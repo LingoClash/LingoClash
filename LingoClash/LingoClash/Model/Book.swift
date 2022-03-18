@@ -14,3 +14,5 @@ struct Book {
 }
 
 extension Book: Codable {}
+
+extension Book: Equatable {}

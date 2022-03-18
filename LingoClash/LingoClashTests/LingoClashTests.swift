@@ -6,30 +6,66 @@
 //
 
 import XCTest
+@testable import LingoClash
 
 class LingoClashTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    func testDataManager_fetchesCorrectly() {
+        let bookDataManager = BookDataManager()
+        let books = bookDataManager.getList(page: 1)
+        
+        books.done { books in
+            print(books)
+            XCTAssertTrue(false)
+            XCTAssertEqual(books, [
+                LingoClash.Book(id: "8", category_id: "3", name: "HSK 2"), LingoClash.Book(id: "7", category_id: "3", name: "HSK 1"), LingoClash.Book(id: "6", category_id: "2", name: "TOPIK 2"), LingoClash.Book(id: "5", category_id: "2", name: "TOPIK 1"), LingoClash.Book(id: "4", category_id: "1", name: "JLPT N4"), LingoClash.Book(id: "3", category_id: "1", name: "JLPT N5"), LingoClash.Book(id: "2", category_id: "1", name: "Minna No Nihongo 2"), LingoClash.Book(id: "1", category_id: "1", name: "Minna No Nihongo 1")
+                ]
+            )
+        }.catch { error in
+            print("Error: ", error)
         }
+        
+//        let booksOne = bookDataManager.getOne(id: "8")
+//        booksOne.done ({ books in
+//            XCTAssertEqual(books, [
+//                LingoClash.Book(id: "8", category_id: "3", name: "HSK 2"), LingoClash.Book(id: "7", category_id: "3", name: "HSK 1"), LingoClash.Book(id: "6", category_id: "2", name: "TOPIK 2"), LingoClash.Book(id: "5", category_id: "2", name: "TOPIK 1"), LingoClash.Book(id: "4", category_id: "1", name: "JLPT N4"), LingoClash.Book(id: "3", category_id: "1", name: "JLPT N5"), LingoClash.Book(id: "2", category_id: "1", name: "Minna No Nihongo 2"), LingoClash.Book(id: "1", category_id: "1", name: "Minna No Nihongo 1")
+//                ]
+//            )
+//        }).catch { error in
+//            print("Error: ", error)
+//        }
+        
+        let booksMany = bookDataManager.getMany(ids: ["1", "8"])
+        booksMany.done { books in
+            print(books)
+            XCTAssertEqual(books, [
+                LingoClash.Book(id: "8", category_id: "3", name: "HSK 2"), LingoClash.Book(id: "7", category_id: "3", name: "HSK 1"), LingoClash.Book(id: "6", category_id: "2", name: "TOPIK 2"), LingoClash.Book(id: "5", category_id: "2", name: "TOPIK 1"), LingoClash.Book(id: "4", category_id: "1", name: "JLPT N4"), LingoClash.Book(id: "3", category_id: "1", name: "JLPT N5"), LingoClash.Book(id: "2", category_id: "1", name: "Minna No Nihongo 2"), LingoClash.Book(id: "1", category_id: "1", name: "Minna No Nihongo 1")
+                ]
+            )
+        }.catch { error in
+            print("Error: ", error)
+        }
+        
+        let booksManyOne = bookDataManager.getMany(ids: ["1"])
+        booksManyOne.done { books in
+            print(books)
+            XCTAssertEqual(books, [
+                LingoClash.Book(id: "8", category_id: "3", name: "HSK 2"), LingoClash.Book(id: "7", category_id: "3", name: "HSK 1"), LingoClash.Book(id: "6", category_id: "2", name: "TOPIK 2"), LingoClash.Book(id: "5", category_id: "2", name: "TOPIK 1"), LingoClash.Book(id: "4", category_id: "1", name: "JLPT N4"), LingoClash.Book(id: "3", category_id: "1", name: "JLPT N5"), LingoClash.Book(id: "2", category_id: "1", name: "Minna No Nihongo 2"), LingoClash.Book(id: "1", category_id: "1", name: "Minna No Nihongo 1")
+                ]
+            )
+        }.catch { error in
+            print("Error: ", error)
+        }
+        
+//        let booksMany = bookDataManager.getManyReference(id: ["1", "8"])
+//        booksMany.done { books in
+//            XCTAssertEqual(books, [
+//                LingoClash.Book(id: "8", category_id: "3", name: "HSK 2"), LingoClash.Book(id: "7", category_id: "3", name: "HSK 1"), LingoClash.Book(id: "6", category_id: "2", name: "TOPIK 2"), LingoClash.Book(id: "5", category_id: "2", name: "TOPIK 1"), LingoClash.Book(id: "4", category_id: "1", name: "JLPT N4"), LingoClash.Book(id: "3", category_id: "1", name: "JLPT N5"), LingoClash.Book(id: "2", category_id: "1", name: "Minna No Nihongo 2"), LingoClash.Book(id: "1", category_id: "1", name: "Minna No Nihongo 1")
+//                ]
+//            )
+//        }.catch { error in
+//            print("Error: ", error)
+//        }
     }
 
 }
