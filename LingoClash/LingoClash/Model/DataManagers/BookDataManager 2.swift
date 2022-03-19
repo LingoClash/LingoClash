@@ -11,9 +11,9 @@ import PromiseKit
 class BookDataManager {
     
     private let dataProvider: DataProvider
-    private let resource = "Books"
+    private let resource = "books"
     
-    init(dataProvider: DataProvider = FirebaseRestDataProvider()) {
+    init(dataProvider: DataProvider = FakeDataProvider()) {
         self.dataProvider = dataProvider
     }
     
@@ -30,9 +30,7 @@ class BookDataManager {
         let data = dataProvider.getList(resource: self.resource, params: GetListParams(pagination: pagination, sort: sort, filter: filter))
         
         return data.compactMap { result in
-            print(result)
-            print(result)
-            return try? JSONDecoder().decode(
+            try? JSONDecoder().decode(
                 [Book].self, from: result.data)
         }
         

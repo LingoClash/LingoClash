@@ -51,19 +51,44 @@ class JSONServerDataProvider: DataProvider {
         ] as [String : Any]
         let query = _query.merging(params.filter) { (current, _) in current }
         
-        guard let url = URL(string: "\(apiURL)/\(resource)?\(FetchUtilities.stringify(query: query))") else {
+        guard let url = URL(string: "\(apiURL)/\(resource)") else {
             return Promise.reject(reason: NetworkError.invalidURL)
         }
         let request = URLRequest(url: url)
-        
+
         return httpClient(request).compactMap { fetchResult in
             
             let response = fetchResult.response as? HTTPURLResponse
-            guard let count = Int(response?.allHeaderFields["X-Total-Count"] as? String ?? "") else {
-                return nil
+//            guard let count = Int(response?.allHeaderFields["X-Total-Count"] as? String ?? "") else {
+//                return nil
+//            }
+            
+            
+//            let json = (try? JSONDecoder().decode(
+//                [String: Any].self, from: fetchResult.data))
+//
+            let jsonData = try? JSONSerialization.jsonObject(with: fetchResult.data, options: [])
+            
+            print(jsonData)
+            
+            if let jsonDict = jsonData as? [String: Any] {
+                print(jsonDict)
+                if let jsonDict	= jsonDict["documents"] as? [Any] {
+                    print(jsonDict)
+                    print(jsonDict)
+                    let result = GetListResult(data: fetchResult.data, total: 1)
+                    return result
+                    
+                }
             }
             
-            return GetListResult(data: fetchResult.data, total: count)
+            if let json = String(data: fetchResult.data, encoding: String.Encoding.utf8) {
+               print(json)
+            }
+//            print(json)
+            let result = GetListResult(data: fetchResult.data, total: 1)
+            
+            return result
         }
     }
     
