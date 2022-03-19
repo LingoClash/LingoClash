@@ -8,8 +8,8 @@
 import Foundation
 
 struct Book {
-    let id: Identifier
-    let category_id: Identifier
+//    let id: Identifier Firebase does not have this
+    let books_category_id: Identifier
     let name: String
 }
 

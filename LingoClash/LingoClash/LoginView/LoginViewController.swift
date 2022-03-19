@@ -27,12 +27,7 @@ class LoginViewController: UIViewController {
         // For testing:
         let bookDataManager = BookDataManager()
         let books = bookDataManager.getList(page: 1)
-        
-        books.done { books in
-            print("Books fetched: ", books)
-        }.catch { error in
-            print("Error: ", error)
-        }
+        print(books)
     }
     
     func setUpView() {
