@@ -46,7 +46,25 @@ class KeychainManager {
         
         return result as? Data
     }
+    
+    static func delete(service: String, account: String) throws {
+        let query: [String: AnyObject] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service as AnyObject,
+            kSecAttrAccount as String: account as AnyObject,
+            kSecMatchLimit as String: kSecMatchLimitOne,
+        ]
+        
+        let status = SecItemDelete(query as CFDictionary)
+        guard status == errSecSuccess || status == errSecItemNotFound else {
+            throw KeychainError.unknown(status)
+        }
+        
+    }
 }
+
+
+
 
 
 
