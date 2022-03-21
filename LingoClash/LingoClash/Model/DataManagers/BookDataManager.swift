@@ -19,9 +19,9 @@ class BookDataManager {
     
     func getList(
         page: Int,
-        perPage: Int = Constants.ListConfig.perPage,
-        field: String = Constants.ListConfig.field,
-        order: String = Constants.ListConfig.order,
+        perPage: Int = AppConfigs.API.perPage,
+        field: String = AppConfigs.API.field,
+        order: String = AppConfigs.API.order,
         filter: [String: Any] = [:]
     ) -> Promise<[Book]> {
         
@@ -59,9 +59,9 @@ class BookDataManager {
         target: String,
         id: Identifier,
         page: Int,
-        perPage: Int = Constants.ListConfig.perPage,
-        field: String = Constants.ListConfig.field,
-        order: String = Constants.ListConfig.order,
+        perPage: Int = AppConfigs.API.perPage,
+        field: String = AppConfigs.API.field,
+        order: String = AppConfigs.API.order,
         filter: [String: Any] = [:]) -> Promise<[Book]> {
             
             let pagination = PaginationPayload(page: page, perPage: perPage)

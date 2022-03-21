@@ -28,6 +28,13 @@ import PromiseKit
 
 class JSONServerDataProvider: DataProvider {
     
+    struct Configs {
+        static let sortKey = "_sort"
+        static let orderKey = "_order"
+        static let startKey = "_start"
+        static let endKey = "_end"
+    }
+    
     typealias HttpClient = (_ request: URLRequest) -> Promise<FetchResult>
     
     private let apiURL: String
@@ -44,10 +51,10 @@ class JSONServerDataProvider: DataProvider {
         let pagination = params.pagination
         let sort = params.sort
         let _query = [
-            "_sort": sort.field,
-            "_order": sort.order,
-            "_start": (pagination.page - 1) * pagination.perPage,
-            "_end": pagination.page * pagination.perPage
+            Configs.sortKey: sort.field,
+            Configs.orderKey: sort.order,
+            Configs.startKey: (pagination.page - 1) * pagination.perPage,
+            Configs.endKey: pagination.page * pagination.perPage
         ] as [String : Any]
         let query = _query.merging(params.filter) { (current, _) in current }
         
@@ -97,10 +104,10 @@ class JSONServerDataProvider: DataProvider {
         let sort = params.sort
         let _query = [
             params.target: params.id,
-            "_sort": sort.field,
-            "_order": sort.order,
-            "_start": (pagination.page - 1) * pagination.perPage,
-            "_end": pagination.page * pagination.perPage
+            Configs.sortKey: sort.field,
+            Configs.orderKey: sort.order,
+            Configs.startKey: (pagination.page - 1) * pagination.perPage,
+            Configs.endKey: pagination.page * pagination.perPage
         ] as [String : Any]
         let query = _query.merging(params.filter) { (current, _) in current }
         

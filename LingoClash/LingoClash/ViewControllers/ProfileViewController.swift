@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
     }
     
     func transitionToSplash() {
-        let splashViewController = storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.splashVC) as? SplashViewController
+        let splashViewController = storyboard?.instantiateViewController(withIdentifier: AppConfigs.StoryBoard.splashVC) as? SplashViewController
         
         view.window?.rootViewController = splashViewController
         view.window?.makeKeyAndVisible()
