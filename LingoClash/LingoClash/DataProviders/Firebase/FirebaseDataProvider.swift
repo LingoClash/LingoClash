@@ -79,11 +79,55 @@ class FirebaseDataProvider: DataProvider {
     }
     
     func getMany(resource: String, params: GetManyParams) -> Promise<GetManyResult> {
-        return Promise<GetManyResult>.resolve(value: GetManyResult(data: []))
+                
+        return Promise { seal in
+            let collection = db.collection(resource)
+            
+            collection.whereField("uid", in: params.ids).getDocuments { (querySnapshot, error) in
+                
+                if let error = error {
+                    return seal.reject(error)
+                }
+                
+                guard let querySnapshot = querySnapshot else {
+                    return seal.reject(FirebaseDataProviderError.invalidQuerySnapshot)
+                }
+                
+                let dataList = querySnapshot.documents.compactMap { document -> Data? in
+                    self.getData(from: document)
+                }
+                
+                return seal.fulfill(GetManyResult(data: dataList))
+            }
+        }
     }
     
     func getManyReference(resource: String, params: GetManyReferenceParams) -> Promise<GetManyReferenceResult> {
-        return Promise<GetManyReferenceResult>.resolve(value: GetManyReferenceResult(data: [], total: 0))
+        
+        return Promise { seal in
+            var filteredCollection = db.collection(resource).whereField(params.target, isEqualTo: params.id)
+            
+            for (key, value) in params.filter {
+                filteredCollection = filteredCollection.whereField(key, isEqualTo: value)
+            }
+            
+            filteredCollection.getDocuments { (querySnapshot, error) in
+                
+                if let error = error {
+                    return seal.reject(error)
+                }
+                
+                guard let querySnapshot = querySnapshot else {
+                    return seal.reject(FirebaseDataProviderError.invalidQuerySnapshot)
+                }
+                
+                let dataList = querySnapshot.documents.compactMap { document -> Data? in
+                    self.getData(from: document)
+                }
+                
+                return seal.fulfill(GetManyReferenceResult(data: dataList, total: querySnapshot.count))
+            }
+        }
     }
     
     func update(resource: String, params: UpdateParams) -> Promise<UpdateResult> {
