@@ -41,9 +41,14 @@ final class LoginViewModel {
 //            ? "Incorrect email or password."
 //            : nil
 //        }
+        
+        print("kw1")
         firstly {
             authProvider.login(params: fields)
+        }.done {
+            self.error = nil
         }.catch { error in
+            print("kw2", error, error.localizedDescription)
             self.error = error.localizedDescription
         }
     }

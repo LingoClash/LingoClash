@@ -18,6 +18,19 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         setUpBinders()
+        
+        
+        print("kw profile")
+        // TODO: To be removed
+        // For testing:
+        let bookDataManager = BookDataManager()
+        let books = bookDataManager.getList(page: 1)
+        
+        books.done { books in
+            print("Profile Books fetched: ", books)
+        }.catch { error in
+            print("Profile Error: ", error)
+        }
     }
     
     func setUpBinders() {
@@ -58,6 +71,7 @@ class ProfileViewController: UIViewController {
     func showLogOutPopUp() {
         let title = ""
         let message = "Are you sure you want to log out?"
+        // TODO: Perhaps we should abstract this into a class
         let alert = Utilities.createAlert(title: title, message: message)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Confirm", style: .default) { _ in

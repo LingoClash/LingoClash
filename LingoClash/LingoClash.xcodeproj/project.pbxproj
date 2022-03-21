@@ -26,7 +26,6 @@
 		D30CD1E827E79F3A0021A5AA /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30CD1E727E79F3A0021A5AA /* KeychainManager.swift */; };
 		D30CD1EB27E7A65F0021A5AA /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30CD1EA27E7A65F0021A5AA /* AuthProvider.swift */; };
 		D30CD1ED27E81D7B0021A5AA /* JSONServerAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30CD1EC27E81D7B0021A5AA /* JSONServerAuthProvider.swift */; };
-		D30CD1EF27E837250021A5AA /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30CD1EE27E837240021A5AA /* URLSession+Extensions.swift */; };
 		D33282DE27D4D42700C80986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33282DD27D4D42700C80986 /* AppDelegate.swift */; };
 		D33282E027D4D42700C80986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33282DF27D4D42700C80986 /* SceneDelegate.swift */; };
 		D33282E227D4D42700C80986 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33282E127D4D42700C80986 /* SplashViewController.swift */; };
@@ -79,7 +78,6 @@
 		D30CD1E727E79F3A0021A5AA /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		D30CD1EA27E7A65F0021A5AA /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		D30CD1EC27E81D7B0021A5AA /* JSONServerAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONServerAuthProvider.swift; sourceTree = "<group>"; };
-		D30CD1EE27E837240021A5AA /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		D33282DA27D4D42700C80986 /* LingoClash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingoClash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33282DD27D4D42700C80986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D33282DF27D4D42700C80986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				D3F00CAC27DFAF6F00393ADC /* Promise+Extensions.swift */,
-				D30CD1EE27E837240021A5AA /* URLSession+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -459,7 +456,6 @@
 			files = (
 				D3BD2A1727DF28B70061E362 /* BookDataManager.swift in Sources */,
 				D3F00CBA27E0642A00393ADC /* FakeDataProvider.swift in Sources */,
-				D30CD1EF27E837250021A5AA /* URLSession+Extensions.swift in Sources */,
 				D33282E227D4D42700C80986 /* SplashViewController.swift in Sources */,
 				D33282DE27D4D42700C80986 /* AppDelegate.swift in Sources */,
 				D3F00CAF27DFC00200393ADC /* DataProviderTypes.swift in Sources */,

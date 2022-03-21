@@ -10,6 +10,7 @@ import Foundation
 enum NetworkError: Error {
     case invalidURL
     case invalidParams
+    case invalidResponse
 }
 
 enum HTTPError: Error {

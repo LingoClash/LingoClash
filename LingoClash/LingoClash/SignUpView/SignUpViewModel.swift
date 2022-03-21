@@ -57,6 +57,8 @@ final class SignUpViewModel {
         
         firstly {
             authProvider.register(params: fields)
+        }.done {
+            self.error = nil
         }.catch { error in
             self.error = error.localizedDescription
         }

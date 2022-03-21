@@ -23,6 +23,8 @@ final class ProfileViewModel {
     func signOut() {
         firstly {
             authProvider.logout()
+        }.done {
+            self.error = nil
         }.catch { error in
             self.error = error.localizedDescription
         }

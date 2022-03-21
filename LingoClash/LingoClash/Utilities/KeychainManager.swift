@@ -10,10 +10,11 @@ import Foundation
 class KeychainManager {
     enum KeychainError: Error {
         case duplicateEntry
+        case noValueFound
         case unknown(OSStatus)
     }
     
-    static func save(service:String, account: String, value: Data) throws {
+    static func save(service:String, account: String, value: Data, shouldOverwrite: Bool = true) throws {
         let query: [String: AnyObject] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
@@ -24,7 +25,34 @@ class KeychainManager {
         let status = SecItemAdd(query as CFDictionary, nil)
         
         guard status != errSecDuplicateItem else {
+            guard !shouldOverwrite else {
+                try KeychainManager.update(service: service, account: account, newValue: value)
+                
+                return
+            }
             throw KeychainError.duplicateEntry
+        }
+        
+        guard status == errSecSuccess else {
+            throw KeychainError.unknown(status)
+        }
+    }
+    
+    static func update(service:String, account: String, newValue: Data) throws {
+        let query: [String: AnyObject] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service as AnyObject,
+            kSecAttrAccount as String: account as AnyObject
+        ]
+        
+        let newAttributes: [String: AnyObject] = [
+            kSecAttrAccount as String: account as AnyObject,
+            kSecValueData as String: newValue as AnyObject
+        ]
+        
+        let status = SecItemUpdate(query as CFDictionary, newAttributes as CFDictionary)
+        
+        guard status != errSecItemNotFound else { throw KeychainError.noValueFound
         }
         
         guard status == errSecSuccess else {
@@ -52,7 +80,6 @@ class KeychainManager {
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
             kSecAttrAccount as String: account as AnyObject,
-            kSecMatchLimit as String: kSecMatchLimitOne,
         ]
         
         let status = SecItemDelete(query as CFDictionary)
