@@ -1,8 +1,8 @@
 //
-//  Error.swift
+//  DataProviderErrors.swift
 //  LingoClash
 //
-//  Created by Kyle キラ on 15/3/22.
+//  Created by Kyle キラ on 21/3/22.
 //
 
 import Foundation
@@ -16,13 +16,4 @@ enum NetworkError: Error {
 enum HTTPError: Error {
     case transportError(Error)
     case serverSideError(Int)
-}
-
-enum DatabaseError: Error {
-    case invalidFormat
-}
-
-enum AuthError: Error  {
-    case invalidLoginParams
-    case invalidLogoutParams
 }

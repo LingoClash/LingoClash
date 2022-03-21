@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import FirebaseAuth
-import FirebaseFirestore
 import PromiseKit
 
 final class SignUpViewModel {
@@ -60,7 +58,7 @@ final class SignUpViewModel {
         }.done {
             self.error = nil
         }.catch { error in
-            self.error = error.localizedDescription
+            self.error = "Error creating user."
         }
         
     }

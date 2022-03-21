@@ -31,11 +31,11 @@ class JSONServerAuthProvider: AuthProvider {
         
         guard let url = URL(string: "\(self.apiURL)/auth/register") else {
             return Promise.reject(
-                reason: NetworkError.invalidURL)
+                reason: AuthError.invalidURL)
         }
         
         guard let data = try? JSONEncoder().encode(userCredentials) else {
-            return Promise.reject(reason: NetworkError.invalidParams)
+            return Promise.reject(reason: AuthError.invalidParams)
         }
         
         var request = URLRequest(url: url)
@@ -63,11 +63,11 @@ class JSONServerAuthProvider: AuthProvider {
         
         guard let url = URL(string: "\(self.apiURL)/auth/login") else {
             return Promise.reject(
-                reason: NetworkError.invalidURL)
+                reason: AuthError.invalidURL)
         }
         
         guard let data = try? JSONEncoder().encode(userCredentials) else {
-            return Promise.reject(reason: NetworkError.invalidParams)
+            return Promise.reject(reason: AuthError.invalidParams)
         }
         
         var request = URLRequest(url: url)
@@ -113,7 +113,7 @@ class JSONServerAuthProvider: AuthProvider {
     
     func getIdentity() -> Promise<UserIdentity> {
         guard let url = URL(string: "\(apiURL)/user/me") else {
-            return Promise.reject(reason: NetworkError.invalidURL)
+            return Promise.reject(reason: AuthError.invalidURL)
         }
         let request = URLRequest(url: url)
         
