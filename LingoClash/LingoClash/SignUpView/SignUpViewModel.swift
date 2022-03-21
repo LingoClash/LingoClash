@@ -8,10 +8,17 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import PromiseKit
 
 final class SignUpViewModel {
     
     @Published var error: String?
+    
+    private let authProvider: AuthProvider
+    
+    init(authProvider: AuthProvider = FakeAuthProvider()) {
+        self.authProvider = authProvider
+    }
     
     func signUp(firstName: String, lastName: String, email: String, password: String) {
         
@@ -30,22 +37,30 @@ final class SignUpViewModel {
         }
         
         // Create user
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
-            if error != nil {
-                self?.error = "Error creating user."
-            } else {
-                guard let result = result else {
-                    return
-                }
-                
-                let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "uid":result.user.uid]) { error in
-                    self?.error = (error != nil)
-                    ? "Error saving user data."
-                    : nil
-                }
-            }
+        // TODO: 
+//        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
+//            if error != nil {
+//                self?.error = "Error creating user."
+//            } else {
+//                guard let result = result else {
+//                    return
+//                }
+//
+//                let db = Firestore.firestore()
+//                db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "uid":result.user.uid]) { error in
+//                    self?.error = (error != nil)
+//                    ? "Error saving user data."
+//                    : nil
+//                }
+//            }
+//        }
+        
+        firstly {
+            authProvider.register(params: fields)
+        }.catch { error in
+            self.error = error.localizedDescription
         }
+        
     }
     
     ///  Returns: nil if fields are correct, else return error message

@@ -45,6 +45,7 @@
 		D3C4422427E877C400676C93 /* JSONAuthProviderTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4422327E877C400676C93 /* JSONAuthProviderTypes.swift */; };
 		D3C4422727E878D800676C93 /* FirebaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4422627E878D800676C93 /* FirebaseAuthProvider.swift */; };
 		D3C4422927E8792200676C93 /* FakeAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4422827E8792200676C93 /* FakeAuthProvider.swift */; };
+		D3C4422D27E87EE800676C93 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4422C27E87EE800676C93 /* ProfileViewModel.swift */; };
 		D3F00CAB27DFA3E200393ADC /* FetchUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F00CAA27DFA3E200393ADC /* FetchUtilities.swift */; };
 		D3F00CAD27DFAF6F00393ADC /* Promise+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F00CAC27DFAF6F00393ADC /* Promise+Extensions.swift */; };
 		D3F00CAF27DFC00200393ADC /* DataProviderTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F00CAE27DFC00200393ADC /* DataProviderTypes.swift */; };
@@ -100,6 +101,7 @@
 		D3C4422327E877C400676C93 /* JSONAuthProviderTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAuthProviderTypes.swift; sourceTree = "<group>"; };
 		D3C4422627E878D800676C93 /* FirebaseAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthProvider.swift; sourceTree = "<group>"; };
 		D3C4422827E8792200676C93 /* FakeAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAuthProvider.swift; sourceTree = "<group>"; };
+		D3C4422C27E87EE800676C93 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		D3F00CAA27DFA3E200393ADC /* FetchUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUtilities.swift; sourceTree = "<group>"; };
 		D3F00CAC27DFAF6F00393ADC /* Promise+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Promise+Extensions.swift"; sourceTree = "<group>"; };
 		D3F00CAE27DFC00200393ADC /* DataProviderTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTypes.swift; sourceTree = "<group>"; };
@@ -153,7 +155,6 @@
 		6232E41327DDDF4700107B89 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6204A03E27DE43350063100D /* ProfileViewController.swift */,
 				6204A03C27DE41990063100D /* MainTabBarViewController.swift */,
 				62C04A1427DDEB10002D2497 /* HomeViewController.swift */,
 				D33282E127D4D42700C80986 /* SplashViewController.swift */,
@@ -198,8 +199,9 @@
 				D3BD2A1827DF29A00061E362 /* DataProviders */,
 				D30CD1E927E7A6460021A5AA /* AuthProviders */,
 				D33282FC27D5258000C80986 /* Model */,
-				D3BD2A1427DEE3DE0061E362 /* LoginView */,
 				D3BD2A1527DEE3F60061E362 /* SignUpView */,
+				D3BD2A1427DEE3DE0061E362 /* LoginView */,
+				D3C4422B27E87EBC00676C93 /* ProfileView */,
 				6232E41327DDDF4700107B89 /* ViewControllers */,
 				D33282F727D4E62F00C80986 /* Resources */,
 				D33282DD27D4D42700C80986 /* AppDelegate.swift */,
@@ -319,6 +321,15 @@
 				D3C4422627E878D800676C93 /* FirebaseAuthProvider.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		D3C4422B27E87EBC00676C93 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				D3C4422C27E87EE800676C93 /* ProfileViewModel.swift */,
+				6204A03E27DE43350063100D /* ProfileViewController.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		D3F00CB627DFC5F200393ADC /* DataManagers */ = {
@@ -476,6 +487,7 @@
 				62C04A1327DDE838002D2497 /* Utilities.swift in Sources */,
 				D33282F927D4E63B00C80986 /* Theme.swift in Sources */,
 				D3C4422927E8792200676C93 /* FakeAuthProvider.swift in Sources */,
+				D3C4422D27E87EE800676C93 /* ProfileViewModel.swift in Sources */,
 				D3F00CB827DFD39700393ADC /* Errors.swift in Sources */,
 				D33282E827D4D42700C80986 /* LingoClash.xcdatamodeld in Sources */,
 				D30CD1ED27E81D7B0021A5AA /* JSONServerAuthProvider.swift in Sources */,

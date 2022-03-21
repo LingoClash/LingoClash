@@ -15,6 +15,7 @@ struct UserIdentity: Codable {
 }
 
 protocol AuthProvider {
+    func register(params: [String: Any]) -> Promise<Void>
     func login(params: [String: Any]) -> Promise<Void>
     func logout() -> Promise<Void>
     func checkError(error: HTTPError) -> Promise<Void>

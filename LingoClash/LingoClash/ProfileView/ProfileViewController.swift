@@ -6,22 +6,41 @@
 //
 
 import UIKit
+import Combine
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
+    
+    private let viewModel = ProfileViewModel()
+    private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setUpBinders()
+    }
+    
+    func setUpBinders() {
+        viewModel.$error.sink {[weak self] error in
+            if let error = error {
+                self?.showError(error)
+            } else {
+                self?.showLogOutPopUp()
+//                self?.transitionToHome()
+            }
+        }.store(in: &cancellables)
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            showLogOutPopUp()
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
+//        do {
+////            try Auth.auth().signOut()
+//
+//        } catch let signOutError as NSError {
+//            print("Error signing out: %@", signOutError)
+//        }
+//
+        // TODO: 
+        viewModel.signOut()
     }
     
     func transitionToSplash() {
@@ -29,6 +48,11 @@ class ProfileViewController: UIViewController {
         
         view.window?.rootViewController = splashViewController
         view.window?.makeKeyAndVisible()
+    }
+    
+    func showError(_ message: String) {
+        // TODO: Perhaps it is better to show as popup
+        print("Error signing out: %@", message)
     }
     
     func showLogOutPopUp() {
