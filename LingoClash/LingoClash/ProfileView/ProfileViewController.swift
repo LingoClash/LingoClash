@@ -49,7 +49,6 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
-        // TODO:
         viewModel.signOut()
     }
     

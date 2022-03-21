@@ -189,7 +189,7 @@ class FirebaseDataProvider: DataProvider {
                         return seal.reject(FirebaseDataProviderError.invalidParams)
                     }
                     
-                    // TODO: modify the id to be ref.documentID
+                    // TODO: Modify the id to be ref.documentID
                     return seal.fulfill(CreateResult(data: data))
                 }
             } catch {
