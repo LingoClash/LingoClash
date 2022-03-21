@@ -37,7 +37,7 @@ final class LoginViewModel {
         }.done {
             self.error = nil
         }.catch { error in
-            self.error = "Incorrect email or password."
+            self.error = error.localizedDescription
         }
     }
     

@@ -39,7 +39,7 @@ final class SignUpViewModel {
         }.done {
             self.error = nil
         }.catch { error in
-            self.error = "Error creating user."
+            self.error = error.localizedDescription
         }
         
     }

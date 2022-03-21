@@ -8,6 +8,8 @@
 import UIKit
 import Combine
 
+import FirebaseAuth
+
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -26,6 +28,9 @@ class LoginViewController: UIViewController {
         // TODO: To be removed
         let bookDataManager = BookDataManager()
         let books = bookDataManager.getList()
+        
+        try? Auth.auth().signOut()
+        print("current user:", Auth.auth().currentUser ?? "")
         
         books.done { books in
             print("Books fetched: ", books)
