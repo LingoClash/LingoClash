@@ -14,9 +14,29 @@ class FirebaseDataProvider: DataProvider {
     
     enum FirebaseDataProviderError: Error {
         case invalidQuerySnapshot
+        case documentNotFound
+        case serializationError
     }
     
     private let db = Firestore.firestore()
+    
+    private func getData(from document: QueryDocumentSnapshot) -> Data? {
+        var documentData = document.data()
+        documentData["id"] = document.documentID
+        
+        return try? JSONSerialization.data(withJSONObject: documentData)
+    }
+    
+    private func getData(from document: DocumentSnapshot) -> Data? {
+        guard var documentData = document.data() else {
+            return nil
+        }
+        
+        documentData["id"] = document.documentID
+        
+        return try? JSONSerialization.data(withJSONObject: documentData)
+    }
+    
     func getList(resource: String, params: GetListParams) -> Promise<GetListResult> {
         
         return Promise { seal in
@@ -31,11 +51,7 @@ class FirebaseDataProvider: DataProvider {
                 }
                 
                 let dataList = querySnapshot.documents.compactMap { document -> Data? in
-                    
-                    var documentData = document.data()
-                    documentData["id"] = document.documentID
-                    
-                    return try? JSONSerialization.data(withJSONObject: documentData)
+                    self.getData(from: document)
                 }
                 
                 return seal.fulfill(GetListResult(data: dataList, total: querySnapshot.count))
@@ -44,7 +60,22 @@ class FirebaseDataProvider: DataProvider {
     }
     
     func getOne(resource: String, params: GetOneParams) -> Promise<GetOneResult> {
-        return Promise<GetOneResult>.resolve(value: GetOneResult(data: Data()))
+        
+        return Promise { seal in
+            let docRef = db.collection(resource).document(params.id)
+            
+            docRef.getDocument { (document, error) in
+                guard let document = document, document.exists else {
+                    return seal.reject(FirebaseDataProviderError.documentNotFound)
+                }
+                
+                guard let data = self.getData(from: document) else {
+                    return seal.reject(FirebaseDataProviderError.serializationError)
+                }
+                
+                return seal.fulfill(GetOneResult(data: data))
+            }
+        }
     }
     
     func getMany(resource: String, params: GetManyParams) -> Promise<GetManyResult> {

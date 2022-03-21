@@ -57,7 +57,6 @@ class FirebaseAuthProvider: AuthProvider {
                         Configs.lastNameKey: lastName,
                         Configs.uidKey: result.user.uid
                     ]) { error in
-                        
                         if let error = error {
                             return seal.reject(error)
                         }
