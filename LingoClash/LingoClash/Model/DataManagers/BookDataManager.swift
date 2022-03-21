@@ -18,16 +18,14 @@ class BookDataManager {
     }
     
     func getList(
-        page: Int,
-        perPage: Int = AppConfigs.API.perPage,
         field: String = AppConfigs.API.field,
         order: String = AppConfigs.API.order,
         filter: [String: Any] = [:]
     ) -> Promise<[Book]> {
         
-        let pagination = PaginationPayload(page: page, perPage: perPage)
         let sort = SortPayload(field: field, order: order)
-        let data = dataProvider.getList(resource: self.resource, params: GetListParams(pagination: pagination, sort: sort, filter: filter))
+        let data = dataProvider.getList(resource: self.resource, params: GetListParams(
+            sort: sort, filter: filter))
         
         return data.compactMap { result in
             try? JSONDecoder().decode(
@@ -58,18 +56,16 @@ class BookDataManager {
     func getManyReference(
         target: String,
         id: Identifier,
-        page: Int,
-        perPage: Int = AppConfigs.API.perPage,
         field: String = AppConfigs.API.field,
         order: String = AppConfigs.API.order,
         filter: [String: Any] = [:]) -> Promise<[Book]> {
             
-            let pagination = PaginationPayload(page: page, perPage: perPage)
             let sort = SortPayload(field: field, order: order)
             let data = dataProvider.getManyReference(
                 resource: self.resource,
                 params: GetManyReferenceParams(
-                    target: target, id: id, pagination: pagination, sort: sort, filter: filter))
+                    target: target, id: id,
+                    sort: sort, filter: filter))
             
             return data.compactMap { result in
                 try? JSONDecoder().decode(

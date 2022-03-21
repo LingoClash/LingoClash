@@ -12,12 +12,13 @@ import PromiseKit
 
 
 
-enum FirebaseAuthError: Error {
-    case invalidAuthParams
-    case invalidAuthDataResult
-}
 
 class FirebaseAuthProvider: AuthProvider {
+ 
+    enum FirebaseAuthError: Error {
+        case invalidAuthParams
+        case invalidAuthDataResult
+    }
     
     struct Configs {
         static let emailKey = "email"

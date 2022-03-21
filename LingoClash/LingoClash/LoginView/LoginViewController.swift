@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         
         // TODO: To be removed
         let bookDataManager = BookDataManager()
-        let books = bookDataManager.getList(page: 1)
+        let books = bookDataManager.getList()
         
         books.done { books in
             print("Books fetched: ", books)

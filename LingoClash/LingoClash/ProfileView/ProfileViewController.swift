@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController {
         // TODO: To be removed
         // For testing:
         let bookDataManager = BookDataManager()
-        let books = bookDataManager.getList(page: 1)
+        let books = bookDataManager.getList()
         
         books.done { books in
             print("Profile Books fetched: ", books)
