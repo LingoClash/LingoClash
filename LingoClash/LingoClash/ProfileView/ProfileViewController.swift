@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController {
     
     func showError(_ message: String) {
         // TODO: Perhaps it is better to show as popup
-        print("Error signing out: %@", message)
+        Log.info("Error signing out: \(message)")
     }
     
 }
