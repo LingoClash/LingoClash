@@ -136,7 +136,7 @@ class FirebaseDataProvider: DataProvider {
         
         return Promise { seal in
             do {
-                try db.collection(resource).document(params.id).setData(from: params.data) { error in
+                try db.collection(resource).document(params.id).setData(from: params.data, merge: true) { error in
                     
                     if let error = error {
                         return seal.reject(error)
@@ -155,7 +155,26 @@ class FirebaseDataProvider: DataProvider {
     }
     
     func create<T: Codable>(resource: String, params: CreateParams<T>) -> Promise<CreateResult> {
-        return Promise<CreateResult>.resolve(value: CreateResult(data: Data()))
+        
+        return Promise { seal in
+            do {
+                let _ = try db.collection(resource).addDocument(from: params.data) { error in
+                    
+                    if let error = error {
+                        return seal.reject(error)
+                    }
+                    
+                    guard let data = try? JSONEncoder().encode(params.data) else {
+                        return seal.reject(FirebaseDataProviderError.invalidParams)
+                    }
+                    
+                    // TODO: modify the id to be ref.documentID
+                    return seal.fulfill(CreateResult(data: data))
+                }
+            } catch {
+                seal.reject(error)
+            }
+        }
     }
     
     func delete<T: Codable>(resource: String, params: DeleteParams<T>) -> Promise<DeleteResult> {
