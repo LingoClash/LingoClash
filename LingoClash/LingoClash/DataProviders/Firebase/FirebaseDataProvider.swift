@@ -150,6 +150,7 @@ class FirebaseDataProvider: DataProvider {
         }
     }
     
+    // See: https://firebase.google.com/docs/firestore/manage-data/transactions
     func updateMany<T: Codable>(resource: String, params: UpdateManyParams<T>) -> Promise<UpdateManyResult> {
         return Promise<UpdateManyResult>.resolve(value: UpdateManyResult(data: []))
     }
@@ -178,7 +179,20 @@ class FirebaseDataProvider: DataProvider {
     }
     
     func delete<T: Codable>(resource: String, params: DeleteParams<T>) -> Promise<DeleteResult> {
-        return Promise<DeleteResult>.resolve(value: DeleteResult(data: Data()))
+        return Promise { seal in
+            db.collection(resource).document(params.id).delete() { error in
+                
+                if let error = error {
+                    return seal.reject(error)
+                }
+                
+                guard let data = try? JSONEncoder().encode(params.previousData) else {
+                    return seal.reject(FirebaseDataProviderError.invalidParams)
+                }
+                
+                return seal.fulfill(DeleteResult(data: data))
+            }
+        }
     }
     
     func deleteMany(resource: String, params: DeleteManyParams) -> Promise<DeleteManyResult> {
