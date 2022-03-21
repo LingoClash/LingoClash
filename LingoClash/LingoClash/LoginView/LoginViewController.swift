@@ -20,24 +20,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("kw signin")
-        
         setUpView()
         setUpBinders()
         
-        print("kw0")
-        
         // TODO: To be removed
-        // For testing:
-        // clear first
-        //        do {
-        //
-        //            print("kw delete key")
-        //
-        //            try KeychainManager.delete(service: AppConfigs.API.devService, account: AppConfigs.API.accessTokenKey)
-        //        } catch {
-        //            print("kw delete key error", error)
-        //        }
         let bookDataManager = BookDataManager()
         let books = bookDataManager.getList(page: 1)
         

@@ -14,7 +14,7 @@ final class SignUpViewModel {
     
     private let authProvider: AuthProvider
     
-    init(authProvider: AuthProvider = FakeAuthProvider()) {
+    init(authProvider: AuthProvider = FirebaseAuthProvider()) {
         self.authProvider = authProvider
     }
     
@@ -33,25 +33,6 @@ final class SignUpViewModel {
             self.error = error
             return
         }
-        
-        // Create user
-        // TODO:
-        //        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (result, error) in
-        //            if error != nil {
-        //                self?.error = "Error creating user."
-        //            } else {
-        //                guard let result = result else {
-        //                    return
-        //                }
-        //
-        //                let db = Firestore.firestore()
-        //                db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "uid":result.user.uid]) { error in
-        //                    self?.error = (error != nil)
-        //                    ? "Error saving user data."
-        //                    : nil
-        //                }
-        //            }
-        //        }
         
         firstly {
             authProvider.register(params: fields)

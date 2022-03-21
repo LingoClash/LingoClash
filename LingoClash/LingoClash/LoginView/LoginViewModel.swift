@@ -16,7 +16,7 @@ final class LoginViewModel {
     
     private let authProvider: AuthProvider
     
-    init(authProvider: AuthProvider = FakeAuthProvider()) {
+    init(authProvider: AuthProvider = FirebaseAuthProvider()) {
         self.authProvider = authProvider
     }
     
@@ -34,22 +34,12 @@ final class LoginViewModel {
             return
         }
         
-        // Sign in
-        // TODO:
-        //        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-        //            self?.error = (error != nil)
-        //            ? "Incorrect email or password."
-        //            : nil
-        //        }
-        
-        print("kw1")
         firstly {
             authProvider.login(params: fields)
         }.done {
             self.error = nil
         }.catch { error in
-            print("kw2", error, error.localizedDescription)
-            self.error = error.localizedDescription
+            self.error = "Incorrect email or password."
         }
     }
     

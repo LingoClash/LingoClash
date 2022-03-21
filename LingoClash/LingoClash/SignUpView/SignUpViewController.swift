@@ -27,7 +27,6 @@ class SignUpViewController: UIViewController {
         setUpView()
         setUpBinders()
         
-        print("kw signup")
     }
     
     func setUpView() {

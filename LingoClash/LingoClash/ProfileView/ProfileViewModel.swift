@@ -17,7 +17,7 @@ final class ProfileViewModel {
     
     private let authProvider: AuthProvider
     
-    init(authProvider: AuthProvider = FakeAuthProvider()) {
+    init(authProvider: AuthProvider = FirebaseAuthProvider()) {
         self.authProvider = authProvider
     }
     
