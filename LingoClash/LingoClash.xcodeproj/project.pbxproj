@@ -241,10 +241,10 @@
 		D33282FC27D5258000C80986 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D3C4423B27E8B17400676C93 /* DatabaseErrors.swift */,
 				D3F00CB227DFC59500393ADC /* Book.swift */,
 				D3F00CB427DFC5DD00393ADC /* BookCategory.swift */,
 				D3F00CB627DFC5F200393ADC /* DataManagers */,
-				D3C4423B27E8B17400676C93 /* DatabaseErrors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

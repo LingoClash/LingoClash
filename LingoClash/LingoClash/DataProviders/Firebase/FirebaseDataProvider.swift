@@ -7,11 +7,40 @@
 
 import Foundation
 import PromiseKit
+import FirebaseFirestore
 
 
 class FirebaseDataProvider: DataProvider {
+    
+    enum FirebaseDataProviderError: Error {
+        case invalidQuerySnapshot
+    }
+    
+    private let db = Firestore.firestore()
     func getList(resource: String, params: GetListParams) -> Promise<GetListResult> {
-        return Promise<GetListResult>.resolve(value: GetListResult(data: Data(), total: 0))
+        
+        return Promise { seal in
+            db.collection(resource).getDocuments { (querySnapshot, error) in
+                
+                if let error = error {
+                    return seal.reject(error)
+                }
+                
+                guard let querySnapshot = querySnapshot else {
+                    return seal.reject(FirebaseDataProviderError.invalidQuerySnapshot)
+                }
+                
+                let dataList = querySnapshot.documents.compactMap { document -> Data? in
+                    
+                    var documentData = document.data()
+                    documentData["id"] = document.documentID
+                    
+                    return try? JSONSerialization.data(withJSONObject: documentData)
+                }
+                
+                return seal.fulfill(GetListResult(data: dataList, total: querySnapshot.count))
+            }
+        }
     }
     
     func getOne(resource: String, params: GetOneParams) -> Promise<GetOneResult> {
@@ -19,11 +48,11 @@ class FirebaseDataProvider: DataProvider {
     }
     
     func getMany(resource: String, params: GetManyParams) -> Promise<GetManyResult> {
-        return Promise<GetManyResult>.resolve(value: GetManyResult(data: Data()))
+        return Promise<GetManyResult>.resolve(value: GetManyResult(data: []))
     }
     
     func getManyReference(resource: String, params: GetManyReferenceParams) -> Promise<GetManyReferenceResult> {
-        return Promise<GetManyReferenceResult>.resolve(value: GetManyReferenceResult(data: Data(), total: 0))
+        return Promise<GetManyReferenceResult>.resolve(value: GetManyReferenceResult(data: [], total: 0))
     }
     
     func update(resource: String, params: UpdateParams) -> Promise<UpdateResult> {

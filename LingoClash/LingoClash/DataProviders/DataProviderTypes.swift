@@ -47,7 +47,7 @@ struct GetListParams {
 }
 
 struct GetListResult {
-    let data: Data
+    let data: [Data]
     let total: Int
 }
 
@@ -64,7 +64,7 @@ struct GetManyParams {
 }
 
 struct GetManyResult {
-    let data: Data
+    let data: [Data]
 }
 
 struct GetManyReferenceParams {
@@ -76,7 +76,7 @@ struct GetManyReferenceParams {
 }
 
 struct GetManyReferenceResult {
-    let data: Data
+    let data: [Data]
     let total: Int
 }
 

@@ -70,7 +70,14 @@ class JSONServerDataProvider: DataProvider {
                 return nil
             }
             
-            return GetListResult(data: fetchResult.data, total: count)
+            guard let items = try? JSONSerialization.jsonObject(with: fetchResult.data, options: []) as? [Any] else {
+                return nil
+            }
+            let dataList = items.compactMap { item in
+                try? JSONSerialization.data(withJSONObject: item, options: [])
+            }
+            
+            return GetListResult(data: dataList, total: count)
         }
     }
     
@@ -94,8 +101,16 @@ class JSONServerDataProvider: DataProvider {
         }
         let request = URLRequest(url: url)
         
-        return httpClient(request).map { fetchResult in
-            GetManyResult(data: fetchResult.data)
+        return httpClient(request).compactMap { fetchResult in
+            
+            guard let items = try? JSONSerialization.jsonObject(with: fetchResult.data, options: []) as? [Any] else {
+                return nil
+            }
+            let dataList = items.compactMap { item in
+                try? JSONSerialization.data(withJSONObject: item, options: [])
+            }
+            
+            return GetManyResult(data: dataList)
         }
     }
     
@@ -123,7 +138,14 @@ class JSONServerDataProvider: DataProvider {
                 return nil
             }
             
-            return GetManyReferenceResult(data: fetchResult.data, total: count)
+            guard let items = try? JSONSerialization.jsonObject(with: fetchResult.data, options: []) as? [Any] else {
+                return nil
+            }
+            let dataList = items.compactMap { item in
+                try? JSONSerialization.data(withJSONObject: item, options: [])
+            }
+            
+            return GetManyReferenceResult(data: dataList, total: count)
         }
         
     }

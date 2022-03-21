@@ -10,11 +10,8 @@ import FirebaseAuth
 import FirebaseFirestore
 import PromiseKit
 
-
-
-
 class FirebaseAuthProvider: AuthProvider {
- 
+    
     enum FirebaseAuthError: Error {
         case invalidAuthParams
         case invalidAuthDataResult
@@ -33,12 +30,12 @@ class FirebaseAuthProvider: AuthProvider {
         
         guard let email = params[Configs.emailKey] as? String,
               let password = params[Configs.passwordKey] as? String,
-                let firstName = params[Configs.firstNameKey] as? String,
-                let lastName = params[Configs.lastNameKey] as? String
+              let firstName = params[Configs.firstNameKey] as? String,
+              let lastName = params[Configs.lastNameKey] as? String
         else {
             return Promise.reject(reason: FirebaseAuthError.invalidAuthParams)
         }
-            
+        
         return Promise<AuthDataResult?> { seal in
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 if let error = error {
@@ -60,12 +57,12 @@ class FirebaseAuthProvider: AuthProvider {
                         Configs.lastNameKey: lastName,
                         Configs.uidKey: result.user.uid
                     ]) { error in
-                    
-                    if let error = error {
-                        return seal.reject(error)
+                        
+                        if let error = error {
+                            return seal.reject(error)
+                        }
+                        return seal.fulfill(())
                     }
-                    return seal.fulfill(())
-                }
             }
         }
     }
@@ -77,7 +74,7 @@ class FirebaseAuthProvider: AuthProvider {
         else {
             return Promise.reject(reason: FirebaseAuthError.invalidAuthParams)
         }
-            
+        
         return Promise<Void> { seal in
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                 if let error = error {

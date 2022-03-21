@@ -13,7 +13,7 @@ class BookDataManager {
     private let dataProvider: DataProvider
     private let resource = "books"
     
-    init(dataProvider: DataProvider = FakeDataProvider()) {
+    init(dataProvider: DataProvider = FirebaseDataProvider()) {
         self.dataProvider = dataProvider
     }
     
@@ -28,8 +28,9 @@ class BookDataManager {
             sort: sort, filter: filter))
         
         return data.compactMap { result in
-            try? JSONDecoder().decode(
-                [Book].self, from: result.data)
+            result.data.compactMap {
+                try? JSONDecoder().decode(Book.self, from: $0)
+            }
         }
         
     }
@@ -48,8 +49,9 @@ class BookDataManager {
         let data = dataProvider.getMany(resource: self.resource, params: GetManyParams(ids: ids))
         
         return data.compactMap { result in
-            try? JSONDecoder().decode(
-                [Book].self, from: result.data)
+            result.data.compactMap {
+                try? JSONDecoder().decode(Book.self, from: $0)
+            }
         }
     }
     
@@ -68,8 +70,9 @@ class BookDataManager {
                     sort: sort, filter: filter))
             
             return data.compactMap { result in
-                try? JSONDecoder().decode(
-                    [Book].self, from: result.data)
+                result.data.compactMap {
+                    try? JSONDecoder().decode(Book.self, from: $0)
+                }
             }
         }
     
