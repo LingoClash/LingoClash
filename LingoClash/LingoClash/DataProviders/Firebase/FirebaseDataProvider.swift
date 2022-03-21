@@ -81,7 +81,7 @@ class FirebaseDataProvider: DataProvider {
     }
     
     func getMany(resource: String, params: GetManyParams) -> Promise<GetManyResult> {
-                
+        
         return Promise { seal in
             let collection = db.collection(resource)
             
@@ -152,7 +152,27 @@ class FirebaseDataProvider: DataProvider {
     
     // See: https://firebase.google.com/docs/firestore/manage-data/transactions
     func updateMany<T: Codable>(resource: String, params: UpdateManyParams<T>) -> Promise<UpdateManyResult> {
-        return Promise<UpdateManyResult>.resolve(value: UpdateManyResult(data: []))
+        
+        let batch = db.batch()
+        
+        for id in params.ids {
+            let docRef = db.collection(resource).document(id)
+            do {
+                try batch.setData(from: params.data, forDocument: docRef, merge: true)
+            } catch {
+                return Promise.reject(reason: error)
+            }
+        }
+        
+        return Promise { seal in
+            batch.commit() { error in
+                if let error = error {
+                    return seal.reject(error)
+                }
+                
+                return seal.fulfill(UpdateManyResult(data: params.ids))
+            }
+        }
     }
     
     func create<T: Codable>(resource: String, params: CreateParams<T>) -> Promise<CreateResult> {
@@ -196,6 +216,21 @@ class FirebaseDataProvider: DataProvider {
     }
     
     func deleteMany(resource: String, params: DeleteManyParams) -> Promise<DeleteManyResult> {
-        return Promise<DeleteManyResult>.resolve(value: DeleteManyResult(data: []))
+        let batch = db.batch()
+        
+        for id in params.ids {
+            let docRef = db.collection(resource).document(id)
+            batch.deleteDocument(docRef)
+        }
+        
+        return Promise { seal in
+            batch.commit() { error in
+                if let error = error {
+                    return seal.reject(error)
+                }
+                
+                return seal.fulfill(DeleteManyResult(data: params.ids))
+            }
+        }
     }
 }
