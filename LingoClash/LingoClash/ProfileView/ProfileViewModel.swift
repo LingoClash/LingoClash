@@ -13,6 +13,7 @@ import PromiseKit
 final class ProfileViewModel {
     
     @Published var error: String?
+    @Published var alertContent: AlertContent?
     
     private let authProvider: AuthProvider
     
@@ -25,6 +26,7 @@ final class ProfileViewModel {
             authProvider.logout()
         }.done {
             self.error = nil
+            self.alertContent = AlertContent(title: "", message: "Are you sure you want to log out?", type: .confirm)
         }.catch { error in
             self.error = error.localizedDescription
         }

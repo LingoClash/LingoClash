@@ -36,11 +36,11 @@ final class LoginViewModel {
         
         // Sign in
         // TODO:
-//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-//            self?.error = (error != nil)
-//            ? "Incorrect email or password."
-//            : nil
-//        }
+        //        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+        //            self?.error = (error != nil)
+        //            ? "Incorrect email or password."
+        //            : nil
+        //        }
         
         print("kw1")
         firstly {

@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
     
     private let viewModel = ProfileViewModel()
     private var cancellables: Set<AnyCancellable> = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,22 +37,29 @@ class ProfileViewController: UIViewController {
         viewModel.$error.sink {[weak self] error in
             if let error = error {
                 self?.showError(error)
-            } else {
-                self?.showLogOutPopUp()
-//                self?.transitionToHome()
+            }
+        }.store(in: &cancellables)
+        
+        
+        viewModel.$alertContent.sink {[weak self] alertContent in
+            if let alertContent = alertContent {
+                //                self?.showAlert(alertContent)
+                self?.showConfirmAlert(title: alertContent.title, message: alertContent.message) { _ in
+                    self?.transitionToSplash()
+                }
             }
         }.store(in: &cancellables)
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
-//        do {
-////            try Auth.auth().signOut()
-//
-//        } catch let signOutError as NSError {
-//            print("Error signing out: %@", signOutError)
-//        }
-//
-        // TODO: 
+        //        do {
+        ////            try Auth.auth().signOut()
+        //
+        //        } catch let signOutError as NSError {
+        //            print("Error signing out: %@", signOutError)
+        //        }
+        //
+        // TODO:
         viewModel.signOut()
     }
     
@@ -68,15 +75,4 @@ class ProfileViewController: UIViewController {
         print("Error signing out: %@", message)
     }
     
-    func showLogOutPopUp() {
-        let title = ""
-        let message = "Are you sure you want to log out?"
-        // TODO: Perhaps we should abstract this into a class
-        let alert = Utilities.createAlert(title: title, message: message)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Confirm", style: .default) { _ in
-            self.transitionToSplash()
-        })
-        self.present(alert, animated: true, completion: nil)
-    }
 }
