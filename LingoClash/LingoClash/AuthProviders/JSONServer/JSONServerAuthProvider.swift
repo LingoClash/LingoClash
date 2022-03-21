@@ -14,7 +14,6 @@ class JSONServerAuthProvider: AuthProvider {
     struct Configs {
         static let emailKey = "email"
         static let passwordKey = "password"
-        static let accessTokenKey = "access_token"
     }
     
     private let apiURL: String
@@ -51,7 +50,7 @@ class JSONServerAuthProvider: AuthProvider {
             
             let accessToken = auth.access_token
             
-            try KeychainManager.save(service: self.apiURL, account: Configs.accessTokenKey, value: accessToken.data(using: .utf8) ?? Data())
+            try KeychainManager.save(service: AppConfigs.API.devService, account: AppConfigs.API.accessTokenKey, value: accessToken.data(using: .utf8) ?? Data())
         }
     }
     
@@ -83,14 +82,14 @@ class JSONServerAuthProvider: AuthProvider {
             
             let accessToken = auth.access_token
             
-            try KeychainManager.save(service: self.apiURL, account: Configs.accessTokenKey, value: accessToken.data(using: .utf8) ?? Data())
+            try KeychainManager.save(service: AppConfigs.API.devService, account: AppConfigs.API.accessTokenKey, value: accessToken.data(using: .utf8) ?? Data())
         }
     }
     
     func logout() -> Promise<Void> {
         
         do {
-            try KeychainManager.delete(service: self.apiURL, account: Configs.accessTokenKey)
+            try KeychainManager.delete(service: AppConfigs.API.devService, account: AppConfigs.API.accessTokenKey)
         } catch {
             return Promise.reject(reason: error)
         }
@@ -102,7 +101,7 @@ class JSONServerAuthProvider: AuthProvider {
         switch error {
         case .serverSideError(401), .serverSideError(403):
             do {
-                try KeychainManager.delete(service: self.apiURL, account: Configs.accessTokenKey)
+                try KeychainManager.delete(service: AppConfigs.API.devService, account: AppConfigs.API.accessTokenKey)
             } catch {
                 return Promise.reject(reason: error)
             }
