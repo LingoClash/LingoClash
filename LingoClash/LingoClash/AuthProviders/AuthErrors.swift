@@ -10,6 +10,7 @@ import Foundation
 
 enum AuthError: Error  {
     case invalidURL
+    case invalidParams
     case invalidLoginParams
     case invalidLogoutParams
 }

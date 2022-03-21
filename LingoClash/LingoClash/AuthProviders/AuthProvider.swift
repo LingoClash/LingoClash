@@ -9,9 +9,9 @@ import Foundation
 import PromiseKit
 
 struct UserIdentity: Codable {
-    let id: Identifier
-    let fullName: String
-    let avatar: String
+    let id: Identifier?
+    let fullName: String?
+    let avatar: String?
 }
 
 protocol AuthProvider {

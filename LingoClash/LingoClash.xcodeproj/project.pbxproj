@@ -282,9 +282,9 @@
 		D3BD2A1827DF29A00061E362 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
+				D398780827DF6AB800B2F4ED /* DataProvider.swift */,
 				D3C4423D27E8B20000676C93 /* DataProviderErrors.swift */,
 				D3F00CAE27DFC00200393ADC /* DataProviderTypes.swift */,
-				D398780827DF6AB800B2F4ED /* DataProvider.swift */,
 				D3C4422227E871A200676C93 /* JSONServer */,
 			);
 			path = DataProviders;

@@ -35,7 +35,7 @@ class FirebaseAuthProvider: AuthProvider {
         else {
             return Promise.reject(reason: FirebaseAuthError.invalidAuthParams)
         }
-        
+            
         return Promise<AuthDataResult?> { seal in
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 if let error = error {
@@ -68,19 +68,45 @@ class FirebaseAuthProvider: AuthProvider {
     }
     
     func login(params: [String : Any]) -> Promise<Void> {
-        <#code#>
+        
+        guard let email = params[Configs.emailKey] as? String,
+              let password = params[Configs.passwordKey] as? String
+        else {
+            return Promise.reject(reason: FirebaseAuthError.invalidAuthParams)
+        }
+            
+        return Promise<Void> { seal in
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                if let error = error {
+                    return seal.reject(error)
+                }
+                
+                return seal.fulfill(())
+            }
+        }
     }
     
     func logout() -> Promise<Void> {
-        <#code#>
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            return Promise.reject(reason: error)
+        }
+        
+        return Promise<Void>.resolve(value: ())
     }
     
     func checkError(error: HTTPError) -> Promise<Void> {
-        <#code#>
+        return Promise<Void>.resolve(value: ())
     }
     
     func getIdentity() -> Promise<UserIdentity> {
-        <#code#>
+        let user = Auth.auth().currentUser
+        
+        let userIdentity = UserIdentity(
+            id: user?.uid, fullName: user?.displayName, avatar: user?.photoURL?.absoluteString)
+        
+        return Promise<UserIdentity>.resolve(value: userIdentity)
     }
     
 }
