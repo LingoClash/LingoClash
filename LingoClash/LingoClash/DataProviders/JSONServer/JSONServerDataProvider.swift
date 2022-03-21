@@ -48,13 +48,13 @@ class JSONServerDataProvider: DataProvider {
         }
     
     func getList(resource: String, params: GetListParams) -> Promise<GetListResult> {
-        let pagination = params.pagination
+        //        let pagination = params.pagination
         let sort = params.sort
         let _query = [
             Configs.sortKey: sort.field,
             Configs.orderKey: sort.order,
-            Configs.startKey: (pagination.page - 1) * pagination.perPage,
-            Configs.endKey: pagination.page * pagination.perPage
+            //            Configs.startKey: (pagination.page - 1) * pagination.perPage,
+            //            Configs.endKey: pagination.page * pagination.perPage
         ] as [String : Any]
         let query = _query.merging(params.filter) { (current, _) in current }
         
@@ -100,14 +100,14 @@ class JSONServerDataProvider: DataProvider {
     }
     
     func getManyReference(resource: String, params: GetManyReferenceParams) -> Promise<GetManyReferenceResult> {
-        let pagination = params.pagination
+        //        let pagination = params.pagination
         let sort = params.sort
         let _query = [
             params.target: params.id,
             Configs.sortKey: sort.field,
             Configs.orderKey: sort.order,
-            Configs.startKey: (pagination.page - 1) * pagination.perPage,
-            Configs.endKey: pagination.page * pagination.perPage
+            //            Configs.startKey: (pagination.page - 1) * pagination.perPage,
+            //            Configs.endKey: pagination.page * pagination.perPage
         ] as [String : Any]
         let query = _query.merging(params.filter) { (current, _) in current }
         
