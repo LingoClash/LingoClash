@@ -13,17 +13,17 @@ struct Record: Codable {
     let id: Identifier
 }
 
-struct CreateParams {
-    let data: Data
+struct CreateParams<T: Codable> {
+    let data: T
 }
 
 struct CreateResult {
     let data: Data
 }
 
-struct DeleteParams {
+struct DeleteParams<T: Codable> {
     let id: Identifier
-    let previousData: Data
+    let previousData: T
 }
 
 struct DeleteResult {
@@ -80,19 +80,19 @@ struct GetManyReferenceResult {
     let total: Int
 }
 
-struct UpdateParams {
+struct UpdateParams<T: Codable> {
     let id: Identifier
-    let data: Data
-    let previousData: Data
+    let data: T
+    let previousData: T
 }
 
 struct UpdateResult {
     let data: Data
 }
 
-struct UpdateManyParams {
+struct UpdateManyParams<T: Codable> {
     let ids: [Identifier]
-    let data: Data
+    let data: T
 }
 
 struct UpdateManyResult {

@@ -8,11 +8,13 @@
 import Foundation
 import PromiseKit
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 
 class FirebaseDataProvider: DataProvider {
     
     enum FirebaseDataProviderError: Error {
+        case invalidParams
         case invalidQuerySnapshot
         case documentNotFound
         case serializationError
@@ -130,19 +132,33 @@ class FirebaseDataProvider: DataProvider {
         }
     }
     
-    func update(resource: String, params: UpdateParams) -> Promise<UpdateResult> {
-        return Promise<UpdateResult>.resolve(value: UpdateResult(data: Data()))
+    func update<T: Codable>(resource: String, params: UpdateParams<T>) -> Promise<UpdateResult> {
+        
+        return Promise { seal in
+            do {
+                try db.collection(resource).document(params.id).setData(from: params.data) { error in
+                    
+                    if let error = error {
+                        return seal.reject(error)
+                    }
+                    
+                    return seal.fulfill(UpdateResult(data: Data()))
+                }
+            } catch {
+                seal.reject(error)
+            }
+        }
     }
     
-    func updateMany(resource: String, params: UpdateManyParams) -> Promise<UpdateManyResult> {
+    func updateMany<T: Codable>(resource: String, params: UpdateManyParams<T>) -> Promise<UpdateManyResult> {
         return Promise<UpdateManyResult>.resolve(value: UpdateManyResult(data: []))
     }
     
-    func create(resource: String, params: CreateParams) -> Promise<CreateResult> {
+    func create<T: Codable>(resource: String, params: CreateParams<T>) -> Promise<CreateResult> {
         return Promise<CreateResult>.resolve(value: CreateResult(data: Data()))
     }
     
-    func delete(resource: String, params: DeleteParams) -> Promise<DeleteResult> {
+    func delete<T: Codable>(resource: String, params: DeleteParams<T>) -> Promise<DeleteResult> {
         return Promise<DeleteResult>.resolve(value: DeleteResult(data: Data()))
     }
     

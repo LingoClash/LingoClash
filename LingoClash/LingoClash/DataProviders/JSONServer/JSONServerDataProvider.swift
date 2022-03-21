@@ -150,15 +150,19 @@ class JSONServerDataProvider: DataProvider {
         
     }
     
-    func update(resource: String, params: UpdateParams) -> Promise<UpdateResult> {
+    func update<T: Codable>(resource: String, params: UpdateParams<T>) -> Promise<UpdateResult> {
         guard let url = URL(string: "\(apiURL)/\(resource)/\(params.id)") else {
             return Promise.reject(reason: NetworkError.invalidURL)
+        }
+        
+        guard let data = try? JSONEncoder().encode(params.data) else {
+            return Promise.reject(reason: NetworkError.invalidParams)
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = params.data
+        request.httpBody = data
         
         return httpClient(request).map { fetchResult in
             UpdateResult(data: fetchResult.data)
@@ -166,7 +170,7 @@ class JSONServerDataProvider: DataProvider {
     }
     
     // json-server doesn't handle filters on UPDATE route, so we fallback to calling UPDATE n times instead
-    func updateMany(resource: String, params: UpdateManyParams) -> Promise<UpdateManyResult> {
+    func updateMany<T: Codable>(resource: String, params: UpdateManyParams<T>) -> Promise<UpdateManyResult> {
         
         firstly { () -> Promise<[FetchResult]> in
             let promises = params.ids.map { id -> Promise<FetchResult> in
@@ -174,10 +178,14 @@ class JSONServerDataProvider: DataProvider {
                     return Promise.reject(reason: NetworkError.invalidURL)
                 }
                 
+                guard let data = try? JSONEncoder().encode(params.data) else {
+                    return Promise.reject(reason: NetworkError.invalidParams)
+                }
+                
                 var request = URLRequest(url: url)
                 request.httpMethod = "PUT"
                 request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-                request.httpBody = params.data
+                request.httpBody = data
                 
                 return httpClient(request)
             }
@@ -194,24 +202,28 @@ class JSONServerDataProvider: DataProvider {
         
     }
     
-    func create(resource: String, params: CreateParams) -> Promise<CreateResult> {
+    func create<T: Codable>(resource: String, params: CreateParams<T>) -> Promise<CreateResult> {
         
         guard let url = URL(string: "\(apiURL)/\(resource)") else {
             return Promise.reject(
                 reason: NetworkError.invalidURL)
         }
         
+        guard let data = try? JSONEncoder().encode(params.data) else {
+            return Promise.reject(reason: NetworkError.invalidParams)
+        }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = params.data
+        request.httpBody = data
         
         return httpClient(request).map { fetchResult in
             CreateResult(data: fetchResult.data)
         }
     }
     
-    func delete(resource: String, params: DeleteParams) -> Promise<DeleteResult> {
+    func delete<T: Codable>(resource: String, params: DeleteParams<T>) -> Promise<DeleteResult> {
         guard let url = URL(string: "\(apiURL)/\(resource)/\(params.id)") else {
             return Promise.reject(reason: NetworkError.invalidURL)
         }
