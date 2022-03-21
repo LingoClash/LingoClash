@@ -24,6 +24,8 @@ class FirebaseAuthProvider: AuthProvider {
         static let passwordKey = "password"
         static let firstNameKey = "firstName"
         static let lastNameKey = "lastName"
+        static let uidKey = "uid"
+        static let usersCollection = "users"
     }
     
     func register(params: [String : Any]) -> Promise<Void> {
@@ -51,11 +53,11 @@ class FirebaseAuthProvider: AuthProvider {
             
             return Promise { seal in
                 let db = Firestore.firestore()
-                db.collection("users").addDocument(
+                db.collection(Configs.usersCollection).addDocument(
                     data: [
-                        "firstName":firstName,
-                        "lastName":lastName,
-                        "uid":result.user.uid
+                        Configs.firstNameKey: firstName,
+                        Configs.lastNameKey: lastName,
+                        Configs.uidKey: result.user.uid
                     ]) { error in
                     
                     if let error = error {
