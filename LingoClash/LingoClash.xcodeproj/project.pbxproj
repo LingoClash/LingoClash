@@ -11,6 +11,9 @@
 		6204A03D27DE41990063100D /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6204A03C27DE41990063100D /* MainTabBarViewController.swift */; };
 		6204A03F27DE43350063100D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6204A03E27DE43350063100D /* ProfileViewController.swift */; };
 		6204A04127DE4A500063100D /* ViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6204A04027DE4A500063100D /* ViewUtilities.swift */; };
+		621E6D5127E9C4F10015BBD4 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621E6D5027E9C4F10015BBD4 /* EditProfileViewController.swift */; };
+		621E6D5327E9C5060015BBD4 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621E6D5227E9C5060015BBD4 /* ChangePasswordViewController.swift */; };
+		621E6D5527E9C8260015BBD4 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621E6D5427E9C8260015BBD4 /* ChangeEmailViewController.swift */; };
 		624989DA27E735600092FC1B /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624989D927E735600092FC1B /* BookCollectionViewController.swift */; };
 		624989DC27E736590092FC1B /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624989DB27E736590092FC1B /* BookCollectionViewCell.swift */; };
 		624989DE27E7395E0092FC1B /* LearningBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624989DD27E7395E0092FC1B /* LearningBooksViewController.swift */; };
@@ -81,6 +84,9 @@
 		6204A03C27DE41990063100D /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		6204A03E27DE43350063100D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6204A04027DE4A500063100D /* ViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtilities.swift; sourceTree = "<group>"; };
+		621E6D5027E9C4F10015BBD4 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		621E6D5227E9C5060015BBD4 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		621E6D5427E9C8260015BBD4 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		624989D927E735600092FC1B /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
 		624989DB27E736590092FC1B /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		624989DD27E7395E0092FC1B /* LearningBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningBooksViewController.swift; sourceTree = "<group>"; };
@@ -234,7 +240,10 @@
 			isa = PBXGroup;
 			children = (
 				6204A03E27DE43350063100D /* ProfileViewController.swift */,
+				621E6D5227E9C5060015BBD4 /* ChangePasswordViewController.swift */,
+				621E6D5427E9C8260015BBD4 /* ChangeEmailViewController.swift */,
 				629090A427E85EFA00941A3B /* ProfileViewModel.swift */,
+				621E6D5027E9C4F10015BBD4 /* EditProfileViewController.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -484,8 +493,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				621E6D5127E9C4F10015BBD4 /* EditProfileViewController.swift in Sources */,
 				D3BD2A1727DF28B70061E362 /* BookDataManager.swift in Sources */,
 				629090A227E8314100941A3B /* RecommendedBooksTableViewCell.swift in Sources */,
+				621E6D5327E9C5060015BBD4 /* ChangePasswordViewController.swift in Sources */,
 				624BD58D27E7A673006F0391 /* RecommendedBooksViewController.swift in Sources */,
 				D3F00CBA27E0642A00393ADC /* FakeDataProvider.swift in Sources */,
 				D33282E227D4D42700C80986 /* SplashViewController.swift in Sources */,
@@ -501,6 +512,7 @@
 				629090A527E85EFA00941A3B /* ProfileViewModel.swift in Sources */,
 				D3F00CB327DFC59500393ADC /* Book.swift in Sources */,
 				D33282E027D4D42700C80986 /* SceneDelegate.swift in Sources */,
+				621E6D5527E9C8260015BBD4 /* ChangeEmailViewController.swift in Sources */,
 				D3F00CAB27DFA3E200393ADC /* FetchUtilities.swift in Sources */,
 				D3BD2A1127DED82A0061E362 /* LoginViewModel.swift in Sources */,
 				D398780B27DF7C1100B2F4ED /* JSONServerDataProvider.swift in Sources */,

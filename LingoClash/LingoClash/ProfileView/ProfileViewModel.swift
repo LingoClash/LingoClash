@@ -14,11 +14,28 @@ final class ProfileViewModel {
     @Published var totalStars: Int?
     @Published var starsToday: Int?
     
+    var firstName: String?
+    var lastName: String?
+    
     func refreshProfile() {
-        // get user profile
+        // TODO: get user profile
+        self.firstName = "John"
+        self.lastName = "Doe"
         self.name = "John Doe"
         self.email = "guy@gmail.com"
         self.totalStars = 5
         self.starsToday = 1
+    }
+    
+    func editProfile(firstName: String, lastName: String) {
+        // TODO: edit profile
+    }
+    
+    func changeEmail(newEmail: String, confirmNewEmail: String) {
+        // TODO: change email
+    }
+    
+    func changePassword(currentPassword: String, newPassword: String, confirmNewPassword: String) {
+        // TODO: change password
     }
 }
