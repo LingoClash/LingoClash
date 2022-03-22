@@ -7,25 +7,25 @@
 
 import UIKit
 
-struct Constants {
-    
-    struct ListConfig {
-        static let perPage = 10
-        static let field = "id"
-        static let order = "desc"
-    }
-    
-    struct API {
-        static let devServerBaseURL = "http://localhost:3000"
-    }
-    
+struct AppConfigs {
+
     struct StoryBoard {
         static let mainTabBarVC = "MainTabBarVC"
         static let splashVC = "SplashVC"
     }
     
-    struct UI {
+    struct View {
         static let primaryColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
         static let blue = #colorLiteral(red: 0.3065024073, green: 0.6942780921, blue: 1, alpha: 1)
     }
+    
+    struct API {
+        static let devService = "lingoclashdev.com"
+        static let devServerBaseURL = "http://localhost:3000"
+        static let perPage = 10
+        static let field = "id"
+        static let order = "desc"
+        static let accessTokenKey = "access_token"
+    }
+    
 }

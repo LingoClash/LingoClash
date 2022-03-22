@@ -8,14 +8,34 @@
 import Combine
 
 final class ProfileViewModel {
-    
+    @Published var error: String?
     @Published var name: String?
     @Published var email: String?
     @Published var totalStars: Int?
     @Published var starsToday: Int?
+    @Published var alertContent: AlertContent?
     
+    private let authProvider: AuthProvider
+
     var firstName: String?
     var lastName: String?
+    
+    init(authProvider: AuthProvider = FirebaseAuthProvider()) {
+        self.authProvider = authProvider
+    }
+    
+    func signOut() {
+        firstly {
+            authProvider.logout()
+        }.done {
+            self.error = nil
+            self.alertContent = AlertContent(title: "", message: "Are you sure you want to log out?", type: .confirm)
+        }.catch { error in
+            self.error = error.localizedDescription
+        }
+    }
+    
+
     
     func refreshProfile() {
         // TODO: get user profile
