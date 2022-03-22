@@ -17,17 +17,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         setUpBinders()
-        
-        // TODO: To be removed
-        // For testing:
-        let bookDataManager = BookDataManager()
-        let books = bookDataManager.getList()
-        
-        books.done { books in
-            print("Profile Books fetched: ", books)
-        }.catch { error in
-            print("Profile Error: ", error)
-        }
     }
     
     func setUpBinders() {
