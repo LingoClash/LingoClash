@@ -20,6 +20,10 @@ class FirebaseDataProvider: DataProvider {
         case serializationError
     }
     
+    struct Configs {
+        static let uidKey = "uid"
+    }
+    
     private let db = Firestore.firestore()
     
     private func getData(from document: QueryDocumentSnapshot) -> Data? {
@@ -67,6 +71,10 @@ class FirebaseDataProvider: DataProvider {
             let docRef = db.collection(resource).document(params.id)
             
             docRef.getDocument { (document, error) in
+                if let error = error {
+                    return seal.reject(error)
+                }
+                
                 guard let document = document, document.exists else {
                     return seal.reject(FirebaseDataProviderError.documentNotFound)
                 }
@@ -85,7 +93,7 @@ class FirebaseDataProvider: DataProvider {
         return Promise { seal in
             let collection = db.collection(resource)
             
-            collection.whereField("uid", in: params.ids).getDocuments { (querySnapshot, error) in
+            collection.whereField(Configs.uidKey, in: params.ids).getDocuments { (querySnapshot, error) in
                 
                 if let error = error {
                     return seal.reject(error)
