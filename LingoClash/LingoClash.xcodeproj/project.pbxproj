@@ -43,6 +43,7 @@
 		62E418CF27EA526200DFF03C /* ProfileLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418CE27EA526200DFF03C /* ProfileLevel.swift */; };
 		62E418D127EA53A800DFF03C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418D027EA53A800DFF03C /* Profile.swift */; };
 		62E418D327EA5A6900DFF03C /* ProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418D227EA5A6900DFF03C /* ProfileDataManager.swift */; };
+		6F04F9C427EEB1EC0073DAC2 /* RevisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F04F9C327EEB1EC0073DAC2 /* RevisionViewController.swift */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
 		6FA0243A27E1BBBE00F94E54 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243927E1BBBE00F94E54 /* FirebaseAuthCombine-Community */; };
 		6FA0243C27E1BBBE00F94E54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243B27E1BBBE00F94E54 /* FirebaseDatabase */; };
@@ -260,6 +261,7 @@
 		CEF1E81B27E74634005D4272 /* TwoDisjointSetOptionQuestionLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoDisjointSetOptionQuestionLayoutViewController.swift; sourceTree = "<group>"; };
 		CEF1E81E27E74C6F005D4272 /* QuestionLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLayoutViewController.swift; sourceTree = "<group>"; };
 		CEF1E82027E75979005D4272 /* OptionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableCell.swift; sourceTree = "<group>"; };
+		6F04F9C327EEB1EC0073DAC2 /* RevisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionViewController.swift; sourceTree = "<group>"; };
 		D30CD1E727E79F3A0021A5AA /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		D30CD1EA27E7A65F0021A5AA /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		D30CD1EC27E81D7B0021A5AA /* JSONServerAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONServerAuthProvider.swift; sourceTree = "<group>"; };
@@ -597,6 +599,14 @@
 			path = QuestionLayoutView;
 			sourceTree = "<group>";
 		};
+		6F04F9C227EEB1D40073DAC2 /* RevisionView */ = {
+			isa = PBXGroup;
+			children = (
+				6F04F9C327EEB1EC0073DAC2 /* RevisionViewController.swift */,
+			);
+			path = RevisionView;
+			sourceTree = "<group>";
+		};
 		D30CD1E927E7A6460021A5AA /* AuthProviders */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,6 +649,7 @@
 				CEF1E7DA27E60C4F005D4272 /* LessonView */,
 				CEF1E7ED27E6D0E2005D4272 /* QuestionView */,
 				D3BD2A1527DEE3F60061E362 /* SignUpView */,
+				6F04F9C227EEB1D40073DAC2 /* RevisionView */,
 				629090A327E85ED000941A3B /* ProfileView */,
 				624BD57D27E76060006F0391 /* BooksView */,
 				629090A627E8D00B00941A3B /* HomeView */,
@@ -978,6 +989,7 @@
 				CEF02D7527E956DA00C30E03 /* LessonQuizOutcomeViewController.swift in Sources */,
 				CEF1E7D727E60C2D005D4272 /* LessonVocabViewController.swift in Sources */,
 				CEF02D8927E9775E00C30E03 /* QuestionConstructorRandomFactory.swift in Sources */,
+				6F04F9C427EEB1EC0073DAC2 /* RevisionViewController.swift in Sources */,
 				D3F00CB127DFC04600393ADC /* FetchTypes.swift in Sources */,
 				CEF02D7727E956EA00C30E03 /* LessonQuizOutcomeViewModel.swift in Sources */,
 				62E418D127EA53A800DFF03C /* Profile.swift in Sources */,

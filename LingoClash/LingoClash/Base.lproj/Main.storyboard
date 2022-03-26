@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wSe-wd-I8A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XkV-uo-H7O">
     <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -271,6 +271,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5R-y5-z8Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1661" y="-206"/>
+        </scene>
+        <!--Revision-->
+        <scene sceneID="LPl-yl-wCV">
+            <objects>
+                <viewController id="XkV-uo-H7O" customClass="RevisionViewController" customModule="LingoClash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SdS-Cg-zbm">
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vZ-8T-cAO">
+                                <rect key="frame" x="220.5" y="506.5" width="379" height="167"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6AO-71-Rgt">
+                                        <rect key="frame" x="156.5" y="116" width="66.5" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRC-cq-fth">
+                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Revise" cornerStyle="capsule">
+                                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="reviseTapped:" destination="XkV-uo-H7O" eventType="touchUpInside" id="Gq1-kS-vZ3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="srt-gX-0DZ">
+                                        <rect key="frame" x="46" y="24" width="88" height="51"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="deck  name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvj-36-auf">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVb-uc-rvl">
+                                                <rect key="frame" x="0.0" y="30.5" width="88" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="167" id="1FQ-iN-ANW"/>
+                                    <constraint firstItem="srt-gX-0DZ" firstAttribute="top" secondItem="6vZ-8T-cAO" secondAttribute="top" constant="24" id="Mqf-yB-fac"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="167" id="SAG-ZV-m5Y"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="379" id="Zuz-Nn-Dco"/>
+                                    <constraint firstItem="srt-gX-0DZ" firstAttribute="leading" secondItem="6vZ-8T-cAO" secondAttribute="leading" constant="46" id="afe-ps-0Dy"/>
+                                    <constraint firstItem="6AO-71-Rgt" firstAttribute="centerX" secondItem="6vZ-8T-cAO" secondAttribute="centerX" id="dBM-Iy-aUg"/>
+                                    <constraint firstAttribute="bottom" secondItem="6AO-71-Rgt" secondAttribute="bottom" constant="20" id="jBG-JB-vFS"/>
+                                    <constraint firstAttribute="width" constant="379" id="lr6-H0-cKH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Vi-lK-mqe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6vZ-8T-cAO" firstAttribute="centerX" secondItem="SdS-Cg-zbm" secondAttribute="centerX" id="5F0-EI-3vP"/>
+                            <constraint firstItem="6vZ-8T-cAO" firstAttribute="centerY" secondItem="SdS-Cg-zbm" secondAttribute="centerY" id="wC6-S1-jBQ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Revision" image="book.closed.circle.fill" catalog="system" id="80c-kH-RxX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQz-8G-uqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3659" y="1294"/>
         </scene>
         <!--Profile-->
         <scene sceneID="kcg-vN-RUI">
@@ -1153,6 +1225,7 @@
                     <connections>
                         <segue destination="bDF-8g-LGo" kind="relationship" relationship="viewControllers" id="4Ye-gq-MXr"/>
                         <segue destination="CSh-T3-ukZ" kind="relationship" relationship="viewControllers" id="j5T-t9-Yd9"/>
+                        <segue destination="XkV-uo-H7O" kind="relationship" relationship="viewControllers" id="eZY-gr-BWa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUL-eA-4Ph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1166,6 +1239,7 @@
         <segue reference="faX-he-4YF"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="book.closed.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="logo" width="360" height="360"/>
