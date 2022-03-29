@@ -16,6 +16,7 @@ class RevisionViewController: UIViewController {
 //    @IBOutlet weak var starsTodayLabel: UILabel!
     
 //    private let viewModel = ProfileViewModel()
+    private let viewModel = CurrentBookViewModel()
     private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
@@ -26,6 +27,12 @@ class RevisionViewController: UIViewController {
     
     private func setUpBinders() {
         // Add binders
+        viewModel.$currentBookProgress.sink {[weak self] bookProgress in
+            if let bookProgress = bookProgress {
+                self?.bookNameLabel.text = bookProgress.name
+                self?.progressLabel.text = "Progress: \(bookProgress.progress)"
+            }
+        }.store(in: &cancellables)
     }
     
     func showError(_ message: String) {
