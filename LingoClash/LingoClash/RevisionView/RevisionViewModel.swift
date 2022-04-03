@@ -12,6 +12,7 @@ final class RevisionViewModel {
 //    @Published var currentBookProgress: BookProgress?
 //    @Published var currentBook: Book?
 //    @Published var lessonSelectionViewModel: LessonSelectionViewModel?
+    @Published var decks: [Deck] = [Deck(name: "Default Deck", vocabs: [])]
     
     func fetchDecks() {
         //TODO: get current decks from db
@@ -25,6 +26,12 @@ final class RevisionViewModel {
     }
     
     func addDeck(_ deckFields: CreateDeckFields) {
-
+        // update locally
+        decks.append(Deck(name: deckFields.newName, vocabs: []))
+        
+    }
+    
+    func refreshDecks() {
+        // todo: fetch decks as well
     }
 }

@@ -46,10 +46,10 @@ class RevisionCreateDeckViewController: UIViewController {
 //        let fields = EditProfileFields(firstName: firstName, lastName: lastName)
 //        viewModel.editProfile(fields)
 //    }
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        let fields = ChangeEmailFields(newEmail: newEmail)
-        viewModel.changeEmail(fields)
-    }
+//    @IBAction func saveButtonTapped(_ sender: Any) {
+//        let fields = ChangeEmailFields(newEmail: newEmail)
+//        viewModel.changeEmail(fields)
+//    }
     
     // Create deck
     @IBAction func onTapActionSave(_ sender: Any) {

@@ -47,8 +47,17 @@
 		62E418D127EA53A800DFF03C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418D027EA53A800DFF03C /* Profile.swift */; };
 		62E418D327EA5A6900DFF03C /* ProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418D227EA5A6900DFF03C /* ProfileDataManager.swift */; };
 		6F0B37BC27F7E18000C91257 /* RevisionCreateDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B37BB27F7E18000C91257 /* RevisionCreateDeckViewController.swift */; };
+		6F2F4A2627F9947500923DB9 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2F4A2527F9947500923DB9 /* Query.swift */; };
+		6F2F4A2827F9952D00923DB9 /* Answerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2F4A2727F9952D00923DB9 /* Answerable.swift */; };
 		6F4C4D6027F7FE9D00394CCB /* CreateDeckFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D5F27F7FE9D00394CCB /* CreateDeckFields.swift */; };
 		6F4C4D6227F7FFDB00394CCB /* RevisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6127F7FFDB00394CCB /* RevisionViewModel.swift */; };
+		6F4C4D6527F8041600394CCB /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6427F8041600394CCB /* Deck.swift */; };
+		6F4C4D6727F8045600394CCB /* RevisionVocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6627F8045600394CCB /* RevisionVocab.swift */; };
+		6F4C4D6927F80A9C00394CCB /* DeckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6827F80A9C00394CCB /* DeckCollectionViewCell.swift */; };
+		6F4C4D6E27F87E7F00394CCB /* RevisionSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6D27F87E7F00394CCB /* RevisionSequence.swift */; };
+		6F4C4D7027F87F2400394CCB /* RevisionScopeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6F27F87F2400394CCB /* RevisionScopeFactory.swift */; };
+		6F4C4D7227F8810800394CCB /* RecallDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D7127F8810800394CCB /* RecallDifficulty.swift */; };
+		6F4C4D7427F9476400394CCB /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D7327F9476400394CCB /* DeckManager.swift */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
 		6FA0243A27E1BBBE00F94E54 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243927E1BBBE00F94E54 /* FirebaseAuthCombine-Community */; };
 		6FA0243C27E1BBBE00F94E54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243B27E1BBBE00F94E54 /* FirebaseDatabase */; };
@@ -222,8 +231,17 @@
 		62E418D027EA53A800DFF03C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		62E418D227EA5A6900DFF03C /* ProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataManager.swift; sourceTree = "<group>"; };
 		6F0B37BB27F7E18000C91257 /* RevisionCreateDeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionCreateDeckViewController.swift; sourceTree = "<group>"; };
+		6F2F4A2527F9947500923DB9 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		6F2F4A2727F9952D00923DB9 /* Answerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answerable.swift; sourceTree = "<group>"; };
 		6F4C4D5F27F7FE9D00394CCB /* CreateDeckFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckFields.swift; sourceTree = "<group>"; };
 		6F4C4D6127F7FFDB00394CCB /* RevisionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionViewModel.swift; sourceTree = "<group>"; };
+		6F4C4D6427F8041600394CCB /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		6F4C4D6627F8045600394CCB /* RevisionVocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionVocab.swift; sourceTree = "<group>"; };
+		6F4C4D6827F80A9C00394CCB /* DeckCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCollectionViewCell.swift; sourceTree = "<group>"; };
+		6F4C4D6D27F87E7F00394CCB /* RevisionSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionSequence.swift; sourceTree = "<group>"; };
+		6F4C4D6F27F87F2400394CCB /* RevisionScopeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionScopeFactory.swift; sourceTree = "<group>"; };
+		6F4C4D7127F8810800394CCB /* RecallDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecallDifficulty.swift; sourceTree = "<group>"; };
+		6F4C4D7327F9476400394CCB /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
 		6FA053D127F69E3A00E03683 /* Revision.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Revision.storyboard; sourceTree = "<group>"; };
 		6FA053D327F69E5900E03683 /* RevisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionViewController.swift; sourceTree = "<group>"; };
 		CE8D228B27EE2986005E7058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Question.storyboard; sourceTree = "<group>"; };
@@ -482,12 +500,50 @@
 			path = RevisionCreateDeck;
 			sourceTree = "<group>";
 		};
+		6F2F4A2427F9945100923DB9 /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				6F2F4A2527F9947500923DB9 /* Query.swift */,
+				6F2F4A2727F9952D00923DB9 /* Answerable.swift */,
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
+		6F4C4D6327F8040400394CCB /* Decks */ = {
+			isa = PBXGroup;
+			children = (
+				6F4C4D6C27F87E7100394CCB /* RevisionGenerator */,
+				6F4C4D6427F8041600394CCB /* Deck.swift */,
+				6F4C4D6627F8045600394CCB /* RevisionVocab.swift */,
+				6F4C4D7127F8810800394CCB /* RecallDifficulty.swift */,
+			);
+			path = Decks;
+			sourceTree = "<group>";
+		};
+		6F4C4D6B27F8274100394CCB /* Revision */ = {
+			isa = PBXGroup;
+			children = (
+				6F4C4D6327F8040400394CCB /* Decks */,
+			);
+			path = Revision;
+			sourceTree = "<group>";
+		};
+		6F4C4D6C27F87E7100394CCB /* RevisionGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				6F4C4D6D27F87E7F00394CCB /* RevisionSequence.swift */,
+				6F4C4D6F27F87F2400394CCB /* RevisionScopeFactory.swift */,
+			);
+			path = RevisionGenerator;
+			sourceTree = "<group>";
+		};
 		6FA053D027F69E0F00E03683 /* RevisionView */ = {
 			isa = PBXGroup;
 			children = (
 				6F0B37BA27F7E16200C91257 /* RevisionCreateDeck */,
 				6FA053D327F69E5900E03683 /* RevisionViewController.swift */,
 				6F4C4D6127F7FFDB00394CCB /* RevisionViewModel.swift */,
+				6F4C4D6827F80A9C00394CCB /* DeckCollectionViewCell.swift */,
 			);
 			path = RevisionView;
 			sourceTree = "<group>";
@@ -740,6 +796,8 @@
 		D33282FC27D5258000C80986 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F2F4A2427F9945100923DB9 /* Query */,
+				6F4C4D6B27F8274100394CCB /* Revision */,
 				CEF1E80027E6E967005D4272 /* Questions */,
 				CEF1E7A627E50060005D4272 /* Currency */,
 				D3C4423B27E8B17400676C93 /* DatabaseErrors.swift */,
@@ -751,9 +809,9 @@
 				D3F00CB227DFC59500393ADC /* Book.swift */,
 				D3F00CB427DFC5DD00393ADC /* BookCategory.swift */,
 				624BD58A27E7A431006F0391 /* BookProgress.swift */,
-				D3F00CB627DFC5F200393ADC /* DataManagers */,
 				CEF1E7E727E61F58005D4272 /* Lesson.swift */,
 				CEF1E7E927E61F68005D4272 /* Vocab.swift */,
+				D3F00CB627DFC5F200393ADC /* DataManagers */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -887,6 +945,7 @@
 				62CB30DE27EA6EFB0044CB24 /* ProfileBookDataManager.swift */,
 				62E418D227EA5A6900DFF03C /* ProfileDataManager.swift */,
 				62E418C327EA4E5200DFF03C /* DataManager.swift */,
+				6F4C4D7327F9476400394CCB /* DeckManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -1031,6 +1090,7 @@
 				D33282E227D4D42700C80986 /* SplashViewController.swift in Sources */,
 				CEF1E7EA27E61F68005D4272 /* Vocab.swift in Sources */,
 				62E418CC27EA525600DFF03C /* ProfileBook.swift in Sources */,
+				6F2F4A2827F9952D00923DB9 /* Answerable.swift in Sources */,
 				624989E127E73C4E0092FC1B /* CompletedBooksViewController.swift in Sources */,
 				D33282DE27D4D42700C80986 /* AppDelegate.swift in Sources */,
 				CEF02D8027E9686C00C30E03 /* QuestionSequence.swift in Sources */,
@@ -1063,6 +1123,8 @@
 				629090A527E85EFA00941A3B /* ProfileViewModel.swift in Sources */,
 				D3C4423A27E8B15900676C93 /* AuthErrors.swift in Sources */,
 				D3F00CB327DFC59500393ADC /* Book.swift in Sources */,
+				6F4C4D6E27F87E7F00394CCB /* RevisionSequence.swift in Sources */,
+				6F4C4D6927F80A9C00394CCB /* DeckCollectionViewCell.swift in Sources */,
 				D33282E027D4D42700C80986 /* SceneDelegate.swift in Sources */,
 				CEF1E7AA27E50093005D4272 /* StarsTransaction.swift in Sources */,
 				CEF1E7E227E60D68005D4272 /* LessonQuizViewModel.swift in Sources */,
@@ -1084,6 +1146,7 @@
 				CEF1E80D27E6F6B1005D4272 /* DefinitionOptionQuestionConstructor.swift in Sources */,
 				D398780B27DF7C1100B2F4ED /* JSONServerDataProvider.swift in Sources */,
 				CEF1E81127E71944005D4272 /* LessonQuizViewModelFromLesson.swift in Sources */,
+				6F4C4D7027F87F2400394CCB /* RevisionScopeFactory.swift in Sources */,
 				CE8D229427EEB7EE005E7058 /* AppStoryboard.swift in Sources */,
 				CEF1E7F527E6D143005D4272 /* QuestionLayoutViewModel.swift in Sources */,
 				D3C4423127E8966C00676C93 /* UIViewController+Alerts.swift in Sources */,
@@ -1097,6 +1160,7 @@
 				CEF1E7E427E61CF1005D4272 /* VocabCollectionCell.swift in Sources */,
 				CEF1E7D927E60C3E005D4272 /* LessonQuizViewController.swift in Sources */,
 				CEF1E80627E6EF4D005D4272 /* MatchVocabToDefinitionQuestion.swift in Sources */,
+				6F4C4D7427F9476400394CCB /* DeckManager.swift in Sources */,
 				CEF1E7E627E61EF0005D4272 /* LessonOverviewViewModelFromLesson.swift in Sources */,
 				62165B7D27F226C7004BC620 /* LoginFields.swift in Sources */,
 				620DF3CE27F231BD006A9E5F /* EditProfileFields.swift in Sources */,
@@ -1104,6 +1168,7 @@
 				CEF1E80B27E6F644005D4272 /* QuestionConstructor.swift in Sources */,
 				CEC5887B27EAC91600809403 /* LessonTableCellViewModelFromLesson.swift in Sources */,
 				CEF02D8527E9720600C30E03 /* QuestionType.swift in Sources */,
+				6F4C4D7227F8810800394CCB /* RecallDifficulty.swift in Sources */,
 				CEF02D7927E9573700C30E03 /* LessonQuizOutcomeViewModelFromQuizResult.swift in Sources */,
 				6F4C4D6027F7FE9D00394CCB /* CreateDeckFields.swift in Sources */,
 				CEF1E7D527E60C1F005D4272 /* LessonOverviewViewController.swift in Sources */,
@@ -1132,6 +1197,7 @@
 				62165B7427F218A0004BC620 /* ChangePasswordViewController.swift in Sources */,
 				D398780927DF6AB800B2F4ED /* DataProvider.swift in Sources */,
 				CEF1E7AE27E503B3005D4272 /* Account.swift in Sources */,
+				6F4C4D6527F8041600394CCB /* Deck.swift in Sources */,
 				CEC5887727EAC6E700809403 /* LessonSelectorTableCell.swift in Sources */,
 				CEC5887327EABECC00809403 /* LessonSelectionViewModel.swift in Sources */,
 				CEF1E7FD27E6E527005D4272 /* SimpleOptionQuestion.swift in Sources */,
@@ -1140,12 +1206,14 @@
 				6F4C4D6227F7FFDB00394CCB /* RevisionViewModel.swift in Sources */,
 				624989DA27E735600092FC1B /* BookCollectionViewController.swift in Sources */,
 				D33282F927D4E63B00C80986 /* Theme.swift in Sources */,
+				6F4C4D6727F8045600394CCB /* RevisionVocab.swift in Sources */,
 				624989DC27E736590092FC1B /* BookCollectionViewCell.swift in Sources */,
 				629090A027E8303F00941A3B /* RecommendedBooksTableViewController.swift in Sources */,
 				624BD58027E761FB006F0391 /* LearningBooksViewModel.swift in Sources */,
 				62E418CA27EA524C00DFF03C /* Level.swift in Sources */,
 				D3C4422927E8792200676C93 /* FakeAuthProvider.swift in Sources */,
 				62165B7627F2244C004BC620 /* FormUtilities.swift in Sources */,
+				6F2F4A2627F9947500923DB9 /* Query.swift in Sources */,
 				CEC5887527EABED600809403 /* LessonSelectionViewModelFromBook.swift in Sources */,
 				D3C4424327E8CB0A00676C93 /* FirebaseDataProvider.swift in Sources */,
 				D3C4423827E8A98400676C93 /* AlertContent.swift in Sources */,
