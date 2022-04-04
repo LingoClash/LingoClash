@@ -16,16 +16,16 @@ struct RevisionSequence {
     var constructorFactory: QuestionConstructorRandomFactory
     var questionsLeft: Int?
     
-    mutating func next() -> Question? {
-        if let questionsLeft = questionsLeft {
-            guard questionsLeft > 0 else {
-                return nil
-            }
-            self.questionsLeft = questionsLeft - 1
-        }
-        let constructor = constructorFactory.getQuestionConstructor()
-        let (testedVocab, otherVocabs) = scopeFactory.getScope(for: constructor)
-        let question = constructor.constructQuestion(vocabsTested: testedVocab, otherVocabs: otherVocabs)
-        return question
-    }
+//    mutating func next() -> Question? {
+//        if let questionsLeft = questionsLeft {
+//            guard questionsLeft > 0 else {
+//                return nil
+//            }
+//            self.questionsLeft = questionsLeft - 1
+//        }
+//        let constructor = constructorFactory.getQuestionConstructor()
+//        let (testedVocab, otherVocabs) = scopeFactory.getScope(for: constructor)
+//        let question = constructor.constructQuestion(vocabsTested: testedVocab, otherVocabs: otherVocabs)
+//        return question
+//    }
 }

@@ -12,30 +12,30 @@ import Foundation
 struct RevisionScopeFactory {
     var scope: Set<RevisionVocab>
     
-    init(vocabSet: Set<Vocab>) {
-        for vocab in vocabSet {
-            let revisionVocab = RevisionVocab(difficultyParameter: Difficulty(amount: 0), vocab: vocab)
-            scope.insert(revisionVocab)
-        }
-    }
+//    init(vocabSet: Set<Vocab>) {
+//        for vocab in vocabSet {
+//            let revisionVocab = RevisionVocab(difficultyParameter: Difficulty(amount: 0), vocab: vocab)
+//            scope.insert(revisionVocab)
+//        }
+//    }
     
-    private mutating func getTestedVocabs(count: Int) -> Set<Vocab> {
-        // get and pop from compulsory scope, rest get randomly from scope
-        guard !compulsoryScope.isEmpty else {
-            return getOtherVocabs(count: count)
-        }
-        // Pops from compulsory scope, returns, if compulsory scope is empty,
-        let countFromCompulsory = min(count, compulsoryScope.count)
-        let leftover = count - countFromCompulsory
-        let compulsoryVocabs = Set(compulsoryScope.suffix(countFromCompulsory))
-        compulsoryScope.removeLast(countFromCompulsory)
-        if leftover != 0 {
-            let otherVocabs = getOtherVocabs(count: leftover, notIn: compulsoryVocabs)
-            return compulsoryVocabs.union(otherVocabs)
-        } else {
-            return compulsoryVocabs
-        }
-    }
+//    private mutating func getTestedVocabs(count: Int) -> Set<Vocab> {
+//        // get and pop from compulsory scope, rest get randomly from scope
+//        guard !compulsoryScope.isEmpty else {
+//            return getOtherVocabs(count: count)
+//        }
+//        // Pops from compulsory scope, returns, if compulsory scope is empty,
+//        let countFromCompulsory = min(count, compulsoryScope.count)
+//        let leftover = count - countFromCompulsory
+//        let compulsoryVocabs = Set(compulsoryScope.suffix(countFromCompulsory))
+//        compulsoryScope.removeLast(countFromCompulsory)
+//        if leftover != 0 {
+//            let otherVocabs = getOtherVocabs(count: leftover, notIn: compulsoryVocabs)
+//            return compulsoryVocabs.union(otherVocabs)
+//        } else {
+//            return compulsoryVocabs
+//        }
+//    }
     
     
     
