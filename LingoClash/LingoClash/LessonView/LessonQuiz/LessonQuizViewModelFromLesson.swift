@@ -91,6 +91,7 @@ class LessonQuizViewModelFromLesson: LessonQuizViewModel {
         if didPass {
             // TODO: update stars currency for user, update lesson for the stars
             quizStatus.value = QuizStatus.passed
+            quizOutcomeViewModel?.reward?.presentReward()
         } else {
             quizStatus.value = QuizStatus.failed
         }
