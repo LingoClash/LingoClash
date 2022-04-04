@@ -37,8 +37,6 @@ struct RevisionScopeFactory {
 //        }
 //    }
     
-    
-    
 //    mutating func getScope(for questionConstructor: QuestionContructor) -> (tested: Set<Vocab>, others: Set<Vocab>) {
 //        let testedVocabs = getTestedVocabs(count: questionConstructor.vocabsTestedCount)
 //        let otherVocabs = getOtherVocabs(count: questionConstructor.otherVocabsCount, notIn: testedVocabs)

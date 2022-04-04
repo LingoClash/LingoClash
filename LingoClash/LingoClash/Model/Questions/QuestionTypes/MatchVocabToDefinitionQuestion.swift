@@ -10,12 +10,12 @@ struct MatchVocabToDefinitionQuestion: TwoDisjointSetOptionQuestion {
     static let vocabsTestedCount = optionsCount
     static let optionsCount: Int = 4
     let vocabsTested: Set<Vocab>
-    let context: String
+    let prompt: String
     let options: [[String]]
     let answer: Set<[String]>
     
     init(context: String, options: [[String]], answer: Set<[String]>, vocabsTested: Set<Vocab>) {
-        self.context = context
+        self.prompt = context
         self.options = options
         self.answer = answer
         self.vocabsTested = vocabsTested
