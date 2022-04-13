@@ -23,8 +23,12 @@ struct Book {
     let lessons: [Lesson]
     let status: BookStatus
     
-    var progress: String {
+    var progressText: String {
         "Progress: \(passedLessons) / \(totalLessons)"
+    }
+    var totalStars: Int {
+        let totalStarsPerLesson = 3
+        return totalLessons * totalStarsPerLesson
     }
     
     init(bookData: BookData, vocabsByLesson: [LessonData: [VocabData]], bookCategoryData: BookCategoryData, profileBookData: ProfileBookData?, profileLessonsData: [ProfileLessonData]) {

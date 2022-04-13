@@ -20,7 +20,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     
     func configure(book: Book, delegate: BookButtonDelegate) {
         bookNameLabel.text = book.name
-        progressLabel.text = book.progress
+        progressLabel.text = book.progressText
         self.delegate = delegate
         self.lessonSelectionViewModel = LessonSelectionViewModelFromBook(book: book)
     }

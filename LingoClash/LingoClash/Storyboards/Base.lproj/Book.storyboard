@@ -227,6 +227,8 @@
                         <outlet property="bookNameLabel" destination="z7c-2N-ouF" id="9Bs-w5-fun"/>
                         <outlet property="containerView" destination="ZsL-GU-8DV" id="2CM-TY-vOU"/>
                         <outlet property="progressLabel" destination="bSW-Bj-4hA" id="J4b-zW-RKy"/>
+                        <outlet property="progressView" destination="EFw-TM-0GE" id="g51-89-55g"/>
+                        <outlet property="totalStarsLabel" destination="Ovq-9O-1nB" id="YAw-gb-pz1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEl-Ri-LhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
