@@ -11,6 +11,8 @@ struct ProfileData {
     let user_id: Identifier
     let stars: Int
     let stars_today: Int
+    let stars_goal: Int
+    let bio: String
 }
 
 extension ProfileData: Record {}

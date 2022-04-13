@@ -12,9 +12,12 @@ import FirebaseAuth
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
-//    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var starsTodayLabel: UILabel!
+    @IBOutlet weak var starsGoalLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var starsGoalProgress: UIProgressView!
+    @IBOutlet weak var starsGoalIcon: UIImageView!
     
     private let viewModel = ProfileViewModel()
     private var cancellables: Set<AnyCancellable> = []
@@ -33,12 +36,6 @@ class ProfileViewController: UIViewController {
             }
         }.store(in: &cancellables)
         
-//        viewModel.$email.sink {[weak self] email in
-//            if let email = email {
-//                self?.emailLabel.text = email
-//            }
-//        }.store(in: &cancellables)
-        
         viewModel.$totalStars.sink {[weak self] totalStars in
             if let totalStars = totalStars {
                 self?.totalStarsLabel.text = "\(totalStars)"
@@ -48,6 +45,25 @@ class ProfileViewController: UIViewController {
         viewModel.$starsToday.sink {[weak self] starsToday in
             if let starsToday = starsToday {
                 self?.starsTodayLabel.text = "\(starsToday)"
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$starsGoal.sink {[weak self] starsGoal in
+            if let starsGoal = starsGoal {
+                self?.starsGoalLabel.text = "\(starsGoal)"
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$starsGoalProgress.sink {[weak self] starsGoalProgress in
+            if let starsGoalProgress = starsGoalProgress {
+                self?.starsGoalProgress.progress = starsGoalProgress
+                self?.starsGoalIcon.alpha = CGFloat(starsGoalProgress)
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$bio.sink {[weak self] bio in
+            if let bio = bio {
+                self?.bioLabel.text = "\"\(bio)\""
             }
         }.store(in: &cancellables)
         

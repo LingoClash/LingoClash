@@ -14,7 +14,9 @@ struct Profile {
     let currentBook: Book?
     let stars: Int
     let starsToday: Int
-    
+    let starsGoal: Int
+    let bio: String
+
     init(userIdentity: UserIdentity, profileData: ProfileData, currentBook: Book?) {
         self.id = profileData.id
         self.name = userIdentity.fullName ?? ""
@@ -22,5 +24,7 @@ struct Profile {
         self.stars = profileData.stars
         self.starsToday = profileData.stars_today
         self.currentBook = currentBook
+        self.starsGoal = profileData.stars_goal
+        self.bio = profileData.bio
     }
 }

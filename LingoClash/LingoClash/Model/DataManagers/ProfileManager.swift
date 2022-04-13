@@ -85,7 +85,29 @@ class ProfileManager: DataManager<ProfileData> {
                 book_id: bookId,
                 user_id: profileData.user_id,
                 stars: profileData.stars,
-                stars_today: profileData.stars_today)
+                stars_today: profileData.stars_today,
+                stars_goal: profileData.stars_goal,
+                bio: profileData.bio
+            )
+            
+            return self.update(id: profileData.id, from: profileData, to: newProfileData)
+        }
+    }
+    
+    func updateProfile(starsGoal: Int, bio: String) -> Promise<ProfileData> {
+        
+        return firstly {
+            self.getCurrentProfileData()
+        }.then { profileData -> Promise<ProfileData> in
+            let newProfileData = ProfileData(
+                id: profileData.id,
+                book_id: profileData.book_id,
+                user_id: profileData.user_id,
+                stars: profileData.stars,
+                stars_today: profileData.stars_today,
+                stars_goal: starsGoal,
+                bio: bio
+            )
             
             return self.update(id: profileData.id, from: profileData, to: newProfileData)
         }

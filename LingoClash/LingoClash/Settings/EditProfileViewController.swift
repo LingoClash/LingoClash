@@ -54,7 +54,7 @@ class EditProfileViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         let name = FormUtilities.getTrimmedString(textField: nameTextField)
         
-        let fields = EditProfileFields(name: name)
+        let fields = EditProfileFields(name: name, starsGoal: 0, bio: "")
         viewModel?.editProfile(fields)
     }
     

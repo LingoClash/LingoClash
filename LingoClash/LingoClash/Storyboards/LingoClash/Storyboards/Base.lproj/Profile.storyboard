@@ -92,8 +92,8 @@
                                                 <color key="textColor" name="PrimaryText"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;君日本语本当上手&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovr-Rz-WoK">
-                                                <rect key="frame" x="277" y="404" width="266.5" height="50"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovr-Rz-WoK">
+                                                <rect key="frame" x="397" y="404" width="26.5" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ihI-ni-cXj"/>
                                                 </constraints>
@@ -425,7 +425,11 @@
                     <navigationItem key="navigationItem" id="jU0-Ln-7ep"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bioLabel" destination="Ovr-Rz-WoK" id="UDw-h2-P5R"/>
                         <outlet property="nameLabel" destination="5go-Xw-bjI" id="Z88-i7-jhM"/>
+                        <outlet property="starsGoalIcon" destination="3yz-VF-em0" id="NvI-iy-e5v"/>
+                        <outlet property="starsGoalLabel" destination="PwQ-Ci-2kJ" id="vbD-jO-hcX"/>
+                        <outlet property="starsGoalProgress" destination="N0i-SH-rPh" id="Uhx-Tm-DsH"/>
                         <outlet property="starsTodayLabel" destination="I19-7S-g39" id="dYJ-gR-c0d"/>
                         <outlet property="totalStarsLabel" destination="eZt-as-a6b" id="h2j-7X-22y"/>
                     </connections>
