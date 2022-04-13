@@ -432,7 +432,7 @@
                         <outlet property="rankingByTotalVocabsLabel" destination="UVi-cG-b3N" id="hRS-U9-m1Q"/>
                         <outlet property="starsGoalIcon" destination="3yz-VF-em0" id="NvI-iy-e5v"/>
                         <outlet property="starsGoalLabel" destination="PwQ-Ci-2kJ" id="vbD-jO-hcX"/>
-                        <outlet property="starsGoalProgress" destination="N0i-SH-rPh" id="Uhx-Tm-DsH"/>
+                        <outlet property="starsGoalProgressView" destination="N0i-SH-rPh" id="YYx-l2-dQC"/>
                         <outlet property="starsTodayLabel" destination="I19-7S-g39" id="dYJ-gR-c0d"/>
                         <outlet property="totalStarsLabel" destination="eZt-as-a6b" id="h2j-7X-22y"/>
                         <outlet property="vocabsLearntLabel" destination="PFI-Ju-3cp" id="eTX-9W-Bdt"/>

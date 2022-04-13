@@ -152,7 +152,9 @@
                                     <outlet property="bookNameLabel" destination="IIC-Y4-7Fa" id="A8D-x1-IhW"/>
                                     <outlet property="learnButton" destination="gQD-Xv-WtM" id="q2l-ka-5hB"/>
                                     <outlet property="progressLabel" destination="Z6G-S7-SYQ" id="XDU-XJ-bBw"/>
+                                    <outlet property="progressView" destination="VK7-67-kqo" id="QMW-Or-r7b"/>
                                     <outlet property="reviseButton" destination="MRn-TK-NhC" id="oD4-9c-FAA"/>
+                                    <outlet property="totalStarsLabel" destination="4aJ-2l-H65" id="TVx-lG-SfM"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

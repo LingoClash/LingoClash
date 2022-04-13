@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var vocabsLearntLabel: UILabel!
     @IBOutlet weak var pkWinningRateLabel: UILabel!
     @IBOutlet weak var rankingByTotalVocabsLabel: UILabel!
-    @IBOutlet weak var starsGoalProgress: UIProgressView!
+    @IBOutlet weak var starsGoalProgressView: UIProgressView!
     @IBOutlet weak var starsGoalIcon: UIImageView!
 
     private let viewModel = ProfileViewModel()
@@ -84,7 +84,7 @@ class ProfileViewController: UIViewController {
         
         viewModel.$starsGoalProgress.sink {[weak self] starsGoalProgress in
             if let starsGoalProgress = starsGoalProgress {
-                self?.starsGoalProgress.progress = starsGoalProgress
+                self?.starsGoalProgressView.progress = starsGoalProgress
                 self?.starsGoalIcon.alpha = max(CGFloat(starsGoalProgress), 0.5)
             }
         }.store(in: &cancellables)

@@ -32,12 +32,10 @@ class CurrentBookViewController: UIViewController {
     func setUpBinders() {
         viewModel?.$currentBook.sink {[weak self] book in
             if let book = book {
-                let totalStarsPerLesson = 3
-                
                 self?.bookNameLabel.text = book.name
                 self?.progressLabel.text = book.progressText
                 self?.totalStarsLabel.text = "\(book.totalStars)"
-                self?.progressView.progress = Float(book.passedLessons / book.totalLessons)
+                self?.progressView.progress = book.progress
             }
         }.store(in: &cancellables)
     }
