@@ -141,7 +141,7 @@ class ProfileManager: DataManager<ProfileData> {
                 pk_winning_rate: profileData.pk_winning_rate
             )
             
-            return self.update(id: profileData.id, from: profileData, to: newProfileData)
+            return self.update(id: profileData.id, to: newProfileData)
         }
     }
     

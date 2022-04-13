@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Profile {
+struct Profile: AccountOwner {
     var id: Identifier
     let name: String
     let email: String

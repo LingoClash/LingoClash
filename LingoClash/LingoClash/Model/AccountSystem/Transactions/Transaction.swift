@@ -8,8 +8,9 @@
 import Foundation
 
 protocol Transaction {
-    var debitOrCredit: DebitOrCredit { get set }
-    var createdAt: Date { get set }
-    var description: String { get set }
+    var id: Identifier { get }
+    var debitOrCredit: DebitOrCredit { get }
+    var createdAt: Date { get }
+    var description: String { get }
     func execute()
 }

@@ -8,13 +8,15 @@
 import Foundation
 
 class CurrencyTransaction<T: Currency>: Transaction {
-    var debitOrCredit: DebitOrCredit
-    var amount: Int
-    var account: CurrencyAccount<T>
-    var createdAt: Date
-    var description: String
+    let id: Identifier
+    let debitOrCredit: DebitOrCredit
+    let amount: Int
+    let account: CurrencyAccount<T>
+    let createdAt: Date
+    let description: String
     
-    init(debitOrCredit: DebitOrCredit, amount: Int, account: CurrencyAccount<T>, createdAt: Date = Date(), description: String = "") {
+    init(id: Identifier, debitOrCredit: DebitOrCredit, amount: Int, account: CurrencyAccount<T>, createdAt: Date = Date(), description: String = "") {
+        self.id = id
         self.debitOrCredit = debitOrCredit
         self.amount = amount
         self.account = account
@@ -32,6 +34,7 @@ class CurrencyTransaction<T: Currency>: Transaction {
             account.balance -= amount
         }
         account.addTransaction(self)
+        
         
         // TODO: Save to db
     }

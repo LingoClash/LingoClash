@@ -6,5 +6,6 @@
 //
 
 protocol Account {
+    var id: Identifier { get }
     var owner: AccountOwner { get }
 }

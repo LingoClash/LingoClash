@@ -89,7 +89,6 @@ struct GetManyReferenceResult<T: Codable> {
 struct UpdateParams<T: Codable> {
     let id: Identifier
     let data: T
-    let previousData: T
 }
 
 struct UpdateResult<T: Codable> {

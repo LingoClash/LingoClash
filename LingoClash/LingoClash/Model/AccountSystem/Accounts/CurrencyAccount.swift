@@ -6,13 +6,16 @@
 //
 
 class CurrencyAccount<T: Currency>: Account {
+    let id: Identifier
     var balance: Int
-    var owner: AccountOwner
-    var transactions = [CurrencyTransaction<T>]()
+    let owner: AccountOwner
+    var transactions: [CurrencyTransaction<T>]
     
-    init(owner: AccountOwner, balance: Int) {
+    init(id: Identifier, owner: AccountOwner, balance: Int, transactions: [CurrencyTransaction<T>] = []) {
+        self.id = id
         self.owner = owner
         self.balance = balance
+        self.transactions = transactions
     }
     
     func createTransaction(amount: Int, description: String) -> CurrencyTransaction<T>? {
@@ -20,7 +23,7 @@ class CurrencyAccount<T: Currency>: Account {
             return nil
         }
         let action: DebitOrCredit = amount > 0 ? .debit : .credit
-        let transaction = CurrencyTransaction<T>(debitOrCredit: action, amount: abs(amount), account: self)
+        let transaction = CurrencyTransaction<T>(id: "", debitOrCredit: action, amount: abs(amount), account: self)
         return transaction
     }
     

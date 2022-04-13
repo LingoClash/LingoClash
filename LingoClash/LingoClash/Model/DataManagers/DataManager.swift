@@ -50,6 +50,25 @@ class DataManager<T: Record> {
         }
     }
     
+    func getOneReference(
+        target: String,
+        id: Identifier,
+        field: String = AppConfigs.API.field,
+        order: String = AppConfigs.API.order,
+        filter: [String: Any] = [:]) -> Promise<T?> {
+            
+            let sort = SortPayload(field: field, order: order)
+            let result: Promise<GetManyReferenceResult<T>> = dataProvider.getManyReference(
+                resource: self.resource,
+                params: GetManyReferenceParams(
+                    target: target, id: id,
+                    sort: sort, filter: filter))
+
+            return result.map { result in
+                result.data.isEmpty ? nil : result.data[0]
+            }
+        }
+    
     func getManyReference(
         target: String,
         id: Identifier,
@@ -70,9 +89,9 @@ class DataManager<T: Record> {
             
         }
     
-    func update(id: Identifier, from previousRecord: T, to newRecord: T) -> Promise<T> {
+    func update(id: Identifier, to newRecord: T) -> Promise<T> {
         
-        let updatedData = dataProvider.update(resource: self.resource, params: UpdateParams(id: id, data: newRecord, previousData: previousRecord))
+        let updatedData = dataProvider.update(resource: self.resource, params: UpdateParams(id: id, data: newRecord))
         
         return updatedData.compactMap { result in
             result.data

@@ -6,11 +6,13 @@
 //
 
 class ItemAccount<T: Item>: Account {
+    let id: Identifier
     var items: [T]
-    var owner: AccountOwner
+    let owner: AccountOwner
     var transactions = [ItemTransaction<T>]()
     
-    init(owner: AccountOwner, items: [T]) {
+    init(id: Identifier, owner: AccountOwner, items: [T]) {
+        self.id = id
         self.owner = owner
         self.items = items
     }
@@ -20,9 +22,8 @@ class ItemAccount<T: Item>: Account {
             return nil
         }
         
-        let transaction = ItemTransaction<T>(debitOrCredit: debitOrCredit, items: items, account: self)
+        let transaction = ItemTransaction<T>(id: "", debitOrCredit: debitOrCredit, items: items, account: self)
         return transaction
-        self.transactions.append(transaction)
     }
     
     func addTransaction(_ transaction: ItemTransaction<T>) {
