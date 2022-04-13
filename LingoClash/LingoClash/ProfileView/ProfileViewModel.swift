@@ -22,7 +22,7 @@ final class ProfileViewModel {
     @Published var daysLearning: Int?
     @Published var vocabsLearnt: Int?
     @Published var pkWinningRate: Double?
-    @Published var rankingByTotalVocabs: Int?
+    @Published var rankingByTotalStars: Int?
     @Published var alertContent: AlertContent?
     
     private let authProvider: AuthProvider
@@ -59,7 +59,7 @@ final class ProfileViewModel {
             self.daysLearning = profile.daysLearning
             self.vocabsLearnt = profile.vocabsLearnt
             self.pkWinningRate = profile.pkWinningRate
-            self.rankingByTotalVocabs = profile.rankingByTotalVocabs
+            self.rankingByTotalStars = profile.rankingByTotalStars
             self.isRefreshing = false
         }.catch { error in
             print(error)

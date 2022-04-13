@@ -97,7 +97,7 @@ class ProfileManager: DataManager<ProfileData> {
                 userIdentity: currentUser,
                 profileData: profile,
                 currentBook: currentBook,
-                rankingByTotalVocabs: rankingByTotalStars)
+                rankingByTotalStars: rankingByTotalStars)
         }
     }
     

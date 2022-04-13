@@ -19,9 +19,9 @@ struct Profile {
     let daysLearning: Int
     let vocabsLearnt: Int
     let pkWinningRate: Double
-    let rankingByTotalVocabs: Int
+    let rankingByTotalStars: Int
 
-    init(userIdentity: UserIdentity, profileData: ProfileData, currentBook: Book?, rankingByTotalVocabs: Int) {
+    init(userIdentity: UserIdentity, profileData: ProfileData, currentBook: Book?, rankingByTotalStars: Int) {
         self.id = profileData.id
         self.name = userIdentity.fullName ?? ""
         self.email = userIdentity.email ?? ""
@@ -33,6 +33,6 @@ struct Profile {
         self.daysLearning = profileData.days_learning
         self.vocabsLearnt = profileData.vocabs_learnt
         self.pkWinningRate = profileData.pk_winning_rate
-        self.rankingByTotalVocabs = rankingByTotalVocabs
+        self.rankingByTotalStars = rankingByTotalStars
     }
 }
