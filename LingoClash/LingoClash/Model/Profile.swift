@@ -16,6 +16,9 @@ struct Profile {
     let starsToday: Int
     let starsGoal: Int
     let bio: String
+    let daysLearning: Int
+    let vocabsLearnt: Int
+    let pkWinningRate: Double
 
     init(userIdentity: UserIdentity, profileData: ProfileData, currentBook: Book?) {
         self.id = profileData.id
@@ -26,5 +29,8 @@ struct Profile {
         self.currentBook = currentBook
         self.starsGoal = profileData.stars_goal
         self.bio = profileData.bio
+        self.daysLearning = profileData.days_learning
+        self.vocabsLearnt = profileData.vocabs_learnt
+        self.pkWinningRate = profileData.pk_winning_rate
     }
 }

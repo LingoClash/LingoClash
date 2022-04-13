@@ -87,7 +87,10 @@ class ProfileManager: DataManager<ProfileData> {
                 stars: profileData.stars,
                 stars_today: profileData.stars_today,
                 stars_goal: profileData.stars_goal,
-                bio: profileData.bio
+                bio: profileData.bio,
+                days_learning: profileData.days_learning,
+                vocabs_learnt: profileData.vocabs_learnt,
+                pk_winning_rate: profileData.pk_winning_rate
             )
             
             return self.update(id: profileData.id, from: profileData, to: newProfileData)
@@ -106,7 +109,10 @@ class ProfileManager: DataManager<ProfileData> {
                 stars: profileData.stars,
                 stars_today: profileData.stars_today,
                 stars_goal: starsGoal,
-                bio: bio
+                bio: bio,
+                days_learning: profileData.days_learning,
+                vocabs_learnt: profileData.vocabs_learnt,
+                pk_winning_rate: profileData.pk_winning_rate
             )
             
             return self.update(id: profileData.id, from: profileData, to: newProfileData)

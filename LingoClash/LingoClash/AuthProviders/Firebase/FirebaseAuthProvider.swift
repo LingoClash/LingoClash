@@ -66,6 +66,9 @@ class FirebaseAuthProvider: AuthProvider {
                         "stars_today": 0,
                         "stars_goal": 10,
                         "bio": "这个人很懒，什么都没留下。",
+                        "days_learning": 0,
+                        "vocabs_learnt": 0,
+                        "pk_winning_rate": 100,
                     ]) { error in
                         if let error = error {
                             return seal.reject(error)

@@ -19,6 +19,9 @@ final class ProfileViewModel {
     @Published var starsGoal: Int?
     @Published var starsGoalProgress: Float?
     @Published var bio: String?
+    @Published var daysLearning: Int?
+    @Published var vocabsLearnt: Int?
+    @Published var pkWinningRate: Double?
     @Published var alertContent: AlertContent?
     
     private let authProvider: AuthProvider
@@ -52,6 +55,9 @@ final class ProfileViewModel {
             self.starsGoalProgress = min(
                 Float(profile.starsToday / profile.starsGoal), 1)
             self.bio = profile.bio
+            self.daysLearning = profile.daysLearning
+            self.vocabsLearnt = profile.vocabsLearnt
+            self.pkWinningRate = profile.pkWinningRate
             self.isRefreshing = false
         }.catch { error in
             print(error)

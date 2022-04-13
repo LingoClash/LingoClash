@@ -11,6 +11,8 @@ import Combine
 class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var starsGoalTextField: UITextField!
+    @IBOutlet weak var bioTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
     weak var viewModel: SettingsViewModel?
@@ -31,6 +33,18 @@ class EditProfileViewController: UIViewController {
         viewModel?.$name.sink {[weak self] name in
             if let name = name {
                 self?.nameTextField.text = name
+            }
+        }.store(in: &cancellables)
+        
+        viewModel?.$starsGoal.sink {[weak self] starsGoal in
+            if let starsGoal = starsGoal {
+                self?.starsGoalTextField.text = "\(starsGoal)"
+            }
+        }.store(in: &cancellables)
+        
+        viewModel?.$bio.sink {[weak self] bio in
+            if let bio = bio {
+                self?.bioTextField.text = bio
             }
         }.store(in: &cancellables)
         

@@ -426,12 +426,15 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bioLabel" destination="Ovr-Rz-WoK" id="UDw-h2-P5R"/>
+                        <outlet property="daysLearningLabel" destination="Kjf-12-waN" id="zIT-EK-QZX"/>
                         <outlet property="nameLabel" destination="5go-Xw-bjI" id="Z88-i7-jhM"/>
+                        <outlet property="pkWinningRateLabel" destination="sVb-ca-PMP" id="Zbi-Ep-fr4"/>
                         <outlet property="starsGoalIcon" destination="3yz-VF-em0" id="NvI-iy-e5v"/>
                         <outlet property="starsGoalLabel" destination="PwQ-Ci-2kJ" id="vbD-jO-hcX"/>
                         <outlet property="starsGoalProgress" destination="N0i-SH-rPh" id="Uhx-Tm-DsH"/>
                         <outlet property="starsTodayLabel" destination="I19-7S-g39" id="dYJ-gR-c0d"/>
                         <outlet property="totalStarsLabel" destination="eZt-as-a6b" id="h2j-7X-22y"/>
+                        <outlet property="vocabsLearntLabel" destination="PFI-Ju-3cp" id="eTX-9W-Bdt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFr-74-7ca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

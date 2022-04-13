@@ -16,9 +16,12 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var starsTodayLabel: UILabel!
     @IBOutlet weak var starsGoalLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var daysLearningLabel: UILabel!
+    @IBOutlet weak var vocabsLearntLabel: UILabel!
+    @IBOutlet weak var pkWinningRateLabel: UILabel!
     @IBOutlet weak var starsGoalProgress: UIProgressView!
     @IBOutlet weak var starsGoalIcon: UIImageView!
-    
+
     private let viewModel = ProfileViewModel()
     private var cancellables: Set<AnyCancellable> = []
     
@@ -53,6 +56,34 @@ class ProfileViewController: UIViewController {
                 self?.starsGoalLabel.text = "\(starsGoal)"
             }
         }.store(in: &cancellables)
+        
+        
+        
+        
+        
+        viewModel.$daysLearning.sink {[weak self] daysLearning in
+            if let daysLearning = daysLearning {
+                self?.daysLearningLabel.text = "\(daysLearning)"
+            }
+        }.store(in: &cancellables)
+        
+        
+        viewModel.$vocabsLearnt.sink {[weak self] vocabsLearnt in
+            if let vocabsLearnt = vocabsLearnt {
+                self?.vocabsLearntLabel.text = "\(vocabsLearnt)"
+            }
+        }.store(in: &cancellables)
+        
+        
+        
+        viewModel.$pkWinningRate.sink {[weak self] pkWinningRate in
+            if let pkWinningRate = pkWinningRate {
+                self?.pkWinningRateLabel.text = "\(pkWinningRate)"
+            }
+        }.store(in: &cancellables)
+        
+        
+        
         
         viewModel.$starsGoalProgress.sink {[weak self] starsGoalProgress in
             if let starsGoalProgress = starsGoalProgress {
