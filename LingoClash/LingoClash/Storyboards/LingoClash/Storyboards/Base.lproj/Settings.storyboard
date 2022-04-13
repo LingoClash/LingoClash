@@ -40,7 +40,7 @@
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3QK-4a-Cbb">
                                                 <rect key="frame" x="271.5" y="0.0" width="448.5" height="51"/>
                                                 <segments>
-                                                    <segment title="First"/>
+                                                    <segment title="Light"/>
                                                     <segment title="Dark"/>
                                                 </segments>
                                             </segmentedControl>
