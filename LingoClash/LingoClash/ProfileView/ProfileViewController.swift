@@ -85,7 +85,7 @@ class ProfileViewController: UIViewController {
         viewModel.$starsGoalProgress.sink {[weak self] starsGoalProgress in
             if let starsGoalProgress = starsGoalProgress {
                 self?.starsGoalProgress.progress = starsGoalProgress
-                self?.starsGoalIcon.alpha = CGFloat(starsGoalProgress)
+                self?.starsGoalIcon.alpha = max(CGFloat(starsGoalProgress), 0.5)
             }
         }.store(in: &cancellables)
         
