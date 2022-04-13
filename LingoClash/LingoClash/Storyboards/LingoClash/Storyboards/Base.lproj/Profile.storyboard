@@ -429,6 +429,7 @@
                         <outlet property="daysLearningLabel" destination="Kjf-12-waN" id="zIT-EK-QZX"/>
                         <outlet property="nameLabel" destination="5go-Xw-bjI" id="Z88-i7-jhM"/>
                         <outlet property="pkWinningRateLabel" destination="sVb-ca-PMP" id="Zbi-Ep-fr4"/>
+                        <outlet property="rankingByTotalVocabsLabel" destination="UVi-cG-b3N" id="hRS-U9-m1Q"/>
                         <outlet property="starsGoalIcon" destination="3yz-VF-em0" id="NvI-iy-e5v"/>
                         <outlet property="starsGoalLabel" destination="PwQ-Ci-2kJ" id="vbD-jO-hcX"/>
                         <outlet property="starsGoalProgress" destination="N0i-SH-rPh" id="Uhx-Tm-DsH"/>

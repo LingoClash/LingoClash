@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var daysLearningLabel: UILabel!
     @IBOutlet weak var vocabsLearntLabel: UILabel!
     @IBOutlet weak var pkWinningRateLabel: UILabel!
+    @IBOutlet weak var rankingByTotalVocabsLabel: UILabel!
     @IBOutlet weak var starsGoalProgress: UIProgressView!
     @IBOutlet weak var starsGoalIcon: UIImageView!
 
@@ -57,9 +58,11 @@ class ProfileViewController: UIViewController {
             }
         }.store(in: &cancellables)
         
-        
-        
-        
+        viewModel.$rankingByTotalVocabs.sink {[weak self] rankingByTotalVocabs in
+            if let rankingByTotalVocabs = rankingByTotalVocabs {
+                self?.rankingByTotalVocabsLabel.text = "\(rankingByTotalVocabs)"
+            }
+        }.store(in: &cancellables)
         
         viewModel.$daysLearning.sink {[weak self] daysLearning in
             if let daysLearning = daysLearning {
@@ -67,23 +70,17 @@ class ProfileViewController: UIViewController {
             }
         }.store(in: &cancellables)
         
-        
         viewModel.$vocabsLearnt.sink {[weak self] vocabsLearnt in
             if let vocabsLearnt = vocabsLearnt {
                 self?.vocabsLearntLabel.text = "\(vocabsLearnt)"
             }
         }.store(in: &cancellables)
         
-        
-        
         viewModel.$pkWinningRate.sink {[weak self] pkWinningRate in
             if let pkWinningRate = pkWinningRate {
                 self?.pkWinningRateLabel.text = "\(pkWinningRate)"
             }
         }.store(in: &cancellables)
-        
-        
-        
         
         viewModel.$starsGoalProgress.sink {[weak self] starsGoalProgress in
             if let starsGoalProgress = starsGoalProgress {
