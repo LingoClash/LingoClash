@@ -13,7 +13,16 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationSystem.instance.setUpNotifications()
+//        NotificationCenter.default.addObserver(self, selector: #selector(lessonQuizCompleted(_:)), name: .lessonQuizCompleted, object: nil)
         viewModel.refresh()
+        
+    }
+    
+    @objc func lessonQuizCompleted(_ notification: Notification) {
+        print("hello")
+//        RewardSystem().generateReward(fromResult: <#T##LessonQuizResult#>)
+//        print(notification.object as? [String: Any] ?? [:])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -7,6 +7,7 @@
 
 import Combine
 import PromiseKit
+import Foundation
 
 class HomeViewModel {
     @Published var isRefreshing = false
@@ -30,6 +31,7 @@ class HomeViewModel {
         }.catch { error in
             print(error)
         }
+        NotificationCenter.default.post(name: .lessonQuizCompleted, object: nil)
     }
 }
 
