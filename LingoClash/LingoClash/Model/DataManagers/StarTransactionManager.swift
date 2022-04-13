@@ -24,7 +24,7 @@ class StarTransactionManager: DataManager<StarTransactionData> {
             }
         }.compactMap {
             return starTransactions.map { starTransaction in
-                CurrencyTransaction<Star>.init(debitOrCredit: starTransaction.debitOrCredit, amount: starTransaction.amount, account: account, createdAt: starTransaction.createdAt, description: starTransaction.description)
+                CurrencyTransaction<Star>.init(id: starTransaction.id, debitOrCredit: starTransaction.debitOrCredit, amount: starTransaction.amount, account: account, createdAt: starTransaction.createdAt, description: starTransaction.description)
             }
         }
     }

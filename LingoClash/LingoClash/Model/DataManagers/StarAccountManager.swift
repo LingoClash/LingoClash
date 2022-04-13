@@ -59,15 +59,14 @@ class StarAccountManager: DataManager<StarAccountData> {
     
     func updateStarAccount(account: CurrencyAccount<Star>, newTransaction: CurrencyTransaction<Star>) -> Promise<CurrencyAccount<Star>> {
         var updatedAccountData: StarAccountData?
-        var newTransactionData: StarTransactionData?
         var updatedAccount: CurrencyAccount<Star>?
 
-        return firstly {
-            let accountData = StarAccountData(id: account.id, owner_id: account.owner.id, balance: account.balance)
-            return self.update(id: account.id, to: accountData).done { starAccountData in
-                updatedAccountData = starAccountData
-            }
-        }.then { () -> Promise<Void> in
+        let accountData = StarAccountData(id: account.id, owner_id: account.owner.id, balance: account.balance)
+        
+        return self.update(id: account.id, to: accountData)
+        .done { starAccountData in
+            updatedAccountData = starAccountData
+        }.then { () -> Promise<StarTransactionData> in
             guard let _ = updatedAccountData else {
                 return Promise.reject(reason: DataManagerError.dataNotFound)
             }
@@ -75,12 +74,8 @@ class StarAccountManager: DataManager<StarAccountData> {
             let transactionData = StarTransactionData(id: "", account_id: account.id, amount: newTransaction.amount,
                                                       createdAt: newTransaction.createdAt, debitOrCredit: newTransaction.debitOrCredit,
                                                       description: newTransaction.description)
-            return firstly {
-                StarTransactionManager().create(newRecord: transactionData)
-            }.done { starTransactionData in
-                newTransactionData = starTransactionData
-            }
-        }.then { () -> Promise<Void> in
+            return StarTransactionManager().create(newRecord: transactionData)
+        }.then { _ -> Promise<Void> in
             return firstly {
                 self.getStarAccount()
             }.done { starAccount in

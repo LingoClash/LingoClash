@@ -34,8 +34,5 @@ class CurrencyTransaction<T: Currency>: Transaction {
             account.balance -= amount
         }
         account.addTransaction(self)
-        
-        
-        // TODO: Save to db
     }
 }

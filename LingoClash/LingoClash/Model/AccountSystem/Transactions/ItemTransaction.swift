@@ -34,7 +34,7 @@ class ItemTransaction<T: Item>: Transaction {
 //                    return
 //                }
 //            }
-//            
+//
 //            for index in indices {
 //                self.items.remove(at: index)
 //            }

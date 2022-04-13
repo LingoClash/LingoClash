@@ -83,6 +83,11 @@
 		62C04A0F27DDE59E002D2497 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A0E27DDE59E002D2497 /* SignUpViewController.swift */; };
 		62C04A1127DDE67F002D2497 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A1027DDE67F002D2497 /* LoginViewController.swift */; };
 		62C04A1527DDEB10002D2497 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A1427DDEB10002D2497 /* HomeViewController.swift */; };
+		62C39FB728069E310079D19B /* StarAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A036B3280598AA00C3D261 /* StarAccountManager.swift */; };
+		62C39FB828069E340079D19B /* StarTransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A036B72805B85800C3D261 /* StarTransactionManager.swift */; };
+		62C39FB928069EF10079D19B /* StarAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A036B5280598F900C3D261 /* StarAccountData.swift */; };
+		62C39FBB28069F010079D19B /* StarTransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C39FBA28069F010079D19B /* StarTransactionData.swift */; };
+		62C39FBC28069F0C0079D19B /* StarTransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C39FBA28069F010079D19B /* StarTransactionData.swift */; };
 		62CB30DF27EA6EFB0044CB24 /* ProfileBookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CB30DE27EA6EFB0044CB24 /* ProfileBookManager.swift */; };
 		62E418CA27EA524C00DFF03C /* LessonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418C927EA524C00DFF03C /* LessonData.swift */; };
 		62E418CC27EA525600DFF03C /* ProfileBookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418CB27EA525600DFF03C /* ProfileBookData.swift */; };
@@ -457,6 +462,7 @@
 		62C04A0E27DDE59E002D2497 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		62C04A1027DDE67F002D2497 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		62C04A1427DDEB10002D2497 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		62C39FBA28069F010079D19B /* StarTransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTransactionData.swift; sourceTree = "<group>"; };
 		62CB30DE27EA6EFB0044CB24 /* ProfileBookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBookManager.swift; sourceTree = "<group>"; };
 		62E418C927EA524C00DFF03C /* LessonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonData.swift; sourceTree = "<group>"; };
 		62E418CB27EA525600DFF03C /* ProfileBookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBookData.swift; sourceTree = "<group>"; };
@@ -1207,6 +1213,7 @@
 				D3F00CB227DFC59500393ADC /* BookData.swift */,
 				D3F00CB427DFC5DD00393ADC /* BookCategoryData.swift */,
 				62A036B5280598F900C3D261 /* StarAccountData.swift */,
+				62C39FBA28069F010079D19B /* StarTransactionData.swift */,
 			);
 			path = Records;
 			sourceTree = "<group>";
@@ -1463,6 +1470,7 @@
 				CEF02D8D27E9862C00C30E03 /* QuestionScopeFactory.swift in Sources */,
 				624BD58227E7A22D006F0391 /* CompletedBooksViewModel.swift in Sources */,
 				62C04A1127DDE67F002D2497 /* LoginViewController.swift in Sources */,
+				62C39FBB28069F010079D19B /* StarTransactionData.swift in Sources */,
 				627A751427F9DDF900E5C240 /* ItemTypes.swift in Sources */,
 				CEF02D7527E956DA00C30E03 /* LessonQuizOutcomeViewController.swift in Sources */,
 				CEF1E7D727E60C2D005D4272 /* LessonVocabViewController.swift in Sources */,
@@ -1613,6 +1621,7 @@
 				D3C5E1ED27F6E36B00F65B8E /* CompletedBooksViewController.swift in Sources */,
 				D30E491827FAC7CE0074CF2B /* BookCategory.swift in Sources */,
 				62A036BE2805C40200C3D261 /* ItemTransaction.swift in Sources */,
+				62C39FB828069E340079D19B /* StarTransactionManager.swift in Sources */,
 				D3C5E1EE27F6E36B00F65B8E /* AppDelegate.swift in Sources */,
 				D3C5E1EF27F6E36B00F65B8E /* QuestionSequence.swift in Sources */,
 				62A036C02805C40900C3D261 /* CurrencyAccount.swift in Sources */,
@@ -1620,6 +1629,7 @@
 				D3C5E1F127F6E36B00F65B8E /* DataProviderTypes.swift in Sources */,
 				D3C5E1F227F6E36B00F65B8E /* HomeNavigationViewController.swift in Sources */,
 				D3C5E1F327F6E36B00F65B8E /* DatabaseErrors.swift in Sources */,
+				62C39FB728069E310079D19B /* StarAccountManager.swift in Sources */,
 				D3C5E1F427F6E36B00F65B8E /* SignUpViewController.swift in Sources */,
 				D3C5E1F527F6E36B00F65B8E /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				D3C5E1F627F6E36B00F65B8E /* StarView.swift in Sources */,
@@ -1651,7 +1661,9 @@
 				D3C5E20527F6E36B00F65B8E /* LessonQuizOutcomeViewModel.swift in Sources */,
 				D3C5E20627F6E36B00F65B8E /* ProfileData.swift in Sources */,
 				D3C5E20727F6E36B00F65B8E /* AlertUtilities.swift in Sources */,
+				62C39FBC28069F0C0079D19B /* StarTransactionData.swift in Sources */,
 				D3C5E20827F6E36B00F65B8E /* ProfileViewModel.swift in Sources */,
+				62C39FB928069EF10079D19B /* StarAccountData.swift in Sources */,
 				D3C5E20927F6E36B00F65B8E /* AuthErrors.swift in Sources */,
 				62A036BF2805C40700C3D261 /* ItemAccount.swift in Sources */,
 				D3C5E20A27F6E36B00F65B8E /* BookData.swift in Sources */,
