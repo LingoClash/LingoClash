@@ -31,7 +31,6 @@ class HomeViewModel {
         }.catch { error in
             print(error)
         }
-        NotificationCenter.default.post(name: .lessonQuizCompleted, object: nil)
     }
 }
 

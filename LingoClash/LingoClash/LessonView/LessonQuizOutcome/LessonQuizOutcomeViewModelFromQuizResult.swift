@@ -15,7 +15,6 @@ class LessonQuizOutcomeViewModelFromQuizResult: LessonQuizOutcomeViewModel {
     let isBackgroundDark: Bool
     let actionText: String
     let didPass: Bool
-    let reward: Reward?
     
     init(quizResult: LessonQuizResult) {
         self.vocabsLearnt = quizResult.vocabsTested.map { $0.word }
@@ -29,13 +28,11 @@ class LessonQuizOutcomeViewModelFromQuizResult: LessonQuizOutcomeViewModel {
             self.performanceComment = "Mastery in progress"
             self.isBackgroundDark = false
             self.actionText = "Strive for more"
-            self.reward = RewardSystem().generateReward(fromResult: quizResult)
         } else {
             self.completedStatus = "Persevere"
             self.performanceComment = "Let's try that again"
             self.isBackgroundDark = true
             self.actionText = "Try again"
-            self.reward = nil
         }
     }
 }

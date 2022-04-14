@@ -8,25 +8,39 @@
 import Foundation
 
 class NotificationSystem {
-    private static let internalInstance = RewardSystem()
-    static var instance: RewardSystem {
-        internalInstance
+    private static let lessonQuizRewardSytem: NotificationObserver = LessonQuizRewardSystem()
+    private static let pkGameRewardSystem: NotificationObserver = PKGameRewardSystem()
+    
+    private static var notificationObservers: [NotificationObserver] {
+        [lessonQuizRewardSytem, pkGameRewardSystem]
+    }
+
+    static func setUpObservers() {
+        for observer in notificationObservers {
+            observer.setUpObservers()
+        }
     }
 }
 
-class RewardSystem {
-    
-    func setUpNotifications() {
-        print("adhjsad")
-        NotificationCenter.default.addObserver(self, selector: #selector(lessonQuizCompleted(_:)), name: .lessonQuizCompleted, object: nil)
+protocol NotificationObserver {
+    func setUpObservers()
+}
+
+class LessonQuizRewardSystem: NotificationObserver {
+    func setUpObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(lessonQuizCompleted(_:)), name: .lessonQuizPassed, object: nil)
     }
     
-    func generateReward(fromResult result: LessonQuizResult) -> Reward? {
-        // TODO: retrieve user star account
-//        starAccount
-        
-        // TODO: check if user completed lessons 5 days in a row, generate more rewards if so
-        return nil
+    @objc func lessonQuizCompleted(_ notification: Notification) {
+        print("hello here")
+//        print(notification.object as? [String: Any] ?? [:])
+    }
+}
+
+class PKGameRewardSystem: NotificationObserver {
+    func setUpObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(lessonQuizCompleted(_:)), name: .PKGameWon, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(lessonQuizCompleted(_:)), name: .PKGameLost, object: nil)
     }
     
     @objc func lessonQuizCompleted(_ notification: Notification) {
@@ -36,6 +50,15 @@ class RewardSystem {
 }
 
 extension Notification.Name {
-    static var lessonQuizCompleted: Notification.Name {
-              return .init(rawValue: "LessonQuizCompleted") }
+    static var lessonQuizPassed: Notification.Name {
+        .init(rawValue: "LessonQuizCompleted.Pass")
+    }
+    
+    static var PKGameWon: Notification.Name {
+        .init(rawValue: "PKGameCompleted.Won")
+    }
+    
+    static var PKGameLost: Notification.Name {
+        .init(rawValue: "PKGameCompleted.Lost")
+    }
 }

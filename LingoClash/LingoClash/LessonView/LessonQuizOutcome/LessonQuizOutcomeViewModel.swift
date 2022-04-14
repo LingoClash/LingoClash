@@ -14,5 +14,4 @@ protocol LessonQuizOutcomeViewModel {
     var isBackgroundDark: Bool { get }
     var actionText: String { get }
     var didPass: Bool { get }
-    var reward: Reward? { get }
 }

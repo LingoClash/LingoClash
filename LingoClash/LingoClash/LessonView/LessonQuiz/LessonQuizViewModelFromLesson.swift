@@ -5,6 +5,8 @@
 //  Created by Sherwin Poh on 20/3/22.
 //
 
+import Foundation
+
 class LessonQuizViewModelFromLesson: LessonQuizViewModel {    
     let lesson: Lesson
     let questionGenerator = QuestionsGenerator()
@@ -91,7 +93,7 @@ class LessonQuizViewModelFromLesson: LessonQuizViewModel {
         if didPass {
             // TODO: update stars currency for user, update lesson for the stars
             quizStatus.value = QuizStatus.passed
-            quizOutcomeViewModel?.reward?.presentReward()
+            NotificationCenter.default.post(name: .lessonQuizPassed, object: nil)
         } else {
             quizStatus.value = QuizStatus.failed
         }
