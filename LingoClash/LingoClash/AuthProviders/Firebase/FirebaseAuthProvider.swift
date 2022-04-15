@@ -12,6 +12,7 @@ import PromiseKit
 
 class FirebaseAuthProvider: AuthProvider {
     
+    // TODO: think of better error names
     enum FirebaseAuthError: Error {
         case invalidAuthParams
         case invalidAuthDataResult
@@ -51,7 +52,30 @@ class FirebaseAuthProvider: AuthProvider {
                 }
             }
         }.then {
-            return self.getIdentity()
+            self.getIdentity()
+        }.then { result -> Promise<UserIdentity> in
+
+            return Promise { seal in
+                let db = Firestore.firestore()
+                
+                // TODO: use codable object for this
+                db.collection("profiles").addDocument(
+                    data: [
+                        "user_id": result.id as Any,
+                        "stars": 0,
+                        "stars_today": 0,
+                        "stars_goal": 10,
+                        "bio": "这个人很懒，什么都没留下。",
+                        "days_learning": 0,
+                        "vocabs_learnt": 0,
+                        "pk_winning_rate": 100,
+                    ]) { error in
+                        if let error = error {
+                            return seal.reject(error)
+                        }
+                        return seal.fulfill(result)
+                    }
+            }
         }
         
     }
@@ -85,7 +109,7 @@ class FirebaseAuthProvider: AuthProvider {
     
     func getIdentity() -> Promise<UserIdentity> {
         let user = Auth.auth().currentUser
-        
+
         let userIdentity = UserIdentity(
             id: user?.uid, email: user?.email, fullName: user?.displayName, avatar: user?.photoURL?.absoluteString)
         

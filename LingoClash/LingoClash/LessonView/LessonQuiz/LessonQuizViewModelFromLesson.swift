@@ -10,7 +10,7 @@ class LessonQuizViewModelFromLesson: LessonQuizViewModel {
     let questionGenerator = QuestionsGenerator()
     let starsBenchmarks = [7,9,10]
     let initialLives = 2
-
+    
     var questionSequence: QuestionSequence
     var questionsLoaded = [Question]()
     var questionsStatus = [QuestionStatus]()
@@ -32,7 +32,7 @@ class LessonQuizViewModelFromLesson: LessonQuizViewModel {
         questionsStatus.filter { $0 == .correct }.count
     }
     
-
+    
     /// Generates questions from lesson's vocabs, initialises fields
     init(lesson: Lesson) {
         assert(lesson.vocabs.count > 0)
@@ -68,25 +68,25 @@ class LessonQuizViewModelFromLesson: LessonQuizViewModel {
             self.questionsStatus[currQuestionIndex] = .wrong
             self.livesLeft.value -= 1
         }
-
+        
         currQuestionIndex += 1
         guard !isQuizComplete() else {
             self.quizDidComplete()
             return
         }
-    
+        
         loadNextQuestion()
     }
     
     private func quizDidComplete() {
         assert(!questionsStatus.contains(where: { $0 == .incomplete }))
-
+        
         let minStarsBenchMark = starsBenchmarks[0]
         let starsObtained = getStarsObtained(score: quizScore)
         let vocabsTested = Set(lesson.vocabs)
         let didPass = quizScore >= minStarsBenchMark
         let quizResult = LessonQuizResult(starsObtained: starsObtained, didPass: didPass,
-                                          vocabsTested: vocabsTested, lessonName: lesson.lessonName)
+                                          vocabsTested: vocabsTested, lessonName: lesson.name)
         quizOutcomeViewModel = LessonQuizOutcomeViewModelFromQuizResult(quizResult: quizResult)
         if didPass {
             // TODO: update stars currency for user, update lesson for the stars

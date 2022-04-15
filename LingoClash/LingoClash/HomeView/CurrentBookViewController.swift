@@ -13,15 +13,16 @@ class CurrentBookViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var bookNameLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var totalStarsLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
-    private let viewModel = CurrentBookViewModel()
+    var viewModel: HomeViewModel?
     private var cancellables: Set<AnyCancellable> = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         setUpBinders()
-        viewModel.refresh()
     }
     
     func setUpView() {
@@ -29,22 +30,24 @@ class CurrentBookViewController: UIViewController {
     }
     
     func setUpBinders() {
-        viewModel.$currentBookProgress.sink {[weak self] bookProgress in
-            if let bookProgress = bookProgress {
-                self?.bookNameLabel.text = bookProgress.name
-                self?.progressLabel.text = "Progress: \(bookProgress.progress)"
+        viewModel?.$currentBook.sink {[weak self] book in
+            if let book = book {
+                self?.bookNameLabel.text = book.name
+                self?.progressLabel.text = book.progressText
+                self?.totalStarsLabel.text = "\(book.totalStars)"
+                self?.progressView.progress = book.progress
             }
         }.store(in: &cancellables)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let lessonSelectionViewController = segue.destination as? LessonSelectionViewController {
-            guard let lessonSelectionViewModel = self.viewModel.lessonSelectionViewModel else {
+            guard let lessonSelectionViewModel = self.viewModel?.lessonSelectionViewModel else {
                 assert(false)
                 return
             }
             lessonSelectionViewController.viewModel = lessonSelectionViewModel
         }
     }
-
+    
 }

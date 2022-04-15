@@ -7,90 +7,100 @@
 import UIKit
 import Combine
 
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var totalStarsLabel: UILabel!
     @IBOutlet weak var starsTodayLabel: UILabel!
-    
+    @IBOutlet weak var starsGoalLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var daysLearningLabel: UILabel!
+    @IBOutlet weak var vocabsLearntLabel: UILabel!
+    @IBOutlet weak var pkWinningRateLabel: UILabel!
+    @IBOutlet weak var rankingByTotalStarsLabel: UILabel!
+    @IBOutlet weak var starsGoalProgressView: UIProgressView!
+    @IBOutlet weak var starsGoalIcon: UIImageView!
+
     private let viewModel = ProfileViewModel()
     private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.refresh()
         setUpBinders()
-        viewModel.refreshProfile()
     }
     
     func setUpBinders() {
-        
-        viewModel.$error.sink {[weak self] error in
-            if let error = error {
-                self?.showError(error)
-            }
-        }.store(in: &cancellables)
-        
         viewModel.$name.sink {[weak self] name in
             if let name = name {
                 self?.nameLabel.text = name
             }
         }.store(in: &cancellables)
         
-        viewModel.$email.sink {[weak self] email in
-            if let email = email {
-                self?.emailLabel.text = email
-            }
-        }.store(in: &cancellables)
-        
         viewModel.$totalStars.sink {[weak self] totalStars in
             if let totalStars = totalStars {
-                self?.totalStarsLabel.text = "Total stars: \(totalStars)"
+                self?.totalStarsLabel.text = "\(totalStars)"
             }
         }.store(in: &cancellables)
         
         viewModel.$starsToday.sink {[weak self] starsToday in
             if let starsToday = starsToday {
-                self?.starsTodayLabel.text = "Total stars today: \(starsToday)"
+                self?.starsTodayLabel.text = "\(starsToday)"
             }
         }.store(in: &cancellables)
         
+        viewModel.$starsGoal.sink {[weak self] starsGoal in
+            if let starsGoal = starsGoal {
+                self?.starsGoalLabel.text = "\(starsGoal)"
+            }
+        }.store(in: &cancellables)
         
-        viewModel.$alertContent.sink {[weak self] alertContent in
-            if let alertContent = alertContent {
-                self?.showConfirmAlert(content: alertContent) { _ in
-                    self?.transitionToSplash()
-                }
+        viewModel.$rankingByTotalStars.sink {[weak self] rankingByTotalStars in
+            if let rankingByTotalStars = rankingByTotalStars {
+                self?.rankingByTotalStarsLabel.text = "\(rankingByTotalStars)"
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$daysLearning.sink {[weak self] daysLearning in
+            if let daysLearning = daysLearning {
+                self?.daysLearningLabel.text = "\(daysLearning)"
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$vocabsLearnt.sink {[weak self] vocabsLearnt in
+            if let vocabsLearnt = vocabsLearnt {
+                self?.vocabsLearntLabel.text = "\(vocabsLearnt)"
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$pkWinningRate.sink {[weak self] pkWinningRate in
+            if let pkWinningRate = pkWinningRate {
+                self?.pkWinningRateLabel.text = "\(pkWinningRate)"
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$starsGoalProgress.sink {[weak self] starsGoalProgress in
+            if let starsGoalProgress = starsGoalProgress {
+                self?.starsGoalProgressView.progress = starsGoalProgress
+                self?.starsGoalIcon.alpha = max(CGFloat(starsGoalProgress), 0.5)
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$bio.sink {[weak self] bio in
+            if let bio = bio {
+                self?.bioLabel.text = "\"\(bio)\""
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$isRefreshing.sink {[weak self] isRefreshing in
+            if isRefreshing {
+                self?.showSpinner()
+            } else {
+                self?.removeSpinner()
             }
         }.store(in: &cancellables)
     }
-    
-    @IBAction func logoutTapped(_ sender: Any) {
-        viewModel.signOut()
-    }
-    
-    func transitionToSplash() {
-        let splashViewController = SplashViewController.instantiateFromAppStoryboard(appStoryboard: AppStoryboard.Main)
-        
-        view.window?.rootViewController = splashViewController
-        view.window?.makeKeyAndVisible()
-    }
-    
-    func showError(_ message: String) {
-        // TODO: Perhaps it is better to show as popup
-        Logger.info("Error signing out: \(message)")
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let editProfileVC = segue.destination as? EditProfileViewController {
-            editProfileVC.viewModel = self.viewModel
-        } else if let changePasswordVC = segue.destination as? ChangePasswordViewController {
-            changePasswordVC.viewModel = self.viewModel
-        } else if let changeEmailVC = segue.destination as? ChangeEmailViewController {
-            changeEmailVC.viewModel = self.viewModel
-        }
-    }
-    
 }

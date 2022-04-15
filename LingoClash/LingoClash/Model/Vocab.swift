@@ -8,13 +8,33 @@
 import Foundation
 
 struct Vocab {
-    let vocabId: Int
+    let id: Identifier
     let word: String
     let definition: String
     let sentence: String
     let sentenceDefinition: String
     let pronunciationText: String
     // TODO: Add pronunciation
+    
+    init(vocabData: VocabData) {
+        self.id = vocabData.id
+        self.word = vocabData.word
+        self.definition = vocabData.definition
+        self.sentence = vocabData.sentence
+        // TODO: add to firebase
+        self.sentenceDefinition = ""
+        self.pronunciationText = ""
+    }
+    
+    // To be removed
+    init(vocabId: Int, word: String, definition: String, sentence: String, sentenceDefinition: String, pronunciationText: String ) {
+        self.word = word
+        self.definition = definition
+        self.sentence = sentence
+        self.sentenceDefinition = sentenceDefinition
+        self.pronunciationText = pronunciationText
+        self.id = "1"
+    }
 }
 
 extension Vocab: Codable {}

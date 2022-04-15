@@ -15,7 +15,7 @@ final class SignUpViewModel {
     
     private let authProvider: AuthProvider
     
-    init(authProvider: AuthProvider = FirebaseAuthProvider()) {
+    init(authProvider: AuthProvider = AppConfigs.API.authProvider) {
         self.authProvider = authProvider
     }
     
@@ -26,29 +26,14 @@ final class SignUpViewModel {
             return
         }
         
-        firstly {
-            authProvider.register(params: fields)
-        }.then { result -> Promise<Void> in
-            return Promise { seal in
-                let db = Firestore.firestore()
-                db.collection("profiles").addDocument(
-                    data: [
-                        "uid": result.id as Any
-                    ]) { error in
-                        if let error = error {
-                            return seal.reject(error)
-                        }
-                        return seal.fulfill(())
-                    }
-            }
-        }.done {
+        authProvider.register(params: fields).done {_ in
             self.error = nil
         }.catch { error in
             self.error = error.localizedDescription
         }
         
     }
-    
+            
     ///  Returns: nil if fields are correct, else return error message
     func validateFields(_ fields: SignUpFields) -> String? {
         if let error = FormUtilities.validateFieldsNotEmpty(fields) {

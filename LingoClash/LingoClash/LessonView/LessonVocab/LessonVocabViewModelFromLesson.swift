@@ -38,10 +38,11 @@ class LessonVocabViewModelFromLesson: LessonVocabViewModel {
         updateCurrVocabInfo(currIndex: 0)
         self.lessonQuizViewModel = LessonQuizViewModelFromLesson(lesson: lesson)
     }
-
+    
     func playVocabPronounciation() {
         // TODO: Implement pronounciation
     }
+    
     func navigateNext() {
         guard !isLastVocab.value else {
             return

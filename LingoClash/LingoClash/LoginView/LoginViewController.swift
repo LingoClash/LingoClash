@@ -24,19 +24,6 @@ class LoginViewController: UIViewController {
         
         setUpView()
         setUpBinders()
-        
-        // TODO: To be removed
-        let bookDataManager = BookDataManager()
-        let books = bookDataManager.getList()
-        
-        try? Auth.auth().signOut()
-        print("current user:", Auth.auth().currentUser ?? "")
-        
-        books.done { books in
-            print("Books fetched: ", books)
-        }.catch { error in
-            print("Error: ", error)
-        }
     }
     
     func setUpView() {
@@ -67,7 +54,7 @@ class LoginViewController: UIViewController {
     }
     
     func transitionToHome() {
-        let mainViewController = HomeNavigationViewController.instantiateFromAppStoryboard(appStoryboard: AppStoryboard.Home)
+        let mainViewController = HomeNavigationViewController.instantiateFromAppStoryboard(AppStoryboard.Home)
         
         view.window?.rootViewController = mainViewController
         view.window?.makeKeyAndVisible()
