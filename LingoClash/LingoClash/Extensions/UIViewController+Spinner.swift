@@ -28,5 +28,4 @@ extension UIViewController {
         spinnerView?.removeFromSuperview()
         spinnerView = nil
     }
-
 }

@@ -27,27 +27,8 @@ class FirebaseDataProvider: DataProvider {
     
     private let db = Firestore.firestore()
     
-    private func getModel<S: Codable>(from document: QueryDocumentSnapshot) -> S? {
-        var documentData = document.data()
-        documentData["id"] = document.documentID
-        
-        let data = try? JSONSerialization.data(withJSONObject: documentData)
-        
-        let model = try? JSONDecoder().decode(S.self, from: data ?? Data())
-        
-        return model
-    }
-    
     private func getModel<S: Codable>(from document: DocumentSnapshot) -> S? {
-        guard var documentData = document.data() else {
-            return nil
-        }
-        
-        documentData["id"] = document.documentID
-        
-        let data =  try? JSONSerialization.data(withJSONObject: documentData)
-        let model = try? JSONDecoder().decode(S.self, from: data ?? Data())
-        
+        let model = try? document.decode(as: S.self)
         return model
     }
     
