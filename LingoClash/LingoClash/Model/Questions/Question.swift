@@ -8,5 +8,9 @@
 protocol Question: Query, Answerable {
     static var vocabsTestedCount: Int { get }
     var vocabsTested: Set<Vocab> { get }
+    
+    var answerToString: String { get }
+    
+    var context: String { get }
     func isCorrect(response: Any) -> Bool
 }

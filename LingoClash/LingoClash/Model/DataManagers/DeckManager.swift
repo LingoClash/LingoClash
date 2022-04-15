@@ -12,4 +12,6 @@ class DeckManager: DataManager<Deck> {
     init() {
         super.init(resource: "decks")
     }
+    
+    
 }

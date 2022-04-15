@@ -6,7 +6,6 @@
 //
 
 protocol TwoDisjointSetOptionQuestion: Question {
-    var prompt: String { get }
     var options: [[String]] { get }
     var answer: Set<[String]> { get }
 }

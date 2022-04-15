@@ -15,7 +15,7 @@ enum RecallDifficulty: Int, CaseIterable, Codable {
   case hard
 
   /// The learner could recall the information needed with the expected amount of difficulty
-//  case good
+  case good
 
   /// The learner would not like to see this prompt again (perhaps 4 days later)
   case easy
