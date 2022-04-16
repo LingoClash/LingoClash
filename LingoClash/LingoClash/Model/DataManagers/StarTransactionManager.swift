@@ -12,7 +12,9 @@ class StarTransactionManager: DataManager<StarTransactionData> {
         super.init(resource: "star_transactions")
     }
 
-    func getStarTransactions(accountId: Identifier, account: CurrencyAccount<Star>) -> Promise<[CurrencyTransaction<Star>]> {
+    func getStarTransactions(accountId: Identifier, account: CurrencyAccount<Star>)
+        -> Promise<[CurrencyTransaction<Star>]> {
+
         var starTransactions = [StarTransactionData]()
 
         return firstly {

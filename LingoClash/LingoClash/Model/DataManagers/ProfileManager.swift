@@ -50,7 +50,7 @@ class ProfileManager: DataManager<ProfileData> {
             var newProfileData = profileData
             newProfileData.book_id = bookId
 
-            return self.update(id: profileData.id, from: profileData, to: newProfileData)
+            return self.update(id: profileData.id, to: newProfileData)
         }
     }
 
@@ -62,7 +62,7 @@ class ProfileManager: DataManager<ProfileData> {
             newProfileData.stars_goal = starsGoal
             newProfileData.bio = bio
 
-            return self.update(id: profileData.id, from: profileData, to: newProfileData)
+            return self.update(id: profileData.id, to: newProfileData)
         }
     }
 
@@ -75,12 +75,12 @@ class ProfileManager: DataManager<ProfileData> {
             newProfileData.stars = stars
             newProfileData.vocabs_learnt = vocabsLearnt
 
-            return self.update(id: profileData.id, from: profileData, to: newProfileData)
+            return self.update(id: profileData.id, to: newProfileData)
         }
     }
 
     func createProfile(params: SignUpFields, userId: Identifier) -> Promise<Profile> {
-        let profileData = ProfileData(userId: userId)
+        let profileData = ProfileData(userId: userId, name: params.name, email: params.email)
         var profile: Profile?
 
         return firstly {
@@ -108,7 +108,7 @@ class ProfileManager: DataManager<ProfileData> {
             var newProfileData = profileData
             newProfileData.vocabs_learnt = profileData.vocabs_learnt + increment
 
-            return self.update(id: profileData.id, from: profileData, to: newProfileData)
+            return self.update(id: profileData.id, to: newProfileData)
         }
     }
 

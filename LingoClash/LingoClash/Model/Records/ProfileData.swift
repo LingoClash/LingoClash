@@ -20,11 +20,13 @@ struct ProfileData {
     var pk_winning_rate: Double
 
     init(id: Identifier, book_id: Identifier?, user_id: Identifier,
-         stars: Int, stars_goal: Int, bio: String,
+         name: String, email: String, stars: Int, stars_goal: Int, bio: String,
          days_learning: Int, vocabs_learnt: Int, pk_winning_rate: Double) {
         self.id = id
         self.book_id = book_id
         self.user_id = user_id
+        self.name = name
+        self.email = email
         self.stars = stars
         // TODO: Remove from profile data
         self.stars_today = 0
@@ -36,8 +38,9 @@ struct ProfileData {
     }
 
         /// Creates a new default profile data for a user.
-    init(userId: Identifier) {
+    init(userId: Identifier, name: String, email: String) {
         self.init(id: "-1", book_id: nil, user_id: userId,
+                  name: name, email: email,
                   stars: 0, stars_goal: 3,
                   bio: "Life is a journey of learning.",
                   days_learning: 0, vocabs_learnt: 0, pk_winning_rate: 0)

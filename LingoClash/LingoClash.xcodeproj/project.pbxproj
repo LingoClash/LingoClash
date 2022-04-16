@@ -58,11 +58,25 @@
 		62C04A0F27DDE59E002D2497 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A0E27DDE59E002D2497 /* SignUpViewController.swift */; };
 		62C04A1127DDE67F002D2497 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A1027DDE67F002D2497 /* LoginViewController.swift */; };
 		62C04A1527DDEB10002D2497 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A1427DDEB10002D2497 /* HomeViewController.swift */; };
+		62C2BD3E280B573100ADC96D /* UIViewController+Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAA6280B4B6300C0503B /* UIViewController+Snackbar.swift */; };
 		62CB30DF27EA6EFB0044CB24 /* ProfileBookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CB30DE27EA6EFB0044CB24 /* ProfileBookManager.swift */; };
 		62E418CC27EA525600DFF03C /* ProfileBookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418CB27EA525600DFF03C /* ProfileBookData.swift */; };
 		62E418CF27EA526200DFF03C /* ProfileLessonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418CE27EA526200DFF03C /* ProfileLessonData.swift */; };
 		62E418D127EA53A800DFF03C /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418D027EA53A800DFF03C /* ProfileData.swift */; };
 		62E418D327EA5A6900DFF03C /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418D227EA5A6900DFF03C /* ProfileManager.swift */; };
+		62FEFA9E280B4AD600C0503B /* DocumentSnapshot+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFA9D280B4AD600C0503B /* DocumentSnapshot+Extensions.swift */; };
+		62FEFA9F280B4AFD00C0503B /* DocumentSnapshot+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFA9D280B4AD600C0503B /* DocumentSnapshot+Extensions.swift */; };
+		62FEFAA1280B4B1200C0503B /* Notification+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAA0280B4B1200C0503B /* Notification+Names.swift */; };
+		62FEFAA2280B4B1E00C0503B /* Notification+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAA0280B4B1200C0503B /* Notification+Names.swift */; };
+		62FEFAA4280B4B3400C0503B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAA3280B4B3400C0503B /* UIApplication+Extensions.swift */; };
+		62FEFAA5280B4B3B00C0503B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAA3280B4B3400C0503B /* UIApplication+Extensions.swift */; };
+		62FEFAA7280B4B6300C0503B /* UIViewController+Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAA6280B4B6300C0503B /* UIViewController+Snackbar.swift */; };
+		62FEFAAA280B4C8C00C0503B /* SnackbarUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAA9280B4C8C00C0503B /* SnackbarUtilities.swift */; };
+		62FEFAAC280B4C9A00C0503B /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAAB280B4C9A00C0503B /* SnackbarView.swift */; };
+		62FEFAAE280B4CA600C0503B /* SnackbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAAD280B4CA600C0503B /* SnackbarViewModel.swift */; };
+		62FEFAAF280B4CBF00C0503B /* SnackbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAAD280B4CA600C0503B /* SnackbarViewModel.swift */; };
+		62FEFAB0280B4CC100C0503B /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAAB280B4C9A00C0503B /* SnackbarView.swift */; };
+		62FEFAB1280B4CC300C0503B /* SnackbarUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAA9280B4C8C00C0503B /* SnackbarUtilities.swift */; };
 		62FEFAB2280B4EDC00C0503B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6204A03E27DE43350063100D /* ProfileViewController.swift */; };
 		62FEFAB6280B4FB300C0503B /* AccountOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAB5280B4FB300C0503B /* AccountOwner.swift */; };
 		62FEFAB8280B4FC900C0503B /* CurrencyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAB7280B4FC900C0503B /* CurrencyAccount.swift */; };
@@ -200,9 +214,6 @@
 		CEF02D7B27E9577C00C30E03 /* LessonQuizResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF02D7A27E9577C00C30E03 /* LessonQuizResult.swift */; };
 		CEF02D9027E9910500C30E03 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = CEF02D8F27E9910500C30E03 /* Algorithms */; };
 		CEF1E7A827E50082005D4272 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7A727E50082005D4272 /* Transaction.swift */; };
-		CEF1E7AC27E5030C005D4272 /* CurrencySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7AB27E5030C005D4272 /* CurrencySystem.swift */; };
-		CEF1E7AE27E503B3005D4272 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7AD27E503B3005D4272 /* Account.swift */; };
-		CEF1E7B327E5071C005D4272 /* StarsCurrencySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7B227E5071C005D4272 /* StarsCurrencySystem.swift */; };
 		CEF1E7D527E60C1F005D4272 /* LessonOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7D427E60C1F005D4272 /* LessonOverviewViewController.swift */; };
 		CEF1E7D727E60C2D005D4272 /* LessonVocabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7D627E60C2D005D4272 /* LessonVocabViewController.swift */; };
 		CEF1E7D927E60C3E005D4272 /* LessonQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7D827E60C3E005D4272 /* LessonQuizViewController.swift */; };
@@ -375,11 +386,9 @@
 		D3C5E21227F6E36B00F65B8E /* FetchUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F00CAA27DFA3E200393ADC /* FetchUtilities.swift */; };
 		D3C5E21427F6E36B00F65B8E /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30CD1E727E79F3A0021A5AA /* KeychainManager.swift */; };
 		D3C5E21527F6E36B00F65B8E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD2A1027DED82A0061E362 /* LoginViewModel.swift */; };
-		D3C5E21627F6E36B00F65B8E /* CurrencySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7AB27E5030C005D4272 /* CurrencySystem.swift */; };
 		D3C5E21727F6E36B00F65B8E /* TwoDisjointSetOptionQuestionLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E81B27E74634005D4272 /* TwoDisjointSetOptionQuestionLayoutViewController.swift */; };
 		D3C5E21827F6E36B00F65B8E /* LessonOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7DD27E60D42005D4272 /* LessonOverviewViewModel.swift */; };
 		D3C5E21927F6E36B00F65B8E /* LessonSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5887027EABEC000809403 /* LessonSelectionViewController.swift */; };
-		D3C5E21A27F6E36B00F65B8E /* StarsCurrencySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7B227E5071C005D4272 /* StarsCurrencySystem.swift */; };
 		D3C5E21C27F6E36B00F65B8E /* LessonQuizViewModelFromLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E81027E71944005D4272 /* LessonQuizViewModelFromLesson.swift */; };
 		D3C5E21D27F6E36B00F65B8E /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229327EEB7EE005E7058 /* AppStoryboard.swift */; };
 		D3C5E21E27F6E36B00F65B8E /* QuestionLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7F427E6D143005D4272 /* QuestionLayoutViewModel.swift */; };
@@ -532,6 +541,13 @@
 		62E418CE27EA526200DFF03C /* ProfileLessonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLessonData.swift; sourceTree = "<group>"; };
 		62E418D027EA53A800DFF03C /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		62E418D227EA5A6900DFF03C /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		62FEFA9D280B4AD600C0503B /* DocumentSnapshot+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Extensions.swift"; sourceTree = "<group>"; };
+		62FEFAA0280B4B1200C0503B /* Notification+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Names.swift"; sourceTree = "<group>"; };
+		62FEFAA3280B4B3400C0503B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		62FEFAA6280B4B6300C0503B /* UIViewController+Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snackbar.swift"; sourceTree = "<group>"; };
+		62FEFAA9280B4C8C00C0503B /* SnackbarUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarUtilities.swift; sourceTree = "<group>"; };
+		62FEFAAB280B4C9A00C0503B /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
+		62FEFAAD280B4CA600C0503B /* SnackbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarViewModel.swift; sourceTree = "<group>"; };
 		62FEFAB5280B4FB300C0503B /* AccountOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOwner.swift; sourceTree = "<group>"; };
 		62FEFAB7280B4FC900C0503B /* CurrencyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAccount.swift; sourceTree = "<group>"; };
 		62FEFAB9280B4FE700C0503B /* ItemAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAccount.swift; sourceTree = "<group>"; };
@@ -627,9 +643,7 @@
 		CEF02D7827E9573700C30E03 /* LessonQuizOutcomeViewModelFromQuizResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonQuizOutcomeViewModelFromQuizResult.swift; sourceTree = "<group>"; };
 		CEF02D7A27E9577C00C30E03 /* LessonQuizResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonQuizResult.swift; sourceTree = "<group>"; };
 		CEF1E7A727E50082005D4272 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		CEF1E7AB27E5030C005D4272 /* CurrencySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySystem.swift; sourceTree = "<group>"; };
 		CEF1E7AD27E503B3005D4272 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		CEF1E7B227E5071C005D4272 /* StarsCurrencySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsCurrencySystem.swift; sourceTree = "<group>"; };
 		CEF1E7D427E60C1F005D4272 /* LessonOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonOverviewViewController.swift; sourceTree = "<group>"; };
 		CEF1E7D627E60C2D005D4272 /* LessonVocabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonVocabViewController.swift; sourceTree = "<group>"; };
 		CEF1E7D827E60C3E005D4272 /* LessonQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonQuizViewController.swift; sourceTree = "<group>"; };
@@ -758,6 +772,7 @@
 		6204A03B27DE34040063100D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				62FEFAA8280B4C7B00C0503B /* Snackbar */,
 				6204A03927DE1CDB0063100D /* AppConfigs.swift */,
 				62165B7527F2244C004BC620 /* FormUtilities.swift */,
 				CEF1E7DB27E60C7A005D4272 /* Dynamic.swift */,
@@ -867,6 +882,16 @@
 				629090AB27E8E3B900941A3B /* CurrentBookViewController.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		62FEFAA8280B4C7B00C0503B /* Snackbar */ = {
+			isa = PBXGroup;
+			children = (
+				62FEFAA9280B4C8C00C0503B /* SnackbarUtilities.swift */,
+				62FEFAAB280B4C9A00C0503B /* SnackbarView.swift */,
+				62FEFAAD280B4CA600C0503B /* SnackbarViewModel.swift */,
+			);
+			path = Snackbar;
 			sourceTree = "<group>";
 		};
 		62FEFAB3280B4F8000C0503B /* Accounts */ = {
@@ -1111,15 +1136,6 @@
 			path = AccountSystem;
 			sourceTree = "<group>";
 		};
-		CEF1E7B127E50706005D4272 /* CurrencySystem */ = {
-			isa = PBXGroup;
-			children = (
-				CEF1E7AB27E5030C005D4272 /* CurrencySystem.swift */,
-				CEF1E7B227E5071C005D4272 /* StarsCurrencySystem.swift */,
-			);
-			path = CurrencySystem;
-			sourceTree = "<group>";
-		};
 		CEF1E7DA27E60C4F005D4272 /* LessonView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1203,7 +1219,6 @@
 				6204A03B27DE34040063100D /* Utilities */,
 				D33282F727D4E62F00C80986 /* Resources */,
 				D3AF1C22280591DA00DCFA2E /* SplashView */,
-				CEF1E7B127E50706005D4272 /* CurrencySystem */,
 				D398780C27DF8C1400B2F4ED /* Extensions */,
 				D3BD2A1827DF29A00061E362 /* DataProviders */,
 				D30CD1E927E7A6460021A5AA /* AuthProviders */,
@@ -1264,7 +1279,11 @@
 			isa = PBXGroup;
 			children = (
 				D3F00CAC27DFAF6F00393ADC /* Promise+Extensions.swift */,
+				62FEFA9D280B4AD600C0503B /* DocumentSnapshot+Extensions.swift */,
 				D3C4423027E8966C00676C93 /* UIViewController+Alerts.swift */,
+				62FEFAA6280B4B6300C0503B /* UIViewController+Snackbar.swift */,
+				62FEFAA3280B4B3400C0503B /* UIApplication+Extensions.swift */,
+				62FEFAA0280B4B1200C0503B /* Notification+Names.swift */,
 				62BB1CE328002766002CD31A /* UIViewController+Spinner.swift */,
 				CE8D229527EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift */,
 			);
@@ -1693,6 +1712,7 @@
 				62FEFAE1280B534D00C0503B /* MainRewardSystem.swift in Sources */,
 				CEC5886C27EA37E900809403 /* VocabsLearntTableCell.swift in Sources */,
 				CE673C2427F8B48300321BB8 /* PKGameQuizViewController.swift in Sources */,
+				62FEFAA1280B4B1200C0503B /* Notification+Names.swift in Sources */,
 				CEA1C8CE27FA14FA00123225 /* PKGame.swift in Sources */,
 				D3757B17280683FF003CF4F2 /* ChangePasswordViewController.swift in Sources */,
 				CEBC07722807DCF100A0ED82 /* DataManagerResources.swift in Sources */,
@@ -1718,6 +1738,7 @@
 				62C04A0F27DDE59E002D2497 /* SignUpViewController.swift in Sources */,
 				D3AF1C1828057C7600DCFA2E /* LightTheme.swift in Sources */,
 				CE8D229627EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
+				62FEFAAA280B4C8C00C0503B /* SnackbarUtilities.swift in Sources */,
 				CEC5886A27EA2A4F00809403 /* StarView.swift in Sources */,
 				D3C5E27A27F6F3E900F65B8E /* SampleDataUtilities.swift in Sources */,
 				62FEFAB2280B4EDC00C0503B /* ProfileViewController.swift in Sources */,
@@ -1733,6 +1754,7 @@
 				62BB1CE428002766002CD31A /* UIViewController+Spinner.swift in Sources */,
 				D3C5E28A27F71DA200F65B8E /* VocabManager.swift in Sources */,
 				CEA1C7B027FA145800123225 /* DefinitionOptionQuestionConstructor.swift in Sources */,
+				62FEFAAE280B4CA600C0503B /* SnackbarViewModel.swift in Sources */,
 				D3757B16280683FF003CF4F2 /* ChangeEmailViewController.swift in Sources */,
 				D3757B192806849B003CF4F2 /* SettingsViewModel.swift in Sources */,
 				D3F00CB527DFC5DD00393ADC /* BookCategoryData.swift in Sources */,
@@ -1771,14 +1793,13 @@
 				D3F00CAB27DFA3E200393ADC /* FetchUtilities.swift in Sources */,
 				D3C5E28427F71D6A00F65B8E /* BookCategoryManager.swift in Sources */,
 				D30CD1E827E79F3A0021A5AA /* KeychainManager.swift in Sources */,
+				62FEFAA4280B4B3400C0503B /* UIApplication+Extensions.swift in Sources */,
 				D3BD2A1127DED82A0061E362 /* LoginViewModel.swift in Sources */,
-				CEF1E7AC27E5030C005D4272 /* CurrencySystem.swift in Sources */,
 				CEF1E81C27E74634005D4272 /* TwoDisjointSetOptionQuestionLayoutViewController.swift in Sources */,
 				CEF1E7DE27E60D42005D4272 /* LessonOverviewViewModel.swift in Sources */,
 				D3AF1C1A28057C8200DCFA2E /* DarkTheme.swift in Sources */,
 				620DF3CA27F23133006A9E5F /* ChangeEmailFields.swift in Sources */,
 				CEC5887127EABEC000809403 /* LessonSelectionViewController.swift in Sources */,
-				CEF1E7B327E5071C005D4272 /* StarsCurrencySystem.swift in Sources */,
 				CEF1E81127E71944005D4272 /* LessonQuizViewModelFromLesson.swift in Sources */,
 				CEA1C90927FA67BC00123225 /* PKGameEngine.swift in Sources */,
 				CE8D229427EEB7EE005E7058 /* AppStoryboard.swift in Sources */,
@@ -1804,6 +1825,7 @@
 				CEA1C7AC27FA145800123225 /* QuestionGenerationError.swift in Sources */,
 				62FEFAB8280B4FC900C0503B /* CurrencyAccount.swift in Sources */,
 				62165B7D27F226C7004BC620 /* LoginFields.swift in Sources */,
+				62FEFA9E280B4AD600C0503B /* DocumentSnapshot+Extensions.swift in Sources */,
 				620DF3CE27F231BD006A9E5F /* EditProfileFields.swift in Sources */,
 				62A03E59280176CA008FE249 /* BookButtonDelegate.swift in Sources */,
 				D30E490E27FA20140074CF2B /* BookCategory.swift in Sources */,
@@ -1821,6 +1843,7 @@
 				CEA1C7AB27FA145800123225 /* QuestionSequence.swift in Sources */,
 				CEA1C7B327FA145800123225 /* QuestionType.swift in Sources */,
 				D3C5E28727F71D8500F65B8E /* LessonManager.swift in Sources */,
+				62FEFAAC280B4C9A00C0503B /* SnackbarView.swift in Sources */,
 				D3C4422727E878D800676C93 /* FirebaseAuthProvider.swift in Sources */,
 				62E418D327EA5A6900DFF03C /* ProfileManager.swift in Sources */,
 				CEA1C91127FA698900123225 /* FirebasePKGameUpdater.swift in Sources */,
@@ -1856,7 +1879,6 @@
 				D30E491427FAA6E70074CF2B /* Lesson.swift in Sources */,
 				D398780927DF6AB800B2F4ED /* DataProvider.swift in Sources */,
 				D3AF1C302805DDDB00DCFA2E /* SplashViewModel.swift in Sources */,
-				CEF1E7AE27E503B3005D4272 /* Account.swift in Sources */,
 				CEC5887727EAC6E700809403 /* LessonSelectorTableCell.swift in Sources */,
 				CEC5887327EABECC00809403 /* LessonSelectionViewModel.swift in Sources */,
 				D3C5E1CD27F600BA00F65B8E /* DataManager.swift in Sources */,
@@ -1873,6 +1895,7 @@
 				62A03E652801CE9D008FE249 /* VerticalAlignment.swift in Sources */,
 				62165B7627F2244C004BC620 /* FormUtilities.swift in Sources */,
 				CEC5887527EABED600809403 /* LessonSelectionViewModelFromBook.swift in Sources */,
+				62FEFAA7280B4B6300C0503B /* UIViewController+Snackbar.swift in Sources */,
 				D3C4424327E8CB0A00676C93 /* FirebaseDataProvider.swift in Sources */,
 				CEE9806D2806E6840052863B /* DevLoginViewController.swift in Sources */,
 				62FEFAD1280B521800C0503B /* StarTransactionManager.swift in Sources */,
@@ -1904,6 +1927,7 @@
 				CEF3E68C280690A0001F483B /* QuestionSequence.swift in Sources */,
 				D3C5E1DF27F6E36B00F65B8E /* EditProfileViewController.swift in Sources */,
 				D3C5E1E127F6E36B00F65B8E /* RecommendedBooksTableViewCell.swift in Sources */,
+				62FEFAA2280B4B1E00C0503B /* Notification+Names.swift in Sources */,
 				D3C5E1E227F6E36B00F65B8E /* ChangePasswordViewController.swift in Sources */,
 				D3C5E1E327F6E36B00F65B8E /* ProfileBookManager.swift in Sources */,
 				D3C5E1E527F6E36B00F65B8E /* RecommendedBooksViewController.swift in Sources */,
@@ -1937,6 +1961,7 @@
 				D3C5E1F227F6E36B00F65B8E /* HomeNavigationViewController.swift in Sources */,
 				D3C5E1F327F6E36B00F65B8E /* DatabaseErrors.swift in Sources */,
 				D3C5E1F427F6E36B00F65B8E /* SignUpViewController.swift in Sources */,
+				62FEFAB0280B4CC100C0503B /* SnackbarView.swift in Sources */,
 				D3C5E1F527F6E36B00F65B8E /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				D3C5E1F627F6E36B00F65B8E /* StarView.swift in Sources */,
 				62FEFAE8280B536600C0503B /* Reward.swift in Sources */,
@@ -1951,6 +1976,7 @@
 				D3AF1C262805937100DCFA2E /* SettingsViewController.swift in Sources */,
 				CE2771D4280988FB00A739C1 /* PKGamePlayerOutcomeData.swift in Sources */,
 				62A03E682801CF53008FE249 /* AlignedCollectionViewFlowLayout.swift in Sources */,
+				62FEFAA5280B4B3B00C0503B /* UIApplication+Extensions.swift in Sources */,
 				D3C5E1FA27F6E36B00F65B8E /* OptionTableCell.swift in Sources */,
 				D3C5E1FB27F6E36B00F65B8E /* QuestionStatus.swift in Sources */,
 				D3AF1C312805DDE000DCFA2E /* SplashViewModel.swift in Sources */,
@@ -1981,11 +2007,13 @@
 				62BB1CE528002766002CD31A /* UIViewController+Spinner.swift in Sources */,
 				CEF3E69D280690CE001F483B /* PKGameManager.swift in Sources */,
 				CEF3E688280690A0001F483B /* QuestionConstructorRandomFactory.swift in Sources */,
+				62FEFAAF280B4CBF00C0503B /* SnackbarViewModel.swift in Sources */,
 				D3C5E21027F6E36B00F65B8E /* QuestionViewModelFromQuestion.swift in Sources */,
 				62FEFAC7280B508800C0503B /* CurrencyTransaction.swift in Sources */,
 				62A03E5728015158008FE249 /* ProfileLessonManager.swift in Sources */,
 				D3C5E21127F6E36B00F65B8E /* ChangeEmailViewController.swift in Sources */,
 				D3C5E21227F6E36B00F65B8E /* FetchUtilities.swift in Sources */,
+				62FEFAB1280B4CC300C0503B /* SnackbarUtilities.swift in Sources */,
 				CEF3E6A0280690D2001F483B /* QueueEntry.swift in Sources */,
 				D3C5E28527F71D6A00F65B8E /* BookCategoryManager.swift in Sources */,
 				D3C5E21427F6E36B00F65B8E /* KeychainManager.swift in Sources */,
@@ -1993,7 +2021,6 @@
 				62FEFAE5280B535C00C0503B /* PKGameRewardSystem.swift in Sources */,
 				62BB1CEB28003F74002CD31A /* BooksForCategory.swift in Sources */,
 				D3C5E21527F6E36B00F65B8E /* LoginViewModel.swift in Sources */,
-				D3C5E21627F6E36B00F65B8E /* CurrencySystem.swift in Sources */,
 				D3AF1C1B28057DC300DCFA2E /* ThemeProtocol.swift in Sources */,
 				D3C5E21727F6E36B00F65B8E /* TwoDisjointSetOptionQuestionLayoutViewController.swift in Sources */,
 				CEF3E69F280690D2001F483B /* PKGameMoveData.swift in Sources */,
@@ -2002,9 +2029,9 @@
 				CEF3E6A6280690D8001F483B /* PKGameMatchFinder.swift in Sources */,
 				D3686A0727F751440013B289 /* LoginFields.swift in Sources */,
 				D3C5E21827F6E36B00F65B8E /* LessonOverviewViewModel.swift in Sources */,
+				62FEFA9F280B4AFD00C0503B /* DocumentSnapshot+Extensions.swift in Sources */,
 				62A03E5A280176DD008FE249 /* BookButtonDelegate.swift in Sources */,
 				D3C5E21927F6E36B00F65B8E /* LessonSelectionViewController.swift in Sources */,
-				D3C5E21A27F6E36B00F65B8E /* StarsCurrencySystem.swift in Sources */,
 				62FEFAEB280B537200C0503B /* NotificationObserver.swift in Sources */,
 				D3C5E21C27F6E36B00F65B8E /* LessonQuizViewModelFromLesson.swift in Sources */,
 				CEF3E68D280690A0001F483B /* QuestionsGenerator.swift in Sources */,
@@ -2068,6 +2095,7 @@
 				D3C5E24427F6E36B00F65B8E /* CurrentBookTabBarController.swift in Sources */,
 				D3C5E24527F6E36B00F65B8E /* DataProvider.swift in Sources */,
 				D30E491727FAC7C80074CF2B /* Lesson.swift in Sources */,
+				62C2BD3E280B573100ADC96D /* UIViewController+Snackbar.swift in Sources */,
 				D3C5E24627F6E36B00F65B8E /* Account.swift in Sources */,
 				62FEFAD2280B521E00C0503B /* StarTransactionManager.swift in Sources */,
 				D3C5E24727F6E36B00F65B8E /* LessonSelectorTableCell.swift in Sources */,

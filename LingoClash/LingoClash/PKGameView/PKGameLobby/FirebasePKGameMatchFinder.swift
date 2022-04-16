@@ -173,8 +173,13 @@ extension FirebasePKGameMatchFinder {
         return pkGameData
     }
 
+<<<<<<< HEAD
     private func generateGamePlayersProfileData(queueEntries: [QueueEntry],
                                                 currentPlayerProfile: Profile) -> Promise<[ProfileData]> {
+=======
+    private func generateGamePlayersProfileData(queueEntries: [QueueEntry], currentPlayerProfile: Profile)
+        -> Promise<[ProfileData]> {
+>>>>>>> fb4e4a3f (Add more code)
         firstly {
             profileDataManager.getOne(id: currentPlayerProfile.id)
         }.map { currentPlayerProfileData -> [ProfileData] in
