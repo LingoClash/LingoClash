@@ -76,6 +76,7 @@ class DeckViewController: UIViewController {
         unhideAnswerButton()
         hideAnswer()
         // Check if we have 0 words left
+        viewModel?.tapRecallButton()
         if revisionSequence?.questionsLeft == 0 {
             showNoWordsScreen()
         }

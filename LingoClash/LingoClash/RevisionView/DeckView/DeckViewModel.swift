@@ -9,11 +9,6 @@ import Foundation
 
 final class DeckViewModel {
     
-//    @Published var currentBookProgress: BookProgress?
-//    @Published var currentBook: Book?
-//    @Published var lessonSelectionViewModel: LessonSelectionViewModel?
-//    @Published var decks: [Deck] = [Deck(name: "Default Deck", vocabs: [])]
-    
     @Published var deck: Deck
     
     @Published var revisionSequence: RevisionSequence
@@ -55,33 +50,11 @@ final class DeckViewModel {
         return nextQuery
     }
     
+    func tapRecallButton() {
+        
+    }
     
     
     
-//    func fetchDecks() {
-//        // TODO: get current decks from db
-//        decks.append(Deck(name: "default Deck", vocabs: []))
-//
-//    //        self.currentBookProgress = BookProgress(name: "Chinese 1", progress: "0/10")
-//    //        self.currentBook = Book(id: "1", category_id: "1", name: "Chinese 1")
-//    //        guard let currentBook = currentBook else {
-//    //            return
-//    //        }
-//    //        self.lessonSelectionViewModel = LessonSelectionViewModelFromBook(book: currentBook)
-//    }
-//
-//    func deckProgress() {
-//
-//    }
-//
-//    func addDeck(_ deckFields: CreateDeckFields) {
-//        // update locally
-//        decks.append(Deck(name: deckFields.newName, vocabs: []))
-//        print(decks)
-//        // TODO: send an api request if possible
-//    }
-//
-//    func refreshDecks() {
-//        // todo: fetch decks as well
-//    }
+    
 }

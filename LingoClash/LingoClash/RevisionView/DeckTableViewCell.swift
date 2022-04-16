@@ -10,9 +10,6 @@ import UIKit
 class DeckTableViewCell: UITableViewCell {
     
     @IBOutlet weak var deckNameLabel: UILabel!
-    //    @IBOutlet weak var reviseButton: UIButton!
-////    @IBOutlet weak var learnButton: UIButton!
-//    @IBOutlet weak var vocabNoLabel: UILabel!
     @IBOutlet weak var vocabNoLabel: UILabel!
     //
 //    // TODO: decide what kind of progress I want to do (number of words not done? or smth)
