@@ -89,9 +89,13 @@ class RecommendedBooksTableViewController: UITableViewController {
 }
 
 extension RecommendedBooksTableViewController: LearnButtonDelegate {
-    func learnButtonTapped(lessonSelectionVM: LessonSelectionViewModel) {
+    func learnButtonTapped(book: Book) {
+        
         let viewController = LessonSelectionViewController.instantiateFromAppStoryboard(.Lesson)
-        viewController.viewModel = lessonSelectionVM
+        viewController.viewModel = LessonSelectionViewModelFromBook(book: book)
+        
         self.show(viewController, sender: nil)
+        
+        self.viewModel?.learnBook(book: book)
     }
 }

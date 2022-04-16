@@ -178,6 +178,11 @@ class BookManager: DataManager<BookData> {
                 let books = recommendedBooks.filter { book in
                     book.status == .unread && book.category.name == category.name
                 }
+                
+                if books.count == 0 {
+                    continue
+                }
+                
                 let booksForCategory = BooksForCategory(category: category.name, books: books)
                 booksForCategories.append(booksForCategory)
             }
@@ -185,9 +190,10 @@ class BookManager: DataManager<BookData> {
         }
     }
         
+    /// Marks given book as learning and sets it as the current book in profile.
     func markAsLearning(bookId: Identifier) -> Promise<ProfileBookData> {
         firstly {
-            ProfileManager().getCurrentProfile()
+            ProfileManager().setAsCurrentBook(bookId: bookId)
         }.then { currentProfile in
             ProfileBookManager().create(
                 newRecord: ProfileBookData(

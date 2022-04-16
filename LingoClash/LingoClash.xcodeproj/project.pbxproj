@@ -126,7 +126,7 @@
 		CE8D228F27EE2B5A005E7058 /* Lesson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D228D27EE2B5A005E7058 /* Lesson.storyboard */; };
 		CE8D229227EEA8B0005E7058 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D229027EEA8B0005E7058 /* Home.storyboard */; };
 		CE8D229427EEB7EE005E7058 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229327EEB7EE005E7058 /* AppStoryboard.swift */; };
-		CE8D229627EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229527EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift */; };
+		CE8D229627EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229527EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift */; };
 		CE8D229F27EEBBD2005E7058 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229E27EEBBD2005E7058 /* HomeNavigationViewController.swift */; };
 		CE8D22A227EEC059005E7058 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D22A027EEC059005E7058 /* Book.storyboard */; };
 		CEC5886A27EA2A4F00809403 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5886927EA2A4F00809403 /* StarView.swift */; };
@@ -276,7 +276,7 @@
 		D3C5E1F227F6E36B00F65B8E /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229E27EEBBD2005E7058 /* HomeNavigationViewController.swift */; };
 		D3C5E1F327F6E36B00F65B8E /* DatabaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4423B27E8B17400676C93 /* DatabaseErrors.swift */; };
 		D3C5E1F427F6E36B00F65B8E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A0E27DDE59E002D2497 /* SignUpViewController.swift */; };
-		D3C5E1F527F6E36B00F65B8E /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229527EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift */; };
+		D3C5E1F527F6E36B00F65B8E /* UIViewController+InstantiateFromAppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229527EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift */; };
 		D3C5E1F627F6E36B00F65B8E /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5886927EA2A4F00809403 /* StarView.swift */; };
 		D3C5E1F727F6E36B00F65B8E /* LessonTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5887827EAC90A00809403 /* LessonTableCellViewModel.swift */; };
 		D3C5E1F827F6E36B00F65B8E /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7F027E6D120005D4272 /* QuestionViewModel.swift */; };
@@ -503,7 +503,7 @@
 		CE8D228E27EE2B5A005E7058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Lesson.storyboard; sourceTree = "<group>"; };
 		CE8D229127EEA8B0005E7058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		CE8D229327EEB7EE005E7058 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
-		CE8D229527EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+InstantiateFromAppStoryboard.swift"; sourceTree = "<group>"; };
+		CE8D229527EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+InstantiateFromAppStoryboard.swift"; sourceTree = "<group>"; };
 		CE8D229E27EEBBD2005E7058 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
 		CE8D22A127EEC059005E7058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Book.storyboard; sourceTree = "<group>"; };
 		CEC5886927EA2A4F00809403 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
@@ -1084,7 +1084,7 @@
 				D3C4423027E8966C00676C93 /* UIViewController+Alerts.swift */,
 				62BB1CE328002766002CD31A /* UIViewController+Spinner.swift */,
 				62C8BF182809CEE60030D668 /* UIViewController+Snackbar.swift */,
-				CE8D229527EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift */,
+				CE8D229527EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift */,
 				62C8BF1A2809CF140030D668 /* UIApplication+Extensions.swift */,
 				6272AAE328097B2B0028D7A2 /* DocumentSnapshot+Extensions.swift */,
 			);
@@ -1500,7 +1500,7 @@
 				D3C4423C27E8B17400676C93 /* DatabaseErrors.swift in Sources */,
 				62C04A0F27DDE59E002D2497 /* SignUpViewController.swift in Sources */,
 				D3AF1C1828057C7600DCFA2E /* LightTheme.swift in Sources */,
-				CE8D229627EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
+				CE8D229627EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				CEC5886A27EA2A4F00809403 /* StarView.swift in Sources */,
 				D3C5E27A27F6F3E900F65B8E /* SampleDataUtilities.swift in Sources */,
 				CEC5887927EAC90A00809403 /* LessonTableCellViewModel.swift in Sources */,
@@ -1688,7 +1688,7 @@
 				D3C5E1F327F6E36B00F65B8E /* DatabaseErrors.swift in Sources */,
 				62C39FB728069E310079D19B /* StarAccountManager.swift in Sources */,
 				D3C5E1F427F6E36B00F65B8E /* SignUpViewController.swift in Sources */,
-				D3C5E1F527F6E36B00F65B8E /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
+				D3C5E1F527F6E36B00F65B8E /* UIViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				D3C5E1F627F6E36B00F65B8E /* StarView.swift in Sources */,
 				62BB1CE228002135002CD31A /* HomeViewModel.swift in Sources */,
 				D3C5E27B27F6F3E900F65B8E /* SampleDataUtilities.swift in Sources */,
