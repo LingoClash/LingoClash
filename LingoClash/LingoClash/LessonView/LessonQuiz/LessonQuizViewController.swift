@@ -89,6 +89,4 @@ extension LessonQuizViewController: QuestionViewControllerDelegate {
     func questionViewController(_: QuestionViewController, didAnswerCorrectly: Bool) {
         viewModel?.questionDidComplete(isCorrect: didAnswerCorrectly)
     }
-    
-    
 }

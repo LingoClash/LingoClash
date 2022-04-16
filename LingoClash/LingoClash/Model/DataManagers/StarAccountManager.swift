@@ -61,7 +61,7 @@ class StarAccountManager: DataManager<StarAccountData> {
         var updatedAccountData: StarAccountData?
         var updatedAccount: CurrencyAccount<Star>?
 
-        let accountData = StarAccountData(id: account.id, owner_id: account.owner.id, balance: account.balance)
+        let accountData = StarAccountData(id: account.id, ownerId: account.owner.id, balance: account.balance)
         
         return self.update(id: account.id, to: accountData)
         .done { starAccountData in
@@ -71,7 +71,7 @@ class StarAccountManager: DataManager<StarAccountData> {
                 return Promise.reject(reason: DataManagerError.dataNotFound)
             }
 
-            let transactionData = StarTransactionData(id: "", account_id: account.id, amount: newTransaction.amount,
+            let transactionData = StarTransactionData(id: "-1", account_id: account.id, amount: newTransaction.amount,
                                                       createdAt: newTransaction.createdAt, debitOrCredit: newTransaction.debitOrCredit,
                                                       description: newTransaction.description)
             return StarTransactionManager().create(newRecord: transactionData)

@@ -111,7 +111,6 @@ class ProfileManager: DataManager<ProfileData> {
                 book_id: bookId,
                 user_id: profileData.user_id,
                 stars: profileData.stars,
-                stars_today: profileData.stars_today,
                 stars_goal: profileData.stars_goal,
                 bio: profileData.bio,
                 days_learning: profileData.days_learning,
@@ -120,6 +119,28 @@ class ProfileManager: DataManager<ProfileData> {
             )
             
             return self.update(id: profileData.id, to: newProfileData)
+        }
+    }
+    
+    func createProfile(params: SignUpFields, userId: Identifier) -> Promise<Profile> {
+        let profileData = ProfileData(userId: userId)
+        var profile: Profile?
+        
+        return firstly {
+            self.create(newRecord: profileData)
+        }.then { _ in
+            self.getCurrentProfile()
+        }.done { currProfile in
+            profile = currProfile
+            let starAccountData = StarAccountData(ownerId: currProfile.id)
+            StarAccountManager().create(newRecord: starAccountData).catch { error in
+                print(error)
+            }
+        }.compactMap {
+            guard let profile = profile else {
+                return nil
+            }
+            return profile
         }
     }
     
@@ -133,7 +154,6 @@ class ProfileManager: DataManager<ProfileData> {
                 book_id: profileData.book_id,
                 user_id: profileData.user_id,
                 stars: profileData.stars,
-                stars_today: profileData.stars_today,
                 stars_goal: starsGoal,
                 bio: bio,
                 days_learning: profileData.days_learning,
@@ -145,4 +165,25 @@ class ProfileManager: DataManager<ProfileData> {
         }
     }
     
+    func updateProfile(stars: Int, vocabsLearnt: Int) -> Promise<ProfileData> {
+        
+        return firstly {
+            self.getCurrentProfileData()
+        }.then { profileData -> Promise<ProfileData> in
+            let newProfileData = ProfileData(
+                id: profileData.id,
+                book_id: profileData.book_id,
+                user_id: profileData.user_id,
+                stars: stars,
+                stars_goal: profileData.stars_goal,
+                bio: profileData.bio,
+                days_learning: profileData.days_learning,
+                vocabs_learnt: vocabsLearnt,
+                pk_winning_rate: profileData.pk_winning_rate
+            )
+            
+            return self.update(id: profileData.id, to: newProfileData)
+        }
+    }
+
 }

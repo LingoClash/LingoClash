@@ -35,49 +35,9 @@ class FirebaseAuthProvider: AuthProvider {
                 
                 return seal.fulfill(result)
             }
-        }.then { result -> Promise<Void> in
-            guard let _ = result else {
-                return Promise.reject(reason: FirebaseAuthError.invalidAuthDataResult)
-            }
-            
-            return Promise { seal in
-                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                changeRequest?.displayName = params.name
-                changeRequest?.commitChanges { error in
-                    if let error = error {
-                        return seal.reject(error)
-                    }
-    
-                    return seal.fulfill(())
-                }
-            }
-        }.then {
+        }.then { _ in
             self.getIdentity()
-        }.then { result -> Promise<UserIdentity> in
-
-            return Promise { seal in
-                let db = Firestore.firestore()
-                
-                // TODO: use codable object for this
-                db.collection("profiles").addDocument(
-                    data: [
-                        "user_id": result.id as Any,
-                        "stars": 0,
-                        "stars_today": 0,
-                        "stars_goal": 10,
-                        "bio": "这个人很懒，什么都没留下。",
-                        "days_learning": 0,
-                        "vocabs_learnt": 0,
-                        "pk_winning_rate": 100,
-                    ]) { error in
-                        if let error = error {
-                            return seal.reject(error)
-                        }
-                        return seal.fulfill(result)
-                    }
-            }
         }
-        
     }
     
     func login(params: LoginFields) -> Promise<Void> {

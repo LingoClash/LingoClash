@@ -18,11 +18,12 @@ class LessonQuizRewardSystem: RewardSystem {
         guard let dict = notification.userInfo, let star_count = dict["stars"] as? Int else {
             return
         }
-                
+        
+        // TODO: Check number of stars before assigning
         firstly {
             StarAccountManager().getStarAccount()
         }.done { currencyAccount in
-            let transaction = CurrencyTransaction<Star>.init(id: "", debitOrCredit: .debit, amount: star_count, account: currencyAccount)
+            let transaction = CurrencyTransaction<Star>.init(id: "-1", debitOrCredit: .debit, amount: star_count, account: currencyAccount)
             let reward = Reward(transactions: [transaction])
 
             reward.presentReward()

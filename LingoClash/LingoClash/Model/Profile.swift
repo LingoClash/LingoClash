@@ -26,7 +26,8 @@ struct Profile: AccountOwner {
         self.name = userIdentity.fullName ?? ""
         self.email = userIdentity.email ?? ""
         self.stars = profileData.stars
-        self.starsToday = profileData.stars_today
+        // TODO: get stars today from stars transaction
+        self.starsToday = 0
         self.currentBook = currentBook
         self.starsGoal = profileData.stars_goal
         self.bio = profileData.bio

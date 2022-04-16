@@ -14,8 +14,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         MainRewardSystem.setUpObservers()
-        viewModel.refresh()
         SnackbarUtilities.showSnackbar(type: .info, text: "Welcome home!")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.refresh()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

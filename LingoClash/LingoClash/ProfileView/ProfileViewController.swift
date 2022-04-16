@@ -28,9 +28,11 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.refresh()
         setUpBinders()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.refresh()
     }
     
     func setUpBinders() {
