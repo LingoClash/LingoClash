@@ -37,10 +37,10 @@ class DeckManager: DataManager<DeckData> {
             var vocabPromises = [Promise<Void>]()
             // [Promise<VocabData>]
             for (deckData, revisionVocabData) in revisionVocabByDeckData {
-                    
+                print(revisionVocabData)
                 vocabPromises.append(
                     firstly {
-                        VocabManager().getMany(ids: revisionVocabData.map{$0.id})
+                        return VocabManager().getMany(ids: revisionVocabData.map{$0.id})
                     }.done { vocabData in
                         vocabByDeckData[deckData] = vocabData
                     }

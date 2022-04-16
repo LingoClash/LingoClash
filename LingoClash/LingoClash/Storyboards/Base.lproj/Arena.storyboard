@@ -33,7 +33,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arena feature coming soon..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xu4-VY-sdG">
-                                <rect key="frame" x="231" y="722" width="358" height="36"/>
+                                <rect key="frame" x="217" y="722.5" width="386.5" height="35"/>
                                 <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="30"/>
                                 <color key="textColor" name="Secondary"/>
                                 <nil key="highlightedColor"/>

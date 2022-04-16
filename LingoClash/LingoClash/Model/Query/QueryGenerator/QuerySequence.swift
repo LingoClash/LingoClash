@@ -13,5 +13,6 @@ protocol QuerySequence {
     var questionsLeft: Int? { get }
     
     mutating func next() -> Query?
+    
 
 }

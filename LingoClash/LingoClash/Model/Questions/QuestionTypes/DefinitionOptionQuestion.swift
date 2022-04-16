@@ -6,7 +6,7 @@
 //
 
 /// Returns a question that gives a word and asks for its definition
-struct DefinitionOptionQuestion: SimpleOptionQuestion {
+struct DefinitionOptionQuestion: SimpleOptionQuestion, Codable {
     static let vocabsTestedCount: Int = 1
     static let optionsCount: Int = 4
     // Represents the vocabs that are in the scope of the question
@@ -26,11 +26,20 @@ struct DefinitionOptionQuestion: SimpleOptionQuestion {
         
         self.vocabsTested = vocabsTested
     }
-    
+
     func isCorrect(response: Any) -> Bool {
         guard let response = response as? String else {
             return false
         }
         return response == answer
     }
+
+    func isEqual(to other: Question) -> Bool {
+        guard let other = other as? DefinitionOptionQuestion else {
+            return false
+        }
+        return self == other
+    }
 }
+
+extension DefinitionOptionQuestion: Equatable {}

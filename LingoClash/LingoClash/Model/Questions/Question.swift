@@ -13,4 +13,5 @@ protocol Question: Query, Answerable {
     
     var context: String { get }
     func isCorrect(response: Any) -> Bool
+    func isEqual(to: Question) -> Bool
 }
