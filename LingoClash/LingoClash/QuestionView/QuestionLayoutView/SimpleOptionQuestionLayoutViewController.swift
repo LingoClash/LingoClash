@@ -41,9 +41,9 @@ class SimpleOptionQuestionLayoutViewController: UIViewController, QuestionLayout
             return
         }
 
-        viewModel.questionStatus.bindAndFire { [unowned self] in
+        viewModel.questionStatus.bindAndFire { [weak self] in
             if $0 != .incomplete {
-                handleQuestionCompletion($0)
+                self?.handleQuestionCompletion($0)
             }
         }
         self.contextLabel.text = viewModel.context

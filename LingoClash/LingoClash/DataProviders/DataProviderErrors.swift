@@ -6,13 +6,15 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case invalidURL
-    case invalidParams
-    case invalidResponse
-}
+struct DataProviderErrors {
+    enum NetworkError: Error {
+        case invalidURL
+        case invalidParams
+        case invalidResponse
+    }
 
-enum HTTPError: Error {
-    case transportError(Error)
-    case serverSideError(Int)
+    enum HTTPError: Error {
+        case transportError(Error)
+        case serverSideError(Int)
+    }
 }

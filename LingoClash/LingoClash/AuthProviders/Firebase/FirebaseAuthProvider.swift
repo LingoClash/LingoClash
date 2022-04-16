@@ -102,7 +102,7 @@ class FirebaseAuthProvider: AuthProvider {
         return Promise<Void>.resolve(value: ())
     }
 
-    func checkError(error: HTTPError) -> Promise<Void> {
+    func checkError(error: DataProviderErrors.HTTPError) -> Promise<Void> {
         Promise<Void>.resolve(value: ())
     }
 
