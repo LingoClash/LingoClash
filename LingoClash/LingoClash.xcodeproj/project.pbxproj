@@ -63,6 +63,43 @@
 		62E418CF27EA526200DFF03C /* ProfileLessonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418CE27EA526200DFF03C /* ProfileLessonData.swift */; };
 		62E418D127EA53A800DFF03C /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418D027EA53A800DFF03C /* ProfileData.swift */; };
 		62E418D327EA5A6900DFF03C /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E418D227EA5A6900DFF03C /* ProfileManager.swift */; };
+		62FEFAB2280B4EDC00C0503B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6204A03E27DE43350063100D /* ProfileViewController.swift */; };
+		62FEFAB6280B4FB300C0503B /* AccountOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAB5280B4FB300C0503B /* AccountOwner.swift */; };
+		62FEFAB8280B4FC900C0503B /* CurrencyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAB7280B4FC900C0503B /* CurrencyAccount.swift */; };
+		62FEFABA280B4FE700C0503B /* ItemAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAB9280B4FE700C0503B /* ItemAccount.swift */; };
+		62FEFABC280B500E00C0503B /* CurrencyTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFABB280B500E00C0503B /* CurrencyTypes.swift */; };
+		62FEFABE280B502500C0503B /* ItemTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFABD280B502500C0503B /* ItemTypes.swift */; };
+		62FEFAC0280B504F00C0503B /* CurrencyTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFABF280B504F00C0503B /* CurrencyTransaction.swift */; };
+		62FEFAC2280B505A00C0503B /* ItemTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAC1280B505A00C0503B /* ItemTransaction.swift */; };
+		62FEFAC4280B506100C0503B /* DebitOrCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAC3280B506100C0503B /* DebitOrCredit.swift */; };
+		62FEFAC5280B508400C0503B /* ItemTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAC1280B505A00C0503B /* ItemTransaction.swift */; };
+		62FEFAC6280B508600C0503B /* DebitOrCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAC3280B506100C0503B /* DebitOrCredit.swift */; };
+		62FEFAC7280B508800C0503B /* CurrencyTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFABF280B504F00C0503B /* CurrencyTransaction.swift */; };
+		62FEFAC8280B508D00C0503B /* AccountOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAB5280B4FB300C0503B /* AccountOwner.swift */; };
+		62FEFAC9280B508F00C0503B /* CurrencyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAB7280B4FC900C0503B /* CurrencyAccount.swift */; };
+		62FEFACA280B509200C0503B /* ItemAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAB9280B4FE700C0503B /* ItemAccount.swift */; };
+		62FEFACB280B509500C0503B /* CurrencyTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFABB280B500E00C0503B /* CurrencyTypes.swift */; };
+		62FEFACC280B509700C0503B /* ItemTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFABD280B502500C0503B /* ItemTypes.swift */; };
+		62FEFACE280B51FA00C0503B /* StarAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFACD280B51FA00C0503B /* StarAccountManager.swift */; };
+		62FEFACF280B520800C0503B /* StarAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFACD280B51FA00C0503B /* StarAccountManager.swift */; };
+		62FEFAD1280B521800C0503B /* StarTransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAD0280B521800C0503B /* StarTransactionManager.swift */; };
+		62FEFAD2280B521E00C0503B /* StarTransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAD0280B521800C0503B /* StarTransactionManager.swift */; };
+		62FEFAD4280B52DE00C0503B /* StarAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAD3280B52DE00C0503B /* StarAccountData.swift */; };
+		62FEFAD5280B52EC00C0503B /* StarAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAD3280B52DE00C0503B /* StarAccountData.swift */; };
+		62FEFAD7280B530000C0503B /* StarTransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAD6280B530000C0503B /* StarTransactionData.swift */; };
+		62FEFAD8280B530000C0503B /* StarTransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAD6280B530000C0503B /* StarTransactionData.swift */; };
+		62FEFADB280B533100C0503B /* LessonQuizRewardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFADA280B533100C0503B /* LessonQuizRewardSystem.swift */; };
+		62FEFADC280B533100C0503B /* LessonQuizRewardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFADA280B533100C0503B /* LessonQuizRewardSystem.swift */; };
+		62FEFADE280B534100C0503B /* RewardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFADD280B534100C0503B /* RewardSystem.swift */; };
+		62FEFADF280B534100C0503B /* RewardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFADD280B534100C0503B /* RewardSystem.swift */; };
+		62FEFAE1280B534D00C0503B /* MainRewardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE0280B534D00C0503B /* MainRewardSystem.swift */; };
+		62FEFAE2280B534D00C0503B /* MainRewardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE0280B534D00C0503B /* MainRewardSystem.swift */; };
+		62FEFAE4280B535C00C0503B /* PKGameRewardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE3280B535C00C0503B /* PKGameRewardSystem.swift */; };
+		62FEFAE5280B535C00C0503B /* PKGameRewardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE3280B535C00C0503B /* PKGameRewardSystem.swift */; };
+		62FEFAE7280B536600C0503B /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE6280B536600C0503B /* Reward.swift */; };
+		62FEFAE8280B536600C0503B /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE6280B536600C0503B /* Reward.swift */; };
+		62FEFAEA280B537200C0503B /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE9280B537200C0503B /* NotificationObserver.swift */; };
+		62FEFAEB280B537200C0503B /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE9280B537200C0503B /* NotificationObserver.swift */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
 		6FA0243A27E1BBBE00F94E54 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243927E1BBBE00F94E54 /* FirebaseAuthCombine-Community */; };
 		6FA0243C27E1BBBE00F94E54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243B27E1BBBE00F94E54 /* FirebaseDatabase */; };
@@ -163,7 +200,6 @@
 		CEF02D7B27E9577C00C30E03 /* LessonQuizResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF02D7A27E9577C00C30E03 /* LessonQuizResult.swift */; };
 		CEF02D9027E9910500C30E03 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = CEF02D8F27E9910500C30E03 /* Algorithms */; };
 		CEF1E7A827E50082005D4272 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7A727E50082005D4272 /* Transaction.swift */; };
-		CEF1E7AA27E50093005D4272 /* StarsTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7A927E50093005D4272 /* StarsTransaction.swift */; };
 		CEF1E7AC27E5030C005D4272 /* CurrencySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7AB27E5030C005D4272 /* CurrencySystem.swift */; };
 		CEF1E7AE27E503B3005D4272 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7AD27E503B3005D4272 /* Account.swift */; };
 		CEF1E7B327E5071C005D4272 /* StarsCurrencySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7B227E5071C005D4272 /* StarsCurrencySystem.swift */; };
@@ -176,7 +212,6 @@
 		CEF1E7E227E60D68005D4272 /* LessonQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7E127E60D68005D4272 /* LessonQuizViewModel.swift */; };
 		CEF1E7E427E61CF1005D4272 /* VocabCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7E327E61CF1005D4272 /* VocabCollectionCell.swift */; };
 		CEF1E7E627E61EF0005D4272 /* LessonOverviewViewModelFromLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7E527E61EF0005D4272 /* LessonOverviewViewModelFromLesson.swift */; };
-		CEF1E7E827E61F58005D4272 /* OldLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7E727E61F58005D4272 /* OldLesson.swift */; };
 		CEF1E7EA27E61F68005D4272 /* Vocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7E927E61F68005D4272 /* Vocab.swift */; };
 		CEF1E7EC27E63A2B005D4272 /* LessonVocabViewModelFromLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7EB27E63A2B005D4272 /* LessonVocabViewModelFromLesson.swift */; };
 		CEF1E7EF27E6D117005D4272 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7EE27E6D117005D4272 /* QuestionViewController.swift */; };
@@ -333,7 +368,6 @@
 		D3C5E20927F6E36B00F65B8E /* AuthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4423927E8B15900676C93 /* AuthErrors.swift */; };
 		D3C5E20A27F6E36B00F65B8E /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F00CB227DFC59500393ADC /* BookData.swift */; };
 		D3C5E20B27F6E36B00F65B8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33282DF27D4D42700C80986 /* SceneDelegate.swift */; };
-		D3C5E20C27F6E36B00F65B8E /* StarsTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7A927E50093005D4272 /* StarsTransaction.swift */; };
 		D3C5E20D27F6E36B00F65B8E /* LessonQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7E127E60D68005D4272 /* LessonQuizViewModel.swift */; };
 		D3C5E20E27F6E36B00F65B8E /* QuestionLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E81E27E74C6F005D4272 /* QuestionLayoutViewController.swift */; };
 		D3C5E21027F6E36B00F65B8E /* QuestionViewModelFromQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7F827E6D567005D4272 /* QuestionViewModelFromQuestion.swift */; };
@@ -365,7 +399,6 @@
 		D3C5E23027F6E36B00F65B8E /* LessonOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7D427E60C1F005D4272 /* LessonOverviewViewController.swift */; };
 		D3C5E23127F6E36B00F65B8E /* AppConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6204A03927DE1CDB0063100D /* AppConfigs.swift */; };
 		D3C5E23227F6E36B00F65B8E /* SimpleOptionQuestionLayoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E81527E742BF005D4272 /* SimpleOptionQuestionLayoutViewModel.swift */; };
-		D3C5E23327F6E36B00F65B8E /* OldLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1E7E727E61F58005D4272 /* OldLesson.swift */; };
 		D3C5E23427F6E36B00F65B8E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4423F27E8C65600676C93 /* Logger.swift */; };
 		D3C5E23527F6E36B00F65B8E /* DataProviderErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4423D27E8B20000676C93 /* DataProviderErrors.swift */; };
 		D3C5E23627F6E36B00F65B8E /* FirebaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4422627E878D800676C93 /* FirebaseAuthProvider.swift */; };
@@ -499,6 +532,24 @@
 		62E418CE27EA526200DFF03C /* ProfileLessonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLessonData.swift; sourceTree = "<group>"; };
 		62E418D027EA53A800DFF03C /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		62E418D227EA5A6900DFF03C /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		62FEFAB5280B4FB300C0503B /* AccountOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOwner.swift; sourceTree = "<group>"; };
+		62FEFAB7280B4FC900C0503B /* CurrencyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyAccount.swift; sourceTree = "<group>"; };
+		62FEFAB9280B4FE700C0503B /* ItemAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAccount.swift; sourceTree = "<group>"; };
+		62FEFABB280B500E00C0503B /* CurrencyTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTypes.swift; sourceTree = "<group>"; };
+		62FEFABD280B502500C0503B /* ItemTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTypes.swift; sourceTree = "<group>"; };
+		62FEFABF280B504F00C0503B /* CurrencyTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTransaction.swift; sourceTree = "<group>"; };
+		62FEFAC1280B505A00C0503B /* ItemTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTransaction.swift; sourceTree = "<group>"; };
+		62FEFAC3280B506100C0503B /* DebitOrCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebitOrCredit.swift; sourceTree = "<group>"; };
+		62FEFACD280B51FA00C0503B /* StarAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarAccountManager.swift; sourceTree = "<group>"; };
+		62FEFAD0280B521800C0503B /* StarTransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTransactionManager.swift; sourceTree = "<group>"; };
+		62FEFAD3280B52DE00C0503B /* StarAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarAccountData.swift; sourceTree = "<group>"; };
+		62FEFAD6280B530000C0503B /* StarTransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTransactionData.swift; sourceTree = "<group>"; };
+		62FEFADA280B533100C0503B /* LessonQuizRewardSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonQuizRewardSystem.swift; sourceTree = "<group>"; };
+		62FEFADD280B534100C0503B /* RewardSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardSystem.swift; sourceTree = "<group>"; };
+		62FEFAE0280B534D00C0503B /* MainRewardSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRewardSystem.swift; sourceTree = "<group>"; };
+		62FEFAE3280B535C00C0503B /* PKGameRewardSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGameRewardSystem.swift; sourceTree = "<group>"; };
+		62FEFAE6280B536600C0503B /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
+		62FEFAE9280B537200C0503B /* NotificationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
 		CE2771CF2809882500A739C1 /* PKGamePlayerOutcomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGamePlayerOutcomeManager.swift; sourceTree = "<group>"; };
 		CE2771D2280988C600A739C1 /* PKGamePlayerOutcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGamePlayerOutcomeData.swift; sourceTree = "<group>"; };
 		CE673C1F27F8B46100321BB8 /* PKGameLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGameLobbyViewController.swift; sourceTree = "<group>"; };
@@ -576,7 +627,6 @@
 		CEF02D7827E9573700C30E03 /* LessonQuizOutcomeViewModelFromQuizResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonQuizOutcomeViewModelFromQuizResult.swift; sourceTree = "<group>"; };
 		CEF02D7A27E9577C00C30E03 /* LessonQuizResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonQuizResult.swift; sourceTree = "<group>"; };
 		CEF1E7A727E50082005D4272 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		CEF1E7A927E50093005D4272 /* StarsTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsTransaction.swift; sourceTree = "<group>"; };
 		CEF1E7AB27E5030C005D4272 /* CurrencySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySystem.swift; sourceTree = "<group>"; };
 		CEF1E7AD27E503B3005D4272 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CEF1E7B227E5071C005D4272 /* StarsCurrencySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsCurrencySystem.swift; sourceTree = "<group>"; };
@@ -589,7 +639,6 @@
 		CEF1E7E127E60D68005D4272 /* LessonQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonQuizViewModel.swift; sourceTree = "<group>"; };
 		CEF1E7E327E61CF1005D4272 /* VocabCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabCollectionCell.swift; sourceTree = "<group>"; };
 		CEF1E7E527E61EF0005D4272 /* LessonOverviewViewModelFromLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonOverviewViewModelFromLesson.swift; sourceTree = "<group>"; };
-		CEF1E7E727E61F58005D4272 /* OldLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldLesson.swift; sourceTree = "<group>"; };
 		CEF1E7E927E61F68005D4272 /* Vocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocab.swift; sourceTree = "<group>"; };
 		CEF1E7EB27E63A2B005D4272 /* LessonVocabViewModelFromLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonVocabViewModelFromLesson.swift; sourceTree = "<group>"; };
 		CEF1E7EE27E6D117005D4272 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -820,6 +869,41 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
+		62FEFAB3280B4F8000C0503B /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				CEF1E7AD27E503B3005D4272 /* Account.swift */,
+				62FEFAB5280B4FB300C0503B /* AccountOwner.swift */,
+				62FEFAB7280B4FC900C0503B /* CurrencyAccount.swift */,
+				62FEFAB9280B4FE700C0503B /* ItemAccount.swift */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
+		62FEFAB4280B4F8A00C0503B /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				CEF1E7A727E50082005D4272 /* Transaction.swift */,
+				62FEFABF280B504F00C0503B /* CurrencyTransaction.swift */,
+				62FEFAC3280B506100C0503B /* DebitOrCredit.swift */,
+				62FEFAC1280B505A00C0503B /* ItemTransaction.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		62FEFAD9280B531F00C0503B /* RewardSystem */ = {
+			isa = PBXGroup;
+			children = (
+				62FEFAE6280B536600C0503B /* Reward.swift */,
+				62FEFAE9280B537200C0503B /* NotificationObserver.swift */,
+				62FEFADA280B533100C0503B /* LessonQuizRewardSystem.swift */,
+				62FEFAE3280B535C00C0503B /* PKGameRewardSystem.swift */,
+				62FEFAE0280B534D00C0503B /* MainRewardSystem.swift */,
+				62FEFADD280B534100C0503B /* RewardSystem.swift */,
+			);
+			path = RewardSystem;
+			sourceTree = "<group>";
+		};
 		CE673C1B27F8B3CE00321BB8 /* PKGameView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1016,14 +1100,15 @@
 			path = LessonQuizOutcome;
 			sourceTree = "<group>";
 		};
-		CEF1E7A627E50060005D4272 /* Currency */ = {
+		CEF1E7A627E50060005D4272 /* AccountSystem */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1E7A727E50082005D4272 /* Transaction.swift */,
-				CEF1E7A927E50093005D4272 /* StarsTransaction.swift */,
-				CEF1E7AD27E503B3005D4272 /* Account.swift */,
+				62FEFAB4280B4F8A00C0503B /* Transactions */,
+				62FEFAB3280B4F8000C0503B /* Accounts */,
+				62FEFABB280B500E00C0503B /* CurrencyTypes.swift */,
+				62FEFABD280B502500C0503B /* ItemTypes.swift */,
 			);
-			path = Currency;
+			path = AccountSystem;
 			sourceTree = "<group>";
 		};
 		CEF1E7B127E50706005D4272 /* CurrencySystem */ = {
@@ -1156,17 +1241,17 @@
 		D33282FC27D5258000C80986 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				62FEFAD9280B531F00C0503B /* RewardSystem */,
 				D3C4423B27E8B17400676C93 /* DatabaseErrors.swift */,
 				CEA1C87827FA14FA00123225 /* PKGame */,
 				CEA1C75827FA145800123225 /* Questions */,
 				62165B7727F2269F004BC620 /* FormFields */,
-				CEF1E7A627E50060005D4272 /* Currency */,
+				CEF1E7A627E50060005D4272 /* AccountSystem */,
 				D3F00CB627DFC5F200393ADC /* DataManagers */,
 				D3C5E28227F71C8E00F65B8E /* Records */,
 				D30E490827FA1E630074CF2B /* Book.swift */,
 				D30E490D27FA20140074CF2B /* BookCategory.swift */,
 				62BB1CE928003F74002CD31A /* BooksForCategory.swift */,
-				CEF1E7E727E61F58005D4272 /* OldLesson.swift */,
 				CEF1E7E927E61F68005D4272 /* Vocab.swift */,
 				624BD58A27E7A431006F0391 /* BookProgress.swift */,
 				D30E491127FAA6880074CF2B /* Profile.swift */,
@@ -1338,6 +1423,8 @@
 				CEF3E67D28066B80001F483B /* PKGameData.swift */,
 				CEF3E68128068701001F483B /* PKGameMoveData.swift */,
 				CE2771D2280988C600A739C1 /* PKGamePlayerOutcomeData.swift */,
+				62FEFAD3280B52DE00C0503B /* StarAccountData.swift */,
+				62FEFAD6280B530000C0503B /* StarTransactionData.swift */,
 			);
 			path = Records;
 			sourceTree = "<group>";
@@ -1358,6 +1445,8 @@
 				CE673C4027F99ED300321BB8 /* QueueEntryDataManager.swift */,
 				CE673C4627F9B8AF00321BB8 /* PKGameManager.swift */,
 				CE2771CF2809882500A739C1 /* PKGamePlayerOutcomeManager.swift */,
+				62FEFACD280B51FA00C0503B /* StarAccountManager.swift */,
+				62FEFAD0280B521800C0503B /* StarTransactionManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -1601,6 +1690,7 @@
 				624BD58D27E7A673006F0391 /* RecommendedBooksViewController.swift in Sources */,
 				CEF1E7E027E60D5C005D4272 /* LessonVocabViewModel.swift in Sources */,
 				62BB1CEA28003F74002CD31A /* BooksForCategory.swift in Sources */,
+				62FEFAE1280B534D00C0503B /* MainRewardSystem.swift in Sources */,
 				CEC5886C27EA37E900809403 /* VocabsLearntTableCell.swift in Sources */,
 				CE673C2427F8B48300321BB8 /* PKGameQuizViewController.swift in Sources */,
 				CEA1C8CE27FA14FA00123225 /* PKGame.swift in Sources */,
@@ -1619,7 +1709,9 @@
 				624989E127E73C4E0092FC1B /* CompletedBooksViewController.swift in Sources */,
 				D33282DE27D4D42700C80986 /* AppDelegate.swift in Sources */,
 				CEF1E7EC27E63A2B005D4272 /* LessonVocabViewModelFromLesson.swift in Sources */,
+				62FEFAC0280B504F00C0503B /* CurrencyTransaction.swift in Sources */,
 				62165B7927F226AF004BC620 /* FormFields.swift in Sources */,
+				62FEFAC4280B506100C0503B /* DebitOrCredit.swift in Sources */,
 				D3F00CAF27DFC00200393ADC /* DataProviderTypes.swift in Sources */,
 				CE8D229F27EEBBD2005E7058 /* HomeNavigationViewController.swift in Sources */,
 				D3C4423C27E8B17400676C93 /* DatabaseErrors.swift in Sources */,
@@ -1628,7 +1720,9 @@
 				CE8D229627EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				CEC5886A27EA2A4F00809403 /* StarView.swift in Sources */,
 				D3C5E27A27F6F3E900F65B8E /* SampleDataUtilities.swift in Sources */,
+				62FEFAB2280B4EDC00C0503B /* ProfileViewController.swift in Sources */,
 				CEC5887927EAC90A00809403 /* LessonTableCellViewModel.swift in Sources */,
+				62FEFAC2280B505A00C0503B /* ItemTransaction.swift in Sources */,
 				CEF1E7F127E6D120005D4272 /* QuestionViewModel.swift in Sources */,
 				CEA1C7B727FA145800123225 /* QuestionFormat.swift in Sources */,
 				CEF1E81827E742FE005D4272 /* TwoDisjointSetOptionQuestionLayoutViewModel.swift in Sources */,
@@ -1662,12 +1756,14 @@
 				CEA1C7AD27FA145800123225 /* QuestionIterator.swift in Sources */,
 				D3F00CB327DFC59500393ADC /* BookData.swift in Sources */,
 				CEA1C8F927FA14FA00123225 /* PKGameMove.swift in Sources */,
+				62FEFAD4280B52DE00C0503B /* StarAccountData.swift in Sources */,
 				D33282E027D4D42700C80986 /* SceneDelegate.swift in Sources */,
-				CEF1E7AA27E50093005D4272 /* StarsTransaction.swift in Sources */,
+				62FEFABC280B500E00C0503B /* CurrencyTypes.swift in Sources */,
 				CEA1C7AE27FA145800123225 /* QuestionConstructorRandomFactory.swift in Sources */,
 				62BB1CE128002135002CD31A /* HomeViewModel.swift in Sources */,
 				CEF1E7E227E60D68005D4272 /* LessonQuizViewModel.swift in Sources */,
 				CEF1E81F27E74C6F005D4272 /* QuestionLayoutViewController.swift in Sources */,
+				62FEFAEA280B537200C0503B /* NotificationObserver.swift in Sources */,
 				CEA1C90D27FA68C600123225 /* PKGameUpdateListener.swift in Sources */,
 				CEF1E7F927E6D568005D4272 /* QuestionViewModelFromQuestion.swift in Sources */,
 				CE673C2F27F9315700321BB8 /* PKGameLobbyViewModelFromProfile.swift in Sources */,
@@ -1687,6 +1783,7 @@
 				CEA1C90927FA67BC00123225 /* PKGameEngine.swift in Sources */,
 				CE8D229427EEB7EE005E7058 /* AppStoryboard.swift in Sources */,
 				62A03E612801CE6E008FE249 /* Alignment.swift in Sources */,
+				62FEFABE280B502500C0503B /* ItemTypes.swift in Sources */,
 				CEF1E7F527E6D143005D4272 /* QuestionLayoutViewModel.swift in Sources */,
 				D3C4423127E8966C00676C93 /* UIViewController+Alerts.swift in Sources */,
 				D3C5E28027F71C7300F65B8E /* VocabData.swift in Sources */,
@@ -1705,6 +1802,7 @@
 				D30E490927FA1E630074CF2B /* Book.swift in Sources */,
 				CEF1E7E627E61EF0005D4272 /* LessonOverviewViewModelFromLesson.swift in Sources */,
 				CEA1C7AC27FA145800123225 /* QuestionGenerationError.swift in Sources */,
+				62FEFAB8280B4FC900C0503B /* CurrencyAccount.swift in Sources */,
 				62165B7D27F226C7004BC620 /* LoginFields.swift in Sources */,
 				620DF3CE27F231BD006A9E5F /* EditProfileFields.swift in Sources */,
 				62A03E59280176CA008FE249 /* BookButtonDelegate.swift in Sources */,
@@ -1714,10 +1812,10 @@
 				CEF1E7D527E60C1F005D4272 /* LessonOverviewViewController.swift in Sources */,
 				CEA1C7B627FA145800123225 /* MatchVocabToDefinitionQuestion.swift in Sources */,
 				6204A03A27DE1CDB0063100D /* AppConfigs.swift in Sources */,
+				62FEFADE280B534100C0503B /* RewardSystem.swift in Sources */,
 				CE673C2A27F8B4DD00321BB8 /* PKGameOverviewViewModel.swift in Sources */,
 				CEA1C7B827FA145800123225 /* SimpleOptionQuestion.swift in Sources */,
 				CEF1E81627E742BF005D4272 /* SimpleOptionQuestionLayoutViewModel.swift in Sources */,
-				CEF1E7E827E61F58005D4272 /* OldLesson.swift in Sources */,
 				D3C4424027E8C65600676C93 /* Logger.swift in Sources */,
 				D3C4423E27E8B20000676C93 /* DataProviderErrors.swift in Sources */,
 				CEA1C7AB27FA145800123225 /* QuestionSequence.swift in Sources */,
@@ -1733,12 +1831,17 @@
 				62E418CF27EA526200DFF03C /* ProfileLessonData.swift in Sources */,
 				CEA1C7B127FA145800123225 /* MatchVocabToDefinitionQuestionConstructor.swift in Sources */,
 				CEA1C7AF27FA145800123225 /* Question.swift in Sources */,
+				62FEFACE280B51FA00C0503B /* StarAccountManager.swift in Sources */,
+				62FEFAD7280B530000C0503B /* StarTransactionData.swift in Sources */,
+				62FEFADB280B533100C0503B /* LessonQuizRewardSystem.swift in Sources */,
+				62FEFABA280B4FE700C0503B /* ItemAccount.swift in Sources */,
 				D3C4424527E9F2FC00676C93 /* BookManager.swift in Sources */,
 				CEA1C90B27FA684500123225 /* PKGameRenderer.swift in Sources */,
 				D30E491227FAA6880074CF2B /* Profile.swift in Sources */,
 				CEA1C91527FA7D0D00123225 /* PKGameOverviewViewModelFromOutcome.swift in Sources */,
 				62C04A1527DDEB10002D2497 /* HomeViewController.swift in Sources */,
 				62A03E5C280177C7008FE249 /* LearnButtonDelegate.swift in Sources */,
+				62FEFAB6280B4FB300C0503B /* AccountOwner.swift in Sources */,
 				624989DE27E7395E0092FC1B /* LearningBooksViewController.swift in Sources */,
 				624989E527E742690092FC1B /* RecommendedBookCollectionViewCell.swift in Sources */,
 				CEA1C7B227FA145800123225 /* QuestionConstructor.swift in Sources */,
@@ -1762,7 +1865,9 @@
 				624989DA27E735600092FC1B /* BookCollectionViewController.swift in Sources */,
 				62BB1CE72800308D002CD31A /* ExploreBookViewController.swift in Sources */,
 				D33282F927D4E63B00C80986 /* Theme.swift in Sources */,
+				62FEFAE7280B536600C0503B /* Reward.swift in Sources */,
 				624989DC27E736590092FC1B /* BookCollectionViewCell.swift in Sources */,
+				62FEFAE4280B535C00C0503B /* PKGameRewardSystem.swift in Sources */,
 				629090A027E8303F00941A3B /* RecommendedBooksTableViewController.swift in Sources */,
 				624BD58027E761FB006F0391 /* LearningBooksViewModel.swift in Sources */,
 				62A03E652801CE9D008FE249 /* VerticalAlignment.swift in Sources */,
@@ -1770,6 +1875,7 @@
 				CEC5887527EABED600809403 /* LessonSelectionViewModelFromBook.swift in Sources */,
 				D3C4424327E8CB0A00676C93 /* FirebaseDataProvider.swift in Sources */,
 				CEE9806D2806E6840052863B /* DevLoginViewController.swift in Sources */,
+				62FEFAD1280B521800C0503B /* StarTransactionManager.swift in Sources */,
 				D3C4423827E8A98400676C93 /* AlertContent.swift in Sources */,
 				D33282E827D4D42700C80986 /* LingoClash.xcdatamodeld in Sources */,
 				CE673C4727F9B8AF00321BB8 /* PKGameManager.swift in Sources */,
@@ -1789,6 +1895,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62FEFAE2280B534D00C0503B /* MainRewardSystem.swift in Sources */,
 				D3C5E1DE27F6E36B00F65B8E /* SimpleOptionQuestionLayoutViewController.swift in Sources */,
 				CEF3E6A1280690D2001F483B /* LessonData.swift in Sources */,
 				CEE980742806E9AF0052863B /* DevLoginTableCell.swift in Sources */,
@@ -1805,12 +1912,15 @@
 				D3C5E1E627F6E36B00F65B8E /* LessonVocabViewModel.swift in Sources */,
 				D3C5E1E727F6E36B00F65B8E /* VocabsLearntTableCell.swift in Sources */,
 				D3686A0B27F7517F0013B289 /* FormFields.swift in Sources */,
+				62FEFAC9280B508F00C0503B /* CurrencyAccount.swift in Sources */,
 				CEF3E68628069092001F483B /* PKGameOutcome.swift in Sources */,
 				D3C5E1EA27F6E36B00F65B8E /* SplashViewController.swift in Sources */,
 				D3C5E1EB27F6E36B00F65B8E /* Vocab.swift in Sources */,
 				D3686A0927F7515C0013B289 /* ChangePasswordFields.swift in Sources */,
 				D3C5E1EC27F6E36B00F65B8E /* ProfileBookData.swift in Sources */,
 				D3C5E1ED27F6E36B00F65B8E /* CompletedBooksViewController.swift in Sources */,
+				62FEFAC6280B508600C0503B /* DebitOrCredit.swift in Sources */,
+				62FEFACB280B509500C0503B /* CurrencyTypes.swift in Sources */,
 				CEF3E6A2280690D2001F483B /* PKGameData.swift in Sources */,
 				D30E491827FAC7CE0074CF2B /* BookCategory.swift in Sources */,
 				CEF3E6B2280690DE001F483B /* PKGameOverviewViewModel.swift in Sources */,
@@ -1819,6 +1929,8 @@
 				CEF3E6AB280690DA001F483B /* PKGameUpdateDelegate.swift in Sources */,
 				D3C5E1EE27F6E36B00F65B8E /* AppDelegate.swift in Sources */,
 				D3C5E1F027F6E36B00F65B8E /* LessonVocabViewModelFromLesson.swift in Sources */,
+				62FEFACA280B509200C0503B /* ItemAccount.swift in Sources */,
+				62FEFADC280B533100C0503B /* LessonQuizRewardSystem.swift in Sources */,
 				D3C5E1F127F6E36B00F65B8E /* DataProviderTypes.swift in Sources */,
 				CEF3E68528069092001F483B /* PKGame.swift in Sources */,
 				CEF3E69A280690C5001F483B /* TwoDisjointSetOptionQuestion.swift in Sources */,
@@ -1827,6 +1939,7 @@
 				D3C5E1F427F6E36B00F65B8E /* SignUpViewController.swift in Sources */,
 				D3C5E1F527F6E36B00F65B8E /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				D3C5E1F627F6E36B00F65B8E /* StarView.swift in Sources */,
+				62FEFAE8280B536600C0503B /* Reward.swift in Sources */,
 				CEF3E696280690C2001F483B /* QuestionWrapper.swift in Sources */,
 				62BB1CE228002135002CD31A /* HomeViewModel.swift in Sources */,
 				D3C5E27B27F6F3E900F65B8E /* SampleDataUtilities.swift in Sources */,
@@ -1858,7 +1971,6 @@
 				D3C5E20927F6E36B00F65B8E /* AuthErrors.swift in Sources */,
 				D3C5E20A27F6E36B00F65B8E /* BookData.swift in Sources */,
 				D3C5E20B27F6E36B00F65B8E /* SceneDelegate.swift in Sources */,
-				D3C5E20C27F6E36B00F65B8E /* StarsTransaction.swift in Sources */,
 				CEF3E68B280690A0001F483B /* QuestionGenerationError.swift in Sources */,
 				D3C5E20D27F6E36B00F65B8E /* LessonQuizViewModel.swift in Sources */,
 				D3C5E20E27F6E36B00F65B8E /* QuestionLayoutViewController.swift in Sources */,
@@ -1870,6 +1982,7 @@
 				CEF3E69D280690CE001F483B /* PKGameManager.swift in Sources */,
 				CEF3E688280690A0001F483B /* QuestionConstructorRandomFactory.swift in Sources */,
 				D3C5E21027F6E36B00F65B8E /* QuestionViewModelFromQuestion.swift in Sources */,
+				62FEFAC7280B508800C0503B /* CurrencyTransaction.swift in Sources */,
 				62A03E5728015158008FE249 /* ProfileLessonManager.swift in Sources */,
 				D3C5E21127F6E36B00F65B8E /* ChangeEmailViewController.swift in Sources */,
 				D3C5E21227F6E36B00F65B8E /* FetchUtilities.swift in Sources */,
@@ -1877,6 +1990,7 @@
 				D3C5E28527F71D6A00F65B8E /* BookCategoryManager.swift in Sources */,
 				D3C5E21427F6E36B00F65B8E /* KeychainManager.swift in Sources */,
 				62A03E5D28017856008FE249 /* LearnButtonDelegate.swift in Sources */,
+				62FEFAE5280B535C00C0503B /* PKGameRewardSystem.swift in Sources */,
 				62BB1CEB28003F74002CD31A /* BooksForCategory.swift in Sources */,
 				D3C5E21527F6E36B00F65B8E /* LoginViewModel.swift in Sources */,
 				D3C5E21627F6E36B00F65B8E /* CurrencySystem.swift in Sources */,
@@ -1891,6 +2005,7 @@
 				62A03E5A280176DD008FE249 /* BookButtonDelegate.swift in Sources */,
 				D3C5E21927F6E36B00F65B8E /* LessonSelectionViewController.swift in Sources */,
 				D3C5E21A27F6E36B00F65B8E /* StarsCurrencySystem.swift in Sources */,
+				62FEFAEB280B537200C0503B /* NotificationObserver.swift in Sources */,
 				D3C5E21C27F6E36B00F65B8E /* LessonQuizViewModelFromLesson.swift in Sources */,
 				CEF3E68D280690A0001F483B /* QuestionsGenerator.swift in Sources */,
 				D3C5E21D27F6E36B00F65B8E /* AppStoryboard.swift in Sources */,
@@ -1898,8 +2013,10 @@
 				D3C5E21E27F6E36B00F65B8E /* QuestionLayoutViewModel.swift in Sources */,
 				D3C5E21F27F6E36B00F65B8E /* UIViewController+Alerts.swift in Sources */,
 				D3C5E28127F71C7300F65B8E /* VocabData.swift in Sources */,
+				62FEFAD5280B52EC00C0503B /* StarAccountData.swift in Sources */,
 				D3C5E22027F6E36B00F65B8E /* SignUpViewModel.swift in Sources */,
 				CEE9806E2806E6840052863B /* DevLoginViewController.swift in Sources */,
+				62FEFACF280B520800C0503B /* StarAccountManager.swift in Sources */,
 				CEF3E691280690A7001F483B /* DefinitionOptionQuestionConstructor.swift in Sources */,
 				D3C5E22127F6E36B00F65B8E /* QuestionViewController.swift in Sources */,
 				D3C5E22227F6E36B00F65B8E /* LessonQuizResult.swift in Sources */,
@@ -1913,6 +2030,7 @@
 				62A03E6B2801CF59008FE249 /* Alignment.swift in Sources */,
 				CEF3E68E280690A0001F483B /* QuestionScopeFactory.swift in Sources */,
 				D3C5E22A27F6E36B00F65B8E /* LessonOverviewViewModelFromLesson.swift in Sources */,
+				62FEFAC8280B508D00C0503B /* AccountOwner.swift in Sources */,
 				D3C5E22D27F6E36B00F65B8E /* LessonTableCellViewModelFromLesson.swift in Sources */,
 				D3C5E22F27F6E36B00F65B8E /* LessonQuizOutcomeViewModelFromQuizResult.swift in Sources */,
 				D3C5E23027F6E36B00F65B8E /* LessonOverviewViewController.swift in Sources */,
@@ -1921,11 +2039,11 @@
 				D3C5E23127F6E36B00F65B8E /* AppConfigs.swift in Sources */,
 				D3C5E23227F6E36B00F65B8E /* SimpleOptionQuestionLayoutViewModel.swift in Sources */,
 				CEF3E68728069092001F483B /* PKGameMove.swift in Sources */,
-				D3C5E23327F6E36B00F65B8E /* OldLesson.swift in Sources */,
 				D3C5E23427F6E36B00F65B8E /* Logger.swift in Sources */,
 				D3C5E23527F6E36B00F65B8E /* DataProviderErrors.swift in Sources */,
 				D3C5E28827F71D8500F65B8E /* LessonManager.swift in Sources */,
 				CEF3E6AF280690DA001F483B /* PKGameUpdateListener.swift in Sources */,
+				62FEFACC280B509700C0503B /* ItemTypes.swift in Sources */,
 				D3C5E23627F6E36B00F65B8E /* FirebaseAuthProvider.swift in Sources */,
 				D3C5E23727F6E36B00F65B8E /* ProfileManager.swift in Sources */,
 				D3C5E23827F6E36B00F65B8E /* AuthProvider.swift in Sources */,
@@ -1941,6 +2059,8 @@
 				CEBC07732807DE1600A0ED82 /* DataManagerResources.swift in Sources */,
 				CEF3E6AE280690DA001F483B /* PKGameQuizViewModelFromPKGame.swift in Sources */,
 				D3C5E24127F6E36B00F65B8E /* BookProgress.swift in Sources */,
+				62FEFAC5280B508400C0503B /* ItemTransaction.swift in Sources */,
+				62FEFADF280B534100C0503B /* RewardSystem.swift in Sources */,
 				D3C5E24227F6E36B00F65B8E /* BooksViewModel.swift in Sources */,
 				CEF3E6A5280690D8001F483B /* PKGameLobbyViewController.swift in Sources */,
 				CE2771D12809889C00A739C1 /* PKGamePlayerOutcomeManager.swift in Sources */,
@@ -1949,6 +2069,7 @@
 				D3C5E24527F6E36B00F65B8E /* DataProvider.swift in Sources */,
 				D30E491727FAC7C80074CF2B /* Lesson.swift in Sources */,
 				D3C5E24627F6E36B00F65B8E /* Account.swift in Sources */,
+				62FEFAD2280B521E00C0503B /* StarTransactionManager.swift in Sources */,
 				D3C5E24727F6E36B00F65B8E /* LessonSelectorTableCell.swift in Sources */,
 				D3C5E24827F6E36B00F65B8E /* LessonSelectionViewModel.swift in Sources */,
 				D3C5E24927F6E36B00F65B8E /* (null) in Sources */,
@@ -1962,6 +2083,7 @@
 				CEF3E6A8280690D8001F483B /* PKGameLobbyViewModelFromProfile.swift in Sources */,
 				D3C5E25127F6E36B00F65B8E /* RecommendedBooksTableViewController.swift in Sources */,
 				D3C5E25227F6E36B00F65B8E /* LearningBooksViewModel.swift in Sources */,
+				62FEFAD8280B530000C0503B /* StarTransactionData.swift in Sources */,
 				D3686A0527F750EA0013B289 /* FormUtilities.swift in Sources */,
 				CEF3E6AA280690DA001F483B /* PKGameRenderer.swift in Sources */,
 				62A03E6A2801CF57008FE249 /* VerticalAlignment.swift in Sources */,

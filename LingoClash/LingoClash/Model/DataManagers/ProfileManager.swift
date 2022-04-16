@@ -66,6 +66,41 @@ class ProfileManager: DataManager<ProfileData> {
         }
     }
 
+    func updateProfile(stars: Int, vocabsLearnt: Int) -> Promise<ProfileData> {
+
+        firstly {
+            self.getCurrentProfileData()
+        }.then { profileData -> Promise<ProfileData> in
+            var newProfileData = profileData
+            newProfileData.stars = stars
+            newProfileData.vocabs_learnt = vocabsLearnt
+
+            return self.update(id: profileData.id, from: profileData, to: newProfileData)
+        }
+    }
+
+    func createProfile(params: SignUpFields, userId: Identifier) -> Promise<Profile> {
+        let profileData = ProfileData(userId: userId)
+        var profile: Profile?
+
+        return firstly {
+            self.create(newRecord: profileData)
+        }.then { _ in
+            self.getCurrentProfile()
+        }.done { currProfile in
+            profile = currProfile
+            let starAccountData = StarAccountData(ownerId: currProfile.id)
+            StarAccountManager().create(newRecord: starAccountData).catch { error in
+                print(error)
+            }
+        }.compactMap {
+            guard let profile = profile else {
+                return nil
+            }
+            return profile
+        }
+    }
+
     func incrementVocabsLearnt(by increment: Int) {
         _ = firstly {
             self.getCurrentProfileData()
