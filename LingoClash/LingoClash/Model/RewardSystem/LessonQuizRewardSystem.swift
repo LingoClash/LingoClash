@@ -18,22 +18,21 @@ class LessonQuizRewardSystem: RewardSystem {
         guard let dict = notification.userInfo, let star_count = dict["stars"] as? Int else {
             return
         }
-        
-        SnackbarUtilities.showSnackbar(type: .info, text: "You earned \(star_count) stars!")
-        
-        // TODO: Save in star account DB
-        
-//        firstly {
-//            StarAccountManager().getStarAccount()
-//        }.done { currencyAccount in
-//            let transaction = CurrencyTransaction<Star>.init(id: "", debitOrCredit: .debit, amount: stars, account: currencyAccount)
-//            let reward = Reward(transactions: [transaction])
-//
-//            reward.presentReward()
-//            StarAccountManager().updateStarAccount(account: currencyAccount, newTransaction: transaction)
-//            print("account updated! with stars: ", stars)
-//        }.catch { error in
-//            print(error)
-//        }
+                
+        firstly {
+            StarAccountManager().getStarAccount()
+        }.done { currencyAccount in
+            let transaction = CurrencyTransaction<Star>.init(id: "", debitOrCredit: .debit, amount: star_count, account: currencyAccount)
+            let reward = Reward(transactions: [transaction])
+
+            reward.presentReward()
+            StarAccountManager().updateStarAccount(account: currencyAccount, newTransaction: transaction).catch { error in
+                print(error)
+            }
+            
+            SnackbarUtilities.showSnackbar(type: .info, text: "You earned \(star_count) stars!")
+        }.catch { error in
+            print(error)
+        }
     }
 }

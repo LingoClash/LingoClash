@@ -25,3 +25,13 @@ struct Lesson {
         self.stars = profileLessonData?.stars ?? 0
     }
 }
+
+extension Lesson: Comparable {
+    static func < (lhs: Lesson, rhs: Lesson) -> Bool {
+        lhs.id < rhs.id
+    }
+    
+    static func == (lhs: Lesson, rhs: Lesson) -> Bool {
+        lhs.id == rhs.id
+    }
+}
