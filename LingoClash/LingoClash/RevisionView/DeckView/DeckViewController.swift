@@ -76,7 +76,7 @@ class DeckViewController: UIViewController {
         unhideAnswerButton()
         hideAnswer()
         // Check if we have 0 words left
-        viewModel?.tapRecallButton()
+        
         if revisionSequence?.questionsLeft == 0 {
             showNoWordsScreen()
         }
@@ -106,6 +106,7 @@ class DeckViewController: UIViewController {
     @IBAction func againDidTap(_ sender: Any) {
         
         viewModel?.addToQueue(currentQuery: currentQuery, recallDifficulty: .again)
+        viewModel?.updateRevisionQuery(query: currentQuery)
         
         let nextQuery = viewModel?.getNextQuery()
         self.currentQuery = nextQuery

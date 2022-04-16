@@ -50,7 +50,13 @@ final class DeckViewModel {
         return nextQuery
     }
     
-    func tapRecallButton() {
+    func updateRevisionQuery(query: RevisionQuery?) {
+        guard let query = query else {
+            return
+        }
+        
+//        RevisionVocabManager().update(id: <#T##Identifier#>, from: <#T##RevisionVocabData#>, to: <#T##RevisionVocabData#>)
+
         
     }
     

@@ -26,6 +26,7 @@ struct RevisionQuery: Query {
         self.answerToString = answer
         
         self.difficultyParameter = Difficulty(amount: 0)
+//        self.id = "id"
     }
     
     init(vocab: RevisionVocab, context: String, answer: String, difficulty: Difficulty, lastAttemptedDate: Date?) {
@@ -35,6 +36,7 @@ struct RevisionQuery: Query {
         
         self.difficultyParameter = difficulty
         self.lastAttemptedDate = lastAttemptedDate
+//        self.id = id
     }
     
     // This magnitude is calculated on the fly, because the time difference always changes when Today changes
