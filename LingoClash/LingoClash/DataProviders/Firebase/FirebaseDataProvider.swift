@@ -123,28 +123,28 @@ class FirebaseDataProvider: DataProvider {
     }
     
     func getManyReference<T: Codable>(resource: String, params: GetManyReferenceParams) -> Promise<GetManyReferenceResult<T>> {
-        
-        return Promise { seal in
+
+        Promise { seal in
             var filteredCollection = db.collection(resource).whereField(params.target, isEqualTo: params.id)
-            
+
             for (key, value) in params.filter {
                 filteredCollection = filteredCollection.whereField(key, isEqualTo: value)
             }
-            
-            filteredCollection.getDocuments { (querySnapshot, error) in
-                
+
+            filteredCollection.getDocuments { querySnapshot, error in
+
                 if let error = error {
                     return seal.reject(error)
                 }
-                
+
                 guard let querySnapshot = querySnapshot else {
                     return seal.reject(FirebaseDataProviderError.invalidQuerySnapshot)
                 }
-                
+
                 let dataList = querySnapshot.documents.compactMap { document -> T? in
                     self.getModel(from: document)
                 }
-                
+
                 return seal.fulfill(GetManyReferenceResult(data: dataList, total: querySnapshot.count))
             }
         }

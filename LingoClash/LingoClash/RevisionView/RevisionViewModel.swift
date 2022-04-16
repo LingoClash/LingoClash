@@ -6,6 +6,7 @@
 //
 
 import Combine
+import PromiseKit
 
 final class RevisionViewModel {
     
@@ -13,6 +14,7 @@ final class RevisionViewModel {
 //    @Published var currentBook: Book?
 //    @Published var lessonSelectionViewModel: LessonSelectionViewModel?
     @Published var decks: [Deck] = []
+    @Published var isRefreshing = false
     
     // remove this
     func createRevisionVocabs() -> [RevisionVocab] {
@@ -23,18 +25,18 @@ final class RevisionViewModel {
                   sentenceDefinition: "She looks saf today.", pronunciationText: "jīntiān"),
             Vocab(vocabId: 3, word: "明天", definition: "tomorrow", sentence: "明天10：10",
                   sentenceDefinition: " tomorrow at 10:10", pronunciationText: "míngtiān"),
-            Vocab(vocabId: 4, word: "昨天", definition: "yesterday", sentence: "她今天看起来很悲伤。",
+            Vocab(vocabId: 4, word: "昨天", definition: "yesterday", sentence: "她昨天看起来很悲伤。",
                   sentenceDefinition: "She looks saf today.", pronunciationText: "jīntiān"),
-            Vocab(vocabId: 5, word: "日历", definition: "calendar", sentence: "她今天看起来很悲伤。",
+            Vocab(vocabId: 5, word: "日历", definition: "calendar", sentence: "她今天看起来很日历。",
                   sentenceDefinition: "She looks saf today.", pronunciationText: "jīntiān"),
-            Vocab(vocabId: 6, word: "秒", definition: "second", sentence: "她今天看起来很悲伤。",
+            Vocab(vocabId: 6, word: "秒", definition: "second", sentence: "她秒看起来很悲伤。",
                   sentenceDefinition: "She looks saf today.", pronunciationText: "jīntiān")
         ]
         var vocabArr: [RevisionVocab] = []
         
         for vocab in vocabs {
             vocabArr.append(
-                RevisionVocab(difficultyParameter: Difficulty(amount: 0), vocab: vocab)
+                RevisionVocab(vocab: vocab, difficultyParameter: Difficulty(amount: 0))
             )
         }
         
@@ -42,15 +44,16 @@ final class RevisionViewModel {
     }
 
     func fetchDecks() {
-        // TODO: get current decks from db with their correct names
-        decks.append(Deck(name: "Default Deck", vocabs: createRevisionVocabs()))
+        self.isRefreshing = true
         
-    //        self.currentBookProgress = BookProgress(name: "Chinese 1", progress: "0/10")
-    //        self.currentBook = Book(id: "1", category_id: "1", name: "Chinese 1")
-    //        guard let currentBook = currentBook else {
-    //            return
-    //        }
-    //        self.lessonSelectionViewModel = LessonSelectionViewModelFromBook(book: currentBook)
+        firstly {
+            DeckManager().getDecks(profileId: "1")
+        }.done { deckArr in
+            self.decks.append(contentsOf: deckArr)
+            self.isRefreshing = false
+        }
+        
+        decks.append(Deck(name: "Default Deck", vocabs: createRevisionVocabs()))
     }
     
     func deckProgress() {

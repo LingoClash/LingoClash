@@ -9,10 +9,20 @@ import Foundation
 
 struct RevisionVocab {
 //    var id: Identifier
-    // Starts from 0
     var difficultyParameter: Difficulty
     var lastAttemptedDate: Date?
     var vocab: Vocab
+    
+    init(vocab: Vocab) {
+        self.difficultyParameter = Difficulty(amount: 0)
+        self.vocab = vocab
+    }
+    
+    init(vocab: Vocab, difficultyParameter: Difficulty) {
+        self.difficultyParameter = Difficulty(amount: 0)
+        self.vocab = vocab
+    }
+    
 }
 
 struct Difficulty: Codable, Hashable {
@@ -21,3 +31,5 @@ struct Difficulty: Codable, Hashable {
 
 extension RevisionVocab: Codable {}
 extension RevisionVocab: Hashable {}
+
+

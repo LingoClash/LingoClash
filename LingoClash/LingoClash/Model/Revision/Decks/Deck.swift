@@ -24,6 +24,18 @@ struct Deck {
         }
     }
     
+    init(deckData: DeckData, vocabDataArr: [VocabData]) {
+        self.name = deckData.name
+
+        
+        self.vocabs = vocabDataArr.map{ vocabData in
+            let revisionVocab = RevisionVocab(vocab: Vocab(vocabData: vocabData), difficultyParameter: Difficulty(amount: 0))
+            return RevisionQuery(vocab: revisionVocab, context: vocabData.word, answer: vocabData.definition, difficulty: Difficulty(amount: 0))
+        }
+        
+    }
+    
+    
 }
 
 extension Deck: Codable {}

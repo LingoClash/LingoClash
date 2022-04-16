@@ -10,19 +10,11 @@ import Combine
 
 class DeckViewController: UIViewController {
 
-    @IBOutlet weak var createDeckLabel: UITextField!
-    
     var viewModel: DeckViewModel?
     private var deck: Deck?
     private var revisionSequence: QuerySequence?
     private var currentQuery: RevisionQuery?
     
-//        private let viewModel = DeckViewModel()
-//    weak var viewModel: RevisionViewModel?
-    //    @IBOutlet weak var nameLabel: UILabel!
-    //    @IBOutlet weak var emailLabel: UILabel!
-    //    @IBOutlet weak var totalStarsLabel: UILabel!
-    //    @IBOutlet weak var starsTodayLabel: UILabel!
     @IBOutlet weak var contextLabel: UILabel!
     
     @IBOutlet weak var exampleLabel: UILabel!
@@ -30,14 +22,19 @@ class DeckViewController: UIViewController {
     
     @IBOutlet weak var wordsLeftLabel: UILabel!
     
+    // No more words screen
+    @IBOutlet weak var noWordsBackground: UIImageView!
+    @IBOutlet weak var noWordsImage: UIImageView!
+    @IBOutlet weak var noWordsLabel1: UILabel!
+    @IBOutlet weak var noWordsLabel2: UILabel!
+    
     private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         hideAnswer()
-//        self.deckProgress = viewModel.deckProgress()
-//        deckAddedNotif.isHidden = true
+        hideNoWordsScreen()
         setUpBinders()
         getFirstQuery()
     }
@@ -49,38 +46,56 @@ class DeckViewController: UIViewController {
         
         viewModel?.$revisionSequence.sink {[weak self] revisionSequence in
             self?.revisionSequence = revisionSequence
+            self?.updateWordsLeft()
         }.store(in: &cancellables)
     }
     
+    private func updateWordsLeft() {
+        // We add 1 because we take into account the word currently being shown too
+        wordsLeftLabel.text = "Words Left: \(revisionSequence?.questionsLeft ?? 0 + 1)"
+    }
+
     private func getFirstQuery() {
         let firstQuery = viewModel?.getNextQuery()
         contextLabel.text = firstQuery?.context
         
         // TODO: make query return an answer object which has a bunch of fields
+        exampleLabel.text = firstQuery?.revVocab.vocab.sentence
         answerLabel.text = firstQuery?.answerToString
         
         self.currentQuery = firstQuery
-//        let answer = firstQuery.answer
-        
-//        contextLabel.text = firstQuery?.context
     }
 
-//    @IBAction func saveButtonTapped(_ sender: Any) {
     @IBOutlet weak var showAnswerButton: UIButton!
-    //        let firstName = FormUtilities.getTrimmedString(textField: firstNameTextField)
-//        let lastName = FormUtilities.getTrimmedString(textField: lastNameTextField)
-//
-//        let fields = EditProfileFields(firstName: firstName, lastName: lastName)
-//        viewModel.editProfile(fields)
-//    }
-//    @IBAction func saveButtonTapped(_ sender: Any) {
-//        let fields = ChangeEmailFields(newEmail: newEmail)
+
     @IBAction func answerDidTap(_ sender: Any) {
         hideAnswerButton()
         showAnswer()
     }
-    //        viewModel.changeEmail(fields)
-//    }
+    
+    func recallDifficultyButtonTapped() {
+        unhideAnswerButton()
+        hideAnswer()
+        // Check if we have 0 words left
+        if revisionSequence?.questionsLeft == 0 {
+            showNoWordsScreen()
+        }
+    }
+    
+    private func hideNoWordsScreen() {
+        noWordsBackground.isHidden = true
+        noWordsImage.isHidden = true
+        noWordsLabel1.isHidden = true
+        noWordsLabel2.isHidden = true
+    }
+    
+    private func showNoWordsScreen() {
+        noWordsBackground.isHidden = false
+        noWordsImage.isHidden = false
+        noWordsLabel1.isHidden = false
+        noWordsLabel2.isHidden = false
+    }
+
     @IBOutlet weak var againButton: UIButton!
     
     @IBOutlet weak var easyButton: UIButton!
@@ -112,18 +127,10 @@ class DeckViewController: UIViewController {
         setLabelToQuery(query: nextQuery)
     }
     
-    
     private func setLabelToQuery(query: RevisionQuery?) {
         contextLabel.text = query?.context
-        answerLabel.text = query?.answerToString
+        answerLabel.text = query?.revVocab.vocab.definition
         exampleLabel.text = query?.revVocab.vocab.sentence
-        
-    }
-
-    
-    func recallDifficultyButtonTapped() {
-        unhideAnswerButton()
-//        hideRecallButtons()
     }
     
     private func hideRecallButtons() {

@@ -16,16 +16,10 @@ class RevisionViewController: UIViewController {
     }
     
     @IBOutlet weak var revisionTableView: UITableView!
+    
     private var decks: [Deck]?
-//    private var decksProgress: [DeckProgress] = []
     
     private let viewModel = RevisionViewModel()
-//    @IBOutlet weak var nameLabel: UILabel!
-//    @IBOutlet weak var emailLabel: UILabel!
-//    @IBOutlet weak var totalStarsLabel: UILabel!
-//    @IBOutlet weak var deckCollection: UILabel!
-    
-//    private let viewModel = ProfileViewModel()
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -45,9 +39,16 @@ class RevisionViewController: UIViewController {
         viewModel.$decks.sink {[weak self] decks in
             self?.decks = decks
             // initialise decks progress as well
-//            self?.decksProgress = decks.map({DeckProgress(name: $0.name, progress: $0.vocabNo)})
             
             self?.revisionTableView.reloadData()
+        }.store(in: &cancellables)
+        
+        viewModel.$isRefreshing.sink {[weak self] isRefreshing in
+            if isRefreshing {
+                self?.parent?.showSpinner()
+            } else {
+                self?.parent?.removeSpinner()
+            }
         }.store(in: &cancellables)
     }
     
