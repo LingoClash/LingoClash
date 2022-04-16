@@ -11,20 +11,17 @@
 /// This is just a wrapper around the factory, with a count and when it hits zero it returns null
 struct RevisionSequence: QuerySequence {
     
-    // Revisions are not generated lazily, so we don't need a constructor for it
-//    var constructorFactory: QuestionConstructorRandomFactory
     var questionsLeft: Int?
     
     // Basically you have a priority queue of RevisionQueries
     // and the next function will reduce the number by 1
-    // TODO: replace this with a protocol
     var revisionPq: Heap<RevisionQuery>
 
     init(revisionQueryArr: [RevisionQuery]) {
         // convert into heap
         self.revisionPq = Heap<RevisionQuery>(sort: {
             (rq1: RevisionQuery, rq2: RevisionQuery) -> Bool in
-            rq1.magnitude > rq2.magnitude
+            rq1.magnitude < rq2.magnitude
         })
         self.questionsLeft = revisionQueryArr.count
         
@@ -39,6 +36,14 @@ struct RevisionSequence: QuerySequence {
     }
     
     mutating func insert(_ rq: RevisionQuery) {
+        // only insert things smaller than a set magnitude
+        print(rq.magnitude)
+        guard rq.magnitude < 2 else {
+            print("revisionquery removed")
+            print(rq.magnitude)
+            return
+        }
+        
         self.revisionPq.insert(rq)
     }
     
@@ -51,6 +56,14 @@ struct RevisionSequence: QuerySequence {
         let nextRevision = self.revisionPq.remove()
         self.questionsLeft = revisionPq.count
         
+//        print(nextRevision?.magnitude)
+        
         return nextRevision
+    }
+}
+
+extension RevisionSequence: CustomStringConvertible {
+    var description: String {
+        revisionPq.description
     }
 }

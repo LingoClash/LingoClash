@@ -28,12 +28,13 @@ struct RevisionQuery: Query {
         self.difficultyParameter = Difficulty(amount: 0)
     }
     
-    init(vocab: RevisionVocab, context: String, answer: String, difficulty: Difficulty) {
+    init(vocab: RevisionVocab, context: String, answer: String, difficulty: Difficulty, lastAttemptedDate: Date?) {
         self.revVocab = vocab
         self.context = context
         self.answerToString = answer
         
         self.difficultyParameter = difficulty
+        self.lastAttemptedDate = lastAttemptedDate
     }
     
     // This magnitude is calculated on the fly, because the time difference always changes when Today changes
@@ -41,7 +42,7 @@ struct RevisionQuery: Query {
         get {
             let difficultyVal: Double = Double(difficultyParameter.amount)
             let timeDiff: TimeInterval? = lastAttemptedDate?.timeIntervalSinceNow
-            let lengthSinceLastDoneVal: Double = timeDiff ?? 0
+            let lengthSinceLastDoneVal: Double = abs(timeDiff ?? 0)
             
             // Calculation to get the magnitude of each RevisionQuery
             return difficultyVal + lengthSinceLastDoneVal / 3600

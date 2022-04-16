@@ -27,7 +27,6 @@ class RevisionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel.refreshDecks()
         self.viewModel.fetchDecks()
         
         setUpBinders()
@@ -93,7 +92,7 @@ extension RevisionViewController: UITableViewDataSource {
 extension RevisionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // set it to the correct viewmodel
-        let selectedDeck = decks?[indexPath.section]
+        let selectedDeck = decks?[indexPath.row]
         self.selectedDeck = selectedDeck
         
         // then do a segue

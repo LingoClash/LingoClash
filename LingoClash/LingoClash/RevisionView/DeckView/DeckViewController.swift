@@ -59,7 +59,6 @@ class DeckViewController: UIViewController {
         let firstQuery = viewModel?.getNextQuery()
         contextLabel.text = firstQuery?.context
         
-        // TODO: make query return an answer object which has a bunch of fields
         exampleLabel.text = firstQuery?.revVocab.vocab.sentence
         answerLabel.text = firstQuery?.answerToString
         
@@ -104,27 +103,48 @@ class DeckViewController: UIViewController {
     @IBOutlet weak var hardButton: UIButton!
     
     @IBAction func againDidTap(_ sender: Any) {
-        let nextQuery = viewModel?.tapDifficulty(currentQuery: currentQuery, recallDifficulty: .again)
-        recallDifficultyButtonTapped()
+        
+        viewModel?.addToQueue(currentQuery: currentQuery, recallDifficulty: .again)
+        
+        let nextQuery = viewModel?.getNextQuery()
+        self.currentQuery = nextQuery
+        
         setLabelToQuery(query: nextQuery)
+        recallDifficultyButtonTapped()
     }
     
     @IBAction func hardDidTap(_ sender: Any) {
-        let nextQuery = viewModel?.tapDifficulty(currentQuery: currentQuery, recallDifficulty: .hard)
-        recallDifficultyButtonTapped()
+        
+        viewModel?.addToQueue(currentQuery: currentQuery, recallDifficulty: .hard)
+        
+        let nextQuery = viewModel?.getNextQuery()
+        self.currentQuery = nextQuery
+        
         setLabelToQuery(query: nextQuery)
+        recallDifficultyButtonTapped()
     }
     
     @IBAction func easyDidTap(_ sender: Any) {
-        let nextQuery = viewModel?.tapDifficulty(currentQuery: currentQuery, recallDifficulty: .easy)
-        recallDifficultyButtonTapped()
+        
+        viewModel?.addToQueue(currentQuery: currentQuery, recallDifficulty: .easy)
+        
+        let nextQuery = viewModel?.getNextQuery()
+        self.currentQuery = nextQuery
+        
+        print(nextQuery?.magnitude)
+        
         setLabelToQuery(query: nextQuery)
+        recallDifficultyButtonTapped()
     }
     
     @IBAction func goodDidTap(_ sender: Any) {
-        let nextQuery = viewModel?.tapDifficulty(currentQuery: currentQuery, recallDifficulty: .good)
-        recallDifficultyButtonTapped()
+        viewModel?.addToQueue(currentQuery: currentQuery, recallDifficulty: .good)
+        
+        let nextQuery = viewModel?.getNextQuery()
+        self.currentQuery = nextQuery
+        
         setLabelToQuery(query: nextQuery)
+        recallDifficultyButtonTapped()
     }
     
     private func setLabelToQuery(query: RevisionQuery?) {

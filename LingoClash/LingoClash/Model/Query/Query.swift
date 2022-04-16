@@ -14,14 +14,7 @@ import Foundation
 // isCorrect etc is addressed in Answerable.
 
 protocol Query {
-//    var prompt: String { get }
-//    var answer: String { get }
-    // Gives the "ordering" in this sequence of queries
-    // magnitude not required for questions, but is required for revision
-//    var magnitude: Int { get }
-    
     var context: String { get }
     
-    // TODO: replace this with an actual Answer struct
     var answerToString: String { get }
 }

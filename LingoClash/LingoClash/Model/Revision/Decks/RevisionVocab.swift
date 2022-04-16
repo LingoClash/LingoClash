@@ -30,6 +30,5 @@ struct Difficulty: Codable, Hashable {
 }
 
 extension RevisionVocab: Codable {}
+
 extension RevisionVocab: Hashable {}
-
-

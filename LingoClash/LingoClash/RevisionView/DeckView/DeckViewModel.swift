@@ -22,23 +22,37 @@ final class DeckViewModel {
         self.deck = deck
         self.revisionSequence = RevisionSequence(deck: deck)
     }
-
-    func tapDifficulty(currentQuery: RevisionQuery?, recallDifficulty: RecallDifficulty) -> RevisionQuery? {
+    
+    func addToQueue(currentQuery: RevisionQuery?, recallDifficulty: RecallDifficulty) {
         guard let currentQuery = currentQuery else {
-            return nil
+            return
         }
         
-        let newQuery = RevisionQuery(vocab: currentQuery.revVocab, context: currentQuery.context, answer: currentQuery.answerToString, difficulty: Difficulty(amount: recallDifficulty.rawValue))
+        // make the question go back to the queue with the specified difficulty
+        let newQuery = RevisionQuery(
+            vocab: currentQuery.revVocab,
+            context: currentQuery.context,
+            answer: currentQuery.answerToString,
+            difficulty: Difficulty(amount: recallDifficulty.rawValue),
+            lastAttemptedDate: Date()
+        )
         
-        // make the question go back to the queue
-//        revisionSequence.insert(newQuery)
-//        print(revisionSequence)
-        
-        return revisionSequence.next() as? RevisionQuery
+        self.revisionSequence.insert(newQuery)
     }
 
+//    func tapDifficulty(currentQuery: RevisionQuery?, recallDifficulty: RecallDifficulty) -> RevisionQuery? {
+//
+//        addToQueue(currentQuery: currentQuery, recallDifficulty: recallDifficulty)
+//
+//        print(revisionSequence)
+//        print(currentQuery.magnitude)
+//
+//        return revisionSequence.next() as? RevisionQuery
+//    }
+
     func getNextQuery() -> RevisionQuery? {
-        return revisionSequence.next() as? RevisionQuery
+        let nextQuery = revisionSequence.next() as? RevisionQuery
+        return nextQuery
     }
     
     

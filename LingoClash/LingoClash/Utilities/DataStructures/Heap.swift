@@ -3,7 +3,7 @@
 //  Written for the Swift Algorithm Club by Kevin Randrup and Matthijs Hollemans
 // Taken from https://github.com/raywenderlich/swift-algorithm-club/blob/master/Heap/Heap.swift
 //
-public struct Heap<T> {
+struct Heap<T> {
     
     /** The array that stores the heap's nodes. */
     var nodes = [T]()
@@ -207,16 +207,23 @@ public struct Heap<T> {
 extension Heap where T: Equatable {
     
     /** Get the index of a node in the heap. Performance: O(n). */
-    public func index(of node: T) -> Int? {
+    func index(of node: T) -> Int? {
         return nodes.firstIndex(where: { $0 == node })
     }
     
     /** Removes the first occurrence of a node from the heap. Performance: O(n). */
-    @discardableResult public mutating func remove(node: T) -> T? {
+    @discardableResult mutating func remove(node: T) -> T? {
         if let index = index(of: node) {
             return remove(at: index)
         }
         return nil
     }
     
+}
+
+// MARK: - String
+extension Heap: CustomStringConvertible {
+    var description: String {
+        nodes.description
+    }
 }

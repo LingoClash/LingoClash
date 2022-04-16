@@ -155,8 +155,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words Left: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJB-S7-2ud">
-                                <rect key="frame" x="571.5" y="20" width="102.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words Left: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJB-S7-2ud">
+                                <rect key="frame" x="574.5" y="20" width="99.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="Background"/>
                                 <nil key="highlightedColor"/>
@@ -165,21 +165,6 @@
                                 <rect key="frame" x="152" y="423" width="400" height="60"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="50"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background_1" translatesAutoresizingMaskIntoConstraints="NO" id="u0j-n6-YCU">
-                                <rect key="frame" x="0.0" y="-973" width="704" height="995.5"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished all words for today!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1p-he-GGK">
-                                <rect key="frame" x="178" y="523.5" width="348.5" height="36"/>
-                                <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="30"/>
-                                <color key="textColor" name="Secondary"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Come back at a later time for more words." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnQ-u7-aPg">
-                                <rect key="frame" x="92" y="589.5" width="520" height="36"/>
-                                <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="30"/>
-                                <color key="textColor" name="Secondary"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdj-1d-TEO">
@@ -255,6 +240,21 @@
                                     <action selector="answerDidTap:" destination="cke-iM-Mrv" eventType="touchUpInside" id="1Xd-Pd-C8J"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background_1" translatesAutoresizingMaskIntoConstraints="NO" id="u0j-n6-YCU">
+                                <rect key="frame" x="0.0" y="-973" width="704" height="995.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished all words for today!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1p-he-GGK">
+                                <rect key="frame" x="178" y="523.5" width="348.5" height="36"/>
+                                <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="30"/>
+                                <color key="textColor" name="Secondary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Come back at a later time for more words." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnQ-u7-aPg">
+                                <rect key="frame" x="92" y="589.5" width="520" height="36"/>
+                                <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="30"/>
+                                <color key="textColor" name="Secondary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="undraw-close_book" translatesAutoresizingMaskIntoConstraints="NO" id="rfq-PN-paS">
                                 <rect key="frame" x="673" y="6" width="394" height="251"/>
                                 <constraints>
