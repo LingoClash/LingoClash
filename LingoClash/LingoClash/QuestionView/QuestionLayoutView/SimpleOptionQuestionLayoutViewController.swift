@@ -8,6 +8,7 @@
 import Foundation
 
 import UIKit
+import PromiseKit
 
 class SimpleOptionQuestionLayoutViewController: UIViewController, QuestionLayoutViewController {
     typealias VM = SimpleOptionQuestionLayoutViewModel
@@ -65,17 +66,16 @@ class SimpleOptionQuestionLayoutViewController: UIViewController, QuestionLayout
             return
         }
 
-        UIView.animate(withDuration: 0.7,
-                       animations: {
-            correctCell.backgroundColor = Theme.current.green
-            correctCell.optionLabel.textColor = .white
-            if questionStatus == .wrong {
-                cellSelected.backgroundColor = Theme.current.errorContainer
-                cellSelected.optionLabel.textColor = Theme.current.errorText
-            }
-        }, completion: { [self] _ -> Void in
-            delegate?.questionLayoutViewController(self, didAnswerCorrectly: questionStatus == .correct)
-        })
+        let animationDuration = 0.7
+        var animationPromises: [Promise<Bool>] = []
+
+        animationPromises.append(correctCell.animate(isCorrect: true, duration: animationDuration))
+        if questionStatus == .wrong {
+            animationPromises.append(cellSelected.animate(isCorrect: false, duration: animationDuration))
+        }
+        when(resolved: animationPromises).done { _ in
+            self.delegate?.questionLayoutViewController(self, didAnswerCorrectly: questionStatus == .correct)
+        }
 
     }
 }
