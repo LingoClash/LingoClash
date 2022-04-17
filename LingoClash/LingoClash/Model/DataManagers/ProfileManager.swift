@@ -43,7 +43,6 @@ class ProfileManager: DataManager<ProfileData> {
     }
 
     func setAsCurrentBook(bookId: Identifier) -> Promise<ProfileData> {
-
         firstly {
             self.getCurrentProfileData()
         }.then { profileData -> Promise<ProfileData> in
@@ -91,23 +90,17 @@ class ProfileManager: DataManager<ProfileData> {
 
     func createProfile(params: SignUpFields, userId: Identifier) -> Promise<Profile> {
         let profileData = ProfileData(userId: userId, name: params.name, email: params.email)
-        var profile: Profile?
 
         return firstly {
             self.create(newRecord: profileData)
-        }.then { _ in
-            self.getCurrentProfile()
         }.done { currProfile in
-            profile = currProfile
             let starAccountData = StarAccountData(ownerId: currProfile.id)
+            
             StarAccountManager().create(newRecord: starAccountData).catch { error in
                 Logger.error(error.localizedDescription)
             }
-        }.compactMap {
-            guard let profile = profile else {
-                return nil
-            }
-            return profile
+        }.then {
+            self.getCurrentProfile()
         }
     }
 
