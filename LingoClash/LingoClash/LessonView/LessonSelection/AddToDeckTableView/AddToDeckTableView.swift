@@ -11,14 +11,13 @@ import Combine
 private let reuseIdentifier = "AddToDeckTableViewCell"
 
 class AddToDeckTableView: UITableViewController {
-    private let viewModel = AddToDeckViewModel()
+    var viewModel: AddToDeckViewModel?
     private var cancellables: Set<AnyCancellable> = []
     
     private var decks: [Deck]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("LOADED")
         
         setUpBinders()
         self.tableView.dataSource = self
@@ -26,18 +25,18 @@ class AddToDeckTableView: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.viewModel.fetchDecks()
+        self.viewModel?.fetchDecks()
     }
     
     private func setUpBinders() {
-        viewModel.$decks.sink {[weak self] decks in
+        viewModel?.$decks.sink {[weak self] decks in
             self?.decks = decks
             // initialise decks progress as well
             
             self?.tableView.reloadData()
         }.store(in: &cancellables)
         
-        viewModel.$isRefreshing.sink {[weak self] isRefreshing in
+        viewModel?.$isRefreshing.sink {[weak self] isRefreshing in
             if isRefreshing {
                 self?.parent?.showSpinner()
             } else {
@@ -51,7 +50,7 @@ extension AddToDeckTableView {
     override func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         decks?.count ?? 0
     }
@@ -71,5 +70,21 @@ extension AddToDeckTableView {
         )
 
         return deckCell
+    }
+}
+
+extension AddToDeckTableView {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let deck = decks?[indexPath.row] else {
+            return
+        }
+        
+        self.viewModel?.addVocabToDeck(deck: deck)
+        // set it to the correct viewmodel
+//        let selectedDeck = decks?[indexPath.row]
+//        self.selectedDeck = selectedDeck
+//
+//        // then do a segue
+//        performSegue(withIdentifier: Segue.gotoDeck, sender: self)
     }
 }

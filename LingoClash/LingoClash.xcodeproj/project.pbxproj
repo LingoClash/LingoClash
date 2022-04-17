@@ -169,6 +169,11 @@
 		6F7EE52C280C3D7000BDE31D /* AddToDeckTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE52B280C3D7000BDE31D /* AddToDeckTableView.swift */; };
 		6F7EE52E280C3E5A00BDE31D /* AddToDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE52D280C3E5A00BDE31D /* AddToDeckViewModel.swift */; };
 		6F7EE530280C3FD700BDE31D /* AddToDeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE52F280C3FD700BDE31D /* AddToDeckTableViewCell.swift */; };
+		6F7EE531280C483100BDE31D /* AddToDeckTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE52B280C3D7000BDE31D /* AddToDeckTableView.swift */; };
+		6F7EE532280C483A00BDE31D /* AddToDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE52D280C3E5A00BDE31D /* AddToDeckViewModel.swift */; };
+		6F7EE533280C483D00BDE31D /* AddToDeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE52F280C3FD700BDE31D /* AddToDeckTableViewCell.swift */; };
+		6F7EE535280C570400BDE31D /* RevisionUpdateVocabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE534280C570400BDE31D /* RevisionUpdateVocabData.swift */; };
+		6F7EE536280C572500BDE31D /* RevisionUpdateVocabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE534280C570400BDE31D /* RevisionUpdateVocabData.swift */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
 		6FA0243A27E1BBBE00F94E54 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243927E1BBBE00F94E54 /* FirebaseAuthCombine-Community */; };
 		6FA0243C27E1BBBE00F94E54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243B27E1BBBE00F94E54 /* FirebaseDatabase */; };
@@ -642,6 +647,7 @@
 		6F7EE52B280C3D7000BDE31D /* AddToDeckTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDeckTableView.swift; sourceTree = "<group>"; };
 		6F7EE52D280C3E5A00BDE31D /* AddToDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDeckViewModel.swift; sourceTree = "<group>"; };
 		6F7EE52F280C3FD700BDE31D /* AddToDeckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDeckTableViewCell.swift; sourceTree = "<group>"; };
+		6F7EE534280C570400BDE31D /* RevisionUpdateVocabData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionUpdateVocabData.swift; sourceTree = "<group>"; };
 		6FA053D327F69E5900E03683 /* RevisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionViewController.swift; sourceTree = "<group>"; };
 		6FCB0A2727FC899200F63E46 /* QuerySequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuerySequence.swift; sourceTree = "<group>"; };
 		CE2771CF2809882500A739C1 /* PKGamePlayerOutcomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGamePlayerOutcomeManager.swift; sourceTree = "<group>"; };
@@ -1631,6 +1637,7 @@
 				CE2771D2280988C600A739C1 /* PKGamePlayerOutcomeData.swift */,
 				62FEFAD3280B52DE00C0503B /* StarAccountData.swift */,
 				62FEFAD6280B530000C0503B /* StarTransactionData.swift */,
+				6F7EE534280C570400BDE31D /* RevisionUpdateVocabData.swift */,
 			);
 			path = Records;
 			sourceTree = "<group>";
@@ -2058,6 +2065,7 @@
 				624989DE27E7395E0092FC1B /* LearningBooksViewController.swift in Sources */,
 				624989E527E742690092FC1B /* RecommendedBookCollectionViewCell.swift in Sources */,
 				CEA1C7B227FA145800123225 /* QuestionConstructor.swift in Sources */,
+				6F7EE535280C570400BDE31D /* RevisionUpdateVocabData.swift in Sources */,
 				624BD58B27E7A431006F0391 /* BookProgress.swift in Sources */,
 				CE673C2227F8B46F00321BB8 /* PKGameLobbyViewModel.swift in Sources */,
 				624BD58827E7A3A2006F0391 /* BooksViewModel.swift in Sources */,
@@ -2204,6 +2212,7 @@
 				D3C5E20727F6E36B00F65B8E /* AlertUtilities.swift in Sources */,
 				D3C5E20827F6E36B00F65B8E /* ProfileViewModel.swift in Sources */,
 				6F75643E280BE1C700AECCBD /* RecallDifficulty.swift in Sources */,
+				6F7EE532280C483A00BDE31D /* AddToDeckViewModel.swift in Sources */,
 				D3C5E20927F6E36B00F65B8E /* AuthErrors.swift in Sources */,
 				D3C5E20A27F6E36B00F65B8E /* BookData.swift in Sources */,
 				D3C5E20B27F6E36B00F65B8E /* SceneDelegate.swift in Sources */,
@@ -2260,6 +2269,7 @@
 				CEF3E691280690A7001F483B /* DefinitionOptionQuestionConstructor.swift in Sources */,
 				D3C5E22127F6E36B00F65B8E /* QuestionViewController.swift in Sources */,
 				6F75643F280BE1CB00AECCBD /* RevisionQuery.swift in Sources */,
+				6F7EE533280C483D00BDE31D /* AddToDeckTableViewCell.swift in Sources */,
 				D3C5E22227F6E36B00F65B8E /* LessonQuizResult.swift in Sources */,
 				D3C5E22327F6E36B00F65B8E /* Dynamic.swift in Sources */,
 				D3C5E22427F6E36B00F65B8E /* LessonQuizProgressBarView.swift in Sources */,
@@ -2297,10 +2307,12 @@
 				D3C5E23C27F6E36B00F65B8E /* ProfileLessonData.swift in Sources */,
 				D3AF1C1D28057DFA00DCFA2E /* DarkTheme.swift in Sources */,
 				D3C5E23D27F6E36B00F65B8E /* BookManager.swift in Sources */,
+				6F7EE531280C483100BDE31D /* AddToDeckTableView.swift in Sources */,
 				D30E491627FAC7C60074CF2B /* Profile.swift in Sources */,
 				D3C5E23E27F6E36B00F65B8E /* HomeViewController.swift in Sources */,
 				D3C5E23F27F6E36B00F65B8E /* LearningBooksViewController.swift in Sources */,
 				D3C5E24027F6E36B00F65B8E /* RecommendedBookCollectionViewCell.swift in Sources */,
+				6F7EE536280C572500BDE31D /* RevisionUpdateVocabData.swift in Sources */,
 				CEBC07732807DE1600A0ED82 /* DataManagerResources.swift in Sources */,
 				CEF3E6AE280690DA001F483B /* PKGameQuizViewModelFromPKGame.swift in Sources */,
 				D3C5E24127F6E36B00F65B8E /* BookProgress.swift in Sources */,

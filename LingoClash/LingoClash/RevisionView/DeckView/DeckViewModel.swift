@@ -50,12 +50,15 @@ final class DeckViewModel {
         let currDate = Date()
         
         firstly {
+            // get the id
+            RevisionVocabManager().getOne(id: query.revVocab.id)
+        }.then { revisionVocabData in
             RevisionVocabManager().update(id: query.revVocab.id,
                                           to: RevisionVocabData(id: query.revVocab.id,
                                                                 difficulty: recallDifficulty.rawValue,
                                                                 last_attempted_date: currDate,
-                                                                vocab_id: query.revVocab.vocab.id)
-            )
+                                                                vocab_id: query.revVocab.vocab.id,
+                                                                deck_id: revisionVocabData.deck_id))
         }.done { _ in
             Logger.info(
                 "Revision Vocab \(query.revVocab.vocab.word) has been updated with latest attempt at \(currDate)"

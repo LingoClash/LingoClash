@@ -6,6 +6,7 @@
 //
 
 struct Deck {
+    let id: Identifier
     let name: String
     var vocabs: [RevisionQuery]
     
@@ -16,12 +17,14 @@ struct Deck {
     }
     
     init(name: String, vocabs: [RevisionVocab]) {
+        self.id = "-1"
         self.name = name
         
         self.vocabs = vocabs.map{ RevisionQuery(vocab: $0) }
     }
     
     init(deckData: DeckData, vocabDataArr: [VocabData]) {
+        self.id = deckData.id
         self.name = deckData.name
         
         self.vocabs = vocabDataArr.map{ vocabData in
@@ -33,6 +36,7 @@ struct Deck {
     }
     
     init(deckData: DeckData, revisionVocabDataArr: [RevisionVocabData], vocabDataArr: [VocabData]) {
+        self.id = deckData.id
         self.name = deckData.name
         
         self.vocabs = vocabDataArr.enumerated().map{ (index, vocabData) in
