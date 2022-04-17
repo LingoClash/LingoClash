@@ -26,6 +26,7 @@
 		62209228280C13E2003365DF /* RewardSystemError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209226280C11C4003365DF /* RewardSystemError.swift */; };
 		6220922A280C1CA1003365DF /* TimeUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209229280C1CA1003365DF /* TimeUtilities.swift */; };
 		6220922B280C1F18003365DF /* TimeUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209229280C1CA1003365DF /* TimeUtilities.swift */; };
+		623FD20A280C6AD700CC1A5E /* PKGameRewardSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623FD209280C6AD700CC1A5E /* PKGameRewardSystemView.swift */; };
 		624989DA27E735600092FC1B /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624989D927E735600092FC1B /* BookCollectionViewController.swift */; };
 		624989DC27E736590092FC1B /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624989DB27E736590092FC1B /* BookCollectionViewCell.swift */; };
 		624989DE27E7395E0092FC1B /* LearningBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624989DD27E7395E0092FC1B /* LearningBooksViewController.swift */; };
@@ -180,7 +181,6 @@
 		6F7EE533280C483D00BDE31D /* AddToDeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE52F280C3FD700BDE31D /* AddToDeckTableViewCell.swift */; };
 		6F7EE535280C570400BDE31D /* RevisionUpdateVocabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE534280C570400BDE31D /* RevisionUpdateVocabData.swift */; };
 		6F7EE536280C572500BDE31D /* RevisionUpdateVocabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7EE534280C570400BDE31D /* RevisionUpdateVocabData.swift */; };
-		6F75644D280BEE4700AECCBD /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA328098B5500663A12 /* DeckManager.swift */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
 		6FA0243A27E1BBBE00F94E54 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243927E1BBBE00F94E54 /* FirebaseAuthCombine-Community */; };
 		6FA0243C27E1BBBE00F94E54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243B27E1BBBE00F94E54 /* FirebaseDatabase */; };
@@ -390,7 +390,6 @@
 		D3AF1C262805937100DCFA2E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF1C242805924300DCFA2E /* SettingsViewController.swift */; };
 		D3AF1C302805DDDB00DCFA2E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF1C2F2805DDDB00DCFA2E /* SplashViewModel.swift */; };
 		D3AF1C312805DDE000DCFA2E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF1C2F2805DDDB00DCFA2E /* SplashViewModel.swift */; };
-		D3AFB0AD280B2FC6006B48A6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6204A03E27DE43350063100D /* ProfileViewController.swift */; };
 		D3BD29E527DCE6350061E362 /* LingoClashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD29E427DCE6350061E362 /* LingoClashTests.swift */; };
 		D3BD2A1127DED82A0061E362 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD2A1027DED82A0061E362 /* LoginViewModel.swift */; };
 		D3BD2A1327DED8330061E362 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD2A1227DED8320061E362 /* SignUpViewModel.swift */; };
@@ -572,6 +571,7 @@
 		62209223280BF45A003365DF /* LessonQuizRewardSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonQuizRewardSystemView.swift; sourceTree = "<group>"; };
 		62209226280C11C4003365DF /* RewardSystemError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardSystemError.swift; sourceTree = "<group>"; };
 		62209229280C1CA1003365DF /* TimeUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtilities.swift; sourceTree = "<group>"; };
+		623FD209280C6AD700CC1A5E /* PKGameRewardSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGameRewardSystemView.swift; sourceTree = "<group>"; };
 		624989D927E735600092FC1B /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
 		624989DB27E736590092FC1B /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		624989DD27E7395E0092FC1B /* LearningBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningBooksViewController.swift; sourceTree = "<group>"; };
@@ -864,7 +864,6 @@
 			isa = PBXGroup;
 			children = (
 				6F67BDED2804260D00B91844 /* DataStructures */,
-				62FEFAA8280B4C7B00C0503B /* Snackbar */,
 				6204A03927DE1CDB0063100D /* AppConfigs.swift */,
 				62165B7527F2244C004BC620 /* FormUtilities.swift */,
 				62209229280C1CA1003365DF /* TimeUtilities.swift */,
@@ -1018,6 +1017,7 @@
 				62FEFAE9280B537200C0503B /* NotificationObserver.swift */,
 				62FEFADA280B533100C0503B /* LessonQuizRewardSystem.swift */,
 				62209223280BF45A003365DF /* LessonQuizRewardSystemView.swift */,
+				623FD209280C6AD700CC1A5E /* PKGameRewardSystemView.swift */,
 				62FEFAE3280B535C00C0503B /* PKGameRewardSystem.swift */,
 				62FEFAE0280B534D00C0503B /* MainRewardSystem.swift */,
 				62FEFADD280B534100C0503B /* RewardSystem.swift */,
@@ -1940,6 +1940,7 @@
 				62FEFAC2280B505A00C0503B /* ItemTransaction.swift in Sources */,
 				CEF1E7F127E6D120005D4272 /* QuestionViewModel.swift in Sources */,
 				CEA1C7B727FA145800123225 /* QuestionFormat.swift in Sources */,
+				623FD20A280C6AD700CC1A5E /* PKGameRewardSystemView.swift in Sources */,
 				CEF1E81827E742FE005D4272 /* TwoDisjointSetOptionQuestionLayoutViewModel.swift in Sources */,
 				6F5425C92803C26E009E5AD5 /* RevisionQuery.swift in Sources */,
 				CEF1E82127E75979005D4272 /* OptionTableCell.swift in Sources */,
@@ -2108,7 +2109,6 @@
 				62BB1CE72800308D002CD31A /* ExploreBookViewController.swift in Sources */,
 				D33282F927D4E63B00C80986 /* Theme.swift in Sources */,
 				6F4C4D6727F8045600394CCB /* RevisionVocab.swift in Sources */,
-				62FEFAE7280B536600C0503B /* Reward.swift in Sources */,
 				624989DC27E736590092FC1B /* BookCollectionViewCell.swift in Sources */,
 				62FEFAE4280B535C00C0503B /* PKGameRewardSystem.swift in Sources */,
 				629090A027E8303F00941A3B /* RecommendedBooksTableViewController.swift in Sources */,
@@ -2194,7 +2194,6 @@
 				D3C5E1F527F6E36B00F65B8E /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				6F75643D280BE1C500AECCBD /* RevisionVocab.swift in Sources */,
 				D3C5E1F627F6E36B00F65B8E /* StarView.swift in Sources */,
-				62FEFAE8280B536600C0503B /* Reward.swift in Sources */,
 				6F756436280BE19400AECCBD /* Deck.swift in Sources */,
 				CEF3E696280690C2001F483B /* QuestionWrapper.swift in Sources */,
 				62BB1CE228002135002CD31A /* HomeViewModel.swift in Sources */,

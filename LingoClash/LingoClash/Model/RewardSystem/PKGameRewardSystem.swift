@@ -6,12 +6,23 @@
 //
 
 import Foundation
+import PromiseKit
 
 class PKGameRewardSystem: RewardSystem {
+    @Published var snackbarText: String?
+
     override func setUpObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(pkGameWon(_:)), name: .PKGameWon, object: nil)
     }
 
     @objc func pkGameWon(_ notification: Notification) {
+        firstly {
+            getStarReward(amount: 1, description: .pkGameWon)
+        }.done { currencyTransaction in
+            self.presentReward(transaction: currencyTransaction)
+            self.snackbarText = "You earned a star for winning a PK!"
+        }.catch { error in
+            print(error)
+        }
     }
 }
