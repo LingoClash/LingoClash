@@ -115,7 +115,6 @@
 		62FEFAE8280B536600C0503B /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE6280B536600C0503B /* Reward.swift */; };
 		62FEFAEA280B537200C0503B /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE9280B537200C0503B /* NotificationObserver.swift */; };
 		62FEFAEB280B537200C0503B /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FEFAE9280B537200C0503B /* NotificationObserver.swift */; };
-		6F034D912809274C00663A12 /* Revision.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA053D127F69E3A00E03683 /* Revision.storyboard */; };
 		6F034D922809281700663A12 /* RevisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA053D327F69E5900E03683 /* RevisionViewController.swift */; };
 		6F034DA228098B4300663A12 /* RevisionVocabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA028098B4300663A12 /* RevisionVocabManager.swift */; };
 		6F034DA828098BE000663A12 /* RevisionVocabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA628098BE000663A12 /* RevisionVocabData.swift */; };
@@ -139,6 +138,10 @@
 		6F67BDF12804607800B91844 /* DeckProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDF02804607800B91844 /* DeckProgress.swift */; };
 		6F6DEB8C280BF6E300FE118C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
 		6F6DEB8D280BF6E800FE118C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
+		6F6DEB93280C141400FE118C /* Revision.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB92280C141400FE118C /* Revision.storyboard */; };
+		6F6DEB94280C141400FE118C /* Revision.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB92280C141400FE118C /* Revision.storyboard */; };
+		6F6DEB96280C145E00FE118C /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB95280C145D00FE118C /* Question.storyboard */; };
+		6F6DEB97280C145E00FE118C /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB95280C145D00FE118C /* Question.storyboard */; };
 		6F756436280BE19400AECCBD /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6427F8041600394CCB /* Deck.swift */; };
 		6F756437280BE19900AECCBD /* RevisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6127F7FFDB00394CCB /* RevisionViewModel.swift */; };
 		6F756438280BE19F00AECCBD /* RevisionCreateDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B37BB27F7E18000C91257 /* RevisionCreateDeckViewController.swift */; };
@@ -169,11 +172,8 @@
 		6FA0244227E1BBBE00F94E54 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0244127E1BBBE00F94E54 /* FirebaseStorage */; };
 		6FA0244427E1BBBE00F94E54 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0244327E1BBBE00F94E54 /* FirebaseStorageCombine-Community */; };
 		6FA0244727E1BC9E00F94E54 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0244627E1BC9E00F94E54 /* PromiseKit */; };
-		6FA053D227F69E3A00E03683 /* Revision.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA053D127F69E3A00E03683 /* Revision.storyboard */; };
 		6FA053D427F69E5900E03683 /* RevisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA053D327F69E5900E03683 /* RevisionViewController.swift */; };
 		6FCB0A2827FC899200F63E46 /* QuerySequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCB0A2727FC899200F63E46 /* QuerySequence.swift */; };
-		6FE082BC280B2A970098BCC0 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F034D882809239600663A12 /* Question.storyboard */; };
-		6FE082BD280B2A980098BCC0 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F034D882809239600663A12 /* Question.storyboard */; };
 		CE2771D02809882500A739C1 /* PKGamePlayerOutcomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2771CF2809882500A739C1 /* PKGamePlayerOutcomeManager.swift */; };
 		CE2771D12809889C00A739C1 /* PKGamePlayerOutcomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2771CF2809882500A739C1 /* PKGamePlayerOutcomeManager.swift */; };
 		CE2771D3280988C600A739C1 /* PKGamePlayerOutcomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2771D2280988C600A739C1 /* PKGamePlayerOutcomeData.swift */; };
@@ -610,7 +610,6 @@
 		62FEFAE3280B535C00C0503B /* PKGameRewardSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGameRewardSystem.swift; sourceTree = "<group>"; };
 		62FEFAE6280B536600C0503B /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		62FEFAE9280B537200C0503B /* NotificationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
-		6F034D882809239600663A12 /* Question.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
 		6F034DA028098B4300663A12 /* RevisionVocabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionVocabManager.swift; sourceTree = "<group>"; };
 		6F034DA328098B5500663A12 /* DeckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckManager.swift; sourceTree = "<group>"; };
 		6F034DA628098BE000663A12 /* RevisionVocabData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionVocabData.swift; sourceTree = "<group>"; };
@@ -632,7 +631,8 @@
 		6F5842D62807D154008C9547 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		6F67BDEE2804261C00B91844 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		6F67BDF02804607800B91844 /* DeckProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckProgress.swift; sourceTree = "<group>"; };
-		6FA053D127F69E3A00E03683 /* Revision.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Revision.storyboard; sourceTree = "<group>"; };
+		6F6DEB92280C141400FE118C /* Revision.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Revision.storyboard; sourceTree = "<group>"; };
+		6F6DEB95280C145D00FE118C /* Question.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
 		6FA053D327F69E5900E03683 /* RevisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionViewController.swift; sourceTree = "<group>"; };
 		6FCB0A2727FC899200F63E46 /* QuerySequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuerySequence.swift; sourceTree = "<group>"; };
 		6FE082C5280B2E350098BCC0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../../../Desktop/Main.storyboard; sourceTree = "<group>"; };
@@ -1473,6 +1473,8 @@
 				CEBC07902808841E00A0ED82 /* LearningBook.storyboard */,
 				CEBC0784280883C300A0ED82 /* CompletedBook.storyboard */,
 				6FE082C5280B2E350098BCC0 /* Main.storyboard */,
+				6F6DEB95280C145D00FE118C /* Question.storyboard */,
+				6F6DEB92280C141400FE118C /* Revision.storyboard */,
 				6F1B90EC280B305700AC235F /* Home.storyboard */,
 				CEBC0786280883C300A0ED82 /* Profile.storyboard */,
 				CEBC0780280883C300A0ED82 /* RecommendedBook.storyboard */,
@@ -1480,9 +1482,7 @@
 				CEBC077C280810CE00A0ED82 /* PKGame.storyboard */,
 				CE8D22A027EEC059005E7058 /* Book.storyboard */,
 				D33282EB27D4D42E00C80986 /* LaunchScreen.storyboard */,
-				6F034D882809239600663A12 /* Question.storyboard */,
 				CE8D228D27EE2B5A005E7058 /* Lesson.storyboard */,
-				6FA053D127F69E3A00E03683 /* Revision.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1774,16 +1774,16 @@
 				6F6DEB8D280BF6E800FE118C /* Home.storyboard in Resources */,
 				CEBC077E280810CF00A0ED82 /* PKGame.storyboard in Resources */,
 				D33282FB27D4E7BF00C80986 /* SF-Pro.ttf in Resources */,
-				6FA053D227F69E3A00E03683 /* Revision.storyboard in Resources */,
 				6F6DEB8C280BF6E300FE118C /* Main.storyboard in Resources */,
 				CE8D22A227EEC059005E7058 /* Book.storyboard in Resources */,
 				CEBC078A280883C300A0ED82 /* CompletedBook.storyboard in Resources */,
+				6F6DEB93280C141400FE118C /* Revision.storyboard in Resources */,
 				CEBC0788280883C300A0ED82 /* RecommendedBook.storyboard in Resources */,
 				D33282EA27D4D42E00C80986 /* Assets.xcassets in Resources */,
 				CEBC07952808841E00A0ED82 /* Arena.storyboard in Resources */,
 				CEBC07942808841E00A0ED82 /* LearningBook.storyboard in Resources */,
+				6F6DEB96280C145E00FE118C /* Question.storyboard in Resources */,
 				CEBC0789280883C300A0ED82 /* Settings.storyboard in Resources */,
-				6FE082BD280B2A980098BCC0 /* Question.storyboard in Resources */,
 				CEBC077A2807E70800A0ED82 /* GoogleService-Info.plist in Resources */,
 				CEBC078B280883C300A0ED82 /* Profile.storyboard in Resources */,
 			);
@@ -1806,15 +1806,15 @@
 				D3C5E26427F6E36B00F65B8E /* LaunchScreen.storyboard in Resources */,
 				6F96F110280BCB10009154BF /* Home.storyboard in Resources */,
 				D3C5E26527F6E36B00F65B8E /* SF-Pro.ttf in Resources */,
-				6F034D912809274C00663A12 /* Revision.storyboard in Resources */,
 				CEBC078F280883E600A0ED82 /* RecommendedBook.storyboard in Resources */,
 				D3C5E26627F6E36B00F65B8E /* Book.storyboard in Resources */,
 				D3C5E26827F6E36B00F65B8E /* Assets.xcassets in Resources */,
+				6F6DEB94280C141400FE118C /* Revision.storyboard in Resources */,
 				CEBC077B2807E71100A0ED82 /* GoogleService-Info.plist in Resources */,
-				6FE082BC280B2A970098BCC0 /* Question.storyboard in Resources */,
 				CEBC078E280883E600A0ED82 /* Profile.storyboard in Resources */,
 				CEBC078D280883E600A0ED82 /* CompletedBook.storyboard in Resources */,
 				CEBC07962808842300A0ED82 /* Arena.storyboard in Resources */,
+				6F6DEB97280C145E00FE118C /* Question.storyboard in Resources */,
 				6F96F111280BCB12009154BF /* Main.storyboard in Resources */,
 				CEBC078C280883E200A0ED82 /* Settings.storyboard in Resources */,
 				CEBC07972808842300A0ED82 /* LearningBook.storyboard in Resources */,
