@@ -72,7 +72,7 @@ class Logger {
         }
 
         #if DEBUG
-        Logger.info(fullString)
+        print(fullString)
         #endif
     }
 }
