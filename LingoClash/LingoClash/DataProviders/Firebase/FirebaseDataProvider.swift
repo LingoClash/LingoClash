@@ -106,13 +106,8 @@ class FirebaseDataProvider: DataProvider {
         }
     }
 
-<<<<<<< HEAD
-    func getManyReference<T: Codable>(resource: String,
-                                      params: GetManyReferenceParams) -> Promise<GetManyReferenceResult<T>> {
-=======
     func getManyReference<T: Codable>(resource: String, params: GetManyReferenceParams)
         -> Promise<GetManyReferenceResult<T>> {
->>>>>>> fb4e4a3f (Add more code)
 
         Promise { seal in
             var filteredCollection = db.collection(resource).whereField(params.target, isEqualTo: params.id)
