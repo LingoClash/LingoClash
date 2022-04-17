@@ -22,7 +22,7 @@ final class RecommendedBooksViewModel {
             self.booksForCategories = booksForCategories
             self.isRefreshing = false
         }.catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
     
@@ -32,7 +32,7 @@ final class RecommendedBooksViewModel {
 
     func learnBook(book: Book) {
         bookManager.markAsLearning(bookId: book.id).catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
 }

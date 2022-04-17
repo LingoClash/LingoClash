@@ -41,7 +41,7 @@ class LessonQuizRewardSystem: RewardSystem {
         }.done {
             self.rewardLearnLessonOneWeekStreak()
         }.catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
 
@@ -60,10 +60,10 @@ class LessonQuizRewardSystem: RewardSystem {
                 self.snackbarText = "You earned a star for a 1 week learning streak! " +
                                     "Keep up the streak to earn more bonus stars!"
             }.catch { error in
-                print(error)
+                Logger.error(error.localizedDescription)
             }
         }.catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
 

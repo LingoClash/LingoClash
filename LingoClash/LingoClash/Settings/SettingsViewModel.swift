@@ -60,7 +60,7 @@ final class SettingsViewModel {
             self.alertContent = nil
             self.isRefreshing = false
         }.catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
     
