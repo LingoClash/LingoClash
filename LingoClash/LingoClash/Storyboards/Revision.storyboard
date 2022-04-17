@@ -190,7 +190,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Hard">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
-                                            <color key="baseForegroundColor" name="ErrorText"/>
+                                            <color key="baseForegroundColor" name="Background"/>
                                             <color key="baseBackgroundColor" name="Tertiary-Dark"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -203,7 +203,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Good">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                            <color key="baseBackgroundColor" name="Green"/>
+                                            <color key="baseBackgroundColor" red="0.32793747462254857" green="0.72503221649484528" blue="0.3449732171795088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="goodDidTap:" destination="cke-iM-Mrv" eventType="touchUpInside" id="EwZ-qa-vXx"/>
@@ -399,9 +399,6 @@
         </namedColor>
         <namedColor name="Error">
             <color red="0.73100000619888306" green="0.10400000214576721" blue="0.10599999874830246" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="ErrorText">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Green">
             <color red="0.45100000500679016" green="0.98199999332427979" blue="0.47600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

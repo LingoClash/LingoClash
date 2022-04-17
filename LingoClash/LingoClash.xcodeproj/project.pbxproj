@@ -156,6 +156,9 @@
 		6F756447280BE3C600AECCBD /* RevisionVocabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA028098B4300663A12 /* RevisionVocabManager.swift */; };
 		6F756448280BE49600AECCBD /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2F4A2527F9947500923DB9 /* Query.swift */; };
 		6F756449280BE49B00AECCBD /* Answerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2F4A2727F9952D00923DB9 /* Answerable.swift */; };
+		6F75644A280BE4DF00AECCBD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
+		6F75644B280BE4E500AECCBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
+		6F75644C280BE60C00AECCBD /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA328098B5500663A12 /* DeckManager.swift */; };
 		6F96F110280BCB10009154BF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
 		6F96F111280BCB12009154BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
@@ -1769,6 +1772,7 @@
 				D32BB7A92809F83F009E4049 /* korean-eng.json in Resources */,
 				D33282ED27D4D42E00C80986 /* LaunchScreen.storyboard in Resources */,
 				CEBC077E280810CF00A0ED82 /* PKGame.storyboard in Resources */,
+				6F75644A280BE4DF00AECCBD /* Home.storyboard in Resources */,
 				D33282FB27D4E7BF00C80986 /* SF-Pro.ttf in Resources */,
 				6FA053D227F69E3A00E03683 /* Revision.storyboard in Resources */,
 				CE8D22A227EEC059005E7058 /* Book.storyboard in Resources */,
@@ -1779,6 +1783,7 @@
 				CEBC07942808841E00A0ED82 /* LearningBook.storyboard in Resources */,
 				CEBC0789280883C300A0ED82 /* Settings.storyboard in Resources */,
 				6FE082BD280B2A980098BCC0 /* Question.storyboard in Resources */,
+				6F75644B280BE4E500AECCBD /* Main.storyboard in Resources */,
 				CEBC077A2807E70800A0ED82 /* GoogleService-Info.plist in Resources */,
 				CEBC078B280883C300A0ED82 /* Profile.storyboard in Resources */,
 			);
@@ -2281,6 +2286,7 @@
 				CEF3E6A5280690D8001F483B /* PKGameLobbyViewController.swift in Sources */,
 				CE2771D12809889C00A739C1 /* PKGamePlayerOutcomeManager.swift in Sources */,
 				D3C5E24327F6E36B00F65B8E /* Promise+Extensions.swift in Sources */,
+				6F75644C280BE60C00AECCBD /* DeckManager.swift in Sources */,
 				D3C5E24427F6E36B00F65B8E /* CurrentBookTabBarController.swift in Sources */,
 				D3C5E24527F6E36B00F65B8E /* DataProvider.swift in Sources */,
 				D30E491727FAC7C80074CF2B /* Lesson.swift in Sources */,
