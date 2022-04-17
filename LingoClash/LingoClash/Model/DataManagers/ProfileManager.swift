@@ -139,7 +139,7 @@ class ProfileManager: DataManager<ProfileData> {
                 self.getList()
             }.done { profiles in
                 let sortedProfiles = profiles.sorted(by: { (p1: ProfileData, p2: ProfileData) -> Bool in
-                    p1.stars < p2.stars
+                    p1.stars > p2.stars
                 })
 
                 rankingByTotalStars = sortedProfiles.firstIndex {
