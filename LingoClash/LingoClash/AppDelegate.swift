@@ -65,10 +65,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let isLightSelected = UserDefaults.standard.bool(forKey: "LightTheme")
-        UIApplication
+        
+        let keyWindow = UIApplication
             .shared
-            .keyWindow?
-            .overrideUserInterfaceStyle = isLightSelected
+            .connectedScenes
+            .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+            .first { $0.isKeyWindow }
+        
+        keyWindow?.overrideUserInterfaceStyle = isLightSelected
         ? .light : .dark
     }
     

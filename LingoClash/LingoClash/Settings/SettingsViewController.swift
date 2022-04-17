@@ -10,7 +10,6 @@ import Combine
 
 class SettingsViewController: UIViewController {
     
-    
     private let viewModel = SettingsViewModel()
     @IBOutlet weak var themeControl: UISegmentedControl!
     private var cancellables: Set<AnyCancellable> = []
@@ -53,13 +52,20 @@ class SettingsViewController: UIViewController {
         }.store(in: &cancellables)
         
         viewModel.$isLightSelected.sink {[weak self] isLightSelected in
-            UIApplication
+            
+            let keyWindow = UIApplication
                 .shared
-                .keyWindow?
-                .overrideUserInterfaceStyle = isLightSelected
+                .connectedScenes
+                .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+                .first { $0.isKeyWindow }
+            
+            keyWindow?.overrideUserInterfaceStyle = isLightSelected
             ? .light : .dark
+            
             UserDefaults.standard.set(isLightSelected, forKey: "LightTheme")
+            
             self?.themeControl.selectedSegmentIndex = isLightSelected ? 0 : 1
+            
         }.store(in: &cancellables)
     }
     
