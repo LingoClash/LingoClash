@@ -137,6 +137,8 @@
 		6F5842D72807D154008C9547 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5842D62807D154008C9547 /* Answer.swift */; };
 		6F67BDEF2804261C00B91844 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDEE2804261C00B91844 /* Heap.swift */; };
 		6F67BDF12804607800B91844 /* DeckProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDF02804607800B91844 /* DeckProgress.swift */; };
+		6F6DEB8C280BF6E300FE118C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
+		6F6DEB8D280BF6E800FE118C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
 		6F756436280BE19400AECCBD /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6427F8041600394CCB /* Deck.swift */; };
 		6F756437280BE19900AECCBD /* RevisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6127F7FFDB00394CCB /* RevisionViewModel.swift */; };
 		6F756438280BE19F00AECCBD /* RevisionCreateDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B37BB27F7E18000C91257 /* RevisionCreateDeckViewController.swift */; };
@@ -1769,9 +1771,11 @@
 				CE8D228F27EE2B5A005E7058 /* Lesson.storyboard in Resources */,
 				D32BB7A92809F83F009E4049 /* korean-eng.json in Resources */,
 				D33282ED27D4D42E00C80986 /* LaunchScreen.storyboard in Resources */,
+				6F6DEB8D280BF6E800FE118C /* Home.storyboard in Resources */,
 				CEBC077E280810CF00A0ED82 /* PKGame.storyboard in Resources */,
 				D33282FB27D4E7BF00C80986 /* SF-Pro.ttf in Resources */,
 				6FA053D227F69E3A00E03683 /* Revision.storyboard in Resources */,
+				6F6DEB8C280BF6E300FE118C /* Main.storyboard in Resources */,
 				CE8D22A227EEC059005E7058 /* Book.storyboard in Resources */,
 				CEBC078A280883C300A0ED82 /* CompletedBook.storyboard in Resources */,
 				CEBC0788280883C300A0ED82 /* RecommendedBook.storyboard in Resources */,
