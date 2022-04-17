@@ -8,7 +8,7 @@
 import Foundation
 
 struct RevisionQuery: Query {
-//    var id: Identifier
+    var id: Identifier
     // Starts from 0
     var revVocab: RevisionVocab
     
@@ -20,23 +20,23 @@ struct RevisionQuery: Query {
     let context: String
     var answerToString: String
     
-    init(vocab: RevisionVocab, context: String, answer: String) {
+    init(vocab: RevisionVocab, context: String, answer: String, id: Identifier) {
         self.revVocab = vocab
         self.context = context
         self.answerToString = answer
         
         self.difficultyParameter = Difficulty(amount: 0)
-//        self.id = "id"
+        self.id = id
     }
     
-    init(vocab: RevisionVocab, context: String, answer: String, difficulty: Difficulty, lastAttemptedDate: Date?) {
+    init(vocab: RevisionVocab, context: String, answer: String, difficulty: Difficulty, lastAttemptedDate: Date?, id: Identifier) {
         self.revVocab = vocab
         self.context = context
         self.answerToString = answer
         
         self.difficultyParameter = difficulty
         self.lastAttemptedDate = lastAttemptedDate
-//        self.id = id
+        self.id = id
     }
     
     // This magnitude is calculated on the fly, because the time difference always changes when Today changes

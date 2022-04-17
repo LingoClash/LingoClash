@@ -20,7 +20,7 @@ struct Deck {
     init(name: String, vocabs: [RevisionVocab]) {
         self.name = name
         
-        self.vocabs = vocabs.map{ RevisionQuery(vocab: $0, context: $0.vocab.word, answer: $0.vocab.definition)
+        self.vocabs = vocabs.map{ RevisionQuery(vocab: $0, context: $0.vocab.word, answer: $0.vocab.definition, id: "-1")
         }
     }
     
@@ -34,7 +34,8 @@ struct Deck {
                                  context: vocabData.word,
                                  answer: vocabData.definition,
                                  difficulty: Difficulty(amount: 0),
-                                 lastAttemptedDate: nil)
+                                 lastAttemptedDate: nil,
+                                 id: "-1")
         }
     }
 }

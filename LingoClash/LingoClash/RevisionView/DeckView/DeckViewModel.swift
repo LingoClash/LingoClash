@@ -29,7 +29,8 @@ final class DeckViewModel {
             context: currentQuery.context,
             answer: currentQuery.answerToString,
             difficulty: Difficulty(amount: recallDifficulty.rawValue),
-            lastAttemptedDate: Date()
+            lastAttemptedDate: Date(),
+            id: currentQuery.id
         )
         
         self.revisionSequence.insert(newQuery)

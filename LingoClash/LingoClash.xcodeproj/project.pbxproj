@@ -80,7 +80,6 @@
 		6F034D9F2809289C00663A12 /* CreateDeckFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D5F27F7FE9D00394CCB /* CreateDeckFields.swift */; };
 		6F034DA128098B4300663A12 /* RevisionVocabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA028098B4300663A12 /* RevisionVocabManager.swift */; };
 		6F034DA228098B4300663A12 /* RevisionVocabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA028098B4300663A12 /* RevisionVocabManager.swift */; };
-		6F034DA428098B5500663A12 /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA328098B5500663A12 /* DeckManager.swift */; };
 		6F034DA528098B5500663A12 /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA328098B5500663A12 /* DeckManager.swift */; };
 		6F034DA728098BE000663A12 /* RevisionVocabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA628098BE000663A12 /* RevisionVocabData.swift */; };
 		6F034DA828098BE000663A12 /* RevisionVocabData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA628098BE000663A12 /* RevisionVocabData.swift */; };
@@ -107,6 +106,7 @@
 		6F5842D72807D154008C9547 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5842D62807D154008C9547 /* Answer.swift */; };
 		6F67BDEF2804261C00B91844 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDEE2804261C00B91844 /* Heap.swift */; };
 		6F67BDF12804607800B91844 /* DeckProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDF02804607800B91844 /* DeckProgress.swift */; };
+		6F96F104280BB1BA009154BF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
 		6FA0243A27E1BBBE00F94E54 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243927E1BBBE00F94E54 /* FirebaseAuthCombine-Community */; };
 		6FA0243C27E1BBBE00F94E54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243B27E1BBBE00F94E54 /* FirebaseDatabase */; };
@@ -1678,7 +1678,7 @@
 				CE8D22A227EEC059005E7058 /* Book.storyboard in Resources */,
 				CEBC078A280883C300A0ED82 /* CompletedBook.storyboard in Resources */,
 				CEBC0788280883C300A0ED82 /* RecommendedBook.storyboard in Resources */,
-				6F1B90ED280B305700AC235F /* Home.storyboard in Resources */,
+				6F96F104280BB1BA009154BF /* Home.storyboard in Resources */,
 				D33282EA27D4D42E00C80986 /* Assets.xcassets in Resources */,
 				6FE082C0280B2AAF0098BCC0 /* Home.storyboard in Resources */,
 				CEBC07952808841E00A0ED82 /* Arena.storyboard in Resources */,
