@@ -17,4 +17,8 @@ struct DataManagerResources {
     static let pkGames = "pk_games"
     static let pkGamesMoves = "moves"
     static let pkGamePlayerOutcomes = "pk_game_player_outcomes"
+    static let starAccounts = "star_accounts"
+    static let starTransactions = "star_transactions"
+    static let decks = "decks"
+    static let revisionVocabs = "revision_vocabs"
 }
