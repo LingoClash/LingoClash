@@ -20,13 +20,13 @@ struct RevisionVocab {
     }
     
     init(id: Identifier, vocab: Vocab, difficultyParameter: Difficulty) {
-        self.difficultyParameter = Difficulty(amount: 0)
+        self.difficultyParameter = difficultyParameter
         self.vocab = vocab
         self.id = id
     }
     
     init(id: Identifier, vocab: Vocab, difficultyParameter: Difficulty, lastAttemptedDate: Date) {
-        self.difficultyParameter = Difficulty(amount: 0)
+        self.difficultyParameter = difficultyParameter
         self.vocab = vocab
         self.lastAttemptedDate = lastAttemptedDate
         self.id = id

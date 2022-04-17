@@ -43,6 +43,9 @@ class DeckViewController: UIViewController {
     private func setUpBinders() {
         viewModel?.$deck.sink {[weak self] deck in
             self?.deck = deck
+            if self?.deck?.vocabs.count == 0 {
+                self?.showNoWordsScreen()
+            }
         }.store(in: &cancellables)
         
         viewModel?.$revisionSequence.sink {[weak self] revisionSequence in
@@ -114,47 +117,47 @@ class DeckViewController: UIViewController {
     @IBOutlet weak var hardButton: UIButton!
     
     @IBAction func againDidTap(_ sender: Any) {
-        
         viewModel?.addToQueue(currentQuery: currentQuery, recallDifficulty: .again)
-        
-        
+        recallDifficultyButtonTapped(recallDifficulty: .again)
+
         let nextQuery = viewModel?.getNextQuery()
         self.currentQuery = nextQuery
         
         setLabelToQuery(query: nextQuery)
-        recallDifficultyButtonTapped(recallDifficulty: .again)
+        
     }
     
     @IBAction func hardDidTap(_ sender: Any) {
-        
         viewModel?.addToQueue(currentQuery: currentQuery, recallDifficulty: .hard)
-        
+        recallDifficultyButtonTapped(recallDifficulty: .hard)
+
         let nextQuery = viewModel?.getNextQuery()
         self.currentQuery = nextQuery
         
         setLabelToQuery(query: nextQuery)
-        recallDifficultyButtonTapped(recallDifficulty: .hard)
+        
     }
     
     @IBAction func easyDidTap(_ sender: Any) {
-        
         viewModel?.addToQueue(currentQuery: currentQuery, recallDifficulty: .easy)
+        recallDifficultyButtonTapped(recallDifficulty: .easy)
         
         let nextQuery = viewModel?.getNextQuery()
         self.currentQuery = nextQuery
         
         setLabelToQuery(query: nextQuery)
-        recallDifficultyButtonTapped(recallDifficulty: .easy)
+        
     }
     
     @IBAction func goodDidTap(_ sender: Any) {
         viewModel?.addToQueue(currentQuery: currentQuery, recallDifficulty: .good)
+        recallDifficultyButtonTapped(recallDifficulty: .good)
         
         let nextQuery = viewModel?.getNextQuery()
         self.currentQuery = nextQuery
         
         setLabelToQuery(query: nextQuery)
-        recallDifficultyButtonTapped(recallDifficulty: .good)
+        
     }
     
     private func setLabelToQuery(query: RevisionQuery?) {

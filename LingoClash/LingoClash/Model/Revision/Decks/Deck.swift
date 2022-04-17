@@ -28,7 +28,8 @@ struct Deck {
         
         self.vocabs = vocabDataArr.map{ vocabData in
             let revisionVocab = RevisionVocab(id: vocabData.id,
-                                                vocab: Vocab(vocabData: vocabData), difficultyParameter: Difficulty(amount: 0))
+                                                vocab: Vocab(vocabData: vocabData),
+                                                difficultyParameter: Difficulty(amount: 0))
             return RevisionQuery(vocab: revisionVocab)
         }
     }
@@ -41,13 +42,10 @@ struct Deck {
             let revisionVocab = RevisionVocab(
                 id: revisionVocabDataArr[index].id,
                 vocab: Vocab(vocabData: vocabData),
-                difficultyParameter: Difficulty(amount: 0),
+                difficultyParameter: Difficulty(amount: revisionVocabDataArr[index].difficulty),
                 lastAttemptedDate: revisionVocabDataArr[index].last_attempted_date
             )
-            return RevisionQuery(vocab: revisionVocab,
-                                 difficulty: Difficulty(amount: 0),
-                                 lastAttemptedDate: nil
-            )
+            return RevisionQuery(vocab: revisionVocab)
         }
         
     }

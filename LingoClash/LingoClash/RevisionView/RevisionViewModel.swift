@@ -13,6 +13,11 @@ final class RevisionViewModel {
     @Published var decks: [Deck] = []
     @Published var isRefreshing = false
     
+    // Criteria for RevisionQueries to appear in decks
+    public static let REVISION_QUERY_CRITERIA = { (revisionQuery: RevisionQuery) -> Bool in
+        return revisionQuery.magnitude < 2
+    }
+    
     private static let DEFAULT_DECK_NAME = "Default Deck"
     
     func addDefaultDeck() {
@@ -31,7 +36,7 @@ final class RevisionViewModel {
             Vocab(vocabId: 2, word: "今天", definition: "today", sentence: "她今天看起来很悲伤。",
                   sentenceDefinition: "She looks saf today.", pronunciationText: "jīntiān"),
             Vocab(vocabId: 3, word: "明天", definition: "tomorrow", sentence: "明天10：10",
-                  sentenceDefinition: " tomorrow at 10:10", pronunciationText: "míngtiān"),
+                  sentenceDefinition: "tomorrow at 10:10", pronunciationText: "míngtiān"),
             Vocab(vocabId: 4, word: "昨天", definition: "yesterday", sentence: "她昨天看起来很悲伤。",
                   sentenceDefinition: "She looks saf today.", pronunciationText: "jīntiān"),
             Vocab(vocabId: 5, word: "日历", definition: "calendar", sentence: "她今天看起来很日历。",
@@ -51,6 +56,7 @@ final class RevisionViewModel {
     }
 
     func fetchDecks() {
+        self.decks = []
         self.isRefreshing = true
         
         firstly {
@@ -60,17 +66,15 @@ final class RevisionViewModel {
         }.done { deckArr in
             self.decks.append(contentsOf: deckArr)
             self.isRefreshing = false
+        }.catch { error in
+            Logger.error("\(error)")
         }
 
         addDefaultDeck()
     }
-    
-    func deckProgress() {
-        
-    }
+
     
     func addDeck(_ deckFields: CreateDeckFields) {
-        // update locally
         decks.append(Deck(name: deckFields.newName, vocabs: []))
     }
 }

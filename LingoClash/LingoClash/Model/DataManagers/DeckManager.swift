@@ -21,9 +21,10 @@ class DeckManager: DataManager<DeckData> {
             self.create(newRecord:
                             DeckData(id: "-1", name: newDeckFields.newName, profile_id: currentProfile.id, revision_vocab_id: [])
             )
+        }.catch { error in
+            Logger.error("\(error)")
         }
     }
-    
     
     func getDecks(profileId: Identifier) -> Promise<[Deck]> {
         var revisionVocabByDeckData: [DeckData: [RevisionVocabData]] = [:]
@@ -63,7 +64,13 @@ class DeckManager: DataManager<DeckData> {
             var deckArr = [Deck]()
             // convert [DeckData] into
             for (deckData, vocabData) in vocabByDeckData {
-                deckArr.append(Deck(deckData: deckData, vocabDataArr: vocabData))
+                deckArr.append(
+                    Deck(deckData: deckData,
+                         revisionVocabDataArr: revisionVocabByDeckData[deckData] ?? [],
+                         vocabDataArr: vocabData
+                    )
+                )
+//                deckArr.append(Deck(deckData: deckData, vocabDataArr: vocabData))
             }
             return deckArr
         }

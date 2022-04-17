@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 final class DeckViewModel {
     
@@ -15,9 +16,12 @@ final class DeckViewModel {
 
     init(deck: Deck) {
         self.deck = deck
-        self.revisionSequence = RevisionSequence(deck: deck)
+        self.revisionSequence = RevisionSequence(
+            deck: deck,
+            criteria: RevisionViewModel.REVISION_QUERY_CRITERIA
+        )
     }
-    
+
     func addToQueue(currentQuery: RevisionQuery?, recallDifficulty: RecallDifficulty) {
         guard let currentQuery = currentQuery else {
             return
@@ -33,16 +37,6 @@ final class DeckViewModel {
         self.revisionSequence.insert(newQuery)
     }
 
-//    func tapDifficulty(currentQuery: RevisionQuery?, recallDifficulty: RecallDifficulty) -> RevisionQuery? {
-//
-//        addToQueue(currentQuery: currentQuery, recallDifficulty: recallDifficulty)
-//
-//        print(revisionSequence)
-//        print(currentQuery.magnitude)
-//
-//        return revisionSequence.next() as? RevisionQuery
-//    }
-
     func getNextQuery() -> RevisionQuery? {
         let nextQuery = revisionSequence.next() as? RevisionQuery
         return nextQuery
@@ -53,16 +47,21 @@ final class DeckViewModel {
             return
         }
         
-        RevisionVocabManager().update(id: query.revVocab.id,
-                                      to: RevisionVocabData(id: query.revVocab.id,
-                                                            difficulty: recallDifficulty.rawValue,
-                                                            last_attempted_date: Date(),
-                                                            vocab_id: query.revVocab.vocab.id)
-        )
+        let currDate = Date()
         
+        firstly {
+            RevisionVocabManager().update(id: query.revVocab.id,
+                                          to: RevisionVocabData(id: query.revVocab.id,
+                                                                difficulty: recallDifficulty.rawValue,
+                                                                last_attempted_date: currDate,
+                                                                vocab_id: query.revVocab.vocab.id)
+            )
+        }.done { _ in
+            Logger.info(
+                "Revision Vocab \(query.revVocab.vocab.word) has been updated with latest attempt at \(currDate)"
+            )
+        }.catch { error in
+            Logger.error("\(error)")
+        }
     }
-    
-    
-    
-    
 }
