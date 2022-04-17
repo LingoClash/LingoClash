@@ -101,7 +101,7 @@ class ProfileManager: DataManager<ProfileData> {
             profile = currProfile
             let starAccountData = StarAccountData(ownerId: currProfile.id)
             StarAccountManager().create(newRecord: starAccountData).catch { error in
-                print(error)
+                Logger.error(error.localizedDescription)
             }
         }.compactMap {
             guard let profile = profile else {

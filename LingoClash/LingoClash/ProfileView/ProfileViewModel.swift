@@ -60,7 +60,7 @@ final class ProfileViewModel {
             self.rankingByTotalStars = String(profile.rankingByTotalStars)
             self.isRefreshing = false
         }.catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
     

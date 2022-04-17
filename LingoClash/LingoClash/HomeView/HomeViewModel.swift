@@ -26,7 +26,7 @@ class HomeViewModel {
 
             self.isRefreshing = false
         }.catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
     

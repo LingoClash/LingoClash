@@ -30,7 +30,7 @@ final class CompletedBooksViewModel: BooksViewModel {
             self.books = books
             self.isRefreshing = false
         }.catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
     

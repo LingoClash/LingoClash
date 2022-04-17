@@ -44,8 +44,8 @@ class LessonManager: DataManager<LessonData> {
                 // This assumes that vocabs learnt between lessons do not overlap
                 profileManager.incrementVocabsLearnt(by: lesson.vocabs.count)
             }
-        }.catch { err in
-            print(err)
+        }.catch { error in
+            Logger.error(error.localizedDescription)
         }
     }
 }
