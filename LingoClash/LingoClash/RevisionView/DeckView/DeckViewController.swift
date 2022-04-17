@@ -35,6 +35,7 @@ class DeckViewController: UIViewController {
         
         hideAnswer()
         hideNoWordsScreen()
+        showScreenWhenNoWordsLeft()
         setUpBinders()
         getFirstQuery()
     }
@@ -47,6 +48,7 @@ class DeckViewController: UIViewController {
         viewModel?.$revisionSequence.sink {[weak self] revisionSequence in
             self?.revisionSequence = revisionSequence
             self?.updateWordsLeft()
+            self?.showScreenWhenNoWordsLeft()
         }.store(in: &cancellables)
     }
     
@@ -77,6 +79,10 @@ class DeckViewController: UIViewController {
         hideAnswer()
         // Check if we have 0 words left
         
+        showScreenWhenNoWordsLeft()
+    }
+    
+    private func showScreenWhenNoWordsLeft() {
         if revisionSequence?.questionsLeft == 0 {
             showNoWordsScreen()
         }
@@ -133,8 +139,6 @@ class DeckViewController: UIViewController {
         let nextQuery = viewModel?.getNextQuery()
         self.currentQuery = nextQuery
         
-        print(nextQuery?.magnitude)
-        
         setLabelToQuery(query: nextQuery)
         recallDifficultyButtonTapped()
     }
@@ -155,6 +159,7 @@ class DeckViewController: UIViewController {
         exampleLabel.text = query?.revVocab.vocab.sentence
     }
     
+    // View specific functions
     private func hideRecallButtons() {
         againButton.isHidden = true
         easyButton.isHidden = true

@@ -37,10 +37,10 @@ struct RevisionSequence: QuerySequence {
     
     mutating func insert(_ rq: RevisionQuery) {
         // only insert things smaller than a set magnitude
-        print(rq.magnitude)
+//        print(rq.magnitude)
         guard rq.magnitude < 2 else {
-            print("revisionquery removed")
-            print(rq.magnitude)
+//            print("revisionquery removed")
+//            print(rq.magnitude)
             return
         }
         

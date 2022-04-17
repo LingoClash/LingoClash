@@ -86,7 +86,6 @@
 		6F034DAA28098BE900663A12 /* DeckData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA928098BE900663A12 /* DeckData.swift */; };
 		6F034DAB28098BE900663A12 /* DeckData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA928098BE900663A12 /* DeckData.swift */; };
 		6F0B37BC27F7E18000C91257 /* RevisionCreateDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B37BB27F7E18000C91257 /* RevisionCreateDeckViewController.swift */; };
-		6F1B90EE280B305700AC235F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
 		6F2F4A2627F9947500923DB9 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2F4A2527F9947500923DB9 /* Query.swift */; };
 		6F2F4A2827F9952D00923DB9 /* Answerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2F4A2727F9952D00923DB9 /* Answerable.swift */; };
 		6F448B8B2809209A00D50D05 /* QuerySequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCB0A2727FC899200F63E46 /* QuerySequence.swift */; };
@@ -106,7 +105,8 @@
 		6F5842D72807D154008C9547 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5842D62807D154008C9547 /* Answer.swift */; };
 		6F67BDEF2804261C00B91844 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDEE2804261C00B91844 /* Heap.swift */; };
 		6F67BDF12804607800B91844 /* DeckProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDF02804607800B91844 /* DeckProgress.swift */; };
-		6F96F104280BB1BA009154BF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
+		6F96F106280BC03A009154BF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
+		6F96F107280BC03F009154BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
 		6FA0243A27E1BBBE00F94E54 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243927E1BBBE00F94E54 /* FirebaseAuthCombine-Community */; };
 		6FA0243C27E1BBBE00F94E54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243B27E1BBBE00F94E54 /* FirebaseDatabase */; };
@@ -121,8 +121,6 @@
 		6FE082BC280B2A970098BCC0 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F034D882809239600663A12 /* Question.storyboard */; };
 		6FE082BD280B2A980098BCC0 /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F034D882809239600663A12 /* Question.storyboard */; };
 		6FE082C0280B2AAF0098BCC0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F034D8E2809246000663A12 /* Home.storyboard */; };
-		6FE082C6280B2E350098BCC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
-		6FE082C7280B2E350098BCC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
 		CE2771D02809882500A739C1 /* PKGamePlayerOutcomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2771CF2809882500A739C1 /* PKGamePlayerOutcomeManager.swift */; };
 		CE2771D12809889C00A739C1 /* PKGamePlayerOutcomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2771CF2809882500A739C1 /* PKGamePlayerOutcomeManager.swift */; };
 		CE2771D3280988C600A739C1 /* PKGamePlayerOutcomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2771D2280988C600A739C1 /* PKGamePlayerOutcomeData.swift */; };
@@ -1667,7 +1665,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FE082C6280B2E350098BCC0 /* Main.storyboard in Resources */,
 				CEBC079C2809211400A0ED82 /* Dev-Info.plist in Resources */,
 				CE8D228F27EE2B5A005E7058 /* Lesson.storyboard in Resources */,
 				D32BB7A92809F83F009E4049 /* korean-eng.json in Resources */,
@@ -1678,12 +1675,13 @@
 				CE8D22A227EEC059005E7058 /* Book.storyboard in Resources */,
 				CEBC078A280883C300A0ED82 /* CompletedBook.storyboard in Resources */,
 				CEBC0788280883C300A0ED82 /* RecommendedBook.storyboard in Resources */,
-				6F96F104280BB1BA009154BF /* Home.storyboard in Resources */,
 				D33282EA27D4D42E00C80986 /* Assets.xcassets in Resources */,
+				6F96F107280BC03F009154BF /* Main.storyboard in Resources */,
 				6FE082C0280B2AAF0098BCC0 /* Home.storyboard in Resources */,
 				CEBC07952808841E00A0ED82 /* Arena.storyboard in Resources */,
 				CEBC07942808841E00A0ED82 /* LearningBook.storyboard in Resources */,
 				CEBC0789280883C300A0ED82 /* Settings.storyboard in Resources */,
+				6F96F106280BC03A009154BF /* Home.storyboard in Resources */,
 				6FE082BD280B2A980098BCC0 /* Question.storyboard in Resources */,
 				CEBC077A2807E70800A0ED82 /* GoogleService-Info.plist in Resources */,
 				CEBC078B280883C300A0ED82 /* Profile.storyboard in Resources */,
@@ -1704,7 +1702,6 @@
 				D3C5E26327F6E36B00F65B8E /* Lesson.storyboard in Resources */,
 				CEBC077F280810CF00A0ED82 /* PKGame.storyboard in Resources */,
 				D32BB7AA2809F83F009E4049 /* korean-eng.json in Resources */,
-				6F1B90EE280B305700AC235F /* Home.storyboard in Resources */,
 				D3C5E26427F6E36B00F65B8E /* LaunchScreen.storyboard in Resources */,
 				D3C5E26527F6E36B00F65B8E /* SF-Pro.ttf in Resources */,
 				6F034D912809274C00663A12 /* Revision.storyboard in Resources */,
@@ -1713,7 +1710,6 @@
 				D3C5E26827F6E36B00F65B8E /* Assets.xcassets in Resources */,
 				CEBC077B2807E71100A0ED82 /* GoogleService-Info.plist in Resources */,
 				6FE082BC280B2A970098BCC0 /* Question.storyboard in Resources */,
-				6FE082C7280B2E350098BCC0 /* Main.storyboard in Resources */,
 				CEBC078E280883E600A0ED82 /* Profile.storyboard in Resources */,
 				CEBC078D280883E600A0ED82 /* CompletedBook.storyboard in Resources */,
 				CEBC07962808842300A0ED82 /* Arena.storyboard in Resources */,

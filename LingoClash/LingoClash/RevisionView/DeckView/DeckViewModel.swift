@@ -57,8 +57,6 @@ final class DeckViewModel {
         }
         
 //        RevisionVocabManager().update(id: <#T##Identifier#>, from: <#T##RevisionVocabData#>, to: <#T##RevisionVocabData#>)
-
-        
     }
     
     

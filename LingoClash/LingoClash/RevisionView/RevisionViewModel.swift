@@ -10,13 +10,20 @@ import PromiseKit
 
 final class RevisionViewModel {
     
-//    @Published var currentBookProgress: BookProgress?
-//    @Published var currentBook: Book?
-//    @Published var lessonSelectionViewModel: LessonSelectionViewModel?
     @Published var decks: [Deck] = []
     @Published var isRefreshing = false
     
-    // remove this
+    private static let DEFAULT_DECK_NAME = "Default Deck"
+    
+    func addDefaultDeck() {
+        decks.append(
+            Deck(
+                name: RevisionViewModel.DEFAULT_DECK_NAME,
+                vocabs: createRevisionVocabs()
+            )
+        )
+    }
+    
     func createRevisionVocabs() -> [RevisionVocab] {
         let vocabs = [
             Vocab(vocabId: 1, word: "周", definition: "week", sentence: "一周有七天。",
@@ -47,13 +54,15 @@ final class RevisionViewModel {
         self.isRefreshing = true
         
         firstly {
-            DeckManager().getDecks(profileId: "1")
+            ProfileManager().getCurrentProfile()
+        }.then { currentProfile in
+            DeckManager().getDecks(profileId: currentProfile.id)
         }.done { deckArr in
             self.decks.append(contentsOf: deckArr)
             self.isRefreshing = false
         }
-        
-        decks.append(Deck(name: "Default Deck", vocabs: createRevisionVocabs()))
+
+        addDefaultDeck()
     }
     
     func deckProgress() {
@@ -63,11 +72,5 @@ final class RevisionViewModel {
     func addDeck(_ deckFields: CreateDeckFields) {
         // update locally
         decks.append(Deck(name: deckFields.newName, vocabs: []))
-        print(decks)
-        // TODO: send an api request if possible
-    }
-    
-    func refreshDecks() {
-        // todo: fetch decks as well
     }
 }
