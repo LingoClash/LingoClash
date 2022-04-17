@@ -22,15 +22,15 @@ struct Profile: AccountOwner {
     let pkWinningRate: Double
     let rankingByTotalStars: Int
 
-    init(profileData: ProfileData, currentBook: Book?, rankingByTotalStars: Int, pkWinningRate: Double) {
+    init(profileData: ProfileData, currentBook: Book?, rankingByTotalStars: Int,
+         pkWinningRate: Double, starsToday: Int) {
         self.id = profileData.id
         self.user_id = profileData.user_id
         self.currentBook = currentBook
         self.email = profileData.email
         self.name = profileData.name
         self.stars = profileData.stars
-        // TODO: get stars today from stars transaction
-        self.starsToday = 0
+        self.starsToday = starsToday
         self.starsGoal = profileData.stars_goal
         self.bio = profileData.bio
         self.daysLearning = profileData.days_learning

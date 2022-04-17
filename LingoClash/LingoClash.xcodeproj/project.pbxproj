@@ -24,8 +24,8 @@
 		62209225280BF612003365DF /* LessonQuizRewardSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209223280BF45A003365DF /* LessonQuizRewardSystemView.swift */; };
 		62209227280C11C4003365DF /* RewardSystemError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209226280C11C4003365DF /* RewardSystemError.swift */; };
 		62209228280C13E2003365DF /* RewardSystemError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209226280C11C4003365DF /* RewardSystemError.swift */; };
-		6220922A280C1CA1003365DF /* TimeUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209229280C1CA1003365DF /* TimeUtilities.swift */; };
-		6220922B280C1F18003365DF /* TimeUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209229280C1CA1003365DF /* TimeUtilities.swift */; };
+		6220922A280C1CA1003365DF /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209229280C1CA1003365DF /* Date+Extensions.swift */; };
+		6220922B280C1F18003365DF /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62209229280C1CA1003365DF /* Date+Extensions.swift */; };
 		624989DA27E735600092FC1B /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624989D927E735600092FC1B /* BookCollectionViewController.swift */; };
 		624989DC27E736590092FC1B /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624989DB27E736590092FC1B /* BookCollectionViewCell.swift */; };
 		624989DE27E7395E0092FC1B /* LearningBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624989DD27E7395E0092FC1B /* LearningBooksViewController.swift */; };
@@ -390,7 +390,6 @@
 		D3AF1C262805937100DCFA2E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF1C242805924300DCFA2E /* SettingsViewController.swift */; };
 		D3AF1C302805DDDB00DCFA2E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF1C2F2805DDDB00DCFA2E /* SplashViewModel.swift */; };
 		D3AF1C312805DDE000DCFA2E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF1C2F2805DDDB00DCFA2E /* SplashViewModel.swift */; };
-		D3AFB0AD280B2FC6006B48A6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6204A03E27DE43350063100D /* ProfileViewController.swift */; };
 		D3BD29E527DCE6350061E362 /* LingoClashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD29E427DCE6350061E362 /* LingoClashTests.swift */; };
 		D3BD2A1127DED82A0061E362 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD2A1027DED82A0061E362 /* LoginViewModel.swift */; };
 		D3BD2A1327DED8330061E362 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD2A1227DED8320061E362 /* SignUpViewModel.swift */; };
@@ -571,7 +570,7 @@
 		62209220280BF1FA003365DF /* TransactionDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDescription.swift; sourceTree = "<group>"; };
 		62209223280BF45A003365DF /* LessonQuizRewardSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonQuizRewardSystemView.swift; sourceTree = "<group>"; };
 		62209226280C11C4003365DF /* RewardSystemError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardSystemError.swift; sourceTree = "<group>"; };
-		62209229280C1CA1003365DF /* TimeUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtilities.swift; sourceTree = "<group>"; };
+		62209229280C1CA1003365DF /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		624989D927E735600092FC1B /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
 		624989DB27E736590092FC1B /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		624989DD27E7395E0092FC1B /* LearningBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningBooksViewController.swift; sourceTree = "<group>"; };
@@ -864,10 +863,8 @@
 			isa = PBXGroup;
 			children = (
 				6F67BDED2804260D00B91844 /* DataStructures */,
-				62FEFAA8280B4C7B00C0503B /* Snackbar */,
 				6204A03927DE1CDB0063100D /* AppConfigs.swift */,
 				62165B7527F2244C004BC620 /* FormUtilities.swift */,
-				62209229280C1CA1003365DF /* TimeUtilities.swift */,
 				CEF1E7DB27E60C7A005D4272 /* Dynamic.swift */,
 				D30CD1E727E79F3A0021A5AA /* KeychainManager.swift */,
 				D3C4423F27E8C65600676C93 /* Logger.swift */,
@@ -1481,6 +1478,7 @@
 		D398780C27DF8C1400B2F4ED /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				62209229280C1CA1003365DF /* Date+Extensions.swift */,
 				D3F00CAC27DFAF6F00393ADC /* Promise+Extensions.swift */,
 				62FEFA9D280B4AD600C0503B /* DocumentSnapshot+Extensions.swift */,
 				D3C4423027E8966C00676C93 /* UIViewController+Alerts.swift */,
@@ -1932,7 +1930,7 @@
 				D3AF1C1828057C7600DCFA2E /* LightTheme.swift in Sources */,
 				CE8D229627EEB8F4005E7058 /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				62FEFAAA280B4C8C00C0503B /* SnackbarUtilities.swift in Sources */,
-				6220922A280C1CA1003365DF /* TimeUtilities.swift in Sources */,
+				6220922A280C1CA1003365DF /* Date+Extensions.swift in Sources */,
 				CEC5886A27EA2A4F00809403 /* StarView.swift in Sources */,
 				D3C5E27A27F6F3E900F65B8E /* SampleDataUtilities.swift in Sources */,
 				62FEFAB2280B4EDC00C0503B /* ProfileViewController.swift in Sources */,
@@ -2274,7 +2272,7 @@
 				62FEFAEB280B537200C0503B /* NotificationObserver.swift in Sources */,
 				D3C5E21C27F6E36B00F65B8E /* LessonQuizViewModelFromLesson.swift in Sources */,
 				CEF3E68D280690A0001F483B /* QuestionsGenerator.swift in Sources */,
-				6220922B280C1F18003365DF /* TimeUtilities.swift in Sources */,
+				6220922B280C1F18003365DF /* Date+Extensions.swift in Sources */,
 				D3C5E21D27F6E36B00F65B8E /* AppStoryboard.swift in Sources */,
 				6F756441280BE1CF00AECCBD /* RevisionSequence.swift in Sources */,
 				CEF3E69C280690C5001F483B /* SimpleOptionQuestion.swift in Sources */,
