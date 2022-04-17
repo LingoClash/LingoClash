@@ -65,7 +65,11 @@ class FirebaseDataProvider: DataProvider {
     func getList<T: Codable>(resource: String, params: GetListParams) -> Promise<GetListResult<T>> {
 
             Promise { seal in
-                db.collection(resource).getDocuments { querySnapshot, error in
+                var filteredCollection: Query = db.collection(resource)
+                for (key, value) in params.filter {
+                    filteredCollection = filteredCollection.whereField(key, isEqualTo: value)
+                }
+                filteredCollection.getDocuments { querySnapshot, error in
 
                     if let error = error {
                         return seal.reject(error)

@@ -52,7 +52,6 @@ struct SortPayload {
 }
 
 struct GetListParams {
-    let sort: SortPayload
     let filter: [String: Any]
 }
 
@@ -80,7 +79,6 @@ struct GetManyResult<T: Codable> {
 struct GetManyReferenceParams {
     let target: String
     let id: Identifier
-    let sort: SortPayload
     let filter: [String: Any]
 }
 
