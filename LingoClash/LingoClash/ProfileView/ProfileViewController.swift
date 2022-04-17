@@ -28,13 +28,17 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setUpBinders()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.refresh()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.stopRefresh()
     }
 
     func setUpBinderForLabel(label: UILabel, publisher: Published<String?>.Publisher) {
@@ -66,6 +70,12 @@ class ProfileViewController: UIViewController {
             if let starsGoalProgress = starsGoalProgress {
                 self?.starsGoalProgressView.progress = starsGoalProgress
                 self?.starsGoalIcon.alpha = max(CGFloat(starsGoalProgress), 0.5)
+            }
+        }.store(in: &cancellables)
+
+        viewModel.$bio.sink {[weak self] bio in
+            if let bio = bio {
+               self?.bioLabel.text = "\"\(bio)\""
             }
         }.store(in: &cancellables)
 

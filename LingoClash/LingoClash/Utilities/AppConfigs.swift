@@ -14,16 +14,22 @@ struct AppConfigs {
         // Preloads the db with some sample data. Only works in development scheme.
         static let enablePreloadData = false
         static let enableLogin = false
+
+        #if DEVELOPMENT
         static let testAccounts: [LoginFields] = [
             LoginFields(email: "guy@gmail.com", password: "setMeUp?"),
             LoginFields(email: "e@e.com", password: "123456")
         ]
+        #else
+        static let testAccounts: [LoginFields] = [
+            LoginFields(email: "b@b.com", password: "setMeUp?"),
+            LoginFields(email: "e@e.com", password: "setMeUp?")
+        ]
+        #endif
     }
 
     struct View {
-        static let primaryColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
         static let vocabCollectionCellIdentifier = "vocabCollectionCellIdentifier"
-        static let blue = #colorLiteral(red: 0.3065024073, green: 0.6942780921, blue: 1, alpha: 1)
     }
 
     struct API {
