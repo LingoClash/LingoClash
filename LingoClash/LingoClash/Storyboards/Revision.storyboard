@@ -146,7 +146,7 @@
                                 <color key="textColor" name="Background"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNk-Zt-k7D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNk-Zt-k7D">
                                 <rect key="frame" x="313" y="627" width="78" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="npU-vS-HG1"/>
@@ -161,7 +161,7 @@
                                 <color key="textColor" name="Background"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日も素敵ですね" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0a-NO-Q30">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日も素敵ですね" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0a-NO-Q30">
                                 <rect key="frame" x="152" y="423" width="400" height="60"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="50"/>
                                 <nil key="textColor"/>
@@ -241,7 +241,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background_1" translatesAutoresizingMaskIntoConstraints="NO" id="u0j-n6-YCU">
-                                <rect key="frame" x="0.0" y="-973" width="704" height="995.5"/>
+                                <rect key="frame" x="0.0" y="-900" width="704" height="995.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished all words for today!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1p-he-GGK">
                                 <rect key="frame" x="178" y="523.5" width="348.5" height="36"/>
@@ -262,12 +262,20 @@
                                     <constraint firstAttribute="width" constant="394" id="qVP-6g-d2P"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw-flash-card" translatesAutoresizingMaskIntoConstraints="NO" id="SuA-Rp-yJF">
+                                <rect key="frame" x="0.0" y="171" width="195" height="156"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="gVQ-8b-ZpN"/>
+                                    <constraint firstAttribute="height" constant="156" id="gY5-zf-CGx"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ath-Uc-iIa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ath-Uc-iIa" firstAttribute="bottom" secondItem="rdj-1d-TEO" secondAttribute="bottom" id="19m-L9-1jK"/>
                             <constraint firstItem="DtN-o5-NCM" firstAttribute="top" secondItem="sJB-S7-2ud" secondAttribute="bottom" constant="122" id="4T8-HU-hfV"/>
+                            <constraint firstItem="SuA-Rp-yJF" firstAttribute="leading" secondItem="Ath-Uc-iIa" secondAttribute="leading" id="5RT-VU-FRL"/>
                             <constraint firstItem="u0j-n6-YCU" firstAttribute="leading" secondItem="Ath-Uc-iIa" secondAttribute="leading" id="8eX-GX-SGv"/>
                             <constraint firstItem="zNk-Zt-k7D" firstAttribute="centerX" secondItem="jbE-k5-LoW" secondAttribute="centerX" id="90o-fw-T1Z"/>
                             <constraint firstItem="S1p-he-GGK" firstAttribute="top" secondItem="rfq-PN-paS" secondAttribute="bottom" constant="30" id="CL7-3B-WY4"/>
@@ -275,6 +283,7 @@
                             <constraint firstItem="rfq-PN-paS" firstAttribute="centerX" secondItem="jbE-k5-LoW" secondAttribute="centerX" id="Hff-L5-bln"/>
                             <constraint firstItem="5Ra-kG-8DO" firstAttribute="top" secondItem="Ath-Uc-iIa" secondAttribute="top" id="Ib8-s2-ecw"/>
                             <constraint firstAttribute="bottom" secondItem="zNk-Zt-k7D" secondAttribute="bottom" constant="332.5" id="InP-aD-HQq"/>
+                            <constraint firstItem="k0a-NO-Q30" firstAttribute="top" secondItem="SuA-Rp-yJF" secondAttribute="bottom" constant="96" id="N8g-me-bFy"/>
                             <constraint firstItem="S1p-he-GGK" firstAttribute="centerX" secondItem="jbE-k5-LoW" secondAttribute="centerX" id="NUj-Ms-S2k"/>
                             <constraint firstItem="4ss-0e-3e8" firstAttribute="leading" secondItem="Ath-Uc-iIa" secondAttribute="leading" id="NeZ-lp-o8y"/>
                             <constraint firstItem="Ath-Uc-iIa" firstAttribute="trailing" secondItem="sJB-S7-2ud" secondAttribute="trailing" constant="30" id="NfA-mP-21u"/>
@@ -393,6 +402,7 @@
         <image name="book" width="30" height="30"/>
         <image name="cover_2" width="1000" height="1000"/>
         <image name="undraw-close_book" width="713.7420654296875" height="454.87759399414062"/>
+        <image name="undraw-flash-card" width="740.10321044921875" height="574.3155517578125"/>
         <image name="undraw-ideas" width="534.6700439453125" height="589.0946044921875"/>
         <namedColor name="Background">
             <color red="0.98400002717971802" green="0.98799997568130493" blue="0.99699997901916504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
