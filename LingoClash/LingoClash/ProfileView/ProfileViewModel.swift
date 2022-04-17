@@ -19,7 +19,6 @@ final class ProfileViewModel {
     @Published var starsGoal: String?
     @Published var starsGoalProgress: Float?
     @Published var bio: String?
-    @Published var daysLearning: String?
     @Published var vocabsLearnt: String?
     @Published var pkWinningRate: String?
     @Published var rankingByTotalStars: String?
@@ -56,7 +55,6 @@ final class ProfileViewModel {
             self.starsGoalProgress = min(
                 Float(profile.starsToday / profile.starsGoal), 1)
             self.bio = profile.bio
-            self.daysLearning = String(profile.daysLearning)
             self.vocabsLearnt = String(profile.vocabsLearnt)
             self.pkWinningRate = String(profile.pkWinningRate)
             self.rankingByTotalStars = String(profile.rankingByTotalStars)

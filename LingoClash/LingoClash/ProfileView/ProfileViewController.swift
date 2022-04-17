@@ -16,7 +16,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet private var starsTodayLabel: UILabel!
     @IBOutlet private var starsGoalLabel: UILabel!
     @IBOutlet private var bioLabel: UILabel!
-    @IBOutlet private var daysLearningLabel: UILabel!
     @IBOutlet private var vocabsLearntLabel: UILabel!
     @IBOutlet private var pkWinningRateLabel: UILabel!
     @IBOutlet private var rankingByTotalStarsLabel: UILabel!
@@ -56,7 +55,6 @@ class ProfileViewController: UIViewController {
             self.starsTodayLabel: viewModel.$starsToday,
             self.starsGoalLabel: viewModel.$starsGoal,
             self.rankingByTotalStarsLabel: viewModel.$rankingByTotalStars,
-            self.daysLearningLabel: viewModel.$daysLearning,
             self.vocabsLearntLabel: viewModel.$vocabsLearnt,
             self.pkWinningRateLabel: viewModel.$pkWinningRate,
             self.bioLabel: viewModel.$bio
