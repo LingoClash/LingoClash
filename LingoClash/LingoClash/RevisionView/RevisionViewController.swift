@@ -10,7 +10,6 @@ import Combine
 private let reuseIdentifier = "DeckTableViewCell"
 
 class RevisionViewController: UIViewController {
-    
     enum Segue {
         static let gotoDeck = "gotoDeck"
     }
