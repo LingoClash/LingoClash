@@ -107,6 +107,8 @@
 		6F67BDF12804607800B91844 /* DeckProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDF02804607800B91844 /* DeckProgress.swift */; };
 		6F96F106280BC03A009154BF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
 		6F96F107280BC03F009154BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
+		6F96F110280BCB10009154BF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
+		6F96F111280BCB12009154BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
 		6FA0243A27E1BBBE00F94E54 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243927E1BBBE00F94E54 /* FirebaseAuthCombine-Community */; };
 		6FA0243C27E1BBBE00F94E54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243B27E1BBBE00F94E54 /* FirebaseDatabase */; };
@@ -1699,6 +1701,7 @@
 				CEBC077F280810CF00A0ED82 /* PKGame.storyboard in Resources */,
 				D32BB7AA2809F83F009E4049 /* korean-eng.json in Resources */,
 				D3C5E26427F6E36B00F65B8E /* LaunchScreen.storyboard in Resources */,
+				6F96F110280BCB10009154BF /* Home.storyboard in Resources */,
 				D3C5E26527F6E36B00F65B8E /* SF-Pro.ttf in Resources */,
 				6F034D912809274C00663A12 /* Revision.storyboard in Resources */,
 				CEBC078F280883E600A0ED82 /* RecommendedBook.storyboard in Resources */,
@@ -1709,6 +1712,7 @@
 				CEBC078E280883E600A0ED82 /* Profile.storyboard in Resources */,
 				CEBC078D280883E600A0ED82 /* CompletedBook.storyboard in Resources */,
 				CEBC07962808842300A0ED82 /* Arena.storyboard in Resources */,
+				6F96F111280BCB12009154BF /* Main.storyboard in Resources */,
 				CEBC078C280883E200A0ED82 /* Settings.storyboard in Resources */,
 				CEBC07972808842300A0ED82 /* LearningBook.storyboard in Resources */,
 			);
