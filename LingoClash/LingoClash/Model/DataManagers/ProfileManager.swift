@@ -66,14 +66,12 @@ class ProfileManager: DataManager<ProfileData> {
         }
     }
 
-    func updateProfile(stars: Int, vocabsLearnt: Int) -> Promise<ProfileData> {
-
+    func updateProfile(stars: Int) -> Promise<ProfileData> {
         firstly {
             self.getCurrentProfileData()
         }.then { profileData -> Promise<ProfileData> in
             var newProfileData = profileData
             newProfileData.stars = stars
-            newProfileData.vocabs_learnt = vocabsLearnt
 
             return self.update(id: profileData.id, to: newProfileData)
         }

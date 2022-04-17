@@ -11,7 +11,7 @@ import PromiseKit
 class DeckManager: DataManager<DeckData> {
     
     init() {
-        super.init(resource: "decks")
+        super.init(resource: DataManagerResources.decks)
     }
     
     func addDeck(newDeckFields: CreateDeckFields) {

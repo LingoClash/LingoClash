@@ -9,7 +9,7 @@ import PromiseKit
 class StarTransactionManager: DataManager<StarTransactionData> {
 
     init() {
-        super.init(resource: "star_transactions")
+        super.init(resource: DataManagerResources.starTransactions)
     }
 
     func getStarTransactions(accountId: Identifier, account: CurrencyAccount<Star>)

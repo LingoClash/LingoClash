@@ -23,13 +23,12 @@ class LessonQuizRewardSystem: RewardSystem {
               let starCount = dict["stars"] as? Int else {
             return
         }
-        print(starCount)
+
         if starCount <= 0 {
             return
         }
 
         self.rewardLessonQuizPass(starCount: starCount)
-        self.rewardLearnLessonOneWeekStreak()
     }
 
     private func rewardLessonQuizPass(starCount: Int) {
@@ -39,6 +38,8 @@ class LessonQuizRewardSystem: RewardSystem {
         }.done { currencyTransaction in
             self.presentReward(transaction: currencyTransaction)
             self.snackbarText = "You earned \(starCount) star(s) for completing a lesson!"
+        }.done {
+            self.rewardLearnLessonOneWeekStreak()
         }.catch { error in
             print(error)
         }
@@ -67,9 +68,9 @@ class LessonQuizRewardSystem: RewardSystem {
     }
 
     private func checkStreak(account: CurrencyAccount<Star>) -> Bool {
-        let fourDaysBefore = DateComponents(day: -4)
+        let sixDaysBefore = DateComponents(day: -6)
         let currDay = Calendar.current.startOfDay(for: Date())
-        let startDate = Calendar.current.date(byAdding: fourDaysBefore, to: currDay)
+        let startDate = Calendar.current.date(byAdding: sixDaysBefore, to: currDay)
 
         guard let startDate = startDate else {
             return false

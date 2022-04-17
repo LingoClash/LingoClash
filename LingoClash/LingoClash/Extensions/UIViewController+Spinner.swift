@@ -12,6 +12,10 @@ private var spinnerView: UIView?
 extension UIViewController {
 
     func showSpinner() {
+        if spinnerView != nil {
+            return
+        }
+        
         let activityView = UIView(frame: self.view.bounds)
         let activityIndicator = UIActivityIndicatorView(
             style: .large)

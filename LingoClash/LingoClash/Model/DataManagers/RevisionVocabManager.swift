@@ -10,7 +10,7 @@ import PromiseKit
 class RevisionVocabManager: DataManager<RevisionVocabData> {
     
     init() {
-        super.init(resource: "revision_vocabs")
+        super.init(resource: DataManagerResources.revisionVocabs)
     }
     
 }
