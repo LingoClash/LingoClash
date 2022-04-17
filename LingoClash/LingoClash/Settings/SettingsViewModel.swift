@@ -57,6 +57,7 @@ final class SettingsViewModel {
             self.email = profile.email
             self.starsToday = profile.starsToday
             self.totalStars = profile.stars
+            self.alertContent = nil
             self.isRefreshing = false
         }.catch { error in
             print(error)
@@ -77,10 +78,16 @@ final class SettingsViewModel {
             return
         }
         
+        if fields.starsGoal <= 0 {
+            editProfileError = "Please input a positive number for your daily stars target."
+            return
+        }
+
         firstly {
             authProvider.updateName(fields.name)
         }.then { [self] _ in
             self.profileManager.updateProfile(
+                name: fields.name,
                 starsGoal: fields.starsGoal ,
                 bio: fields.bio)
         }.done { [self] _ in
@@ -110,7 +117,10 @@ final class SettingsViewModel {
         
         firstly {
             authProvider.updateEmail(fields.newEmail)
-        }.done {
+        }.then { [self] _ in
+            self.profileManager.updateProfile(
+                email: fields.newEmail)
+        }.done { [self] _ in
             self.changeEmailError = nil
             self.alertContent = AlertContent(title: "", message: "Your email is updated succesfully.")
             self.refresh()

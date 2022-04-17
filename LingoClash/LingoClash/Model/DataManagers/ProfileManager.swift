@@ -54,11 +54,12 @@ class ProfileManager: DataManager<ProfileData> {
         }
     }
 
-    func updateProfile(starsGoal: Int, bio: String) -> Promise<ProfileData> {
+    func updateProfile(name: String, starsGoal: Int, bio: String) -> Promise<ProfileData> {
         firstly {
             self.getCurrentProfileData()
         }.then { profileData -> Promise<ProfileData> in
             var newProfileData = profileData
+            newProfileData.name = name
             newProfileData.stars_goal = starsGoal
             newProfileData.bio = bio
 
@@ -72,6 +73,17 @@ class ProfileManager: DataManager<ProfileData> {
         }.then { profileData -> Promise<ProfileData> in
             var newProfileData = profileData
             newProfileData.stars = stars
+
+            return self.update(id: profileData.id, to: newProfileData)
+        }
+    }
+    
+    func updateProfile(email: String) -> Promise<ProfileData> {
+        firstly {
+            self.getCurrentProfileData()
+        }.then { profileData -> Promise<ProfileData> in
+            var newProfileData = profileData
+            newProfileData.email = email
 
             return self.update(id: profileData.id, to: newProfileData)
         }
