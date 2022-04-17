@@ -26,11 +26,8 @@ final class DeckViewModel {
         // make the question go back to the queue with the specified difficulty
         let newQuery = RevisionQuery(
             vocab: currentQuery.revVocab,
-            context: currentQuery.context,
-            answer: currentQuery.answerToString,
             difficulty: Difficulty(amount: recallDifficulty.rawValue),
-            lastAttemptedDate: Date(),
-            id: currentQuery.id
+            lastAttemptedDate: Date()
         )
         
         self.revisionSequence.insert(newQuery)
@@ -51,12 +48,18 @@ final class DeckViewModel {
         return nextQuery
     }
     
-    func updateRevisionQuery(query: RevisionQuery?) {
+    func updateRevisionQuery(query: RevisionQuery?, recallDifficulty: RecallDifficulty) {
         guard let query = query else {
             return
         }
         
-//        RevisionVocabManager().update(id: <#T##Identifier#>, from: <#T##RevisionVocabData#>, to: <#T##RevisionVocabData#>)
+        RevisionVocabManager().update(id: query.revVocab.id,
+                                      to: RevisionVocabData(id: query.revVocab.id,
+                                                            difficulty: recallDifficulty.rawValue,
+                                                            last_attempted_date: Date(),
+                                                            vocab_id: query.revVocab.vocab.id)
+        )
+        
     }
     
     

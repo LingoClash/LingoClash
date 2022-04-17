@@ -12,7 +12,7 @@ struct RevisionVocabData {
     let difficulty: Int
     
     // TODO: add the date after PR has been merged
-//    let last_attempted_date: Date
+    let last_attempted_date: Date
     let vocab_id: Int
 }
 

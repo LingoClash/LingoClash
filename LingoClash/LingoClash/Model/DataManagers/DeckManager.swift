@@ -42,17 +42,14 @@ class DeckManager: DataManager<DeckData> {
                     revisionVocabByDeckData[deckData] = revisionVocabsData
                 }
             }
-            // returns [RevisionVocabData]
             return when(fulfilled: revisionVocabPromises)
         }.then { _ -> Promise<Void> in
             var vocabPromises = [Promise<Void>]()
-            // [Promise<VocabData>]
             for (deckData, revisionVocabData) in revisionVocabByDeckData {
                 guard revisionVocabData.count > 0 else {
                     vocabByDeckData[deckData] = []
                     continue
                 }
-//                print(revisionVocabData)
                 vocabPromises.append(
                     firstly {
                         VocabManager().getMany(ids: revisionVocabData.map{$0.id})

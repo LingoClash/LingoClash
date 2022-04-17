@@ -43,7 +43,7 @@ final class RevisionViewModel {
         
         for vocab in vocabs {
             vocabArr.append(
-                RevisionVocab(vocab: vocab, difficultyParameter: Difficulty(amount: 0))
+                RevisionVocab(id: "-1", vocab: vocab, difficultyParameter: Difficulty(amount: 0))
             )
         }
         
