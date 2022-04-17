@@ -6,6 +6,7 @@
 //
 
 import PromiseKit
+import Foundation
 
 class LessonManager: DataManager<LessonData> {
 
@@ -25,13 +26,15 @@ class LessonManager: DataManager<LessonData> {
             profileLessonManager.getOne(lessonId: lesson.id, profileId: profileData.id)
         }.then { profileLessonData -> Promise<ProfileLessonData> in
             let didGainStars = profileLessonData.stars < lesson.stars
-
+            
             if didGainStars {
                 let modifiedData = ProfileLessonData(id: profileLessonData.id, profile_id: profileLessonData.profile_id,
                                                      profile_book_id: profileLessonData.profile_book_id,
                                                      lesson_id: profileLessonData.lesson_id,
                                                      stars: lesson.stars)
                 _ = profileLessonManager.update(id: profileLessonData.id, to: modifiedData)
+                
+                NotificationCenter.default.post(name: .lessonQuizPassed, object: nil, userInfo: ["stars": lesson.stars -  profileLessonData.stars])
             }
             return Promise<ProfileLessonData>.resolve(value: profileLessonData)
         }.done { oldProfileLessonData in
