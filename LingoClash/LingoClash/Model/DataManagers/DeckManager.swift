@@ -70,9 +70,8 @@ class DeckManager: DataManager<DeckData> {
                          vocabDataArr: vocabData
                     )
                 )
-//                deckArr.append(Deck(deckData: deckData, vocabDataArr: vocabData))
             }
-            return deckArr
+            return deckArr.sorted()
         }
     }
     

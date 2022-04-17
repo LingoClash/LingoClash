@@ -6,11 +6,9 @@
 //
 
 struct Deck {
-//    var id: Identifier
     let name: String
     var vocabs: [RevisionQuery]
     
-    // can probably list the easy, med, hard vocabs next time
     var vocabNo: Int {
         get {
             vocabs.count
@@ -38,7 +36,6 @@ struct Deck {
         self.name = deckData.name
         
         self.vocabs = vocabDataArr.enumerated().map{ (index, vocabData) in
-            
             let revisionVocab = RevisionVocab(
                 id: revisionVocabDataArr[index].id,
                 vocab: Vocab(vocabData: vocabData),
@@ -52,4 +49,10 @@ struct Deck {
 }
 
 extension Deck: Codable {}
+
+extension Deck: Comparable {
+    static func <(lhs: Deck, rhs: Deck) -> Bool {
+        return lhs.name < rhs.name
+    }
+}
 

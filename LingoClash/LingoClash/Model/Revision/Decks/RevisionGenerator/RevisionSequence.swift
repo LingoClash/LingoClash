@@ -39,7 +39,6 @@ struct RevisionSequence: QuerySequence {
     
     mutating func insert(_ rq: RevisionQuery) {
         // only insert things smaller than a set magnitude
-        print(rq.magnitude)
         guard criteria(rq) else {
             Logger.info("Revision Query \(rq) discarded from queue")
             return
@@ -56,8 +55,6 @@ struct RevisionSequence: QuerySequence {
     mutating func next() -> Query? {
         let nextRevision = self.revisionPq.remove()
         self.questionsLeft = revisionPq.count
-        
-//        print(nextRevision?.magnitude)
         
         return nextRevision
     }
