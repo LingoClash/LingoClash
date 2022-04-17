@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction private func logoutTapped(_ sender: Any) {
-        viewModel.signOut()
+        viewModel.signOutAlert()
     }
     
     func setUpBinders() {
@@ -46,6 +46,7 @@ class SettingsViewController: UIViewController {
         viewModel.$alertContent.sink {[weak self] alertContent in
             if let alertContent = alertContent {
                 self?.showConfirmAlert(content: alertContent) { _ in
+                    self?.viewModel.signOut()
                     self?.transitionToSplash()
                 }
             }

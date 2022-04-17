@@ -53,6 +53,7 @@ final class ProfileViewModel {
             self.starsToday = String(profile.starsToday)
             self.totalStars = String(profile.stars)
             self.starsGoal = String(profile.starsGoal)
+            print(profile.starsToday, profile.starsGoal)
             self.starsGoalProgress = min(
                 Float(profile.starsToday / profile.starsGoal), 1)
             self.bio = profile.bio

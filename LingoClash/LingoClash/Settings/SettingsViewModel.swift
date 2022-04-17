@@ -30,13 +30,17 @@ final class SettingsViewModel {
     init(authProvider: AuthProvider = AppConfigs.API.authProvider) {
         self.authProvider = authProvider
     }
+
+    func signOutAlert() {
+        self.alertContent = AlertContent(title: "", message: "Are you sure you want to log out?")
+    }
     
     func signOut() {
         firstly {
             authProvider.logout()
         }.done {
             self.error = nil
-            self.alertContent = AlertContent(title: "", message: "Are you sure you want to log out?")
+            
         }.catch { error in
             self.error = error.localizedDescription
         }
