@@ -1,19 +1,11 @@
 //
-//  TimeUtilities.swift
+//  Date+Extensions.swift
 //  LingoClash
 //
 //  Created by Ai Ling Hong on 17/4/22.
 //
 
 import Foundation
-
-struct Interval {
-    let month: Int?
-    let day: Int?
-    let hour: Int?
-    let minute: Int?
-    let second: Int?
-}
 
 extension Date {
 
@@ -26,5 +18,23 @@ extension Date {
 
         return Interval(month: month, day: day, hour: hour, minute: minute, second: second)
     }
+    
+    func isToday() -> Bool {
+        let startOfToday = Calendar.current.startOfDay(for: Date())
+        let components = DateComponents(hour: 23, minute: 59, second: 59)
+        let endOfToday = Calendar.current.date(byAdding: components, to: startOfToday)
+        guard let endOfToday = endOfToday else {
+            return false
+        }
 
+        return self >= startOfToday && self <= endOfToday
+    }
+}
+
+struct Interval {
+    let month: Int?
+    let day: Int?
+    let hour: Int?
+    let minute: Int?
+    let second: Int?
 }

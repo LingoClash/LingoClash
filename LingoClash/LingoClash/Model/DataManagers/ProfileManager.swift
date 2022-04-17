@@ -116,6 +116,7 @@ class ProfileManager: DataManager<ProfileData> {
         var currentBook: Book?
         var rankingByTotalStars: Int?
         var winningPKRate: Double?
+        var starsToday: Int = 0
 
         return profileData.then { profileData-> Promise<Void> in
             // Gets the current book
@@ -175,6 +176,19 @@ class ProfileManager: DataManager<ProfileData> {
                     winningPKRate = Double(wins) / Double(total) * 100
                 }
             }
+        }.then { () -> Promise<Void> in
+            // Gets stars today
+            return firstly {
+                StarTransactionManager().getStarTransactionData()
+            }.done { starTransactionData in
+                var starCount = 0
+                for transaction in starTransactionData {
+                    if transaction.createdAt.isToday() && transaction.debitOrCredit == .debit {
+                        starCount += transaction.amount
+                    }
+                }
+                starsToday = starCount
+            }
         }.compactMap {
             guard let profile = profile,
                     let rankingByTotalStars = rankingByTotalStars,
@@ -186,7 +200,8 @@ class ProfileManager: DataManager<ProfileData> {
                 profileData: profile,
                 currentBook: currentBook,
                 rankingByTotalStars: rankingByTotalStars,
-                pkWinningRate: winningPKRate)
+                pkWinningRate: winningPKRate,
+                starsToday: starsToday)
         }
     }
 }
