@@ -1,5 +1,5 @@
 //
-//  PKGameRewardSystem.swift
+//  PKGameRewardViewModel.swift
 //  LingoClash
 //
 //  Created by Ai Ling Hong on 15/4/22.
@@ -8,7 +8,7 @@
 import Foundation
 import PromiseKit
 
-class PKGameRewardSystem: RewardSystem {
+class PKGameRewardViewModel: RewardSystem {
     @Published var snackbarText: String?
 
     override func setUpObservers() {

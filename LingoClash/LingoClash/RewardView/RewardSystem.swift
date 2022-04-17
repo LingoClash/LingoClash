@@ -38,7 +38,3 @@ class RewardSystem: NotificationObserver {
         }
     }
 }
-
-protocol RewardSystemView {
-    func setUp()
-}

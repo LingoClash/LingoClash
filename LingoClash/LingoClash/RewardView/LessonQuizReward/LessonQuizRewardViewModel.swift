@@ -1,5 +1,5 @@
 //
-//  LessonQuizRewardSystem.swift
+//  LessonQuizRewardViewModel.swift
 //  LingoClash
 //
 //  Created by Ai Ling Hong on 15/4/22.
@@ -9,7 +9,7 @@ import Combine
 import PromiseKit
 import UIKit
 
-class LessonQuizRewardSystem: RewardSystem {
+class LessonQuizRewardViewModel: RewardSystem {
 
     @Published var snackbarText: String?
 

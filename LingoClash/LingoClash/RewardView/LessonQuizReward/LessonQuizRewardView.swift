@@ -1,5 +1,5 @@
 //
-//  PKGameRewardSystemView.swift
+//  LessonQuizRewardView.swift
 //  LingoClash
 //
 //  Created by Ai Ling Hong on 17/4/22.
@@ -8,9 +8,9 @@
 import Combine
 import UIKit
 
-class PKGameRewardSystemView: RewardSystemView {
+class LessonQuizRewardView: RewardSystemView {
 
-    private let viewModel = PKGameRewardSystem()
+    private let viewModel = PKGameRewardViewModel()
     private var cancellables: Set<AnyCancellable> = []
 
     func setUp() {
