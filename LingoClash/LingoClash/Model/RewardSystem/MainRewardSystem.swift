@@ -7,7 +7,7 @@
 
 class MainRewardSystem {
     private static let lessonQuizRewardSytemView: RewardSystemView = LessonQuizRewardSystemView()
-//    private static let pkGameRewardSystem: RewardSystem = PKGameRewardSystem()
+    private static let pkGameRewardSystemView: RewardSystemView = PKGameRewardSystemView()
 
     private static var rewardSystems: [RewardSystemView] {
         [lessonQuizRewardSytemView]

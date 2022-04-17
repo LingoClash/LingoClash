@@ -65,6 +65,7 @@
 		62BB1CE82800308D002CD31A /* ExploreBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB1CE62800308D002CD31A /* ExploreBookViewController.swift */; };
 		62BB1CEA28003F74002CD31A /* BooksForCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB1CE928003F74002CD31A /* BooksForCategory.swift */; };
 		62BB1CEB28003F74002CD31A /* BooksForCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB1CE928003F74002CD31A /* BooksForCategory.swift */; };
+		62BD46DE280C90F700CE2660 /* PKGameRewardSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623FD209280C6AD700CC1A5E /* PKGameRewardSystemView.swift */; };
 		62C04A0F27DDE59E002D2497 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A0E27DDE59E002D2497 /* SignUpViewController.swift */; };
 		62C04A1127DDE67F002D2497 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A1027DDE67F002D2497 /* LoginViewController.swift */; };
 		62C04A1527DDEB10002D2497 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C04A1427DDEB10002D2497 /* HomeViewController.swift */; };
@@ -977,6 +978,34 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
+		62BD46DF280C911E00CE2660 /* RewardView */ = {
+			isa = PBXGroup;
+			children = (
+				62FEFADD280B534100C0503B /* RewardSystem.swift */,
+				62BD46E1280C913400CE2660 /* PKGameReward */,
+				62BD46E0280C912C00CE2660 /* LessonQuizReward */,
+			);
+			path = RewardView;
+			sourceTree = "<group>";
+		};
+		62BD46E0280C912C00CE2660 /* LessonQuizReward */ = {
+			isa = PBXGroup;
+			children = (
+				62FEFADA280B533100C0503B /* LessonQuizRewardSystem.swift */,
+				62209223280BF45A003365DF /* LessonQuizRewardSystemView.swift */,
+			);
+			path = LessonQuizReward;
+			sourceTree = "<group>";
+		};
+		62BD46E1280C913400CE2660 /* PKGameReward */ = {
+			isa = PBXGroup;
+			children = (
+				623FD209280C6AD700CC1A5E /* PKGameRewardSystemView.swift */,
+				62FEFAE3280B535C00C0503B /* PKGameRewardSystem.swift */,
+			);
+			path = PKGameReward;
+			sourceTree = "<group>";
+		};
 		62FEFAA8280B4C7B00C0503B /* Snackbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1015,12 +1044,7 @@
 			children = (
 				62209226280C11C4003365DF /* RewardSystemError.swift */,
 				62FEFAE9280B537200C0503B /* NotificationObserver.swift */,
-				62FEFADA280B533100C0503B /* LessonQuizRewardSystem.swift */,
-				62209223280BF45A003365DF /* LessonQuizRewardSystemView.swift */,
-				623FD209280C6AD700CC1A5E /* PKGameRewardSystemView.swift */,
-				62FEFAE3280B535C00C0503B /* PKGameRewardSystem.swift */,
 				62FEFAE0280B534D00C0503B /* MainRewardSystem.swift */,
-				62FEFADD280B534100C0503B /* RewardSystem.swift */,
 			);
 			path = RewardSystem;
 			sourceTree = "<group>";
@@ -1416,6 +1440,7 @@
 		D33282DC27D4D42700C80986 /* LingoClash */ = {
 			isa = PBXGroup;
 			children = (
+				62BD46DF280C911E00CE2660 /* RewardView */,
 				6FA053D027F69E0F00E03683 /* RevisionView */,
 				6204A03B27DE34040063100D /* Utilities */,
 				D33282F727D4E62F00C80986 /* Resources */,
@@ -2191,6 +2216,7 @@
 				D3C5E1F427F6E36B00F65B8E /* SignUpViewController.swift in Sources */,
 				6F756444280BE1F100AECCBD /* CreateDeckFields.swift in Sources */,
 				62FEFAB0280B4CC100C0503B /* SnackbarView.swift in Sources */,
+				62BD46DE280C90F700CE2660 /* PKGameRewardSystemView.swift in Sources */,
 				D3C5E1F527F6E36B00F65B8E /* UiViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				6F75643D280BE1C500AECCBD /* RevisionVocab.swift in Sources */,
 				D3C5E1F627F6E36B00F65B8E /* StarView.swift in Sources */,
