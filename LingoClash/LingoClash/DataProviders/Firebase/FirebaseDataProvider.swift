@@ -26,38 +26,8 @@ class FirebaseDataProvider: DataProvider {
 
     private let db = Firestore.firestore()
 
-    private func getModel<S: Codable>(from document: QueryDocumentSnapshot) -> S? {
-        var documentData = document.data()
-        documentData["id"] = document.documentID
-
-        var model: S?
-
-        do {
-            let data = try JSONSerialization.data(withJSONObject: processDocumentData(documentData))
-            model = try JSONDecoder().decode(S.self, from: data)
-        } catch {
-            Logger.error(
-                "Failure to convert \(S.self) data to model. Error: \(error.localizedDescription)")
-        }
-
-        return model
-    }
-
     private func getModel<S: Codable>(from document: DocumentSnapshot) -> S? {
-        guard var documentData = document.data() else {
-            return nil
-        }
-
-        documentData["id"] = document.documentID
-
-        var model: S?
-
-        do {
-            let data = try JSONSerialization.data(withJSONObject: processDocumentData(documentData))
-            model = try JSONDecoder().decode(S.self, from: data)
-        } catch {
-            Logger.error("Failure to convert data to model. Error: \(error)")
-        }
+        let model = document.decode(as: S.self)
 
         return model
     }
@@ -65,7 +35,7 @@ class FirebaseDataProvider: DataProvider {
     func getList<T: Codable>(resource: String, params: GetListParams) -> Promise<GetListResult<T>> {
 
             Promise { seal in
-                var filteredCollection: Query = db.collection(resource)
+                var filteredCollection: FirebaseFirestore.Query = db.collection(resource)
                 for (key, value) in params.filter {
                     filteredCollection = filteredCollection.whereField(key, isEqualTo: value)
                 }
@@ -136,8 +106,8 @@ class FirebaseDataProvider: DataProvider {
         }
     }
 
-    func getManyReference<T: Codable>(resource: String,
-                                      params: GetManyReferenceParams) -> Promise<GetManyReferenceResult<T>> {
+    func getManyReference<T: Codable>(resource: String, params: GetManyReferenceParams)
+        -> Promise<GetManyReferenceResult<T>> {
 
         Promise { seal in
             var filteredCollection = db.collection(resource).whereField(params.target, isEqualTo: params.id)

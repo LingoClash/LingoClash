@@ -15,7 +15,6 @@ struct RevisionQuery: Query {
     
     var difficultyParameter: Difficulty
     var lastAttemptedDate: Date?
-//    var vocab: Vocab
     
     let context: String
     var answerToString: String
