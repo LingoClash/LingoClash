@@ -10,8 +10,8 @@ import Foundation
 class LessonQuizViewModelFromLesson: LessonQuizViewModel {
     private let lesson: Lesson
     let questionGenerator = QuestionsGenerator()
-    let starsBenchmarks = [1, 9, 10]
-    let initialLives = 1
+    let starsBenchmarks = [7, 9, 10]
+    let initialLives = 2
 
     var questionSequence: QuestionSequence
     var questionsLoaded = [Question]()
@@ -88,15 +88,15 @@ class LessonQuizViewModelFromLesson: LessonQuizViewModel {
         let didPass = quizScore >= minStarsBenchMark
         let quizResult = LessonQuizResult(starsObtained: starsObtained, didPass: didPass,
                                           vocabsTested: vocabsTested, lessonName: lesson.name)
-        quizOutcomeViewModel = LessonQuizOutcomeViewModelFromQuizResult(quizResult: quizResult)
+
+        var updatedLesson = lesson
+        updatedLesson.completeQuiz(result: quizResult)
+        quizOutcomeViewModel = LessonQuizOutcomeViewModelFromQuizResult(lesson: updatedLesson, quizResult: quizResult)
         if didPass {
             quizStatus.value = QuizStatus.passed
         } else {
             quizStatus.value = QuizStatus.failed
         }
-
-        var updatedLesson = lesson
-        updatedLesson.completeQuiz(result: quizResult)
         LessonManager().completeLesson(updatedLesson)
     }
 

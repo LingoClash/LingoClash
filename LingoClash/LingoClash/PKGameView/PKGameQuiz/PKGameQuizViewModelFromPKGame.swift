@@ -98,7 +98,6 @@ extension PKGameQuizViewModelFromPKGame {
     }
 
     func didForfeit(player: Profile) {
-        // TODO: Add some notif that a person has forfeitted
         _ = pkGameEngine.forfeitGame(player: player)
         Logger.info("renderer update forfeit.")
     }
