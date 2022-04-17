@@ -136,12 +136,14 @@
 		6F5842D72807D154008C9547 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5842D62807D154008C9547 /* Answer.swift */; };
 		6F67BDEF2804261C00B91844 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDEE2804261C00B91844 /* Heap.swift */; };
 		6F67BDF12804607800B91844 /* DeckProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F67BDF02804607800B91844 /* DeckProgress.swift */; };
-		6F6DEB8C280BF6E300FE118C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
-		6F6DEB8D280BF6E800FE118C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
 		6F6DEB93280C141400FE118C /* Revision.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB92280C141400FE118C /* Revision.storyboard */; };
 		6F6DEB94280C141400FE118C /* Revision.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB92280C141400FE118C /* Revision.storyboard */; };
 		6F6DEB96280C145E00FE118C /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB95280C145D00FE118C /* Question.storyboard */; };
 		6F6DEB97280C145E00FE118C /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB95280C145D00FE118C /* Question.storyboard */; };
+		6F6DEB99280C154D00FE118C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB98280C154D00FE118C /* Main.storyboard */; };
+		6F6DEB9A280C154D00FE118C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB98280C154D00FE118C /* Main.storyboard */; };
+		6F6DEB9C280C159A00FE118C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB9B280C159A00FE118C /* Home.storyboard */; };
+		6F6DEB9D280C159A00FE118C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F6DEB9B280C159A00FE118C /* Home.storyboard */; };
 		6F756436280BE19400AECCBD /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6427F8041600394CCB /* Deck.swift */; };
 		6F756437280BE19900AECCBD /* RevisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4D6127F7FFDB00394CCB /* RevisionViewModel.swift */; };
 		6F756438280BE19F00AECCBD /* RevisionCreateDeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B37BB27F7E18000C91257 /* RevisionCreateDeckViewController.swift */; };
@@ -162,8 +164,6 @@
 		6F756448280BE49600AECCBD /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2F4A2527F9947500923DB9 /* Query.swift */; };
 		6F756449280BE49B00AECCBD /* Answerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2F4A2727F9952D00923DB9 /* Answerable.swift */; };
 		6F75644D280BEE4700AECCBD /* DeckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F034DA328098B5500663A12 /* DeckManager.swift */; };
-		6F96F110280BCB10009154BF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1B90EC280B305700AC235F /* Home.storyboard */; };
-		6F96F111280BCB12009154BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE082C5280B2E350098BCC0 /* Main.storyboard */; };
 		6FA0243827E1BBBE00F94E54 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243727E1BBBE00F94E54 /* FirebaseAuth */; };
 		6FA0243A27E1BBBE00F94E54 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243927E1BBBE00F94E54 /* FirebaseAuthCombine-Community */; };
 		6FA0243C27E1BBBE00F94E54 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA0243B27E1BBBE00F94E54 /* FirebaseDatabase */; };
@@ -615,7 +615,6 @@
 		6F034DA628098BE000663A12 /* RevisionVocabData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionVocabData.swift; sourceTree = "<group>"; };
 		6F034DA928098BE900663A12 /* DeckData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckData.swift; sourceTree = "<group>"; };
 		6F0B37BB27F7E18000C91257 /* RevisionCreateDeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionCreateDeckViewController.swift; sourceTree = "<group>"; };
-		6F1B90EC280B305700AC235F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = ../../../../../../../Desktop/Home.storyboard; sourceTree = "<group>"; };
 		6F2F4A2527F9947500923DB9 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		6F2F4A2727F9952D00923DB9 /* Answerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answerable.swift; sourceTree = "<group>"; };
 		6F4C4D5F27F7FE9D00394CCB /* CreateDeckFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeckFields.swift; sourceTree = "<group>"; };
@@ -633,9 +632,10 @@
 		6F67BDF02804607800B91844 /* DeckProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckProgress.swift; sourceTree = "<group>"; };
 		6F6DEB92280C141400FE118C /* Revision.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Revision.storyboard; sourceTree = "<group>"; };
 		6F6DEB95280C145D00FE118C /* Question.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
+		6F6DEB98280C154D00FE118C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6F6DEB9B280C159A00FE118C /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6FA053D327F69E5900E03683 /* RevisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionViewController.swift; sourceTree = "<group>"; };
 		6FCB0A2727FC899200F63E46 /* QuerySequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuerySequence.swift; sourceTree = "<group>"; };
-		6FE082C5280B2E350098BCC0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../../../Desktop/Main.storyboard; sourceTree = "<group>"; };
 		CE2771CF2809882500A739C1 /* PKGamePlayerOutcomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGamePlayerOutcomeManager.swift; sourceTree = "<group>"; };
 		CE2771D2280988C600A739C1 /* PKGamePlayerOutcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGamePlayerOutcomeData.swift; sourceTree = "<group>"; };
 		CE673C1F27F8B46100321BB8 /* PKGameLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGameLobbyViewController.swift; sourceTree = "<group>"; };
@@ -1472,10 +1472,10 @@
 				CEBC07922808841E00A0ED82 /* Arena.storyboard */,
 				CEBC07902808841E00A0ED82 /* LearningBook.storyboard */,
 				CEBC0784280883C300A0ED82 /* CompletedBook.storyboard */,
-				6FE082C5280B2E350098BCC0 /* Main.storyboard */,
 				6F6DEB95280C145D00FE118C /* Question.storyboard */,
 				6F6DEB92280C141400FE118C /* Revision.storyboard */,
-				6F1B90EC280B305700AC235F /* Home.storyboard */,
+				6F6DEB98280C154D00FE118C /* Main.storyboard */,
+				6F6DEB9B280C159A00FE118C /* Home.storyboard */,
 				CEBC0786280883C300A0ED82 /* Profile.storyboard */,
 				CEBC0780280883C300A0ED82 /* RecommendedBook.storyboard */,
 				CEBC0782280883C300A0ED82 /* Settings.storyboard */,
@@ -1771,10 +1771,9 @@
 				CE8D228F27EE2B5A005E7058 /* Lesson.storyboard in Resources */,
 				D32BB7A92809F83F009E4049 /* korean-eng.json in Resources */,
 				D33282ED27D4D42E00C80986 /* LaunchScreen.storyboard in Resources */,
-				6F6DEB8D280BF6E800FE118C /* Home.storyboard in Resources */,
+				6F6DEB9C280C159A00FE118C /* Home.storyboard in Resources */,
 				CEBC077E280810CF00A0ED82 /* PKGame.storyboard in Resources */,
 				D33282FB27D4E7BF00C80986 /* SF-Pro.ttf in Resources */,
-				6F6DEB8C280BF6E300FE118C /* Main.storyboard in Resources */,
 				CE8D22A227EEC059005E7058 /* Book.storyboard in Resources */,
 				CEBC078A280883C300A0ED82 /* CompletedBook.storyboard in Resources */,
 				6F6DEB93280C141400FE118C /* Revision.storyboard in Resources */,
@@ -1785,6 +1784,7 @@
 				6F6DEB96280C145E00FE118C /* Question.storyboard in Resources */,
 				CEBC0789280883C300A0ED82 /* Settings.storyboard in Resources */,
 				CEBC077A2807E70800A0ED82 /* GoogleService-Info.plist in Resources */,
+				6F6DEB99280C154D00FE118C /* Main.storyboard in Resources */,
 				CEBC078B280883C300A0ED82 /* Profile.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1803,8 +1803,8 @@
 				D3C5E26327F6E36B00F65B8E /* Lesson.storyboard in Resources */,
 				CEBC077F280810CF00A0ED82 /* PKGame.storyboard in Resources */,
 				D32BB7AA2809F83F009E4049 /* korean-eng.json in Resources */,
+				6F6DEB9D280C159A00FE118C /* Home.storyboard in Resources */,
 				D3C5E26427F6E36B00F65B8E /* LaunchScreen.storyboard in Resources */,
-				6F96F110280BCB10009154BF /* Home.storyboard in Resources */,
 				D3C5E26527F6E36B00F65B8E /* SF-Pro.ttf in Resources */,
 				CEBC078F280883E600A0ED82 /* RecommendedBook.storyboard in Resources */,
 				D3C5E26627F6E36B00F65B8E /* Book.storyboard in Resources */,
@@ -1815,8 +1815,8 @@
 				CEBC078D280883E600A0ED82 /* CompletedBook.storyboard in Resources */,
 				CEBC07962808842300A0ED82 /* Arena.storyboard in Resources */,
 				6F6DEB97280C145E00FE118C /* Question.storyboard in Resources */,
-				6F96F111280BCB12009154BF /* Main.storyboard in Resources */,
 				CEBC078C280883E200A0ED82 /* Settings.storyboard in Resources */,
+				6F6DEB9A280C154D00FE118C /* Main.storyboard in Resources */,
 				CEBC07972808842300A0ED82 /* LearningBook.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
