@@ -13,7 +13,8 @@ extension UIViewController {
 
     func showSpinner() {
         if spinnerView != nil {
-            return
+            spinnerView?.removeFromSuperview()
+            spinnerView = nil
         }
         
         let activityView = UIView(frame: self.view.bounds)

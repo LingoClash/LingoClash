@@ -15,7 +15,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="UICollectionViewController-YY5-1r-xMr" id="YY5-1r-xMr" customClass="BookCollectionViewController" customModule="LingoClash" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Bf6-4I-qYX">
-                        <rect key="frame" x="0.0" y="0.0" width="780" height="1096"/>
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1136"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uAd-HP-Gzd">
@@ -27,7 +27,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCell" id="aHg-xy-IQI" customClass="BookCollectionViewCell" customModule="LingoClash" customModuleProvider="target">
-                                <rect key="frame" x="90" y="20" width="600" height="600"/>
+                                <rect key="frame" x="110" y="20" width="600" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yc0-2z-3LU">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -213,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pa6-IK-ZY3">
-                                <rect key="frame" x="20" y="64" width="780" height="1096"/>
+                                <rect key="frame" x="0.0" y="24" width="820" height="1136"/>
                                 <connections>
                                     <segue destination="YY5-1r-xMr" kind="embed" id="MYV-Xs-1I4"/>
                                 </connections>
@@ -223,9 +223,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WFN-O5-oj8" firstAttribute="bottom" secondItem="pa6-IK-ZY3" secondAttribute="bottom" id="7FS-Cz-mdE"/>
-                            <constraint firstItem="pa6-IK-ZY3" firstAttribute="leading" secondItem="WFN-O5-oj8" secondAttribute="leading" constant="20" id="7cP-zo-agK"/>
-                            <constraint firstItem="WFN-O5-oj8" firstAttribute="trailing" secondItem="pa6-IK-ZY3" secondAttribute="trailing" constant="20" id="8fE-22-7Rm"/>
-                            <constraint firstItem="pa6-IK-ZY3" firstAttribute="top" secondItem="WFN-O5-oj8" secondAttribute="top" constant="40" id="PwY-Y4-4hX"/>
+                            <constraint firstItem="pa6-IK-ZY3" firstAttribute="leading" secondItem="WFN-O5-oj8" secondAttribute="leading" id="7cP-zo-agK"/>
+                            <constraint firstItem="WFN-O5-oj8" firstAttribute="trailing" secondItem="pa6-IK-ZY3" secondAttribute="trailing" id="8fE-22-7Rm"/>
+                            <constraint firstItem="pa6-IK-ZY3" firstAttribute="top" secondItem="WFN-O5-oj8" secondAttribute="top" id="PwY-Y4-4hX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Completed" image="book-completed" id="aha-ce-132"/>
