@@ -25,6 +25,7 @@ extension UIViewController {
         activityView.backgroundColor = .white
         activityView.alpha = 0.3
         self.view.addSubview(activityView)
+        self.view.bringSubviewToFront(activityView)
         spinnerView = activityView
     }
 

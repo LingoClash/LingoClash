@@ -11,7 +11,10 @@ import Combine
 private let reuseIdentifier = "BookCell"
 
 class BookCollectionViewController: UICollectionViewController {
-    var books: [Book] = []
+    
+    @IBOutlet private var emptyView: UIView!
+    
+    var books: [Book]?
     var viewModel: BooksViewModel?
     weak var parentVC: UIViewController?
     private var cancellables: Set<AnyCancellable> = []
@@ -22,9 +25,29 @@ class BookCollectionViewController: UICollectionViewController {
         viewModel?.refresh()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        viewModel?.stopRefresh()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.refresh()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.parentVC?.showSpinner()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        guard let books = books else {
+            return
+        }
+
+        self.parentVC?.removeSpinner()
+        if books.count == 0 {
+            collectionView.backgroundView = emptyView
+        } else {
+            collectionView.backgroundView = nil
+        }
     }
 
     func setUpBinders() {
@@ -36,24 +59,20 @@ class BookCollectionViewController: UICollectionViewController {
             self?.books = books
             self?.collectionView.reloadData()
         }.store(in: &cancellables)
-
-        viewModel.isRefreshingPublisher.sink {[weak self] isRefreshing in
-            if isRefreshing {
-                self?.parentVC?.showSpinner()
-            } else {
-                self?.parentVC?.removeSpinner()
-            }
-        }.store(in: &cancellables)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        books.count
+        books?.count ?? 0
     }
 
     override func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+            
+        guard let books = books else {
+            return cell
+        }
 
         if let bookCell = collectionView.dequeueReusableCell(
             withReuseIdentifier: reuseIdentifier,
