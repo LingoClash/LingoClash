@@ -31,11 +31,15 @@ class FirebaseDataProvider: DataProvider {
 
         Promise { seal in
             let isDescending = params.sort.isDescending
-            let collection = db.collection(resource)
-
+            var collection: FirebaseFirestore.Query = db.collection(resource)
+            
             if let sortField = params.sort.field {
-                collection.order(
+                collection = collection.order(
                     by: sortField, descending: isDescending)
+            }
+            
+            for (key, value) in params.filter {
+                collection = collection.whereField(key, isEqualTo: value)
             }
 
             collection.getDocuments { querySnapshot, error in
@@ -61,7 +65,10 @@ class FirebaseDataProvider: DataProvider {
 
         Promise { seal in
             let docRef = db.collection(resource).document(params.id)
-
+            
+            if resource == "profiles" {
+                
+            }
             docRef.getDocument { document, error in
                 if let error = error {
                     return seal.reject(error)

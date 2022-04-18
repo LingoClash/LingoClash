@@ -18,7 +18,8 @@ struct AppConfigs {
         #if DEVELOPMENT
         static let testAccounts: [LoginFields] = [
             LoginFields(email: "e@e.com", password: "123456"),
-            LoginFields(email: "guy@gmail.com", password: "setMeUp?")
+            LoginFields(email: "guy@gmail.com", password: "setMeUp?"),
+            LoginFields(email: "abc@abc.com", password: "setMeUp?")
         ]
         #else
         static let testAccounts: [LoginFields] = []
