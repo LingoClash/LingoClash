@@ -10,35 +10,30 @@ import PromiseKit
 
 final class CompletedBooksViewModel: BooksViewModel {
 
-    @Published var isRefreshing = false
-    var isRefreshingPublisher: Published<Bool>.Publisher {
-        $isRefreshing
-    }
     @Published var error: String?
-    @Published var books: [Book] = []
-    var booksPublisher: Published<[Book]>.Publisher {
+    @Published var books: [Book]?
+    var booksPublisher: Published<[Book]?>.Publisher {
         $books
     }
 
     private let bookManager = BookManager()
+    private let profileManager = ProfileManager()
 
     func refresh() {
-        if self.isRefreshing {
-            return
-        }
-        
-        self.isRefreshing = true
         firstly {
             bookManager.getCompletedBooks()
         }.done { books in
             self.books = books
-            self.isRefreshing = false
         }.catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
     
-    func stopRefresh() {
-        self.isRefreshing = false
+    func learnBook(bookId: Identifier) {
+        firstly {
+            profileManager.setAsCurrentBook(bookId: bookId)
+        }.catch { error in
+            Logger.error(error.localizedDescription)
+        }
     }
 }

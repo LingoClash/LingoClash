@@ -19,7 +19,6 @@ final class ProfileViewModel {
     @Published var starsGoal: String?
     @Published var starsGoalProgress: Float?
     @Published var bio: String?
-    @Published var daysLearning: String?
     @Published var vocabsLearnt: String?
     @Published var pkWinningRate: String?
     @Published var rankingByTotalStars: String?
@@ -44,10 +43,6 @@ final class ProfileViewModel {
     }
 
     func refresh() {
-        if self.isRefreshing {
-            return
-        }
-        
         self.isRefreshing = true
         firstly {
             profileManager.getCurrentProfile()
@@ -58,15 +53,14 @@ final class ProfileViewModel {
             self.totalStars = String(profile.stars)
             self.starsGoal = String(profile.starsGoal)
             self.starsGoalProgress = min(
-                Float(profile.starsToday / profile.starsGoal), 1)
+                Float(profile.starsToday) / Float(profile.starsGoal), 1)
             self.bio = profile.bio
-            self.daysLearning = String(profile.daysLearning)
             self.vocabsLearnt = String(profile.vocabsLearnt)
             self.pkWinningRate = String(profile.pkWinningRate)
             self.rankingByTotalStars = String(profile.rankingByTotalStars)
             self.isRefreshing = false
         }.catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
     

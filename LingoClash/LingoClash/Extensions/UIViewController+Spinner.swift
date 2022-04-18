@@ -12,6 +12,11 @@ private var spinnerView: UIView?
 extension UIViewController {
 
     func showSpinner() {
+        if spinnerView != nil {
+            spinnerView?.removeFromSuperview()
+            spinnerView = nil
+        }
+        
         let activityView = UIView(frame: self.view.bounds)
         let activityIndicator = UIActivityIndicatorView(
             style: .large)
@@ -21,6 +26,7 @@ extension UIViewController {
         activityView.backgroundColor = .white
         activityView.alpha = 0.3
         self.view.addSubview(activityView)
+        self.view.bringSubviewToFront(activityView)
         spinnerView = activityView
     }
 

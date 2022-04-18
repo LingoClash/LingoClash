@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcX-sl-ld5">
-                                <rect key="frame" x="20" y="64" width="780" height="1096"/>
+                                <rect key="frame" x="0.0" y="24" width="820" height="1136"/>
                                 <connections>
                                     <segue destination="nAg-v2-0gL" kind="embed" id="ACZ-w0-s7m"/>
                                 </connections>
@@ -26,10 +26,10 @@
                         <viewLayoutGuide key="safeArea" id="raU-bx-zTm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kcX-sl-ld5" firstAttribute="leading" secondItem="raU-bx-zTm" secondAttribute="leading" constant="20" id="gZY-yz-zRd"/>
-                            <constraint firstItem="kcX-sl-ld5" firstAttribute="top" secondItem="raU-bx-zTm" secondAttribute="top" constant="40" id="h0O-Hj-4PR"/>
+                            <constraint firstItem="kcX-sl-ld5" firstAttribute="leading" secondItem="raU-bx-zTm" secondAttribute="leading" id="gZY-yz-zRd"/>
+                            <constraint firstItem="kcX-sl-ld5" firstAttribute="top" secondItem="raU-bx-zTm" secondAttribute="top" id="h0O-Hj-4PR"/>
                             <constraint firstItem="raU-bx-zTm" firstAttribute="bottom" secondItem="kcX-sl-ld5" secondAttribute="bottom" id="pzF-F0-PRg"/>
-                            <constraint firstItem="raU-bx-zTm" firstAttribute="trailing" secondItem="kcX-sl-ld5" secondAttribute="trailing" constant="20" id="sKu-cZ-pAA"/>
+                            <constraint firstItem="raU-bx-zTm" firstAttribute="trailing" secondItem="kcX-sl-ld5" secondAttribute="trailing" id="sKu-cZ-pAA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Learning" image="book-reading" id="UyJ-NN-fon"/>

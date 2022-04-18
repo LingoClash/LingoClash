@@ -50,7 +50,7 @@ class FirebasePKGameUpdater: PKGameUpdateDelegate {
     }
 
     func didForfeit(player: Profile) {
-        print("did forfeit game")
+        Logger.info("did forfeit game")
         Promise<Profile> { seal in
             self.gameDocumentRef.updateData([
                 "forfeittedPlayers": FieldValue.arrayUnion([player.id])
@@ -60,24 +60,24 @@ class FirebasePKGameUpdater: PKGameUpdateDelegate {
                         .errorUpdatingForfeit(
                             desc: "\(err): Error adding forfeitted player to Firebase \(player.id) \(player.name)"))
                 }
-                print("Successfully added forfietted player to Firebase \(player.id) \(player.name)")
+                Logger.info("Successfully added forfietted player to Firebase \(player.id) \(player.name)")
                 return seal.fulfill(player)
             }
-        }.catch { err in
-            print(err)
+        }.catch { error in
+            Logger.error(error.localizedDescription)
         }
     }
 
     private func addListenerToPKGame(gameUpdateListener: PKGameUpdateListener) {
-        print("did add listener to game")
+        Logger.info("did add listener to game")
         self.gameDocumentRef.addSnapshotListener { [self] documentSnapshot, error in
             guard let snapShot = documentSnapshot else {
-              print("Error fetching snapshots: \(error!)")
+              Logger.info("Error fetching snapshots: \(error!)")
               return
             }
 
             guard let gameData: PKGameData = self.getModel(from: snapShot) else {
-                print("Unable to convert data to PkGameData model")
+                Logger.info("Unable to convert data to PkGameData model")
                 assert(false)
                 return
             }
@@ -92,17 +92,17 @@ class FirebasePKGameUpdater: PKGameUpdateDelegate {
     private func updateListenerOnForfeit(_ gameUpdateListener: PKGameUpdateListener, _ pkGameData: PKGameData) {
         let newForfeittedPlayers = pkGameData.forfeittedPlayers.subtracting(forfeittedPlayerIds)
         guard !newForfeittedPlayers.isEmpty else {
-            print("No new forfeitted players")
+            Logger.info("No new forfeitted players")
             return
         }
 
-        print("forfeittedPlayer ids: \(newForfeittedPlayers)")
+        Logger.info("forfeittedPlayer ids: \(newForfeittedPlayers)")
 
         let forfeittedPlayers = self.pkGame.players.filter { newForfeittedPlayers.contains($0.id) }
 
         guard forfeittedPlayers.count == newForfeittedPlayers.count else {
 //            assert(false)
-            print("Received update on forfeit but player not in game.")
+            Logger.info("Received update on forfeit but player not in game.")
             return
         }
 
@@ -119,13 +119,13 @@ class FirebasePKGameUpdater: PKGameUpdateDelegate {
             do {
                 _ = try self.moveCollectionRef.addDocument(from: moveData) { error in
                     if let error = error {
-                        print("add game document error: \(error)")
+                        Logger.info("add game document error: \(error)")
                     } else {
-                        print("successfully added document")
+                        Logger.info("successfully added document")
                     }
                 }
             } catch {
-                print("unable to add game move")
+                Logger.info("unable to add game move")
             }
         }
     }
@@ -133,7 +133,7 @@ class FirebasePKGameUpdater: PKGameUpdateDelegate {
     private func addListenerToMoves(gameUpdateListener: PKGameUpdateListener) {
         let moveListener = moveCollectionRef.addSnapshotListener { [self] querySnapshot, error in
             guard let snapShot = querySnapshot else {
-              print("Error fetching snapshots: \(error!)")
+              Logger.info("Error fetching snapshots: \(error!)")
               return
             }
             snapShot.documentChanges.forEach { diff in

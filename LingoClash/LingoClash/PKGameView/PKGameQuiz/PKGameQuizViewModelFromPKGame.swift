@@ -44,7 +44,8 @@ class PKGameQuizViewModelFromPKGame: PKGameQuizViewModel {
     func forfeitGame() {
         let didSucessfullyForfeit = pkGameEngine.forfeitGame(player: currentPlayerProfile)
         guard didSucessfullyForfeit else {
-            print("Unable to forfeit game.")
+            Logger.info("Unable to forfeit game.")
+            // TODO: Tell user this failure
             return
         }
 
@@ -61,7 +62,7 @@ extension PKGameQuizViewModelFromPKGame {
     func didCompleteGame(gameOutcome: PKGameOutcome) {
         guard let currPlayerOutcome = gameOutcome.playerOutcomes.first(
             where: { $0.profile == currentPlayerProfile }) else {
-            print("current player outcome not found.")
+            Logger.info("current player outcome not found.")
             assert(false)
             return
         }
@@ -86,7 +87,8 @@ extension PKGameQuizViewModelFromPKGame {
     }
 
     func didAccountForForfeit(player: Profile) {
-        print("renderer update forfeit.")
+        // TODO: Add some notif that a person has forfeitted
+        Logger.info("renderer update forfeit.")
     }
 }
 
@@ -98,6 +100,6 @@ extension PKGameQuizViewModelFromPKGame {
 
     func didForfeit(player: Profile) {
         _ = pkGameEngine.forfeitGame(player: player)
-        print("renderer update forfeit.")
+        Logger.info("renderer update forfeit.")
     }
 }

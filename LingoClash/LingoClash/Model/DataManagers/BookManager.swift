@@ -56,10 +56,13 @@ class BookManager: DataManager<BookData> {
             }.done { bookCategoryData in
                 bookCategory = bookCategoryData
             }
-        }.then { () -> Promise<Void> in
+        }.then { () -> Promise<ProfileData> in
+            // Gets current profile data
+            ProfileManager().getCurrentProfileData()
+        }.then { profileData -> Promise<Void> in
             // Gets the profile book
             firstly {
-                ProfileBookManager().getManyReference(target: "book_id", id: id)
+                ProfileBookManager().getManyReference(target: "book_id", id: id, filter: ["profile_id": profileData.id])
             }.done { profileBooksData in
                 if !profileBooksData.isEmpty {
                     profileBook = profileBooksData[0]

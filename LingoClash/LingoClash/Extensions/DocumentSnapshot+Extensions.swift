@@ -15,9 +15,6 @@ extension DocumentSnapshot {
     func decode<T: Decodable>(as objectType: T.Type, includingId: Bool = true) -> T? {
 
         do {
-            if objectType == ProfileBookData.self {
-                
-            }
             guard var documentJson = self.data() else { throw DocumentSnapshotExtensionError.decodingError }
             if includingId {
                 documentJson["id"] = self.documentID

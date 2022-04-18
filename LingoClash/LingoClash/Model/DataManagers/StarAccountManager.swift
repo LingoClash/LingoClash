@@ -9,7 +9,7 @@ import PromiseKit
 class StarAccountManager: DataManager<StarAccountData> {
 
     init() {
-        super.init(resource: "star_accounts")
+        super.init(resource: DataManagerResources.starAccounts)
     }
 
     func getStarAccount() -> Promise<CurrencyAccount<Star>> {
@@ -65,9 +65,10 @@ class StarAccountManager: DataManager<StarAccountData> {
         let accountData = StarAccountData(id: account.id, ownerId: account.owner.id, balance: account.balance)
 
         return self.update(id: account.id, to: accountData)
-        .done { starAccountData in
+        .then { starAccountData -> Promise<ProfileData> in
             updatedAccountData = starAccountData
-        }.then { () -> Promise<StarTransactionData> in
+            return ProfileManager().updateProfile(stars: starAccountData.balance)
+        }.then { _ -> Promise<StarTransactionData> in
             guard updatedAccountData != nil else {
                 return Promise.reject(reason: DataManagerError.dataNotFound)
             }

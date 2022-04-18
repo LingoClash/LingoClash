@@ -9,7 +9,22 @@ import PromiseKit
 class StarTransactionManager: DataManager<StarTransactionData> {
 
     init() {
-        super.init(resource: "star_transactions")
+        super.init(resource: DataManagerResources.starTransactions)
+    }
+    
+    func getStarTransactionData() -> Promise<[StarTransactionData]> {
+                
+        return firstly {
+            ProfileManager().getCurrentProfileData()
+        }.then { profileData -> Promise<StarAccountData?> in
+            StarAccountManager().getOneReference(target: "owner_id", id: profileData.id)
+        }.then { starAccountData -> Promise<[StarTransactionData]> in
+            guard let starAccountData = starAccountData else {
+                return Promise.reject(reason: DataManagerError.dataNotFound)
+            }
+            
+            return self.getManyReference(target: "account_id", id: starAccountData.id)
+        }
     }
 
     func getStarTransactions(accountId: Identifier, account: CurrencyAccount<Star>)

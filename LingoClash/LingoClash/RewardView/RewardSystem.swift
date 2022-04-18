@@ -23,7 +23,7 @@ class RewardSystem: NotificationObserver {
                                                         debitOrCredit: .debit,
                                                         amount: amount,
                                                         account: currencyAccount,
-                                                        description: .lessonCompletion)
+                                                        description: description)
             return transaction
         }
     }
@@ -34,7 +34,7 @@ class RewardSystem: NotificationObserver {
         StarAccountManager()
             .updateStarAccount(account: transaction.account, newTransaction: transaction)
         .catch { error in
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
 }

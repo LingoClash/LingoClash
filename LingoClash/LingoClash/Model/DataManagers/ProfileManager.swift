@@ -43,7 +43,6 @@ class ProfileManager: DataManager<ProfileData> {
     }
 
     func setAsCurrentBook(bookId: Identifier) -> Promise<ProfileData> {
-
         firstly {
             self.getCurrentProfileData()
         }.then { profileData -> Promise<ProfileData> in
@@ -54,11 +53,12 @@ class ProfileManager: DataManager<ProfileData> {
         }
     }
 
-    func updateProfile(starsGoal: Int, bio: String) -> Promise<ProfileData> {
+    func updateProfile(name: String, starsGoal: Int, bio: String) -> Promise<ProfileData> {
         firstly {
             self.getCurrentProfileData()
         }.then { profileData -> Promise<ProfileData> in
             var newProfileData = profileData
+            newProfileData.name = name
             newProfileData.stars_goal = starsGoal
             newProfileData.bio = bio
 
@@ -66,14 +66,23 @@ class ProfileManager: DataManager<ProfileData> {
         }
     }
 
-    func updateProfile(stars: Int, vocabsLearnt: Int) -> Promise<ProfileData> {
-
+    func updateProfile(stars: Int) -> Promise<ProfileData> {
         firstly {
             self.getCurrentProfileData()
         }.then { profileData -> Promise<ProfileData> in
             var newProfileData = profileData
             newProfileData.stars = stars
-            newProfileData.vocabs_learnt = vocabsLearnt
+
+            return self.update(id: profileData.id, to: newProfileData)
+        }
+    }
+    
+    func updateProfile(email: String) -> Promise<ProfileData> {
+        firstly {
+            self.getCurrentProfileData()
+        }.then { profileData -> Promise<ProfileData> in
+            var newProfileData = profileData
+            newProfileData.email = email
 
             return self.update(id: profileData.id, to: newProfileData)
         }
@@ -81,23 +90,17 @@ class ProfileManager: DataManager<ProfileData> {
 
     func createProfile(params: SignUpFields, userId: Identifier) -> Promise<Profile> {
         let profileData = ProfileData(userId: userId, name: params.name, email: params.email)
-        var profile: Profile?
 
         return firstly {
             self.create(newRecord: profileData)
-        }.then { _ in
-            self.getCurrentProfile()
         }.done { currProfile in
-            profile = currProfile
             let starAccountData = StarAccountData(ownerId: currProfile.id)
+            
             StarAccountManager().create(newRecord: starAccountData).catch { error in
-                print(error)
+                Logger.error(error.localizedDescription)
             }
-        }.compactMap {
-            guard let profile = profile else {
-                return nil
-            }
-            return profile
+        }.then {
+            self.getCurrentProfile()
         }
     }
 
@@ -118,6 +121,7 @@ class ProfileManager: DataManager<ProfileData> {
         var currentBook: Book?
         var rankingByTotalStars: Int?
         var winningPKRate: Double?
+        var starsToday: Int = 0
 
         return profileData.then { profileData-> Promise<Void> in
             // Gets the current book
@@ -141,7 +145,7 @@ class ProfileManager: DataManager<ProfileData> {
                 self.getList()
             }.done { profiles in
                 let sortedProfiles = profiles.sorted(by: { (p1: ProfileData, p2: ProfileData) -> Bool in
-                    p1.stars < p2.stars
+                    p1.stars > p2.stars
                 })
 
                 rankingByTotalStars = sortedProfiles.firstIndex {
@@ -177,6 +181,19 @@ class ProfileManager: DataManager<ProfileData> {
                     winningPKRate = Double(wins) / Double(total) * 100
                 }
             }
+        }.then { () -> Promise<Void> in
+            // Gets stars today
+            return firstly {
+                StarTransactionManager().getStarTransactionData()
+            }.done { starTransactionData in
+                var starCount = 0
+                for transaction in starTransactionData {
+                    if transaction.createdAt.isToday() && transaction.debitOrCredit == .debit {
+                        starCount += transaction.amount
+                    }
+                }
+                starsToday = starCount
+            }
         }.compactMap {
             guard let profile = profile,
                     let rankingByTotalStars = rankingByTotalStars,
@@ -188,7 +205,8 @@ class ProfileManager: DataManager<ProfileData> {
                 profileData: profile,
                 currentBook: currentBook,
                 rankingByTotalStars: rankingByTotalStars,
-                pkWinningRate: winningPKRate)
+                pkWinningRate: winningPKRate,
+                starsToday: starsToday)
         }
     }
 }

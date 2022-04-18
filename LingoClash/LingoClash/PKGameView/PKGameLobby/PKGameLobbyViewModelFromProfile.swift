@@ -26,7 +26,7 @@ class PKGameLobbyViewModelFromProfile: PKGameLobbyViewModel {
                 currentPlayerProfile: self.playerProfile)
         }.catch { error in
             assert(false)
-            print(error)
+            Logger.error(error.localizedDescription)
         }
     }
 

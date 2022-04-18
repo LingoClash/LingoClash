@@ -64,7 +64,7 @@ final class DeckViewModel {
                 "Revision Vocab \(query.revVocab.vocab.word) has been updated with latest attempt at \(currDate)"
             )
         }.catch { error in
-            Logger.error("\(error)")
+            Logger.error(error.localizedDescription)
         }
     }
 }

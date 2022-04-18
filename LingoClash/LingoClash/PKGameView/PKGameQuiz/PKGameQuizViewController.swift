@@ -38,7 +38,7 @@ class PKGameQuizViewController: UIViewController {
     }
 
     @IBAction private func forfeit(_ sender: Any) {
-        print("did click forfeit")
+        Logger.info("did click forfeit")
         let forfeitConfirmation = UIAlertController(
             title: "Forfeit",
             message: "Forfeit in cowardice? Are you sure?",

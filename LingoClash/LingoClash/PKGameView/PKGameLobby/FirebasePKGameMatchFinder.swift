@@ -98,7 +98,7 @@ class FirebasePKGameMatchFinder: PKGameMatchFinder {
             return Promise { seal in
                 batch.commit { error in
                     if let error = error {
-                        print(error)
+                        Logger.error(error.localizedDescription)
                         return seal.reject(error)
                     }
 

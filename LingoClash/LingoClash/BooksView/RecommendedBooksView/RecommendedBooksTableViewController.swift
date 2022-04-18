@@ -12,7 +12,10 @@ private let tableCellReuseIdentifier = "RecommendedBookTableCell"
 private let headerReuseIdentifer = "CategoryHeader"
 
 class RecommendedBooksTableViewController: UITableViewController {
-    var booksForCategories = [BooksForCategory]()
+    
+    @IBOutlet var emptyView: UIView!
+    
+    var booksForCategories: [BooksForCategory]?
     var viewModel: RecommendedBooksViewModel?
     private var cancellables: Set<AnyCancellable> = []
 
@@ -22,9 +25,24 @@ class RecommendedBooksTableViewController: UITableViewController {
         viewModel?.refresh()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        viewModel?.stopRefresh()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.showSpinner()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        guard let booksForCategories = booksForCategories else {
+            return
+        }
+
+        self.removeSpinner()
+        if booksForCategories.count == 0 {
+            tableView.backgroundView = emptyView
+        } else {
+            tableView.backgroundView = nil
+        }
     }
 
     func setUpBinders() {
@@ -35,21 +53,14 @@ class RecommendedBooksTableViewController: UITableViewController {
         viewModel.$booksForCategories.sink {[weak self] books in
             self?.booksForCategories = books
             self?.tableView.reloadData()
-        }.store(in: &cancellables)
-
-        viewModel.$isRefreshing.sink {[weak self] isRefreshing in
-            if isRefreshing {
-                self?.showSpinner()
-            } else {
-                self?.removeSpinner()
-            }
+            
         }.store(in: &cancellables)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        booksForCategories.count
+        return booksForCategories?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,7 +68,12 @@ class RecommendedBooksTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         var cell = UITableViewCell()
+        guard let booksForCategories = booksForCategories else {
+            return cell
+        }
+
         if let booksCell = tableView.dequeueReusableCell(
             withIdentifier: tableCellReuseIdentifier,
             for: indexPath) as? RecommendedBooksTableViewCell {
@@ -74,7 +90,7 @@ class RecommendedBooksTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        booksForCategories[section].category
+        booksForCategories?[section].category
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

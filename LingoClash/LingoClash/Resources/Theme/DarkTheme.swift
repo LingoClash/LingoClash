@@ -8,7 +8,7 @@
 import UIKit
 
 class DarkTheme: ThemeProtocol {
-        var mainFontName: String = "SF-Pro"
+    var mainFontName: String = "SF-Pro"
     var accent = UIColor(named: "AccentColor-Dark")!
     var background = UIColor(named: "Background-Dark")!
     var tint = UIColor(named: "TintColor-Dark")!

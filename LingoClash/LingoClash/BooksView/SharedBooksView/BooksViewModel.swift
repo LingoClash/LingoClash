@@ -8,8 +8,7 @@
 import Combine
 
 protocol BooksViewModel {
-    var isRefreshingPublisher: Published<Bool>.Publisher { get }
-    var booksPublisher: Published<[Book]>.Publisher { get }
+    var booksPublisher: Published<[Book]?>.Publisher { get }
     func refresh()
-    func stopRefresh()
+    func learnBook(bookId: Identifier)
 }

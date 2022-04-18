@@ -23,7 +23,7 @@ struct Book {
     let status: BookStatus
 
     var progress: Float {
-        Float(passedLessons / totalLessons)
+        Float(passedLessons) / Float(totalLessons)
     }
     var progressText: String {
         "Progress: \(passedLessons) / \(totalLessons)"
