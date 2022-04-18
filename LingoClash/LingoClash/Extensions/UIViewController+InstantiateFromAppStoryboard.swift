@@ -1,5 +1,5 @@
 //
-//  UiViewController.swift
+//  UIViewController+InstantiateFromAppStoryboard.swift
 //  LingoClash
 //
 //  Created by Sherwin Poh on 26/3/22.
