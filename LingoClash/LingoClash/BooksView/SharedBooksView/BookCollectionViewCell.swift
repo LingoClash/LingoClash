@@ -13,12 +13,11 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var progressLabel: UILabel!
     @IBOutlet private var totalStarsLabel: UILabel!
     @IBOutlet private var progressView: UIProgressView!
-    @IBOutlet private var PKButton: UIButton!
     @IBOutlet private var reviseButton: UIButton!
     @IBOutlet private var learnButton: UIButton!
 
     weak var delegate: BookButtonDelegate?
-    private(set) var lessonSelectionViewModel: LessonSelectionViewModel?
+    private(set) var book: Book?
 
     func configure(book: Book, delegate: BookButtonDelegate) {
         bookNameLabel.text = book.name
@@ -27,14 +26,13 @@ class BookCollectionViewCell: UICollectionViewCell {
         progressView.progress = book.progress
 
         self.delegate = delegate
-        self.lessonSelectionViewModel = LessonSelectionViewModelFromBook(book: book)
+        self.book = book
     }
 
     @IBAction private func learnButtonTapped(_ sender: UIButton) {
-        guard let lessonSelectionViewModel = lessonSelectionViewModel else {
+        guard let book = book else {
             return
         }
-        self.delegate?.learnButtonTapped(lessonSelectionVM: lessonSelectionViewModel)
+        self.delegate?.learnButtonTapped(book: book)
     }
-
 }

@@ -10,4 +10,5 @@ import Combine
 protocol BooksViewModel {
     var booksPublisher: Published<[Book]?>.Publisher { get }
     func refresh()
+    func learnBook(bookId: Identifier)
 }

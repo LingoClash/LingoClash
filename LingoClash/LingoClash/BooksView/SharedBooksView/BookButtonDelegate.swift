@@ -6,5 +6,5 @@
 //
 
 protocol BookButtonDelegate: AnyObject {
-    func learnButtonTapped(lessonSelectionVM: LessonSelectionViewModel)
+    func learnButtonTapped(book: Book)
 }

@@ -17,6 +17,7 @@ final class CompletedBooksViewModel: BooksViewModel {
     }
 
     private let bookManager = BookManager()
+    private let profileManager = ProfileManager()
 
     func refresh() {
         firstly {
@@ -24,7 +25,15 @@ final class CompletedBooksViewModel: BooksViewModel {
         }.done { books in
             self.books = books
         }.catch { error in
-            Logger.error(error.localizedDescription)
+            Logger.error("\(error)")
+        }
+    }
+    
+    func learnBook(bookId: Identifier) {
+        firstly {
+            profileManager.setAsCurrentBook(bookId: bookId)
+        }.catch { error in
+            Logger.error("\(error)")
         }
     }
 }

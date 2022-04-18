@@ -90,9 +90,13 @@ class BookCollectionViewController: UICollectionViewController {
 }
 
 extension BookCollectionViewController: BookButtonDelegate {
-    func learnButtonTapped(lessonSelectionVM: LessonSelectionViewModel) {
+    func learnButtonTapped(book: Book) {
+        
         let viewController = LessonSelectionViewController.instantiateFromAppStoryboard(.Lesson)
-        viewController.viewModel = lessonSelectionVM
+        viewController.viewModel = LessonSelectionViewModelFromBook(book: book)
+        
         self.show(viewController, sender: nil)
+        
+        self.viewModel?.learnBook(bookId: book.id)
     }
 }
