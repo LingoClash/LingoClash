@@ -5,6 +5,8 @@
 //  Created by Sherwin Poh on 4/4/22.
 //
 
+import Foundation
+
 class PKGameOverviewViewModelFromOutcome: PKGameOverviewViewModel {
     var titleOutcome: String
     var descriptionOutcome: String
@@ -32,6 +34,7 @@ class PKGameOverviewViewModelFromOutcome: PKGameOverviewViewModel {
             self.titleOutcome = "Victorious"
             self.descriptionOutcome = "Masterful!"
             self.isBackgroundDark = false
+            NotificationCenter.default.post(name: .PKGameWon, object: nil, userInfo: nil)
         case .draw:
             self.titleOutcome = "Draw"
             self.descriptionOutcome = "You have met your match."
