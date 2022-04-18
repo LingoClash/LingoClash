@@ -22,7 +22,7 @@ class PKGameRewardViewModel: RewardSystem {
             self.presentReward(transaction: currencyTransaction)
             self.snackbarText = "You earned a star for winning a PK!"
         }.catch { error in
-            Logger.error("\(error)")
+            Logger.error(error.localizedDescription)
         }
     }
 }

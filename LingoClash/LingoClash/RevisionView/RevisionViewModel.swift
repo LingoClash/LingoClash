@@ -30,7 +30,7 @@ final class RevisionViewModel {
             self.decks.append(contentsOf: deckArr)
             self.isRefreshing = false
         }.catch { error in
-            Logger.error("\(error)")
+            Logger.error(error.localizedDescription)
         }
     }
     

@@ -25,7 +25,7 @@ final class AddToDeckViewModel {
         }.done { _ in
             Logger.info("Successly added \(revisionVocabData) to Deck \(deck)")
         }.catch { error in
-            Logger.error("\(error)")
+            Logger.error(error.localizedDescription)
         }
     }
 
@@ -41,7 +41,7 @@ final class AddToDeckViewModel {
             self.decks.append(contentsOf: deckArr)
             self.isRefreshing = false
         }.catch { error in
-            Logger.error("\(error)")
+            Logger.error(error.localizedDescription)
         }
     }
 }

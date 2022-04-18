@@ -33,7 +33,7 @@ final class LearningBooksViewModel: BooksViewModel {
         firstly {
             profileManager.setAsCurrentBook(bookId: bookId)
         }.catch { error in
-            Logger.error("\(error)")
+            Logger.error(error.localizedDescription)
         }
     }
 }

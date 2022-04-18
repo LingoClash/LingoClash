@@ -25,7 +25,7 @@ final class CompletedBooksViewModel: BooksViewModel {
         }.done { books in
             self.books = books
         }.catch { error in
-            Logger.error("\(error)")
+            Logger.error(error.localizedDescription)
         }
     }
     
@@ -33,7 +33,7 @@ final class CompletedBooksViewModel: BooksViewModel {
         firstly {
             profileManager.setAsCurrentBook(bookId: bookId)
         }.catch { error in
-            Logger.error("\(error)")
+            Logger.error(error.localizedDescription)
         }
     }
 }
