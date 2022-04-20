@@ -38,9 +38,9 @@ class AddToDeckTableView: UITableViewController {
         
         viewModel?.$isRefreshing.sink {[weak self] isRefreshing in
             if isRefreshing {
-                self?.parent?.showSpinner()
+                self?.showSpinner()
             } else {
-                self?.parent?.removeSpinner()
+                self?.removeSpinner()
             }
         }.store(in: &cancellables)
     }
@@ -80,11 +80,6 @@ extension AddToDeckTableView {
         }
         
         self.viewModel?.addVocabToDeck(deck: deck)
-        // set it to the correct viewmodel
-//        let selectedDeck = decks?[indexPath.row]
-//        self.selectedDeck = selectedDeck
-//
-//        // then do a segue
-//        performSegue(withIdentifier: Segue.gotoDeck, sender: self)
+        self.dismiss(animated: true)
     }
 }

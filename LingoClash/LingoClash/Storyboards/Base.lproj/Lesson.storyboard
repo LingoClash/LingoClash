@@ -391,7 +391,7 @@
                                     <color key="baseBackgroundColor" red="0.3279374746" green="0.72503221650000005" blue="0.34497321720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="AQY-bs-IYg" kind="popoverPresentation" popoverAnchorView="Ntb-iR-GmD" id="2Rk-Mb-Jur">
+                                    <segue destination="AQY-bs-IYg" kind="popoverPresentation" popoverAnchorView="Ntb-iR-GmD" id="pS8-Wm-3mg">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -447,15 +447,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Deck 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-tm-zwo">
-                                            <rect key="frame" x="127" y="8" width="66" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-tm-zwo">
+                                            <rect key="frame" x="127" y="8.5" width="66" height="27"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="vc4-tm-zwo" firstAttribute="centerY" secondItem="fnu-Y0-vpX" secondAttribute="centerY" id="Bin-UH-VLs"/>
                                         <constraint firstItem="vc4-tm-zwo" firstAttribute="centerX" secondItem="fnu-Y0-vpX" secondAttribute="centerX" id="Ep2-hH-UfW"/>
+                                        <constraint firstItem="vc4-tm-zwo" firstAttribute="centerX" secondItem="fnu-Y0-vpX" secondAttribute="centerX" id="aUf-E3-d7g"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -468,6 +470,7 @@
                             <outlet property="delegate" destination="AQY-bs-IYg" id="2ea-tg-pnC"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="1Xb-ks-zn3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQB-GF-dCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
