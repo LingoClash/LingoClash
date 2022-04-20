@@ -85,7 +85,6 @@ class DataManager<T: Record> {
         field: String? = nil,
         isDescending: Bool = AppConfigs.API.isDescending,
         filter: [String: Any] = [:]    ) -> Promise<[T]> {
-            
             let sort = SortPayload(field: field, isDescending: isDescending)
             let result: Promise<GetManyReferenceResult<T>> = dataProvider.getManyReference(
                 resource: self.resource,

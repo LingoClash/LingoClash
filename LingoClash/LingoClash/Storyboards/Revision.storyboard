@@ -42,9 +42,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaU-OM-RQo">
-                                                    <rect key="frame" x="507" y="11" width="119" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaU-OM-RQo">
+                                                    <rect key="frame" x="685" y="4" width="73" height="36"/>
                                                     <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -52,7 +51,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="PA5-xA-1bl" firstAttribute="leading" secondItem="POO-5H-nsB" secondAttribute="leading" constant="40" id="5l5-7w-Ptj"/>
+                                                <constraint firstItem="OaU-OM-RQo" firstAttribute="centerY" secondItem="POO-5H-nsB" secondAttribute="centerY" id="6TR-Z1-uad"/>
                                                 <constraint firstItem="PA5-xA-1bl" firstAttribute="centerY" secondItem="POO-5H-nsB" secondAttribute="centerY" id="ADf-13-oMr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OaU-OM-RQo" secondAttribute="trailing" constant="250" id="UOs-3Y-vjX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -97,8 +98,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Press the &quot;+&quot; button on the bottom right to create a deck!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFj-NJ-IFg">
-                                <rect key="frame" x="317" y="341" width="390" height="99"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the &quot;+&quot; button on the bottom right to create a deck!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFj-NJ-IFg">
+                                <rect key="frame" x="317" y="363" width="390" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="390" id="rct-Ja-5cV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="30"/>
                                 <color key="textColor" name="Background"/>
                                 <nil key="highlightedColor"/>

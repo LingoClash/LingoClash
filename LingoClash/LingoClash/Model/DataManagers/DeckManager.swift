@@ -9,6 +9,9 @@ import Foundation
 import PromiseKit
 
 class DeckManager: DataManager<DeckData> {
+    enum FetchingErrors: Error {
+        case alreadyExist
+    }
     
     init() {
         super.init(resource: DataManagerResources.decks)
@@ -28,6 +31,14 @@ class DeckManager: DataManager<DeckData> {
         }
     }
     
+    func getDecksFromProfileId() -> Promise<[Deck]> {
+        firstly {
+            ProfileManager().getCurrentProfile()
+        }.then { currentProfile in
+            DeckManager().getDecks(profileId: currentProfile.id)
+        }
+    }
+    
     
     func getDecks(profileId: Identifier) -> Promise<[Deck]> {
         var revisionVocabByDeckData: [DeckData: [RevisionVocabData]] = [:]
@@ -39,9 +50,9 @@ class DeckManager: DataManager<DeckData> {
             // first, fetch decks
             DeckManager().getManyReference(target: "profile_id", id: profileId)
         }.then { deckDataArr -> Promise<Void> in
-            let revisionVocabPromises = deckDataArr.map { deckData in
+            let revisionVocabPromises = deckDataArr.map { deckData -> Promise<Void> in
                 firstly {
-                    RevisionVocabManager().getManyReference(target: "deck_id", id: deckData.id)
+                    RevisionVocabManager().getManyReference(target: "deck_id", id: String(deckData.id))
                 }.done { revisionVocabsData in
                     revisionVocabByDeckData[deckData] = revisionVocabsData
                 }
@@ -58,7 +69,7 @@ class DeckManager: DataManager<DeckData> {
                 }
                 vocabPromises.append(
                     firstly {
-                        VocabManager().getMany(ids: revisionVocabData.map{$0.id})
+                        VocabManager().getMany(ids: revisionVocabData.map{$0.vocab_id})
                     }.done { vocabData in
                         vocabByDeckData[deckData] = vocabData
                     }
@@ -77,6 +88,26 @@ class DeckManager: DataManager<DeckData> {
                 )
             }
             return deckArr.sorted()
+        }
+    }
+    
+    func addVocabToDeck(deck: Deck, vocab: Vocab) {
+        let revisionVocabData = RevisionVocabData(id: "-1", difficulty: 0, last_attempted_date: nil, vocab_id: vocab.id, deck_id: deck.id)
+        // Check if there is a duplicate in the database before adding
+        firstly {
+            RevisionVocabManager().getOneReference(target: "vocab_id", id: vocab.id)
+        }.then { revisionVocabData -> Promise<Void> in
+            if let revisionVocabData = revisionVocabData {
+                Logger.info("Revision Vocab \(revisionVocabData) already exists. Terminating request")
+                throw FetchingErrors.alreadyExist
+            }
+            return Promise()
+        }.then { _ in
+            RevisionVocabManager().create(newRecord: revisionVocabData)
+        }.done { _ in
+            Logger.info("Successfully added \(revisionVocabData) to Deck \(deck)")
+        }.catch { error in
+            Logger.error(error.localizedDescription)
         }
     }
     

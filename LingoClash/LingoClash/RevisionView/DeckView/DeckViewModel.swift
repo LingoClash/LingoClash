@@ -22,6 +22,7 @@ final class DeckViewModel {
         )
     }
 
+    // Adds the word to the back of the queue after a user attempts it
     func addToQueue(currentQuery: RevisionQuery?, recallDifficulty: RecallDifficulty) {
         guard let currentQuery = currentQuery else {
             return

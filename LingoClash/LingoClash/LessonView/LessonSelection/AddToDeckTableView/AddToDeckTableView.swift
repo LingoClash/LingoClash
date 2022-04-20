@@ -32,7 +32,6 @@ class AddToDeckTableView: UITableViewController {
         viewModel?.$decks.sink {[weak self] decks in
             self?.decks = decks
             // initialise decks progress as well
-            
             self?.tableView.reloadData()
         }.store(in: &cancellables)
         

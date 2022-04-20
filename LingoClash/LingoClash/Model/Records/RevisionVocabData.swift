@@ -11,7 +11,7 @@ struct RevisionVocabData {
     let id: Identifier
     let difficulty: Int
     
-    let last_attempted_date: Date
+    let last_attempted_date: Date?
     let vocab_id: Identifier
     let deck_id: Identifier
 }
