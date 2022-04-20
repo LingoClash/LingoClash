@@ -56,7 +56,7 @@ final class ProfileViewModel {
                 Float(profile.starsToday) / Float(profile.starsGoal), 1)
             self.bio = profile.bio
             self.vocabsLearnt = String(profile.vocabsLearnt)
-            self.pkWinningRate = String(profile.pkWinningRate)
+            self.pkWinningRate = String(format:"%.2f", profile.pkWinningRate)
             self.rankingByTotalStars = String(profile.rankingByTotalStars)
             self.isRefreshing = false
         }.catch { error in
