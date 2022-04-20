@@ -95,7 +95,7 @@ class DeckManager: DataManager<DeckData> {
         let revisionVocabData = RevisionVocabData(id: "-1", difficulty: 0, last_attempted_date: nil, vocab_id: vocab.id, deck_id: deck.id)
         // Check if there is a duplicate in the database before adding
         firstly {
-            RevisionVocabManager().getOneReference(target: "vocab_id", id: vocab.id)
+            RevisionVocabManager().getOneReference(target: "vocab_id", id: vocab.id, filter: ["deck_id": deck.id])
         }.then { revisionVocabData -> Promise<Void> in
             if let revisionVocabData = revisionVocabData {
                 Logger.info("Revision Vocab \(revisionVocabData) already exists. Terminating request")
