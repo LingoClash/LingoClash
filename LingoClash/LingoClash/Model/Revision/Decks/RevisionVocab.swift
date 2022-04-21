@@ -25,7 +25,7 @@ struct RevisionVocab {
         self.id = id
     }
     
-    init(id: Identifier, vocab: Vocab, difficultyParameter: Difficulty, lastAttemptedDate: Date) {
+    init(id: Identifier, vocab: Vocab, difficultyParameter: Difficulty, lastAttemptedDate: Date?) {
         self.difficultyParameter = difficultyParameter
         self.vocab = vocab
         self.lastAttemptedDate = lastAttemptedDate

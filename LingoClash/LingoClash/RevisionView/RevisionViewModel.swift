@@ -22,11 +22,7 @@ final class RevisionViewModel {
         self.decks = []
         self.isRefreshing = true
         
-        firstly {
-            ProfileManager().getCurrentProfile()
-        }.then { currentProfile in
-            DeckManager().getDecks(profileId: currentProfile.id)
-        }.done { deckArr in
+        DeckManager().getDecksFromProfileId().done { deckArr in
             self.decks.append(contentsOf: deckArr)
             self.isRefreshing = false
         }.catch { error in

@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Book Collection View Controller-->
         <scene sceneID="fyF-KY-018">
@@ -51,18 +56,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="kaO-gG-aVb">
-                                                    <rect key="frame" x="229" y="549" width="163" height="31"/>
+                                                    <rect key="frame" x="280" y="549" width="60.5" height="31"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRn-TK-NhC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="66.5" height="31"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="filled" title="Revise" cornerStyle="capsule">
-                                                                <color key="baseForegroundColor" name="Primary"/>
-                                                                <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </buttonConfiguration>
-                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQD-Xv-WtM">
-                                                            <rect key="frame" x="96.5" y="0.0" width="66.5" height="31"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="60.5" height="31"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="filled" title="Learn" cornerStyle="capsule">
                                                                 <color key="baseForegroundColor" name="Primary"/>
@@ -145,7 +142,6 @@
                                     <outlet property="learnButton" destination="gQD-Xv-WtM" id="q2l-ka-5hB"/>
                                     <outlet property="progressLabel" destination="Z6G-S7-SYQ" id="XDU-XJ-bBw"/>
                                     <outlet property="progressView" destination="VK7-67-kqo" id="QMW-Or-r7b"/>
-                                    <outlet property="reviseButton" destination="MRn-TK-NhC" id="oD4-9c-FAA"/>
                                     <outlet property="totalStarsLabel" destination="4aJ-2l-H65" id="TVx-lG-SfM"/>
                                 </connections>
                             </collectionViewCell>
@@ -164,41 +160,27 @@
                     <rect key="frame" x="0.0" y="0.0" width="822" height="1068"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="17v-dR-rpo">
-                            <rect key="frame" x="0.0" y="349" width="822" height="374"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="undraw-decorative_friends" translatesAutoresizingMaskIntoConstraints="NO" id="u50-VA-1zd">
-                                    <rect key="frame" x="200" y="0.0" width="422" height="338"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="u50-VA-1zd" secondAttribute="height" multiplier="5:4" id="Jum-Cx-srG"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT2-pj-Yd3">
-                                    <rect key="frame" x="317.5" y="338" width="187.5" height="36"/>
-                                    <attributedString key="attributedText">
-                                        <fragment content="Nothing here...">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="0.21568627450980393" blue="0.37254901960784315" alpha="0.79834954470198671" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" metaFont="system" size="30"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="undraw-decorative_friends" translatesAutoresizingMaskIntoConstraints="NO" id="u50-VA-1zd">
+                            <rect key="frame" x="261" y="384" width="300" height="300"/>
                             <constraints>
-                                <constraint firstItem="u50-VA-1zd" firstAttribute="leading" secondItem="17v-dR-rpo" secondAttribute="leading" constant="200" id="K9Y-XF-8Xi"/>
-                                <constraint firstItem="u50-VA-1zd" firstAttribute="centerX" secondItem="17v-dR-rpo" secondAttribute="centerX" id="syz-TT-Wvb"/>
+                                <constraint firstAttribute="width" constant="300" id="P5Y-an-Fyp"/>
+                                <constraint firstAttribute="height" constant="300" id="gxm-gh-zBY"/>
                             </constraints>
-                        </stackView>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kK-DQ-CVW">
+                            <rect key="frame" x="319.5" y="666" width="183" height="36"/>
+                            <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="30"/>
+                            <color key="textColor" name="Secondary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="vGd-Jl-1cH"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="17v-dR-rpo" firstAttribute="centerX" secondItem="vGd-Jl-1cH" secondAttribute="centerX" id="8wW-Gk-REe"/>
-                        <constraint firstItem="17v-dR-rpo" firstAttribute="centerY" secondItem="vGd-Jl-1cH" secondAttribute="centerY" id="pee-2R-4M7"/>
-                        <constraint firstItem="17v-dR-rpo" firstAttribute="width" secondItem="vGd-Jl-1cH" secondAttribute="width" id="zf7-fp-MEO"/>
+                        <constraint firstItem="u50-VA-1zd" firstAttribute="centerY" secondItem="Evz-7b-S0M" secondAttribute="centerY" id="HXh-tp-ZIL"/>
+                        <constraint firstItem="u50-VA-1zd" firstAttribute="centerX" secondItem="Evz-7b-S0M" secondAttribute="centerX" id="cpQ-Im-nOv"/>
+                        <constraint firstItem="7kK-DQ-CVW" firstAttribute="centerX" secondItem="Evz-7b-S0M" secondAttribute="centerX" id="gYR-cs-8L5"/>
+                        <constraint firstItem="7kK-DQ-CVW" firstAttribute="centerY" secondItem="Evz-7b-S0M" secondAttribute="centerY" constant="150" id="pRK-7J-uPn"/>
                     </constraints>
                 </view>
             </objects>
@@ -245,6 +227,9 @@
         </namedColor>
         <namedColor name="PrimaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary">
+            <color red="0.49000000953674316" green="0.46200001239776611" blue="0.74000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

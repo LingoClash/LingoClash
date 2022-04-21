@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZZq-Jd-1fA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZZq-Jd-1fA">
     <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro.ttf">
+            <string>SFPro-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Recommended-->
         <scene sceneID="Ug4-tX-IAe">
@@ -167,41 +172,27 @@
                     <rect key="frame" x="0.0" y="0.0" width="822" height="1068"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dgQ-ha-dEX">
-                            <rect key="frame" x="0.0" y="349" width="822" height="374"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="undraw-decorative_friends" translatesAutoresizingMaskIntoConstraints="NO" id="fqJ-KL-uqH">
-                                    <rect key="frame" x="200" y="0.0" width="422" height="338"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="fqJ-KL-uqH" secondAttribute="height" multiplier="5:4" id="RpZ-NK-0fq"/>
-                                    </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFu-E2-GhJ">
-                                    <rect key="frame" x="317.5" y="338" width="187.5" height="36"/>
-                                    <attributedString key="attributedText">
-                                        <fragment content="Nothing here...">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="0.21568627450980393" blue="0.37254901960784315" alpha="0.79834954470198671" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" metaFont="system" size="30"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="undraw-decorative_friends" translatesAutoresizingMaskIntoConstraints="NO" id="mS4-yA-Bfk">
+                            <rect key="frame" x="261" y="384" width="300" height="300"/>
                             <constraints>
-                                <constraint firstItem="fqJ-KL-uqH" firstAttribute="leading" secondItem="dgQ-ha-dEX" secondAttribute="leading" constant="200" id="HC8-Zl-DJk"/>
-                                <constraint firstItem="fqJ-KL-uqH" firstAttribute="centerX" secondItem="dgQ-ha-dEX" secondAttribute="centerX" id="ycn-r3-6km"/>
+                                <constraint firstAttribute="height" constant="300" id="97D-PL-RhU"/>
+                                <constraint firstAttribute="width" constant="300" id="dTz-sI-1qe"/>
                             </constraints>
-                        </stackView>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfV-7V-8A5">
+                            <rect key="frame" x="319.5" y="666" width="183" height="36"/>
+                            <fontDescription key="fontDescription" name="SFPro-Light" family="SF Pro" pointSize="30"/>
+                            <color key="textColor" name="Secondary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="se7-s7-XCi"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="dgQ-ha-dEX" firstAttribute="width" secondItem="se7-s7-XCi" secondAttribute="width" id="RBe-Wf-PbX"/>
-                        <constraint firstItem="dgQ-ha-dEX" firstAttribute="centerX" secondItem="se7-s7-XCi" secondAttribute="centerX" id="RLY-C7-SmZ"/>
-                        <constraint firstItem="dgQ-ha-dEX" firstAttribute="centerY" secondItem="se7-s7-XCi" secondAttribute="centerY" id="ZdC-yY-OMg"/>
+                        <constraint firstItem="mS4-yA-Bfk" firstAttribute="centerY" secondItem="oLD-3g-chY" secondAttribute="centerY" id="GAN-FX-ti8"/>
+                        <constraint firstItem="yfV-7V-8A5" firstAttribute="centerY" secondItem="oLD-3g-chY" secondAttribute="centerY" constant="150" id="IQL-qW-dKa"/>
+                        <constraint firstItem="mS4-yA-Bfk" firstAttribute="centerX" secondItem="oLD-3g-chY" secondAttribute="centerX" id="KPR-13-vIU"/>
+                        <constraint firstItem="yfV-7V-8A5" firstAttribute="centerX" secondItem="oLD-3g-chY" secondAttribute="centerX" id="pNQ-2W-5wm"/>
                     </constraints>
                 </view>
             </objects>
@@ -214,6 +205,9 @@
         <image name="undraw-true_love" width="888" height="475.27072143554688"/>
         <namedColor name="Primary">
             <color red="0.36500000953674316" green="0.70999997854232788" blue="0.77999997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Secondary">
+            <color red="0.49000000953674316" green="0.46200001239776611" blue="0.74000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
