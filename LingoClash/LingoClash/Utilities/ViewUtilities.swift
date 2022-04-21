@@ -60,6 +60,7 @@ class ViewUtilities {
         view.layer.shadowOffset = CGSize(width: 0, height: 5)
         view.layer.masksToBounds = false
     }
+    
 }
 
 extension UILabel {

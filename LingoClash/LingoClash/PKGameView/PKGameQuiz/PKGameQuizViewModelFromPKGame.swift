@@ -14,22 +14,29 @@ class PKGameQuizViewModelFromPKGame: PKGameQuizViewModel {
     var gameOverviewViewModel: Dynamic<PKGameOverviewViewModel?> = Dynamic(nil)
     var playerNames: [String]
     private var players: [Profile]
-    var scores: Dynamic<[Int]>
+    var scores: [Dynamic<Int>]
+    var scoresChange: [Dynamic<Int>]
+    var balance: Dynamic<[Float]>
     init(game: PKGame, currentPlayerProfile: Profile) {
         self.pkGame = game
         self.gameUpdateDelegate = FirebasePKGameUpdater(game: game)
         self.currentPlayerProfile = currentPlayerProfile
         self.players = [currentPlayerProfile] + game.players.filter { $0 != currentPlayerProfile }
         self.playerNames = self.players.map({ $0.name.capitalized })
-        self.scores = Dynamic(self.players.map({ _ in
-            0
-        }))
-
+        self.scores = self.players.map({ _ in
+            Dynamic(0)
+        })
+        self.scoresChange = self.players.map { _ in
+            Dynamic(0)
+        }
         self.pkGameEngine = PKGameEngine(game: game)
+        let playerCount = self.players.count
+        self.balance = Dynamic(self.players.map { _ in
+            1.0 / Float(playerCount)
+        })
 
         self.pkGameEngine.renderer = self
         self.gameUpdateDelegate.gameUpdateListener = self
-
     }
 
     func questionDidComplete(isCorrect: Bool) {
@@ -77,13 +84,24 @@ extension PKGameQuizViewModelFromPKGame {
     }
 
     func didIncrementScore(newScore: Int, change: Int, player: Profile) {
-        var newScores = self.scores.value
         guard let index = players.firstIndex(of: player) else {
             assert(false)
             return
         }
-        newScores[index] = newScore
-        self.scores.value = newScores
+        self.scores[index].value = newScore
+        self.scoresChange[index].value = change
+        updateBalance()
+    }
+    
+    private func updateBalance() {
+        let total = self.scores.reduce(0, { $0 + $1.value })
+        guard total != 0 else {
+            self.balance.value = self.players.map { _ in
+                1.0 / Float(self.players.count)
+            }
+            return
+        }
+        self.balance.value = self.scores.map { Float($0.value) / Float(total) }
     }
 
     func didAccountForForfeit(player: Profile) {

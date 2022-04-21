@@ -11,4 +11,5 @@ protocol PKGameOverviewViewModel {
     var titleOutcome: String { get }
     var descriptionOutcome: String { get }
     var isBackgroundDark: Bool { get }
+    var didWin: Bool { get }
 }

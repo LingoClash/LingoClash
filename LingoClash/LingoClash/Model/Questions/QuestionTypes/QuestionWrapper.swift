@@ -24,6 +24,8 @@ struct QuestionWrapper: Codable {
             self.question = try container.decode(DefinitionOptionQuestion.self, forKey: .payload)
         case .matchVocabToDefinitionOption:
             self.question = try container.decode(MatchVocabToDefinitionQuestion.self, forKey: .payload)
+        case .pronounciationOption:
+            self.question = try container.decode(PronounciationOptionQuestion.self, forKey: .payload)
         }
     }
 
@@ -36,6 +38,9 @@ struct QuestionWrapper: Codable {
             try container.encode(payload, forKey: .payload)
         case let payload as MatchVocabToDefinitionQuestion:
             try container.encode(QuestionType.matchVocabToDefinitionOption, forKey: .questionType)
+            try container.encode(payload, forKey: .payload)
+        case let payload as PronounciationOptionQuestion:
+            try container.encode(QuestionType.pronounciationOption, forKey: .questionType)
             try container.encode(payload, forKey: .payload)
         default:
             break

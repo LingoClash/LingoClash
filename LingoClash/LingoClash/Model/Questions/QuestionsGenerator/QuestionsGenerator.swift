@@ -8,7 +8,7 @@
 import Darwin
 
 class QuestionsGenerator {
-    private static let questionConstructors: [QuestionContructor] = [DefinitionOptionQuestionConstructor()]
+    private static let questionConstructors: [QuestionContructor] = [DefinitionOptionQuestionConstructor(), PronounciationOptionQuestionConstructor()]
 
     func generateQuestions(settings: QuestionGeneratorSettings) throws -> QuestionSequence {
         /*
@@ -83,6 +83,8 @@ class QuestionsGenerator {
             return QuestionsGenerator.questionConstructors.first(where: { $0 is DefinitionOptionQuestionConstructor })
         case .matchVocabToDefinitionOption:
             return nil
+        case .pronounciationOption:
+            return QuestionsGenerator.questionConstructors.first(where: { $0 is PronounciationOptionQuestionConstructor })
         }
     }
 }

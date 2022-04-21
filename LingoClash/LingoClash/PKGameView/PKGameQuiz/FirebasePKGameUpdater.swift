@@ -25,7 +25,7 @@ class FirebasePKGameUpdater: PKGameUpdateDelegate {
     // All listeners on fields of pkGame
     private var pkGameUpdateListeners: [(PKGameUpdateListener, PKGameData) -> Void] = []
     private let pkGame: PKGame
-    var firebaseMoveListeners: [ListenerRegistration] = []
+    private var firebaseMoveListeners: [ListenerRegistration] = []
 
     var gameUpdateListener: PKGameUpdateListener? {
         didSet {

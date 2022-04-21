@@ -36,6 +36,12 @@ class PKGameOverviewViewController: UIViewController {
         guard isViewLoaded, let viewModel = viewModel else {
             return
         }
+        AudioPlayer.stopPlaying()
+        if viewModel.didWin {
+            AudioPlayer.playWinSound()
+        } else {
+            AudioPlayer.playLoseSound()
+        }
         titleOutcome.text = viewModel.titleOutcome
         descriptionOutcome.text = viewModel.descriptionOutcome
         topImageView.image = viewModel.isBackgroundDark ? #imageLiteral(resourceName: "cover_5") : #imageLiteral(resourceName: "cover_2")

@@ -24,13 +24,14 @@ class SimpleOptionQuestionLayoutViewModel: QuestionLayoutViewModel {
         self.answerIndex = answerIndex
     }
 
-    func didSelectOption(at index: Int) {
+    func didSelectOption(at index: Int) -> Bool? {
         guard optionSelectedIndex == nil else {
-            return
+            return nil
         }
         let optionSelected = self.options[index]
         let isCorrect = self.question.isCorrect(response: optionSelected)
         optionSelectedIndex = index
         questionStatus.value = isCorrect ? .correct : .wrong
+        return isCorrect
     }
 }

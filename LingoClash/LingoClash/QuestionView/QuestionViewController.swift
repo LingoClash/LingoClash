@@ -20,9 +20,7 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpViewModel()
         styleUI()
-        fillUI()
     }
 
     func reloadData() {
@@ -66,17 +64,36 @@ class QuestionViewController: UIViewController {
 
     private func loadQuestionLayoutViewController(_ newViewController: QuestionLayoutViewController) {
         let oldViewController = self.currentChildVC
+        if let oldViewController = oldViewController {
+            let oldFrame = oldViewController.view.frame
+            let newStartingFrmae = CGRect(origin: oldFrame.origin.adding(vector: CGVector(dx: oldFrame.size.width, dy: 0)), size: oldFrame.size)
+            oldViewController.willMove(toParent: nil)
+            addChild(newViewController)
+            view.addSubview(newViewController.view)
+            
+            newViewController.view.frame = newStartingFrmae
+            self.transition(from: oldViewController, to: newViewController, duration: 0.5, animations: {
+                newViewController.view.frame = oldViewController.view.frame
+                oldViewController.view.alpha = 0
+            }, completion: { finished in
+                oldViewController.view.removeFromSuperview()
+                oldViewController.removeFromParent()
+                newViewController.didMove(toParent: self)
+            })
+            
+            self.currentChildVC = newViewController
+        } else {
+            addChild(newViewController)
+            view.addSubview(newViewController.view)
+            setVCConstraints(newViewController)
+            newViewController.didMove(toParent: self)
 
-        addChild(newViewController)
-        view.addSubview(newViewController.view)
-        setVCConstraints(newViewController)
-        newViewController.didMove(toParent: self)
+            oldViewController?.willMove(toParent: nil)
+            oldViewController?.view.removeFromSuperview()
+            oldViewController?.removeFromParent()
 
-        oldViewController?.willMove(toParent: nil)
-        oldViewController?.view.removeFromSuperview()
-        oldViewController?.removeFromParent()
-
-        self.currentChildVC = newViewController
+            self.currentChildVC = newViewController
+        }
     }
 
     private func setVCConstraints(_ viewController: QuestionLayoutViewController) {

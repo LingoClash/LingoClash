@@ -35,7 +35,7 @@ class PKGameEngine {
         }
     }
 
-    // Returns true if player successfully forfeitted game
+// Returns true if player successfully forfeitted game
     func forfeitGame(player: Profile) -> Bool {
         guard players.contains(player) else {
             return false
@@ -99,14 +99,14 @@ class PKGameEngine {
 
     }
 
-    func calculateScoreIncrement(timeTaken: Double) -> Int {
+    private func calculateScoreIncrement(timeTaken: Double) -> Int {
         let timeFraction = (max((
             PKGameEngine.maxTimePerQuestion - timeTaken), 0.0) / PKGameEngine.maxTimePerQuestion)
         let scoreIncrement = Int((PKGameEngine.maxPointsPerQuestion * timeFraction).rounded())
         return scoreIncrement
     }
 
-    func shouldLoadNextQuestion() -> Bool {
+    private func shouldLoadNextQuestion() -> Bool {
         var playersThatAnswered = Set<Profile>()
         moves.forEach({ move in
             if move.question.isEqual(to: currentQuestion) {

@@ -63,6 +63,11 @@ class LessonQuizOutcomeViewController: UIViewController {
         guard isViewLoaded, let viewModel = viewModel else {
             return
         }
+        if viewModel.didPass {
+            AudioPlayer.playWinSound()
+        } else {
+            AudioPlayer.playLoseSound()
+        }
         self.completionStatusLabel.text = viewModel.completedStatus
         self.lessonNameLabel.text = viewModel.lessonName
         self.performanceCommentLabel.text = viewModel.performanceComment
