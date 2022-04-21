@@ -210,6 +210,76 @@
 		CE673C4127F99ED300321BB8 /* QueueEntryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE673C4027F99ED300321BB8 /* QueueEntryDataManager.swift */; };
 		CE673C4327F99F0100321BB8 /* QueueEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE673C4227F99F0100321BB8 /* QueueEntry.swift */; };
 		CE673C4727F9B8AF00321BB8 /* PKGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE673C4627F9B8AF00321BB8 /* PKGameManager.swift */; };
+		CE6FF6F628115C6500F4C588 /* ClassicSparkTrajectoryFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6DC28115C6500F4C588 /* ClassicSparkTrajectoryFactoryProtocol.swift */; };
+		CE6FF6F728115C6500F4C588 /* ClassicSparkTrajectoryFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6DC28115C6500F4C588 /* ClassicSparkTrajectoryFactoryProtocol.swift */; };
+		CE6FF6F828115C6500F4C588 /* ClassicFireworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6DD28115C6500F4C588 /* ClassicFireworkController.swift */; };
+		CE6FF6F928115C6500F4C588 /* ClassicFireworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6DD28115C6500F4C588 /* ClassicFireworkController.swift */; };
+		CE6FF6FA28115C6500F4C588 /* ClassicSparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6DE28115C6500F4C588 /* ClassicSparkTrajectoryFactory.swift */; };
+		CE6FF6FB28115C6500F4C588 /* ClassicSparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6DE28115C6500F4C588 /* ClassicSparkTrajectoryFactory.swift */; };
+		CE6FF6FC28115C6500F4C588 /* ClassicFireworkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6DF28115C6500F4C588 /* ClassicFireworkAnimator.swift */; };
+		CE6FF6FD28115C6500F4C588 /* ClassicFireworkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6DF28115C6500F4C588 /* ClassicFireworkAnimator.swift */; };
+		CE6FF6FE28115C6500F4C588 /* ClassicFirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E028115C6500F4C588 /* ClassicFirework.swift */; };
+		CE6FF6FF28115C6500F4C588 /* ClassicFirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E028115C6500F4C588 /* ClassicFirework.swift */; };
+		CE6FF70028115C6500F4C588 /* FountainFirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E228115C6500F4C588 /* FountainFirework.swift */; };
+		CE6FF70128115C6500F4C588 /* FountainFirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E228115C6500F4C588 /* FountainFirework.swift */; };
+		CE6FF70228115C6500F4C588 /* FountainFireworkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E328115C6500F4C588 /* FountainFireworkAnimator.swift */; };
+		CE6FF70328115C6500F4C588 /* FountainFireworkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E328115C6500F4C588 /* FountainFireworkAnimator.swift */; };
+		CE6FF70428115C6500F4C588 /* FountainFireworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E428115C6500F4C588 /* FountainFireworkController.swift */; };
+		CE6FF70528115C6500F4C588 /* FountainFireworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E428115C6500F4C588 /* FountainFireworkController.swift */; };
+		CE6FF70628115C6500F4C588 /* FountainSparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E528115C6500F4C588 /* FountainSparkTrajectoryFactory.swift */; };
+		CE6FF70728115C6500F4C588 /* FountainSparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E528115C6500F4C588 /* FountainSparkTrajectoryFactory.swift */; };
+		CE6FF70828115C6500F4C588 /* ImageSparkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E728115C6500F4C588 /* ImageSparkViewFactory.swift */; };
+		CE6FF70928115C6500F4C588 /* ImageSparkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E728115C6500F4C588 /* ImageSparkViewFactory.swift */; };
+		CE6FF70A28115C6500F4C588 /* CircleColorSparkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E828115C6500F4C588 /* CircleColorSparkViewFactory.swift */; };
+		CE6FF70B28115C6500F4C588 /* CircleColorSparkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E828115C6500F4C588 /* CircleColorSparkViewFactory.swift */; };
+		CE6FF70C28115C6500F4C588 /* CircleColorSparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E928115C6500F4C588 /* CircleColorSparkView.swift */; };
+		CE6FF70D28115C6500F4C588 /* CircleColorSparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6E928115C6500F4C588 /* CircleColorSparkView.swift */; };
+		CE6FF70E28115C6500F4C588 /* ImageSparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6EA28115C6500F4C588 /* ImageSparkView.swift */; };
+		CE6FF70F28115C6500F4C588 /* ImageSparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6EA28115C6500F4C588 /* ImageSparkView.swift */; };
+		CE6FF71028115C6500F4C588 /* SparkTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6EC28115C6500F4C588 /* SparkTrajectory.swift */; };
+		CE6FF71128115C6500F4C588 /* SparkTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6EC28115C6500F4C588 /* SparkTrajectory.swift */; };
+		CE6FF71228115C6500F4C588 /* SparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6ED28115C6500F4C588 /* SparkTrajectoryFactory.swift */; };
+		CE6FF71328115C6500F4C588 /* SparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6ED28115C6500F4C588 /* SparkTrajectoryFactory.swift */; };
+		CE6FF71428115C6500F4C588 /* FireworkSparkScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6EE28115C6500F4C588 /* FireworkSparkScheduler.swift */; };
+		CE6FF71528115C6500F4C588 /* FireworkSparkScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6EE28115C6500F4C588 /* FireworkSparkScheduler.swift */; };
+		CE6FF71628115C6500F4C588 /* Firework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6EF28115C6500F4C588 /* Firework.swift */; };
+		CE6FF71728115C6500F4C588 /* Firework.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6EF28115C6500F4C588 /* Firework.swift */; };
+		CE6FF71828115C6500F4C588 /* SparkViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F028115C6500F4C588 /* SparkViewAnimator.swift */; };
+		CE6FF71928115C6500F4C588 /* SparkViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F028115C6500F4C588 /* SparkViewAnimator.swift */; };
+		CE6FF71A28115C6500F4C588 /* SparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F128115C6500F4C588 /* SparkView.swift */; };
+		CE6FF71B28115C6500F4C588 /* SparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F128115C6500F4C588 /* SparkView.swift */; };
+		CE6FF71C28115C6500F4C588 /* SparkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F228115C6500F4C588 /* SparkViewFactory.swift */; };
+		CE6FF71D28115C6500F4C588 /* SparkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F228115C6500F4C588 /* SparkViewFactory.swift */; };
+		CE6FF71E28115C6500F4C588 /* FireworkSpark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F328115C6500F4C588 /* FireworkSpark.swift */; };
+		CE6FF71F28115C6500F4C588 /* FireworkSpark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F328115C6500F4C588 /* FireworkSpark.swift */; };
+		CE6FF72028115C6500F4C588 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F528115C6500F4C588 /* CGPoint+Extensions.swift */; };
+		CE6FF72128115C6500F4C588 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF6F528115C6500F4C588 /* CGPoint+Extensions.swift */; };
+		CE6FF730281162CF00F4C588 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF725281162CF00F4C588 /* Directions.swift */; };
+		CE6FF731281162CF00F4C588 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF725281162CF00F4C588 /* Directions.swift */; };
+		CE6FF732281162CF00F4C588 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF726281162CF00F4C588 /* AnimationType.swift */; };
+		CE6FF733281162CF00F4C588 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF726281162CF00F4C588 /* AnimationType.swift */; };
+		CE6FF734281162CF00F4C588 /* UITableView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF728281162CF00F4C588 /* UITableView + ViewAnimator.swift */; };
+		CE6FF735281162CF00F4C588 /* UITableView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF728281162CF00F4C588 /* UITableView + ViewAnimator.swift */; };
+		CE6FF736281162CF00F4C588 /* UICollectionView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF729281162CF00F4C588 /* UICollectionView + ViewAnimator.swift */; };
+		CE6FF737281162CF00F4C588 /* UICollectionView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF729281162CF00F4C588 /* UICollectionView + ViewAnimator.swift */; };
+		CE6FF738281162CF00F4C588 /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF72A281162CF00F4C588 /* ViewAnimatorConfig.swift */; };
+		CE6FF739281162CF00F4C588 /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF72A281162CF00F4C588 /* ViewAnimatorConfig.swift */; };
+		CE6FF73A281162CF00F4C588 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF72B281162CF00F4C588 /* ViewAnimator.swift */; };
+		CE6FF73B281162CF00F4C588 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF72B281162CF00F4C588 /* ViewAnimator.swift */; };
+		CE6FF73C281162CF00F4C588 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF72D281162CF00F4C588 /* Animation.swift */; };
+		CE6FF73D281162CF00F4C588 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF72D281162CF00F4C588 /* Animation.swift */; };
+		CE6FF7402811724400F4C588 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF73F2811724400F4C588 /* AudioPlayer.swift */; };
+		CE6FF7412811724400F4C588 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF73F2811724400F4C588 /* AudioPlayer.swift */; };
+		CE6FF7432811730200F4C588 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF7422811730200F4C588 /* correct.mp3 */; };
+		CE6FF7442811730200F4C588 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF7422811730200F4C588 /* correct.mp3 */; };
+		CE6FF7462811747300F4C588 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF7452811747300F4C588 /* wrong.mp3 */; };
+		CE6FF7472811747300F4C588 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF7452811747300F4C588 /* wrong.mp3 */; };
+		CE6FF7492811762800F4C588 /* pkgamebackground.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF7482811762800F4C588 /* pkgamebackground.mp3 */; };
+		CE6FF74A2811762800F4C588 /* pkgamebackground.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF7482811762800F4C588 /* pkgamebackground.mp3 */; };
+		CE6FF74D2811779100F4C588 /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF74B2811779100F4C588 /* lose.mp3 */; };
+		CE6FF74E2811779100F4C588 /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF74B2811779100F4C588 /* lose.mp3 */; };
+		CE6FF74F2811779100F4C588 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF74C2811779100F4C588 /* win.mp3 */; };
+		CE6FF7502811779100F4C588 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF74C2811779100F4C588 /* win.mp3 */; };
 		CE8D228F27EE2B5A005E7058 /* Lesson.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8D228D27EE2B5A005E7058 /* Lesson.storyboard */; };
 		CE8D229427EEB7EE005E7058 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229327EEB7EE005E7058 /* AppStoryboard.swift */; };
 		CE8D229627EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D229527EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift */; };
@@ -679,6 +749,41 @@
 		CE673C4027F99ED300321BB8 /* QueueEntryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueEntryDataManager.swift; sourceTree = "<group>"; };
 		CE673C4227F99F0100321BB8 /* QueueEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueEntry.swift; sourceTree = "<group>"; };
 		CE673C4627F9B8AF00321BB8 /* PKGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKGameManager.swift; sourceTree = "<group>"; };
+		CE6FF6DC28115C6500F4C588 /* ClassicSparkTrajectoryFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicSparkTrajectoryFactoryProtocol.swift; sourceTree = "<group>"; };
+		CE6FF6DD28115C6500F4C588 /* ClassicFireworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicFireworkController.swift; sourceTree = "<group>"; };
+		CE6FF6DE28115C6500F4C588 /* ClassicSparkTrajectoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicSparkTrajectoryFactory.swift; sourceTree = "<group>"; };
+		CE6FF6DF28115C6500F4C588 /* ClassicFireworkAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicFireworkAnimator.swift; sourceTree = "<group>"; };
+		CE6FF6E028115C6500F4C588 /* ClassicFirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicFirework.swift; sourceTree = "<group>"; };
+		CE6FF6E228115C6500F4C588 /* FountainFirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FountainFirework.swift; sourceTree = "<group>"; };
+		CE6FF6E328115C6500F4C588 /* FountainFireworkAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FountainFireworkAnimator.swift; sourceTree = "<group>"; };
+		CE6FF6E428115C6500F4C588 /* FountainFireworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FountainFireworkController.swift; sourceTree = "<group>"; };
+		CE6FF6E528115C6500F4C588 /* FountainSparkTrajectoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FountainSparkTrajectoryFactory.swift; sourceTree = "<group>"; };
+		CE6FF6E728115C6500F4C588 /* ImageSparkViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSparkViewFactory.swift; sourceTree = "<group>"; };
+		CE6FF6E828115C6500F4C588 /* CircleColorSparkViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleColorSparkViewFactory.swift; sourceTree = "<group>"; };
+		CE6FF6E928115C6500F4C588 /* CircleColorSparkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleColorSparkView.swift; sourceTree = "<group>"; };
+		CE6FF6EA28115C6500F4C588 /* ImageSparkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSparkView.swift; sourceTree = "<group>"; };
+		CE6FF6EC28115C6500F4C588 /* SparkTrajectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkTrajectory.swift; sourceTree = "<group>"; };
+		CE6FF6ED28115C6500F4C588 /* SparkTrajectoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkTrajectoryFactory.swift; sourceTree = "<group>"; };
+		CE6FF6EE28115C6500F4C588 /* FireworkSparkScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkSparkScheduler.swift; sourceTree = "<group>"; };
+		CE6FF6EF28115C6500F4C588 /* Firework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firework.swift; sourceTree = "<group>"; };
+		CE6FF6F028115C6500F4C588 /* SparkViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkViewAnimator.swift; sourceTree = "<group>"; };
+		CE6FF6F128115C6500F4C588 /* SparkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkView.swift; sourceTree = "<group>"; };
+		CE6FF6F228115C6500F4C588 /* SparkViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkViewFactory.swift; sourceTree = "<group>"; };
+		CE6FF6F328115C6500F4C588 /* FireworkSpark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkSpark.swift; sourceTree = "<group>"; };
+		CE6FF6F528115C6500F4C588 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		CE6FF725281162CF00F4C588 /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
+		CE6FF726281162CF00F4C588 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
+		CE6FF728281162CF00F4C588 /* UITableView + ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView + ViewAnimator.swift"; sourceTree = "<group>"; };
+		CE6FF729281162CF00F4C588 /* UICollectionView + ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + ViewAnimator.swift"; sourceTree = "<group>"; };
+		CE6FF72A281162CF00F4C588 /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimatorConfig.swift; sourceTree = "<group>"; };
+		CE6FF72B281162CF00F4C588 /* ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
+		CE6FF72D281162CF00F4C588 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		CE6FF73F2811724400F4C588 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		CE6FF7422811730200F4C588 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		CE6FF7452811747300F4C588 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
+		CE6FF7482811762800F4C588 /* pkgamebackground.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pkgamebackground.mp3; sourceTree = "<group>"; };
+		CE6FF74B2811779100F4C588 /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		CE6FF74C2811779100F4C588 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
 		CE8D228E27EE2B5A005E7058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Lesson.storyboard; sourceTree = "<group>"; };
 		CE8D229327EEB7EE005E7058 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		CE8D229527EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+InstantiateFromAppStoryboard.swift"; sourceTree = "<group>"; };
@@ -867,6 +972,7 @@
 		6204A03B27DE34040063100D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CE6FF73F2811724400F4C588 /* AudioPlayer.swift */,
 				6F67BDED2804260D00B91844 /* DataStructures */,
 				6204A03927DE1CDB0063100D /* AppConfigs.swift */,
 				62165B7527F2244C004BC620 /* FormUtilities.swift */,
@@ -1193,6 +1299,120 @@
 			path = PKGameOverview;
 			sourceTree = "<group>";
 		};
+		CE6FF6DA28115C6500F4C588 /* Fireworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF6DB28115C6500F4C588 /* Classic Firework */,
+				CE6FF6E128115C6500F4C588 /* Fountain Firework */,
+				CE6FF6E628115C6500F4C588 /* Spark Views */,
+				CE6FF6EB28115C6500F4C588 /* Model */,
+				CE6FF6F428115C6500F4C588 /* System Extensions */,
+			);
+			path = Fireworks;
+			sourceTree = "<group>";
+		};
+		CE6FF6DB28115C6500F4C588 /* Classic Firework */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF6DC28115C6500F4C588 /* ClassicSparkTrajectoryFactoryProtocol.swift */,
+				CE6FF6DD28115C6500F4C588 /* ClassicFireworkController.swift */,
+				CE6FF6DE28115C6500F4C588 /* ClassicSparkTrajectoryFactory.swift */,
+				CE6FF6DF28115C6500F4C588 /* ClassicFireworkAnimator.swift */,
+				CE6FF6E028115C6500F4C588 /* ClassicFirework.swift */,
+			);
+			path = "Classic Firework";
+			sourceTree = "<group>";
+		};
+		CE6FF6E128115C6500F4C588 /* Fountain Firework */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF6E228115C6500F4C588 /* FountainFirework.swift */,
+				CE6FF6E328115C6500F4C588 /* FountainFireworkAnimator.swift */,
+				CE6FF6E428115C6500F4C588 /* FountainFireworkController.swift */,
+				CE6FF6E528115C6500F4C588 /* FountainSparkTrajectoryFactory.swift */,
+			);
+			path = "Fountain Firework";
+			sourceTree = "<group>";
+		};
+		CE6FF6E628115C6500F4C588 /* Spark Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF6E728115C6500F4C588 /* ImageSparkViewFactory.swift */,
+				CE6FF6E828115C6500F4C588 /* CircleColorSparkViewFactory.swift */,
+				CE6FF6E928115C6500F4C588 /* CircleColorSparkView.swift */,
+				CE6FF6EA28115C6500F4C588 /* ImageSparkView.swift */,
+			);
+			path = "Spark Views";
+			sourceTree = "<group>";
+		};
+		CE6FF6EB28115C6500F4C588 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF6EC28115C6500F4C588 /* SparkTrajectory.swift */,
+				CE6FF6ED28115C6500F4C588 /* SparkTrajectoryFactory.swift */,
+				CE6FF6EE28115C6500F4C588 /* FireworkSparkScheduler.swift */,
+				CE6FF6EF28115C6500F4C588 /* Firework.swift */,
+				CE6FF6F028115C6500F4C588 /* SparkViewAnimator.swift */,
+				CE6FF6F128115C6500F4C588 /* SparkView.swift */,
+				CE6FF6F228115C6500F4C588 /* SparkViewFactory.swift */,
+				CE6FF6F328115C6500F4C588 /* FireworkSpark.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE6FF6F428115C6500F4C588 /* System Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF6F528115C6500F4C588 /* CGPoint+Extensions.swift */,
+			);
+			path = "System Extensions";
+			sourceTree = "<group>";
+		};
+		CE6FF722281162CF00F4C588 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF724281162CF00F4C588 /* Models */,
+				CE6FF727281162CF00F4C588 /* Extensions */,
+				CE6FF72A281162CF00F4C588 /* ViewAnimatorConfig.swift */,
+				CE6FF72B281162CF00F4C588 /* ViewAnimator.swift */,
+				CE6FF72C281162CF00F4C588 /* Protocols */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CE6FF724281162CF00F4C588 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF725281162CF00F4C588 /* Directions.swift */,
+				CE6FF726281162CF00F4C588 /* AnimationType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE6FF727281162CF00F4C588 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF728281162CF00F4C588 /* UITableView + ViewAnimator.swift */,
+				CE6FF729281162CF00F4C588 /* UICollectionView + ViewAnimator.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE6FF72C281162CF00F4C588 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FF72D281162CF00F4C588 /* Animation.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE6FF73E281171F900F4C588 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		CEA1C75827FA145800123225 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1436,6 +1656,8 @@
 		D33282DC27D4D42700C80986 /* LingoClash */ = {
 			isa = PBXGroup;
 			children = (
+				CE6FF722281162CF00F4C588 /* Sources */,
+				CE6FF6DA28115C6500F4C588 /* Fireworks */,
 				D3C5E29127F73C9900F65B8E /* Dev-Info.plist */,
 				D33282EE27D4D42E00C80986 /* Info.plist */,
 				D33282DD27D4D42700C80986 /* AppDelegate.swift */,
@@ -1469,6 +1691,12 @@
 		D33282F727D4E62F00C80986 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE6FF74B2811779100F4C588 /* lose.mp3 */,
+				CE6FF74C2811779100F4C588 /* win.mp3 */,
+				CE6FF7482811762800F4C588 /* pkgamebackground.mp3 */,
+				CE6FF7452811747300F4C588 /* wrong.mp3 */,
+				CE6FF7422811730200F4C588 /* correct.mp3 */,
+				CE6FF73E281171F900F4C588 /* Sound */,
 				D3AF1C1428057B1200DCFA2E /* Theme */,
 				D33282FA27D4E7BE00C80986 /* SF-Pro.ttf */,
 			);
@@ -1832,7 +2060,9 @@
 				D32BB7A92809F83F009E4049 /* korean-eng.json in Resources */,
 				D33282ED27D4D42E00C80986 /* LaunchScreen.storyboard in Resources */,
 				6F6DEB9C280C159A00FE118C /* Home.storyboard in Resources */,
+				CE6FF7462811747300F4C588 /* wrong.mp3 in Resources */,
 				CEBC077E280810CF00A0ED82 /* PKGame.storyboard in Resources */,
+				CE6FF7432811730200F4C588 /* correct.mp3 in Resources */,
 				6F75644A280BE4DF00AECCBD /* (null) in Resources */,
 				D33282FB27D4E7BF00C80986 /* SF-Pro.ttf in Resources */,
 				CE8D22A227EEC059005E7058 /* Book.storyboard in Resources */,
@@ -1841,7 +2071,10 @@
 				CEBC0788280883C300A0ED82 /* RecommendedBook.storyboard in Resources */,
 				D33282EA27D4D42E00C80986 /* Assets.xcassets in Resources */,
 				CEBC07952808841E00A0ED82 /* Arena.storyboard in Resources */,
+				CE6FF74F2811779100F4C588 /* win.mp3 in Resources */,
+				CE6FF7492811762800F4C588 /* pkgamebackground.mp3 in Resources */,
 				CEBC07942808841E00A0ED82 /* LearningBook.storyboard in Resources */,
+				CE6FF74D2811779100F4C588 /* lose.mp3 in Resources */,
 				6F6DEB96280C145E00FE118C /* Question.storyboard in Resources */,
 				CEBC0789280883C300A0ED82 /* Settings.storyboard in Resources */,
 				6F75644B280BE4E500AECCBD /* (null) in Resources */,
@@ -1862,13 +2095,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6FF7472811747300F4C588 /* wrong.mp3 in Resources */,
 				D3C5E26327F6E36B00F65B8E /* Lesson.storyboard in Resources */,
+				CE6FF7442811730200F4C588 /* correct.mp3 in Resources */,
 				CEBC077F280810CF00A0ED82 /* PKGame.storyboard in Resources */,
 				D32BB7AA2809F83F009E4049 /* korean-eng.json in Resources */,
 				6F6DEB9D280C159A00FE118C /* Home.storyboard in Resources */,
 				D3C5E26427F6E36B00F65B8E /* LaunchScreen.storyboard in Resources */,
 				D3C5E26527F6E36B00F65B8E /* SF-Pro.ttf in Resources */,
 				CEBC078F280883E600A0ED82 /* RecommendedBook.storyboard in Resources */,
+				CE6FF74A2811762800F4C588 /* pkgamebackground.mp3 in Resources */,
 				D3C5E26627F6E36B00F65B8E /* Book.storyboard in Resources */,
 				D3C5E26827F6E36B00F65B8E /* Assets.xcassets in Resources */,
 				6F6DEB94280C141400FE118C /* Revision.storyboard in Resources */,
@@ -1876,10 +2112,12 @@
 				CEBC078E280883E600A0ED82 /* Profile.storyboard in Resources */,
 				CEBC078D280883E600A0ED82 /* CompletedBook.storyboard in Resources */,
 				CEBC07962808842300A0ED82 /* Arena.storyboard in Resources */,
+				CE6FF7502811779100F4C588 /* win.mp3 in Resources */,
 				6F6DEB97280C145E00FE118C /* Question.storyboard in Resources */,
 				CEBC078C280883E200A0ED82 /* Settings.storyboard in Resources */,
 				6F6DEB9A280C154D00FE118C /* Main.storyboard in Resources */,
 				CEBC07972808842300A0ED82 /* LearningBook.storyboard in Resources */,
+				CE6FF74E2811779100F4C588 /* lose.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1915,6 +2153,7 @@
 				CE2771D02809882500A739C1 /* PKGamePlayerOutcomeManager.swift in Sources */,
 				CE673C3D27F981F000321BB8 /* FirebasePKGameMatchFinder.swift in Sources */,
 				62A03E632801CE8C008FE249 /* HorizontalAlignment.swift in Sources */,
+				CE6FF71028115C6500F4C588 /* SparkTrajectory.swift in Sources */,
 				621E6D5127E9C4F10015BBD4 /* EditProfileViewController.swift in Sources */,
 				629090A227E8314100941A3B /* RecommendedBooksTableViewCell.swift in Sources */,
 				CEA1C7B527FA145800123225 /* DefinitionOptionQuestion.swift in Sources */,
@@ -1941,11 +2180,13 @@
 				CE673C2027F8B46100321BB8 /* PKGameLobbyViewController.swift in Sources */,
 				CE673C4327F99F0100321BB8 /* QueueEntry.swift in Sources */,
 				624989E127E73C4E0092FC1B /* CompletedBooksViewController.swift in Sources */,
+				CE6FF70628115C6500F4C588 /* FountainSparkTrajectoryFactory.swift in Sources */,
 				D33282DE27D4D42700C80986 /* AppDelegate.swift in Sources */,
 				CEF1E7EC27E63A2B005D4272 /* LessonVocabViewModelFromLesson.swift in Sources */,
 				62FEFAC0280B504F00C0503B /* CurrencyTransaction.swift in Sources */,
 				62165B7927F226AF004BC620 /* FormFields.swift in Sources */,
 				62FEFAC4280B506100C0503B /* DebitOrCredit.swift in Sources */,
+				CE6FF70228115C6500F4C588 /* FountainFireworkAnimator.swift in Sources */,
 				D3F00CAF27DFC00200393ADC /* DataProviderTypes.swift in Sources */,
 				CE8D229F27EEBBD2005E7058 /* HomeNavigationViewController.swift in Sources */,
 				D3C4423C27E8B17400676C93 /* DatabaseErrors.swift in Sources */,
@@ -1954,6 +2195,7 @@
 				CE8D229627EEB8F4005E7058 /* UIViewController+InstantiateFromAppStoryboard.swift in Sources */,
 				62FEFAAA280B4C8C00C0503B /* SnackbarUtilities.swift in Sources */,
 				6220922A280C1CA1003365DF /* Date+Extensions.swift in Sources */,
+				CE6FF70428115C6500F4C588 /* FountainFireworkController.swift in Sources */,
 				CEC5886A27EA2A4F00809403 /* StarView.swift in Sources */,
 				D3C5E27A27F6F3E900F65B8E /* SampleDataUtilities.swift in Sources */,
 				62FEFAB2280B4EDC00C0503B /* ProfileViewController.swift in Sources */,
@@ -1976,6 +2218,7 @@
 				D3757B192806849B003CF4F2 /* SettingsViewModel.swift in Sources */,
 				D3F00CB527DFC5DD00393ADC /* BookCategoryData.swift in Sources */,
 				624BD58227E7A22D006F0391 /* CompletedBooksViewModel.swift in Sources */,
+				CE6FF7402811724400F4C588 /* AudioPlayer.swift in Sources */,
 				62C04A1127DDE67F002D2497 /* LoginViewController.swift in Sources */,
 				CEA1C90F27FA68F800123225 /* PKGameUpdateDelegate.swift in Sources */,
 				CE673C2827F8B4D400321BB8 /* PKGameOverviewViewController.swift in Sources */,
@@ -1983,6 +2226,7 @@
 				CEF1E7D727E60C2D005D4272 /* LessonVocabViewController.swift in Sources */,
 				D30E491027FA91ED0074CF2B /* DataManagerError.swift in Sources */,
 				D3AF1C1628057B2900DCFA2E /* ThemeProtocol.swift in Sources */,
+				CE6FF71228115C6500F4C588 /* SparkTrajectoryFactory.swift in Sources */,
 				D3F00CB127DFC04600393ADC /* FetchTypes.swift in Sources */,
 				CEF02D7727E956EA00C30E03 /* LessonQuizOutcomeViewModel.swift in Sources */,
 				CEA1C7B427FA145800123225 /* QuestionWrapper.swift in Sources */,
@@ -1991,18 +2235,23 @@
 				D3C4423627E8A96200676C93 /* AlertUtilities.swift in Sources */,
 				CE673C4127F99ED300321BB8 /* QueueEntryDataManager.swift in Sources */,
 				629090A527E85EFA00941A3B /* ProfileViewModel.swift in Sources */,
+				CE6FF70A28115C6500F4C588 /* CircleColorSparkViewFactory.swift in Sources */,
 				D3C4423A27E8B15900676C93 /* AuthErrors.swift in Sources */,
 				6F4C4D6E27F87E7F00394CCB /* RevisionSequence.swift in Sources */,
 				6F4C4D6927F80A9C00394CCB /* DeckTableViewCell.swift in Sources */,
 				CEA1C7AD27FA145800123225 /* QuestionIterator.swift in Sources */,
+				CE6FF736281162CF00F4C588 /* UICollectionView + ViewAnimator.swift in Sources */,
 				D3F00CB327DFC59500393ADC /* BookData.swift in Sources */,
 				CEA1C8F927FA14FA00123225 /* PKGameMove.swift in Sources */,
+				CE6FF738281162CF00F4C588 /* ViewAnimatorConfig.swift in Sources */,
 				62BD46E3280C925300CE2660 /* RewardSystemView.swift in Sources */,
 				62FEFAD4280B52DE00C0503B /* StarAccountData.swift in Sources */,
 				62209221280BF1FA003365DF /* TransactionDescription.swift in Sources */,
 				D33282E027D4D42700C80986 /* SceneDelegate.swift in Sources */,
+				CE6FF70828115C6500F4C588 /* ImageSparkViewFactory.swift in Sources */,
 				62FEFABC280B500E00C0503B /* CurrencyTypes.swift in Sources */,
 				CEA1C7AE27FA145800123225 /* QuestionConstructorRandomFactory.swift in Sources */,
+				CE6FF730281162CF00F4C588 /* Directions.swift in Sources */,
 				6F7EE52E280C3E5A00BDE31D /* AddToDeckViewModel.swift in Sources */,
 				62BB1CE128002135002CD31A /* HomeViewModel.swift in Sources */,
 				CEF1E7E227E60D68005D4272 /* LessonQuizViewModel.swift in Sources */,
@@ -2028,8 +2277,12 @@
 				6FA053D427F69E5900E03683 /* RevisionViewController.swift in Sources */,
 				CEF1E7DE27E60D42005D4272 /* LessonOverviewViewModel.swift in Sources */,
 				D3AF1C1A28057C8200DCFA2E /* DarkTheme.swift in Sources */,
+				CE6FF72028115C6500F4C588 /* CGPoint+Extensions.swift in Sources */,
+				CE6FF70C28115C6500F4C588 /* CircleColorSparkView.swift in Sources */,
 				620DF3CA27F23133006A9E5F /* ChangeEmailFields.swift in Sources */,
 				CEC5887127EABEC000809403 /* LessonSelectionViewController.swift in Sources */,
+				CE6FF71E28115C6500F4C588 /* FireworkSpark.swift in Sources */,
+				CE6FF71828115C6500F4C588 /* SparkViewAnimator.swift in Sources */,
 				CEF1E81127E71944005D4272 /* LessonQuizViewModelFromLesson.swift in Sources */,
 				CEA1C90927FA67BC00123225 /* PKGameEngine.swift in Sources */,
 				CE8D229427EEB7EE005E7058 /* AppStoryboard.swift in Sources */,
@@ -2040,13 +2293,16 @@
 				D3C5E28027F71C7300F65B8E /* VocabData.swift in Sources */,
 				D3BD2A1327DED8330061E362 /* SignUpViewModel.swift in Sources */,
 				CEF1E7EF27E6D117005D4272 /* QuestionViewController.swift in Sources */,
+				CE6FF73C281162CF00F4C588 /* Animation.swift in Sources */,
 				D3AF1C252805924300DCFA2E /* SettingsViewController.swift in Sources */,
 				CEF02D7B27E9577C00C30E03 /* LessonQuizResult.swift in Sources */,
 				62A03E5F2801CDD4008FE249 /* AlignedCollectionViewFlowLayout.swift in Sources */,
 				CEF1E7DC27E60C7A005D4272 /* Dynamic.swift in Sources */,
 				6F67BDF12804607800B91844 /* DeckProgress.swift in Sources */,
 				CEF3E67E28066B80001F483B /* PKGameData.swift in Sources */,
+				CE6FF734281162CF00F4C588 /* UITableView + ViewAnimator.swift in Sources */,
 				CEF02D7327E8CAC400C30E03 /* LessonQuizProgressBarView.swift in Sources */,
+				CE6FF732281162CF00F4C588 /* AnimationType.swift in Sources */,
 				6204A04127DE4A500063100D /* ViewUtilities.swift in Sources */,
 				CEF1E7A827E50082005D4272 /* Transaction.swift in Sources */,
 				CEF1E7E427E61CF1005D4272 /* VocabCollectionCell.swift in Sources */,
@@ -2057,10 +2313,12 @@
 				62FEFAB8280B4FC900C0503B /* CurrencyAccount.swift in Sources */,
 				62165B7D27F226C7004BC620 /* LoginFields.swift in Sources */,
 				62FEFA9E280B4AD600C0503B /* DocumentSnapshot+Extensions.swift in Sources */,
+				CE6FF6FE28115C6500F4C588 /* ClassicFirework.swift in Sources */,
 				620DF3CE27F231BD006A9E5F /* EditProfileFields.swift in Sources */,
 				62A03E59280176CA008FE249 /* BookButtonDelegate.swift in Sources */,
 				D30E490E27FA20140074CF2B /* BookCategory.swift in Sources */,
 				CEC5887B27EAC91600809403 /* LessonTableCellViewModelFromLesson.swift in Sources */,
+				CE6FF6FA28115C6500F4C588 /* ClassicSparkTrajectoryFactory.swift in Sources */,
 				6F7EE530280C3FD700BDE31D /* AddToDeckTableViewCell.swift in Sources */,
 				6F4C4D7227F8810800394CCB /* RecallDifficulty.swift in Sources */,
 				CEF02D7927E9573700C30E03 /* LessonQuizOutcomeViewModelFromQuizResult.swift in Sources */,
@@ -2073,6 +2331,7 @@
 				CEA1C7B827FA145800123225 /* SimpleOptionQuestion.swift in Sources */,
 				CEF1E81627E742BF005D4272 /* SimpleOptionQuestionLayoutViewModel.swift in Sources */,
 				D3C4424027E8C65600676C93 /* Logger.swift in Sources */,
+				CE6FF6F628115C6500F4C588 /* ClassicSparkTrajectoryFactoryProtocol.swift in Sources */,
 				D3C4423E27E8B20000676C93 /* DataProviderErrors.swift in Sources */,
 				62209224280BF45A003365DF /* LessonQuizRewardView.swift in Sources */,
 				CEA1C7AB27FA145800123225 /* QuestionSequence.swift in Sources */,
@@ -2086,6 +2345,7 @@
 				D30CD1EB27E7A65F0021A5AA /* AuthProvider.swift in Sources */,
 				629090AC27E8E3B900941A3B /* CurrentBookViewController.swift in Sources */,
 				CEA1C90127FA187300123225 /* LessonData.swift in Sources */,
+				CE6FF71628115C6500F4C588 /* Firework.swift in Sources */,
 				62E418CF27EA526200DFF03C /* ProfileLessonData.swift in Sources */,
 				CEA1C7B127FA145800123225 /* MatchVocabToDefinitionQuestionConstructor.swift in Sources */,
 				CEA1C7AF27FA145800123225 /* Question.swift in Sources */,
@@ -2094,6 +2354,7 @@
 				6F756448280BE49600AECCBD /* Query.swift in Sources */,
 				62FEFADB280B533100C0503B /* LessonQuizRewardViewModel.swift in Sources */,
 				62FEFABA280B4FE700C0503B /* ItemAccount.swift in Sources */,
+				CE6FF70028115C6500F4C588 /* FountainFirework.swift in Sources */,
 				D3C4424527E9F2FC00676C93 /* BookManager.swift in Sources */,
 				CEA1C90B27FA684500123225 /* PKGameRenderer.swift in Sources */,
 				D30E491227FAA6880074CF2B /* Profile.swift in Sources */,
@@ -2109,12 +2370,15 @@
 				624BD58B27E7A431006F0391 /* BookProgress.swift in Sources */,
 				CE673C2227F8B46F00321BB8 /* PKGameLobbyViewModel.swift in Sources */,
 				624BD58827E7A3A2006F0391 /* BooksViewModel.swift in Sources */,
+				CE6FF70E28115C6500F4C588 /* ImageSparkView.swift in Sources */,
 				CE673C3B27F9813C00321BB8 /* PKGameMatchFinder.swift in Sources */,
 				CEE980702806E83B0052863B /* DevLoginViewModel.swift in Sources */,
 				D3F00CAD27DFAF6F00393ADC /* Promise+Extensions.swift in Sources */,
 				629090AA27E8DE0300941A3B /* CurrentBookTabBarController.swift in Sources */,
+				CE6FF6F828115C6500F4C588 /* ClassicFireworkController.swift in Sources */,
 				CEE980732806E9AF0052863B /* DevLoginTableCell.swift in Sources */,
 				D30E491427FAA6E70074CF2B /* Lesson.swift in Sources */,
+				CE6FF73A281162CF00F4C588 /* ViewAnimator.swift in Sources */,
 				D398780927DF6AB800B2F4ED /* DataProvider.swift in Sources */,
 				D3AF1C302805DDDB00DCFA2E /* SplashViewModel.swift in Sources */,
 				6F4C4D6527F8041600394CCB /* Deck.swift in Sources */,
@@ -2124,17 +2388,21 @@
 				CEF3E68228068701001F483B /* PKGameMoveData.swift in Sources */,
 				6F756446280BE3A500AECCBD /* RevisionVocabData.swift in Sources */,
 				624BD58627E7A37D006F0391 /* RecommendedBooksViewModel.swift in Sources */,
+				CE6FF71C28115C6500F4C588 /* SparkViewFactory.swift in Sources */,
 				6F4C4D6227F7FFDB00394CCB /* RevisionViewModel.swift in Sources */,
 				6F756447280BE3C600AECCBD /* RevisionVocabManager.swift in Sources */,
 				6F5842D52806FFEB008C9547 /* DeckViewModel.swift in Sources */,
 				624989DA27E735600092FC1B /* BookCollectionViewController.swift in Sources */,
 				62BB1CE72800308D002CD31A /* ExploreBookViewController.swift in Sources */,
 				D33282F927D4E63B00C80986 /* Theme.swift in Sources */,
+				CE6FF6FC28115C6500F4C588 /* ClassicFireworkAnimator.swift in Sources */,
 				6F4C4D6727F8045600394CCB /* RevisionVocab.swift in Sources */,
 				624989DC27E736590092FC1B /* BookCollectionViewCell.swift in Sources */,
+				CE6FF71428115C6500F4C588 /* FireworkSparkScheduler.swift in Sources */,
 				62FEFAE4280B535C00C0503B /* PKGameRewardViewModel.swift in Sources */,
 				629090A027E8303F00941A3B /* RecommendedBooksTableViewController.swift in Sources */,
 				6F50FC2D28054E490027C634 /* DeckViewController.swift in Sources */,
+				CE6FF71A28115C6500F4C588 /* SparkView.swift in Sources */,
 				6F756449280BE49B00AECCBD /* Answerable.swift in Sources */,
 				624BD58027E761FB006F0391 /* LearningBooksViewModel.swift in Sources */,
 				62A03E652801CE9D008FE249 /* VerticalAlignment.swift in Sources */,
@@ -2167,6 +2435,7 @@
 				D3C5E1DE27F6E36B00F65B8E /* SimpleOptionQuestionLayoutViewController.swift in Sources */,
 				CEF3E6A1280690D2001F483B /* LessonData.swift in Sources */,
 				CEE980742806E9AF0052863B /* DevLoginTableCell.swift in Sources */,
+				CE6FF71128115C6500F4C588 /* SparkTrajectory.swift in Sources */,
 				CEF3E698280690C2001F483B /* DefinitionOptionQuestion.swift in Sources */,
 				62A03E692801CF55008FE249 /* HorizontalAlignment.swift in Sources */,
 				CEF3E68C280690A0001F483B /* QuestionSequence.swift in Sources */,
@@ -2193,11 +2462,13 @@
 				62FEFAC6280B508600C0503B /* DebitOrCredit.swift in Sources */,
 				62FEFACB280B509500C0503B /* CurrencyTypes.swift in Sources */,
 				CEF3E6A2280690D2001F483B /* PKGameData.swift in Sources */,
+				CE6FF70728115C6500F4C588 /* FountainSparkTrajectoryFactory.swift in Sources */,
 				D30E491827FAC7CE0074CF2B /* BookCategory.swift in Sources */,
 				CEF3E6B2280690DE001F483B /* PKGameOverviewViewModel.swift in Sources */,
 				CEF3E6AC280690DA001F483B /* FirebasePKGameUpdater.swift in Sources */,
 				CEF3E69B280690C5001F483B /* QuestionFormat.swift in Sources */,
 				CEF3E6AB280690DA001F483B /* PKGameUpdateDelegate.swift in Sources */,
+				CE6FF70328115C6500F4C588 /* FountainFireworkAnimator.swift in Sources */,
 				6F756438280BE19F00AECCBD /* RevisionCreateDeckViewController.swift in Sources */,
 				D3C5E1EE27F6E36B00F65B8E /* AppDelegate.swift in Sources */,
 				D3C5E1F027F6E36B00F65B8E /* LessonVocabViewModelFromLesson.swift in Sources */,
@@ -2206,6 +2477,7 @@
 				D3C5E1F127F6E36B00F65B8E /* DataProviderTypes.swift in Sources */,
 				6F448B8C280920A000D50D05 /* Query.swift in Sources */,
 				CEF3E68528069092001F483B /* PKGame.swift in Sources */,
+				CE6FF70528115C6500F4C588 /* FountainFireworkController.swift in Sources */,
 				CEF3E69A280690C5001F483B /* TwoDisjointSetOptionQuestion.swift in Sources */,
 				D3C5E1F227F6E36B00F65B8E /* HomeNavigationViewController.swift in Sources */,
 				6F034DAB28098BE900663A12 /* DeckData.swift in Sources */,
@@ -2228,6 +2500,7 @@
 				CEF3E6B0280690DA001F483B /* PKGameQuizViewController.swift in Sources */,
 				D30E490A27FA1E670074CF2B /* Book.swift in Sources */,
 				6F756439280BE1A300AECCBD /* DeckViewModel.swift in Sources */,
+				CE6FF7412811724400F4C588 /* AudioPlayer.swift in Sources */,
 				62209228280C13E2003365DF /* RewardSystemError.swift in Sources */,
 				D3AF1C262805937100DCFA2E /* SettingsViewController.swift in Sources */,
 				CE2771D4280988FB00A739C1 /* PKGamePlayerOutcomeData.swift in Sources */,
@@ -2235,6 +2508,7 @@
 				62FEFAA5280B4B3B00C0503B /* UIApplication+Extensions.swift in Sources */,
 				62209222280BF25E003365DF /* TransactionDescription.swift in Sources */,
 				D3C5E1FA27F6E36B00F65B8E /* OptionTableCell.swift in Sources */,
+				CE6FF71328115C6500F4C588 /* SparkTrajectoryFactory.swift in Sources */,
 				6F75643A280BE1A800AECCBD /* DeckViewController.swift in Sources */,
 				D3C5E1FB27F6E36B00F65B8E /* QuestionStatus.swift in Sources */,
 				D3AF1C312805DDE000DCFA2E /* SplashViewModel.swift in Sources */,
@@ -2243,18 +2517,23 @@
 				CEF3E6AD280690DA001F483B /* PKGameQuizViewModel.swift in Sources */,
 				D3C5E1FD27F6E36B00F65B8E /* BookCategoryData.swift in Sources */,
 				D3C5E1FF27F6E36B00F65B8E /* CompletedBooksViewModel.swift in Sources */,
+				CE6FF70B28115C6500F4C588 /* CircleColorSparkViewFactory.swift in Sources */,
 				D3C5E20027F6E36B00F65B8E /* LoginViewController.swift in Sources */,
 				D3C5E20127F6E36B00F65B8E /* LessonQuizOutcomeViewController.swift in Sources */,
 				D30E491527FAC7BD0074CF2B /* DataManagerError.swift in Sources */,
 				D3C5E20227F6E36B00F65B8E /* LessonVocabViewController.swift in Sources */,
+				CE6FF737281162CF00F4C588 /* UICollectionView + ViewAnimator.swift in Sources */,
 				D3C5E20427F6E36B00F65B8E /* FetchTypes.swift in Sources */,
 				D3C5E20527F6E36B00F65B8E /* LessonQuizOutcomeViewModel.swift in Sources */,
+				CE6FF739281162CF00F4C588 /* ViewAnimatorConfig.swift in Sources */,
 				62BD46E4280C925700CE2660 /* RewardSystemView.swift in Sources */,
 				D3C5E20627F6E36B00F65B8E /* ProfileData.swift in Sources */,
 				D3C5E20727F6E36B00F65B8E /* AlertUtilities.swift in Sources */,
 				D3C5E20827F6E36B00F65B8E /* ProfileViewModel.swift in Sources */,
+				CE6FF70928115C6500F4C588 /* ImageSparkViewFactory.swift in Sources */,
 				6F75643E280BE1C700AECCBD /* RecallDifficulty.swift in Sources */,
 				6F7EE532280C483A00BDE31D /* AddToDeckViewModel.swift in Sources */,
+				CE6FF731281162CF00F4C588 /* Directions.swift in Sources */,
 				D3C5E20927F6E36B00F65B8E /* AuthErrors.swift in Sources */,
 				D3C5E20A27F6E36B00F65B8E /* BookData.swift in Sources */,
 				D3C5E20B27F6E36B00F65B8E /* SceneDelegate.swift in Sources */,
@@ -2280,8 +2559,12 @@
 				6F034D922809281700663A12 /* RevisionViewController.swift in Sources */,
 				D3C5E21427F6E36B00F65B8E /* KeychainManager.swift in Sources */,
 				62A03E5D28017856008FE249 /* LearnButtonDelegate.swift in Sources */,
+				CE6FF72128115C6500F4C588 /* CGPoint+Extensions.swift in Sources */,
+				CE6FF70D28115C6500F4C588 /* CircleColorSparkView.swift in Sources */,
 				62FEFAE5280B535C00C0503B /* PKGameRewardViewModel.swift in Sources */,
 				62BB1CEB28003F74002CD31A /* BooksForCategory.swift in Sources */,
+				CE6FF71F28115C6500F4C588 /* FireworkSpark.swift in Sources */,
+				CE6FF71928115C6500F4C588 /* SparkViewAnimator.swift in Sources */,
 				D3C5E21527F6E36B00F65B8E /* LoginViewModel.swift in Sources */,
 				D3AF1C1B28057DC300DCFA2E /* ThemeProtocol.swift in Sources */,
 				D3C5E21727F6E36B00F65B8E /* TwoDisjointSetOptionQuestionLayoutViewController.swift in Sources */,
@@ -2292,13 +2575,16 @@
 				D3686A0727F751440013B289 /* LoginFields.swift in Sources */,
 				D3C5E21827F6E36B00F65B8E /* LessonOverviewViewModel.swift in Sources */,
 				62FEFA9F280B4AFD00C0503B /* DocumentSnapshot+Extensions.swift in Sources */,
+				CE6FF73D281162CF00F4C588 /* Animation.swift in Sources */,
 				62A03E5A280176DD008FE249 /* BookButtonDelegate.swift in Sources */,
 				D3C5E21927F6E36B00F65B8E /* LessonSelectionViewController.swift in Sources */,
 				62FEFAEB280B537200C0503B /* NotificationObserver.swift in Sources */,
 				D3C5E21C27F6E36B00F65B8E /* LessonQuizViewModelFromLesson.swift in Sources */,
 				CEF3E68D280690A0001F483B /* QuestionsGenerator.swift in Sources */,
 				6220922B280C1F18003365DF /* Date+Extensions.swift in Sources */,
+				CE6FF735281162CF00F4C588 /* UITableView + ViewAnimator.swift in Sources */,
 				D3C5E21D27F6E36B00F65B8E /* AppStoryboard.swift in Sources */,
+				CE6FF733281162CF00F4C588 /* AnimationType.swift in Sources */,
 				6F756441280BE1CF00AECCBD /* RevisionSequence.swift in Sources */,
 				CEF3E69C280690C5001F483B /* SimpleOptionQuestion.swift in Sources */,
 				D3C5E21E27F6E36B00F65B8E /* QuestionLayoutViewModel.swift in Sources */,
@@ -2309,10 +2595,12 @@
 				D3C5E22027F6E36B00F65B8E /* SignUpViewModel.swift in Sources */,
 				CEE9806E2806E6840052863B /* DevLoginViewController.swift in Sources */,
 				62FEFACF280B520800C0503B /* StarAccountManager.swift in Sources */,
+				CE6FF6FF28115C6500F4C588 /* ClassicFirework.swift in Sources */,
 				CEF3E691280690A7001F483B /* DefinitionOptionQuestionConstructor.swift in Sources */,
 				D3C5E22127F6E36B00F65B8E /* QuestionViewController.swift in Sources */,
 				6F75643F280BE1CB00AECCBD /* RevisionQuery.swift in Sources */,
 				6F7EE533280C483D00BDE31D /* AddToDeckTableViewCell.swift in Sources */,
+				CE6FF6FB28115C6500F4C588 /* ClassicSparkTrajectoryFactory.swift in Sources */,
 				D3C5E22227F6E36B00F65B8E /* LessonQuizResult.swift in Sources */,
 				D3C5E22327F6E36B00F65B8E /* Dynamic.swift in Sources */,
 				D3C5E22427F6E36B00F65B8E /* LessonQuizProgressBarView.swift in Sources */,
@@ -2325,6 +2613,7 @@
 				62A03E6B2801CF59008FE249 /* Alignment.swift in Sources */,
 				62209225280BF612003365DF /* LessonQuizRewardView.swift in Sources */,
 				CEF3E68E280690A0001F483B /* QuestionScopeFactory.swift in Sources */,
+				CE6FF6F728115C6500F4C588 /* ClassicSparkTrajectoryFactoryProtocol.swift in Sources */,
 				D3C5E22A27F6E36B00F65B8E /* LessonOverviewViewModelFromLesson.swift in Sources */,
 				62FEFAC8280B508D00C0503B /* AccountOwner.swift in Sources */,
 				D3C5E22D27F6E36B00F65B8E /* LessonTableCellViewModelFromLesson.swift in Sources */,
@@ -2338,6 +2627,7 @@
 				6F448B8D280920A900D50D05 /* Answerable.swift in Sources */,
 				6F034DA828098BE000663A12 /* RevisionVocabData.swift in Sources */,
 				D3C5E23427F6E36B00F65B8E /* Logger.swift in Sources */,
+				CE6FF71728115C6500F4C588 /* Firework.swift in Sources */,
 				D3C5E23527F6E36B00F65B8E /* DataProviderErrors.swift in Sources */,
 				D3C5E28827F71D8500F65B8E /* LessonManager.swift in Sources */,
 				CEF3E6AF280690DA001F483B /* PKGameUpdateListener.swift in Sources */,
@@ -2346,6 +2636,7 @@
 				D3C5E23627F6E36B00F65B8E /* FirebaseAuthProvider.swift in Sources */,
 				D3C5E23727F6E36B00F65B8E /* ProfileManager.swift in Sources */,
 				D3C5E23827F6E36B00F65B8E /* AuthProvider.swift in Sources */,
+				CE6FF70128115C6500F4C588 /* FountainFirework.swift in Sources */,
 				D3C5E23927F6E36B00F65B8E /* ProfileViewController.swift in Sources */,
 				D3C5E23B27F6E36B00F65B8E /* CurrentBookViewController.swift in Sources */,
 				D3C5E23C27F6E36B00F65B8E /* ProfileLessonData.swift in Sources */,
@@ -2361,12 +2652,15 @@
 				CEF3E6AE280690DA001F483B /* PKGameQuizViewModelFromPKGame.swift in Sources */,
 				D3C5E24127F6E36B00F65B8E /* BookProgress.swift in Sources */,
 				62FEFAC5280B508400C0503B /* ItemTransaction.swift in Sources */,
+				CE6FF70F28115C6500F4C588 /* ImageSparkView.swift in Sources */,
 				62FEFADF280B534100C0503B /* RewardSystem.swift in Sources */,
 				D3C5E24227F6E36B00F65B8E /* BooksViewModel.swift in Sources */,
 				CEF3E6A5280690D8001F483B /* PKGameLobbyViewController.swift in Sources */,
 				CE2771D12809889C00A739C1 /* PKGamePlayerOutcomeManager.swift in Sources */,
+				CE6FF6F928115C6500F4C588 /* ClassicFireworkController.swift in Sources */,
 				D3C5E24327F6E36B00F65B8E /* Promise+Extensions.swift in Sources */,
 				6F362D88280C17C40079E44F /* DeckManager.swift in Sources */,
+				CE6FF73B281162CF00F4C588 /* ViewAnimator.swift in Sources */,
 				D3C5E24427F6E36B00F65B8E /* CurrentBookTabBarController.swift in Sources */,
 				D3C5E24527F6E36B00F65B8E /* DataProvider.swift in Sources */,
 				D30E491727FAC7C80074CF2B /* Lesson.swift in Sources */,
@@ -2376,17 +2670,21 @@
 				D3C5E24727F6E36B00F65B8E /* LessonSelectorTableCell.swift in Sources */,
 				D3C5E24827F6E36B00F65B8E /* LessonSelectionViewModel.swift in Sources */,
 				D3C5E24927F6E36B00F65B8E /* (null) in Sources */,
+				CE6FF71D28115C6500F4C588 /* SparkViewFactory.swift in Sources */,
 				D3C5E24B27F6E36B00F65B8E /* DataManager.swift in Sources */,
 				D3C5E24D27F6E36B00F65B8E /* RecommendedBooksViewModel.swift in Sources */,
 				D3C5E24E27F6E36B00F65B8E /* BookCollectionViewController.swift in Sources */,
 				D3C5E24F27F6E36B00F65B8E /* Theme.swift in Sources */,
 				D3C5E25027F6E36B00F65B8E /* BookCollectionViewCell.swift in Sources */,
 				CEF3E6A7280690D8001F483B /* FirebasePKGameMatchFinder.swift in Sources */,
+				CE6FF6FD28115C6500F4C588 /* ClassicFireworkAnimator.swift in Sources */,
 				62BB1CE82800308D002CD31A /* ExploreBookViewController.swift in Sources */,
 				CEF3E6A8280690D8001F483B /* PKGameLobbyViewModelFromProfile.swift in Sources */,
+				CE6FF71528115C6500F4C588 /* FireworkSparkScheduler.swift in Sources */,
 				D3C5E25127F6E36B00F65B8E /* RecommendedBooksTableViewController.swift in Sources */,
 				D3C5E25227F6E36B00F65B8E /* LearningBooksViewModel.swift in Sources */,
 				62FEFAD8280B530000C0503B /* StarTransactionData.swift in Sources */,
+				CE6FF71B28115C6500F4C588 /* SparkView.swift in Sources */,
 				D3686A0527F750EA0013B289 /* FormUtilities.swift in Sources */,
 				CEF3E6AA280690DA001F483B /* PKGameRenderer.swift in Sources */,
 				62A03E6A2801CF57008FE249 /* VerticalAlignment.swift in Sources */,

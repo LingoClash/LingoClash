@@ -182,10 +182,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="lW6-28-4cc"/>
                     <connections>
-                        <outlet property="playerOneName" destination="gPR-JH-go0" id="EMm-VQ-znc"/>
-                        <outlet property="playerOneScore" destination="LUM-U6-mbk" id="1w9-eM-qwM"/>
-                        <outlet property="playerTwoName" destination="FIv-Cy-E8O" id="9B7-zM-tJj"/>
-                        <outlet property="playerTwoScore" destination="czZ-1c-9dP" id="GEF-LR-XPG"/>
+                        <outlet property="headerView" destination="89F-ve-CDC" id="SSj-E0-302"/>
+                        <outletCollection property="playerNames" destination="gPR-JH-go0" collectionClass="NSMutableArray" id="m9N-2f-ig5"/>
+                        <outletCollection property="playerNames" destination="FIv-Cy-E8O" collectionClass="NSMutableArray" id="bkS-gF-vF9"/>
+                        <outletCollection property="playerScores" destination="LUM-U6-mbk" collectionClass="NSMutableArray" id="OBN-f4-fkt"/>
+                        <outletCollection property="playerScores" destination="czZ-1c-9dP" collectionClass="NSMutableArray" id="rmB-UU-KxD"/>
                         <segue destination="3LJ-bp-6rq" kind="show" identifier="segueFromPKGameQuizToOverviewVC" id="c2L-rf-b2e"/>
                     </connections>
                 </viewController>

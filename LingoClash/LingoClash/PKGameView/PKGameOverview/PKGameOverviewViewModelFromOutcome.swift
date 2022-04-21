@@ -11,6 +11,7 @@ class PKGameOverviewViewModelFromOutcome: PKGameOverviewViewModel {
     var titleOutcome: String
     var descriptionOutcome: String
     var isBackgroundDark: Bool
+    var didWin: Bool
     private let playerOutcome: PKGamePlayerOutcome
     private let playerOutcomes: [PKGamePlayerOutcome]
     var scores: [String]
@@ -27,15 +28,18 @@ class PKGameOverviewViewModelFromOutcome: PKGameOverviewViewModel {
 
         switch playerOutcome.outcome {
         case .lose:
+            self.didWin = false
             self.titleOutcome = "Loss"
             self.descriptionOutcome = "Better luck next time."
             self.isBackgroundDark = true
         case .win:
+            self.didWin = true
             self.titleOutcome = "Victorious"
             self.descriptionOutcome = "Masterful!"
             self.isBackgroundDark = false
             NotificationCenter.default.post(name: .PKGameWon, object: nil, userInfo: nil)
         case .draw:
+            self.didWin = false
             self.titleOutcome = "Draw"
             self.descriptionOutcome = "You have met your match."
             self.isBackgroundDark = true

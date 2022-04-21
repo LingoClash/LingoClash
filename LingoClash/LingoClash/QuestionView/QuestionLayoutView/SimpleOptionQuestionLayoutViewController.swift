@@ -16,6 +16,9 @@ class SimpleOptionQuestionLayoutViewController: UIViewController, QuestionLayout
 
     @IBOutlet private var contextLabel: UILabel!
     @IBOutlet private var optionsTableView: UITableView!
+    private let fireworkController = ClassicFireworkController()
+
+
     var delegate: QuestionLayoutVCDelegate?
 
     var viewModel: VM? {
@@ -35,6 +38,8 @@ class SimpleOptionQuestionLayoutViewController: UIViewController, QuestionLayout
     func styleUI() {
 
     }
+    
+    
 
     func fillUI() {
         guard isViewLoaded, let viewModel = viewModel else {
@@ -121,6 +126,20 @@ extension SimpleOptionQuestionLayoutViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel?.didSelectOption(at: indexPath.section)
+        let isCorrect = viewModel?.didSelectOption(at: indexPath.section)
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return
+        }
+        
+        guard let isCorrect = isCorrect else {
+            return
+        }
+
+        if isCorrect {
+            self.fireworkController.addFireworks(count: 2, sparks: 8, around: cell)
+            AudioPlayer.playCorrectAnswerSound()
+        } else {
+            AudioPlayer.playWrongAnswerSound()
+        }
     }
 }

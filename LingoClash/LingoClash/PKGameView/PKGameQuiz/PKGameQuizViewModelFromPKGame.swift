@@ -14,16 +14,20 @@ class PKGameQuizViewModelFromPKGame: PKGameQuizViewModel {
     var gameOverviewViewModel: Dynamic<PKGameOverviewViewModel?> = Dynamic(nil)
     var playerNames: [String]
     private var players: [Profile]
-    var scores: Dynamic<[Int]>
+    var scores: [Dynamic<Int>]
+    var scoresChange: [Dynamic<Int>]
     init(game: PKGame, currentPlayerProfile: Profile) {
         self.pkGame = game
         self.gameUpdateDelegate = FirebasePKGameUpdater(game: game)
         self.currentPlayerProfile = currentPlayerProfile
         self.players = [currentPlayerProfile] + game.players.filter { $0 != currentPlayerProfile }
         self.playerNames = self.players.map({ $0.name.capitalized })
-        self.scores = Dynamic(self.players.map({ _ in
-            0
-        }))
+        self.scores = self.players.map({ _ in
+            Dynamic(0)
+        })
+        self.scoresChange = self.players.map { _ in
+            Dynamic(0)
+        }
 
         self.pkGameEngine = PKGameEngine(game: game)
 
@@ -77,13 +81,12 @@ extension PKGameQuizViewModelFromPKGame {
     }
 
     func didIncrementScore(newScore: Int, change: Int, player: Profile) {
-        var newScores = self.scores.value
         guard let index = players.firstIndex(of: player) else {
             assert(false)
             return
         }
-        newScores[index] = newScore
-        self.scores.value = newScores
+        self.scores[index].value = newScore
+        self.scoresChange[index].value = change
     }
 
     func didAccountForForfeit(player: Profile) {
