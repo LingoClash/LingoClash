@@ -58,6 +58,7 @@ class PKGameQuizViewController: UIViewController {
 
     }
 
+    @IBOutlet weak var balanceProgressBar: UIProgressView!
     func fillUI() {
         guard isViewLoaded, let viewModel = viewModel else {
             return
@@ -82,11 +83,14 @@ class PKGameQuizViewController: UIViewController {
         viewModel.questionViewModel.bindAndFire { [weak self] _ -> Void in
             self?.questionViewController?.reloadData()
         }
+        
+        viewModel.balance.bindAndFire { [weak self] in
+            self?.balanceProgressBar.setProgress($0[0], animated: true)
+        }
 
 
         viewModel.gameOverviewViewModel.bindAndFire { [weak self] in
             self?.navigateAfterQuizCompleted(vm: $0)
-
         }
     }
     
@@ -94,10 +98,10 @@ class PKGameQuizViewController: UIViewController {
         guard increment != 0 else {
             return
         }
-        let nameLabel = self.playerNames[playerIndex]
-        let scoreIncrement = UILabel(frame: nameLabel.frame)
+        let scoreLabel = self.playerScores[playerIndex]
+        let scoreIncrement = UILabel(frame: scoreLabel.frame)
         scoreIncrement.text = String(increment)
-        scoreIncrement.textColor = Theme.current.red
+        scoreIncrement.textColor = Theme.current.primaryText
         scoreIncrement.font = UIFont(name: "SF Pro", size: 30)
         self.headerView.addSubview(scoreIncrement)
         let animations = [AnimationType.vector(CGVector(dx: 0, dy: 50))]
