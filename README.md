@@ -5,15 +5,13 @@
   <p align="center">
     LingoClash is an iPad application to learn languages competitively. It features a battle system, a revision system, and achievements.
     <br>
-    
-    
-    
-<img src="https://github.com/LingoClash/LingoClash/actions/workflows/Testing.yml/badge.svg" />
-    </p>
+    <br>
+    <img src="https://github.com/LingoClash/LingoClash/actions/workflows/Testing.yml/badge.svg" />
+  </p>
 </p>
 
-
 # Requirements
+
 - Xcode 13.3
 - Swift 5.6
 - Firebase 8.14
@@ -21,9 +19,8 @@
 
 # Background
 
-We are a group of language enthusiasts of diverse backgrounds. Having been exposed to numerous language learning apps, we have identified some of the best apps that have helped us tremendously in our learning journey. 
+We are a group of language enthusiasts of diverse backgrounds. Having been exposed to numerous language learning apps, we have identified some of the best apps that have helped us tremendously in our learning journey.
 Among these apps, we thought that 沪江 by 开心词场 is the closest to what we have envisioned as a perfect language-learning app. Despite that, we have not seen anything that resembles it in the English community and hence we decided to recreate it in English while also incorporating some of the best features that other apps have to offer such as spaced repetition.
-
 
 # Team Members
 
@@ -39,6 +36,7 @@ The user manual can be found [here](https://www.notion.so/kyletoh/User-Manual-5d
 # Getting started
 
 ## Setting up Firebase
+
 - Create a Firebase project [here](https://console.firebase.google.com/u/0/) for both Production and Development.
 - Add an iOS app. Enter your app's bundle ID in the iOS bundle ID field when prompted.
 - Download and place the provided GoogleService-Info.plist under both `SupportingFiles/Development` and `SupportingFiles/Production` directories.
@@ -52,7 +50,7 @@ For more information refer to the [Firebase Documentation for Swift](https://fir
 
 - Open Xcode Project file.
 - Wait for all the packages to be resolved.
-- Choose the scheme to work with. 
+- Choose the scheme to work with.
 
 <div align="center">
   
