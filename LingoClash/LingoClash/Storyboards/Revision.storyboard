@@ -402,57 +402,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover_2" translatesAutoresizingMaskIntoConstraints="NO" id="3X2-i3-3Z0">
-                                <rect key="frame" x="-148" y="0.0" width="1000" height="411"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="138" translatesAutoresizingMaskIntoConstraints="NO" id="Xzf-lZ-zlK">
+                                <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TX3-wd-uac">
+                                        <rect key="frame" x="0.0" y="0.0" width="704" height="400"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover_2" translatesAutoresizingMaskIntoConstraints="NO" id="zdE-Ut-Dcn">
+                                                <rect key="frame" x="0.0" y="0.0" width="704" height="400"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a Deck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNa-sd-OKY">
+                                                <rect key="frame" x="206.5" y="170" width="291" height="60"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="50"/>
+                                                <color key="textColor" name="PrimaryText"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck Successfully Added!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlD-VM-M91">
+                                                <rect key="frame" x="183" y="282" width="338" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" name="Green"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="wNa-sd-OKY" firstAttribute="centerY" secondItem="TX3-wd-uac" secondAttribute="centerY" id="1NR-gw-ude"/>
+                                            <constraint firstItem="IlD-VM-M91" firstAttribute="centerY" secondItem="TX3-wd-uac" secondAttribute="centerY" constant="100" id="7RQ-sV-21A"/>
+                                            <constraint firstAttribute="bottom" secondItem="zdE-Ut-Dcn" secondAttribute="bottom" id="ARY-UP-wfg"/>
+                                            <constraint firstItem="IlD-VM-M91" firstAttribute="centerX" secondItem="TX3-wd-uac" secondAttribute="centerX" id="RQ4-AK-xA5"/>
+                                            <constraint firstItem="zdE-Ut-Dcn" firstAttribute="top" secondItem="TX3-wd-uac" secondAttribute="top" id="TqK-Do-oMb"/>
+                                            <constraint firstAttribute="height" constant="400" id="e8r-0p-F7Y"/>
+                                            <constraint firstItem="zdE-Ut-Dcn" firstAttribute="leading" secondItem="TX3-wd-uac" secondAttribute="leading" id="hzi-6c-Rmj"/>
+                                            <constraint firstAttribute="trailing" secondItem="zdE-Ut-Dcn" secondAttribute="trailing" id="kDZ-ic-IX6"/>
+                                            <constraint firstItem="wNa-sd-OKY" firstAttribute="centerX" secondItem="TX3-wd-uac" secondAttribute="centerX" id="pzI-sr-NvF"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09f-ij-g38">
+                                        <rect key="frame" x="0.0" y="538" width="704" height="457.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="146" translatesAutoresizingMaskIntoConstraints="NO" id="Ju8-Od-2N8">
+                                                <rect key="frame" x="0.0" y="0.0" width="704" height="457.5"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcp-w1-rd2" userLabel="Create Deck Field">
+                                                        <rect key="frame" x="202" y="0.0" width="300" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="300" id="6Ch-U0-4Dh"/>
+                                                            <constraint firstAttribute="height" constant="50" id="9QI-G6-yaz"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="50"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt9-Pu-MOU">
+                                                        <rect key="frame" x="302" y="196" width="100" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="AYp-yf-Z7t"/>
+                                                            <constraint firstAttribute="height" constant="50" id="f17-aB-YmD"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Save">
+                                                            <color key="baseBackgroundColor" red="0.65931482016563425" green="0.62119777685399624" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="onTapActionSave:" destination="UF9-3A-gCh" eventType="touchUpInside" id="fTZ-nt-eOp"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of5-nt-40c">
+                                                        <rect key="frame" x="0.0" y="392" width="704" height="65.5"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Of5-nt-40c" secondAttribute="trailing" id="Pwy-pH-zl7"/>
+                                                    <constraint firstItem="Of5-nt-40c" firstAttribute="leading" secondItem="Ju8-Od-2N8" secondAttribute="leading" id="SmH-Xb-fW7"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Ju8-Od-2N8" firstAttribute="centerY" secondItem="09f-ij-g38" secondAttribute="centerY" id="6lJ-Vz-kdm"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ju8-Od-2N8" secondAttribute="trailing" id="clS-Jd-K5X"/>
+                                            <constraint firstItem="Ju8-Od-2N8" firstAttribute="centerX" secondItem="09f-ij-g38" secondAttribute="centerX" id="ed2-EN-pM5"/>
+                                            <constraint firstItem="Ju8-Od-2N8" firstAttribute="leading" secondItem="09f-ij-g38" secondAttribute="leading" id="p6N-d9-ums"/>
+                                            <constraint firstItem="Ju8-Od-2N8" firstAttribute="top" secondItem="09f-ij-g38" secondAttribute="top" id="qB1-NB-LDJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ju8-Od-2N8" secondAttribute="bottom" id="vtz-EF-pnA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="411" id="Igz-1Z-n1S"/>
+                                    <constraint firstAttribute="trailing" secondItem="09f-ij-g38" secondAttribute="trailing" id="41e-If-cHw"/>
+                                    <constraint firstAttribute="bottom" secondItem="09f-ij-g38" secondAttribute="bottom" id="eUc-0a-iWo"/>
+                                    <constraint firstItem="09f-ij-g38" firstAttribute="leading" secondItem="Xzf-lZ-zlK" secondAttribute="leading" id="ggp-7z-k76"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deck Successfully Added!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlD-VM-M91">
-                                <rect key="frame" x="74" y="728" width="556" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" name="Green"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create a Deck:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNa-sd-OKY">
-                                <rect key="frame" x="197" y="220" width="310" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="50"/>
-                                <color key="textColor" name="Background"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt9-Pu-MOU">
-                                <rect key="frame" x="235.5" y="611" width="233" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="233" id="gdP-WC-nU8"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Save">
-                                    <color key="baseBackgroundColor" red="0.65931482016563425" green="0.62119777685399624" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="onTapActionSave:" destination="UF9-3A-gCh" eventType="touchUpInside" id="fTZ-nt-eOp"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcp-w1-rd2">
-                                <rect key="frame" x="235.5" y="463" width="233" height="69.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="233" id="2jf-hA-9h6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="50"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b4B-cA-S3v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Wt9-Pu-MOU" firstAttribute="centerX" secondItem="fvo-A8-lza" secondAttribute="centerX" id="GuG-pO-sj7"/>
-                            <constraint firstItem="3X2-i3-3Z0" firstAttribute="centerX" secondItem="fvo-A8-lza" secondAttribute="centerX" id="cNS-ON-AgS"/>
-                            <constraint firstItem="3X2-i3-3Z0" firstAttribute="top" secondItem="b4B-cA-S3v" secondAttribute="top" id="g4K-9H-HoL"/>
-                            <constraint firstItem="Zcp-w1-rd2" firstAttribute="centerX" secondItem="fvo-A8-lza" secondAttribute="centerX" id="rR6-FY-XZq"/>
-                            <constraint firstItem="Wt9-Pu-MOU" firstAttribute="top" secondItem="Zcp-w1-rd2" secondAttribute="bottom" constant="78.5" id="txS-VN-flu"/>
-                            <constraint firstItem="Zcp-w1-rd2" firstAttribute="centerY" secondItem="fvo-A8-lza" secondAttribute="centerY" id="vfO-tC-J2l"/>
+                            <constraint firstItem="Xzf-lZ-zlK" firstAttribute="top" secondItem="b4B-cA-S3v" secondAttribute="top" id="Csb-4L-dmS"/>
+                            <constraint firstItem="b4B-cA-S3v" firstAttribute="trailing" secondItem="Xzf-lZ-zlK" secondAttribute="trailing" id="Q00-Ca-Hic"/>
+                            <constraint firstItem="b4B-cA-S3v" firstAttribute="bottom" secondItem="Xzf-lZ-zlK" secondAttribute="bottom" id="arB-wP-Wev"/>
+                            <constraint firstItem="Xzf-lZ-zlK" firstAttribute="leading" secondItem="b4B-cA-S3v" secondAttribute="leading" id="dNS-3B-tnY"/>
+                            <constraint firstItem="Xzf-lZ-zlK" firstAttribute="centerX" secondItem="fvo-A8-lza" secondAttribute="centerX" id="eiW-aw-36P"/>
+                            <constraint firstItem="Xzf-lZ-zlK" firstAttribute="centerY" secondItem="fvo-A8-lza" secondAttribute="centerY" id="rCG-HR-SSt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZZ9-7P-xon"/>
@@ -484,6 +535,9 @@
         </namedColor>
         <namedColor name="Outline-Dark">
             <color red="0.43999999761581421" green="0.47099998593330383" blue="0.4869999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Red">
             <color red="0.58099997043609619" green="0.087999999523162842" blue="0.3190000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
