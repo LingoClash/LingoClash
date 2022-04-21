@@ -13,7 +13,6 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var progressLabel: UILabel!
     @IBOutlet private var totalStarsLabel: UILabel!
     @IBOutlet private var progressView: UIProgressView!
-    @IBOutlet private var reviseButton: UIButton!
     @IBOutlet private var learnButton: UIButton!
 
     weak var delegate: BookButtonDelegate?
