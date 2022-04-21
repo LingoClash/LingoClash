@@ -9,4 +9,5 @@
 enum QuestionType: String, Codable {
     case definitionOption
     case matchVocabToDefinitionOption
+    case pronounciationOption
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class PKGame {
     static let playerCountRequired: Int = 2
-    static let numberOfQuestions: Int = 3
+    static let numberOfQuestions: Int = 8
     let id: Identifier
     var players: [Profile]
     var questions: [Question]
