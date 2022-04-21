@@ -18,15 +18,14 @@ class BookCollectionViewController: UICollectionViewController {
     var viewModel: BooksViewModel?
     weak var parentVC: UIViewController?
     private var cancellables: Set<AnyCancellable> = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpBinders()
-        viewModel?.refresh()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         viewModel?.refresh()
     }
     
@@ -41,7 +40,7 @@ class BookCollectionViewController: UICollectionViewController {
         guard let books = books else {
             return
         }
-
+        
         self.parentVC?.removeSpinner()
         if books.count == 0 {
             collectionView.backgroundView = emptyView
@@ -49,44 +48,44 @@ class BookCollectionViewController: UICollectionViewController {
             collectionView.backgroundView = nil
         }
     }
-
+    
     func setUpBinders() {
         guard let viewModel = viewModel else {
             return
         }
-
+        
         viewModel.booksPublisher.sink {[weak self] books in
             self?.books = books
             self?.collectionView.reloadData()
         }.store(in: &cancellables)
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         books?.count ?? 0
     }
-
+    
     override func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
+            var cell = UICollectionViewCell()
             
-        guard let books = books else {
+            guard let books = books else {
+                return cell
+            }
+            
+            if let bookCell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: reuseIdentifier,
+                for: indexPath) as? BookCollectionViewCell {
+                
+                bookCell.configure(book: books[indexPath.row], delegate: self)
+                
+                ViewUtilities.styleCard(bookCell)
+                
+                cell = bookCell
+            }
+            
             return cell
         }
-
-        if let bookCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: reuseIdentifier,
-            for: indexPath) as? BookCollectionViewCell {
-
-            bookCell.configure(book: books[indexPath.row], delegate: self)
-
-            ViewUtilities.styleCard(bookCell)
-
-            cell = bookCell
-        }
-
-        return cell
-    }
 }
 
 extension BookCollectionViewController: BookButtonDelegate {
