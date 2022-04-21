@@ -4,10 +4,11 @@
 //
 //  Created by Ai Ling Hong on 13/3/22.
 //
+
 import UIKit
 import Combine
-
 import FirebaseAuth
+import FSCalendar
 
 class ProfileViewController: UIViewController {
     
@@ -21,10 +22,21 @@ class ProfileViewController: UIViewController {
     @IBOutlet private var rankingByTotalStarsLabel: UILabel!
     @IBOutlet private var starsGoalProgressView: UIProgressView!
     @IBOutlet private var starsGoalIcon: UIImageView!
-    
+    @IBOutlet private var calendar: FSCalendar!
+        
     private let viewModel = ProfileViewModel()
     private var cancellables: Set<AnyCancellable> = []
     
+    private let gregorian = Calendar(identifier: .gregorian)
+    private var dateToStars: [Date: Int] = [:]
+    
+    override func loadView() {
+        super.loadView()
+        calendar.dataSource = self
+        calendar.delegate = self
+        calendar.register(CalendarCell.self, forCellReuseIdentifier: "CalendarCell")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpBinders()
@@ -84,5 +96,28 @@ class ProfileViewController: UIViewController {
                 self?.removeSpinner()
             }
         }.store(in: &cancellables)
+        
+        viewModel.$dateToStars.sink {[weak self] dateToStars in
+            self?.dateToStars = dateToStars
+            self?.calendar.reloadData()
+        }.store(in: &cancellables)
+    }
+}
+
+extension ProfileViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
+    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+        let cell = calendar.dequeueReusableCell(withIdentifier: "CalendarCell", for: date, at: position)
+        guard let calendarCell = cell as? CalendarCell else {
+            return cell
+        }
+        return calendarCell
+    }
+    
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let startDay = Calendar.current.startOfDay(for: date)
+        if let stars = dateToStars[startDay] {
+            return min(stars, 3)
+        }
+        return 0
     }
 }

@@ -23,7 +23,6 @@ class LessonQuizRewardViewModel: RewardSystem {
               let starCount = dict["stars"] as? Int else {
             return
         }
-
         if starCount <= 0 {
             return
         }

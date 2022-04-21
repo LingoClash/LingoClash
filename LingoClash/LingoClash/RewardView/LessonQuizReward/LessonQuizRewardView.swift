@@ -10,7 +10,7 @@ import UIKit
 
 class LessonQuizRewardView: RewardSystemView {
 
-    private let viewModel = PKGameRewardViewModel()
+    private let viewModel = LessonQuizRewardViewModel()
     private var cancellables: Set<AnyCancellable> = []
 
     func setUp() {

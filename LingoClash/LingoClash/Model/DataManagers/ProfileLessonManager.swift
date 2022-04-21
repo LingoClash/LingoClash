@@ -19,7 +19,7 @@ class ProfileLessonManager: DataManager<ProfileLessonData> {
         return firstly { () -> Promise<[ProfileLessonData]> in
             let profileLessonDatas = self.getManyReference(target: "profile_id", id: profileId)
             let filtered = profileLessonDatas.filterValues { profileLessonData in
-                profileLessonData.lesson_id == lessonId
+                return profileLessonData.lesson_id == lessonId
             }
             return filtered
         }.compactMap { profileLessonDatas in

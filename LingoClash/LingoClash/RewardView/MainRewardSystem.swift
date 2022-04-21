@@ -10,7 +10,7 @@ class MainRewardSystem {
     private static let pkGameRewardSystemView: RewardSystemView = PKGameRewardView()
 
     private static var rewardSystems: [RewardSystemView] {
-        [lessonQuizRewardSytemView]
+        [lessonQuizRewardSytemView, pkGameRewardSystemView]
     }
 
     static func setUp() {

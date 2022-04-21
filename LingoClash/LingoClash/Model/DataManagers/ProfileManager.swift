@@ -27,7 +27,6 @@ class ProfileManager: DataManager<ProfileData> {
             guard !profilesData.isEmpty else {
                 return nil
             }
-
             return profilesData[0]
         }
     }
