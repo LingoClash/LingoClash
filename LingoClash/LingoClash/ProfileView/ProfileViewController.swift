@@ -10,7 +10,7 @@ import Combine
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
-
+    
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var totalStarsLabel: UILabel!
     @IBOutlet private var starsTodayLabel: UILabel!
@@ -21,15 +21,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet private var rankingByTotalStarsLabel: UILabel!
     @IBOutlet private var starsGoalProgressView: UIProgressView!
     @IBOutlet private var starsGoalIcon: UIImageView!
-
+    
     private let viewModel = ProfileViewModel()
     private var cancellables: Set<AnyCancellable> = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpBinders()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.refresh()
@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController {
         super.viewDidDisappear(animated)
         viewModel.stopRefresh()
     }
-
+    
     func setUpBinderForLabel(label: UILabel, publisher: Published<String?>.Publisher) {
         publisher.sink { value in
             if let value = value {
@@ -47,7 +47,7 @@ class ProfileViewController: UIViewController {
             }
         }.store(in: &cancellables)
     }
-
+    
     func setUpBinders() {
         let bindings: [UILabel: Published<String?>.Publisher] = [
             self.nameLabel: viewModel.$name,
@@ -59,24 +59,24 @@ class ProfileViewController: UIViewController {
             self.pkWinningRateLabel: viewModel.$pkWinningRate,
             self.bioLabel: viewModel.$bio
         ]
-
+        
         for (label, publisher) in bindings {
             setUpBinderForLabel(label: label, publisher: publisher)
         }
-
+        
         viewModel.$starsGoalProgress.sink {[weak self] starsGoalProgress in
             if let starsGoalProgress = starsGoalProgress {
                 self?.starsGoalProgressView.progress = starsGoalProgress
                 self?.starsGoalIcon.alpha = max(CGFloat(starsGoalProgress), 0.5)
             }
         }.store(in: &cancellables)
-
+        
         viewModel.$bio.sink {[weak self] bio in
             if let bio = bio {
-               self?.bioLabel.text = "\"\(bio)\""
+                self?.bioLabel.text = "\"\(bio)\""
             }
         }.store(in: &cancellables)
-
+        
         viewModel.$isRefreshing.sink {[weak self] isRefreshing in
             if isRefreshing {
                 self?.showSpinner()

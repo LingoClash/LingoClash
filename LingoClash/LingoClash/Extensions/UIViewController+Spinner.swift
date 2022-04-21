@@ -22,11 +22,11 @@ extension UIViewController {
             style: .large)
         activityIndicator.center = activityView.center
         activityIndicator.startAnimating()
+        
+        activityIndicator.color = Theme.current.primary
+        
         activityView.addSubview(activityIndicator)
-        activityView.backgroundColor = .white
-        activityView.alpha = 0.3
         self.view.addSubview(activityView)
-        self.view.bringSubviewToFront(activityView)
         spinnerView = activityView
     }
 
@@ -36,3 +36,4 @@ extension UIViewController {
     }
 
 }
+
