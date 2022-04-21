@@ -75,35 +75,70 @@
                                         <rect key="frame" x="0.0" y="350" width="1024" height="851"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kYk-Zr-bdh">
-                                                <rect key="frame" x="8" y="8" width="1008" height="785"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="851"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeckTableViewCell" id="y6C-61-Kck" customClass="DeckTableViewCell" customModule="LingoClash" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.5" width="1008" height="43.5"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y6C-61-Kck" id="POO-5H-nsB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1008" height="43.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
+                                                <view key="tableHeaderView" contentMode="scaleToFill" id="MSn-k6-zEh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FRA-dV-zaw">
+                                                            <rect key="frame" x="50" y="0.0" width="924" height="100"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PA5-xA-1bl">
-                                                                    <rect key="frame" x="40" y="4" width="73" height="36"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deck" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFS-XR-Byi">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="462" height="100"/>
                                                                     <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="30"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="SecondaryText"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaU-OM-RQo">
-                                                                    <rect key="frame" x="669" y="4" width="73" height="36"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vocabs Left Today" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeW-KA-gEi">
+                                                                    <rect key="frame" x="462" y="0.0" width="462" height="100"/>
                                                                     <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="30"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="SecondaryText"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="Secondary"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="FRA-dV-zaw" secondAttribute="bottom" id="JJA-65-z9E"/>
+                                                        <constraint firstAttribute="trailing" secondItem="FRA-dV-zaw" secondAttribute="trailing" constant="50" id="Xsm-c2-ecb"/>
+                                                        <constraint firstItem="FRA-dV-zaw" firstAttribute="leading" secondItem="MSn-k6-zEh" secondAttribute="leading" constant="50" id="pRQ-Hp-wvn"/>
+                                                        <constraint firstItem="FRA-dV-zaw" firstAttribute="top" secondItem="MSn-k6-zEh" secondAttribute="top" id="vC8-jO-jmf"/>
+                                                    </constraints>
+                                                </view>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeckTableViewCell" id="y6C-61-Kck" customClass="DeckTableViewCell" customModule="LingoClash" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="144.5" width="1024" height="56.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y6C-61-Kck" id="POO-5H-nsB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="56.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jje-oU-Rnu">
+                                                                    <rect key="frame" x="50" y="10" width="894" height="36.5"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PA5-xA-1bl">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="447" height="36.5"/>
+                                                                            <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="30"/>
+                                                                            <color key="textColor" name="Tertiary"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaU-OM-RQo">
+                                                                            <rect key="frame" x="447" y="0.0" width="447" height="36.5"/>
+                                                                            <fontDescription key="fontDescription" name="SFPro-Medium" family="SF Pro" pointSize="30"/>
+                                                                            <color key="textColor" name="Tertiary"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="PA5-xA-1bl" firstAttribute="leading" secondItem="POO-5H-nsB" secondAttribute="leading" constant="40" id="5l5-7w-Ptj"/>
-                                                                <constraint firstItem="OaU-OM-RQo" firstAttribute="centerY" secondItem="POO-5H-nsB" secondAttribute="centerY" id="6TR-Z1-uad"/>
-                                                                <constraint firstItem="PA5-xA-1bl" firstAttribute="centerY" secondItem="POO-5H-nsB" secondAttribute="centerY" id="ADf-13-oMr"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="OaU-OM-RQo" secondAttribute="trailing" constant="250" id="UOs-3Y-vjX"/>
+                                                                <constraint firstAttribute="trailing" secondItem="jje-oU-Rnu" secondAttribute="trailing" constant="80" id="Upd-Xi-jae"/>
+                                                                <constraint firstAttribute="bottom" secondItem="jje-oU-Rnu" secondAttribute="bottom" constant="10" id="XXX-MZ-0cl"/>
+                                                                <constraint firstItem="jje-oU-Rnu" firstAttribute="top" secondItem="POO-5H-nsB" secondAttribute="top" constant="10" id="mv3-BF-2oZ"/>
+                                                                <constraint firstItem="jje-oU-Rnu" firstAttribute="leading" secondItem="POO-5H-nsB" secondAttribute="leading" constant="50" id="phQ-PH-Djq"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
@@ -550,6 +585,9 @@
         </namedColor>
         <namedColor name="SecondaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tertiary">
+            <color red="0.35400000214576721" green="0.36100000143051147" blue="0.49599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tertiary-Dark">
             <color red="0.35400000214576721" green="0.36100000143051147" blue="0.49599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
