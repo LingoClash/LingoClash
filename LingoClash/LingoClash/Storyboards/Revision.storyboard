@@ -154,54 +154,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocp-Rq-IzR" userLabel="Bottom View">
                                         <rect key="frame" x="0.0" y="1201" width="1024" height="100"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="219" translatesAutoresizingMaskIntoConstraints="NO" id="T0e-7E-kLS">
-                                                <rect key="frame" x="5" y="0.0" width="1014" height="100"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Studied 0 cards in 0 minutes today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oau-r6-1b6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="695" height="100"/>
-                                                        <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="30"/>
-                                                        <color key="textColor" name="Secondary"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggJ-KP-OSW">
-                                                        <rect key="frame" x="914" y="0.0" width="100" height="100"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gu-BY-KXD">
-                                                                <rect key="frame" x="20" y="20" width="60" height="60"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="60" id="ROP-SB-FHa"/>
-                                                                    <constraint firstAttribute="height" constant="60" id="oKQ-Va-5xO"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="filled" title="+">
-                                                                    <fontDescription key="titleFontDescription" type="system" pointSize="46"/>
-                                                                    <color key="baseForegroundColor" name="SecondaryText"/>
-                                                                    <color key="baseBackgroundColor" name="Secondary"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <segue destination="UF9-3A-gCh" kind="presentation" id="EID-nl-Sdi"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="LaN-sZ-Ywj"/>
-                                                            <constraint firstItem="2gu-BY-KXD" firstAttribute="centerX" secondItem="ggJ-KP-OSW" secondAttribute="centerX" id="VuX-zj-ifx"/>
-                                                            <constraint firstItem="2gu-BY-KXD" firstAttribute="centerY" secondItem="ggJ-KP-OSW" secondAttribute="centerY" id="cIr-IC-2NZ"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gu-BY-KXD">
+                                                <rect key="frame" x="482" y="20" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="V8k-1D-aEC"/>
+                                                    <constraint firstAttribute="height" constant="60" id="dhh-dU-mVe"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="+">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="46"/>
+                                                    <color key="baseForegroundColor" name="SecondaryText"/>
+                                                    <color key="baseBackgroundColor" name="Secondary"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="UF9-3A-gCh" kind="presentation" id="EID-nl-Sdi"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="T0e-7E-kLS" secondAttribute="bottom" id="DLR-Qj-thv"/>
+                                            <constraint firstItem="2gu-BY-KXD" firstAttribute="centerX" secondItem="ocp-Rq-IzR" secondAttribute="centerX" id="5WL-JT-xGt"/>
                                             <constraint firstAttribute="height" constant="100" id="Fy0-pb-o7G"/>
-                                            <constraint firstItem="T0e-7E-kLS" firstAttribute="top" secondItem="ocp-Rq-IzR" secondAttribute="top" id="Gwb-ej-9SA"/>
-                                            <constraint firstItem="T0e-7E-kLS" firstAttribute="leading" secondItem="ocp-Rq-IzR" secondAttribute="leading" constant="5" id="JZh-Nh-f82"/>
-                                            <constraint firstItem="T0e-7E-kLS" firstAttribute="centerY" secondItem="ocp-Rq-IzR" secondAttribute="centerY" id="M0n-qs-CRB"/>
-                                            <constraint firstItem="T0e-7E-kLS" firstAttribute="centerX" secondItem="ocp-Rq-IzR" secondAttribute="centerX" id="qzU-yN-QZT"/>
-                                            <constraint firstAttribute="trailing" secondItem="T0e-7E-kLS" secondAttribute="trailing" constant="5" id="vVH-hW-4nr"/>
+                                            <constraint firstItem="2gu-BY-KXD" firstAttribute="centerY" secondItem="ocp-Rq-IzR" secondAttribute="centerY" id="GZE-Et-zPW"/>
                                         </constraints>
                                     </view>
                                 </subviews>
