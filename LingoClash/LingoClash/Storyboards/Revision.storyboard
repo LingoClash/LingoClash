@@ -481,7 +481,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="146" translatesAutoresizingMaskIntoConstraints="NO" id="Ju8-Od-2N8">
                                                 <rect key="frame" x="0.0" y="0.0" width="704" height="457.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcp-w1-rd2" userLabel="Create Deck Field">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Deck Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcp-w1-rd2" userLabel="Create Deck Field">
                                                         <rect key="frame" x="202" y="0.0" width="300" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="300" id="6Ch-U0-4Dh"/>
