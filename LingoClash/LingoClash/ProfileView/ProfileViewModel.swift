@@ -23,6 +23,7 @@ final class ProfileViewModel {
     @Published var pkWinningRate: String?
     @Published var rankingByTotalStars: String?
     @Published var alertContent: AlertContent?
+    @Published var dateToStars: [Date:Int] = [:]
 
     private let authProvider: AuthProvider
     private let profileManager = ProfileManager()
@@ -58,6 +59,20 @@ final class ProfileViewModel {
             self.vocabsLearnt = String(profile.vocabsLearnt)
             self.pkWinningRate = String(format: "%.2f", profile.pkWinningRate)
             self.rankingByTotalStars = String(profile.rankingByTotalStars)
+        }.then {
+            StarAccountManager().getStarAccount()
+        }.done { starAccount in
+            for transaction in starAccount.transactions {
+                let date = Calendar.current.startOfDay(for: transaction.createdAt)
+                
+                if let stars = self.dateToStars[date] {
+                    if transaction.amount > stars {
+                        self.dateToStars[date] = stars + transaction.amount
+                    }
+                } else {
+                    self.dateToStars[date] = transaction.amount
+                }
+            }
             self.isRefreshing = false
         }.catch { error in
             Logger.error(error.localizedDescription)

@@ -33,8 +33,7 @@ class LessonManager: DataManager<LessonData> {
                                                      lesson_id: profileLessonData.lesson_id,
                                                      stars: lesson.stars)
                 _ = profileLessonManager.update(id: profileLessonData.id, to: modifiedData)
-                
-                NotificationCenter.default.post(name: .lessonQuizPassed, object: nil, userInfo: ["stars": lesson.stars -  profileLessonData.stars])
+                NotificationCenter.default.post(name: .lessonQuizPassed, object: nil, userInfo: ["stars": lesson.stars - profileLessonData.stars])
             }
             return Promise<ProfileLessonData>.resolve(value: profileLessonData)
         }.done { oldProfileLessonData in
