@@ -17,11 +17,6 @@
 - Firebase 8.14
 - PromiseKit 6.17
 
-# Background
-
-We are a group of language enthusiasts of diverse backgrounds. Having been exposed to numerous language learning apps, we have identified some of the best apps that have helped us tremendously in our learning journey.
-Among these apps, we thought that 沪江 by 开心词场 is the closest to what we have envisioned as a perfect language-learning app. Despite that, we have not seen anything that resembles it in the English community and hence we decided to recreate it in English while also incorporating some of the best features that other apps have to offer such as spaced repetition.
-
 # Team Members
 
 [Hong Ai Ling](https://github.com/ailing35)  
